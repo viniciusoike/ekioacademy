@@ -1,0 +1,28 @@
+---
+title: "Urban Economics"
+subtitle: "Brazilian Cities, Housing Markets & Municipal Analysis"
+lang: en
+listing:
+  contents: "../posts"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: "urban-economics"
+---
+
+## Urban Economics Posts
+
+Dive deep into Brazilian urban economic analysis, from housing market dynamics to municipal finance and urban development patterns.
+
+### Featured Topics
+
+- **Housing Markets**: Price analysis, affordability studies, and market forecasting
+- **Municipal Finance**: Budget analysis, debt levels, and fiscal performance indicators
+- **Urban Development**: Infrastructure investment, transportation, and regional growth
+- **Brazilian Cities**: São Paulo, Rio de Janeiro, and emerging metropolitan areas
+- **Policy Analysis**: Urban planning effectiveness and economic development strategies
+
+[← Back to All Posts](../index.qmd){.btn .btn-outline-primary}

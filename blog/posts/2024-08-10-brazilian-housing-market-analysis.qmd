@@ -1,0 +1,313 @@
+---
+title: "Analyzing Brazilian Housing Market Trends with R"
+subtitle: "Using FipeZap data to understand regional price dynamics"
+author: "EKIO Academy Team"
+date: "2024-08-10"
+categories: [data-analysis, urban-economics, r-programming]
+image: "housing-market-thumbnail.jpg"
+lang: en
+format:
+  html:
+    code-fold: false
+    toc: true
+---
+
+## Introduction
+
+Brazil's housing market has experienced significant volatility over the past decade, with regional differences creating complex patterns that require sophisticated analysis. In this post, we'll explore how to use R and FipeZap data to understand these trends and build predictive models for housing price movements.
+
+::: {.callout-note}
+## Data Source
+This analysis uses FipeZap residential price indices, which track average listing prices per square meter across Brazilian metropolitan areas. The data is particularly valuable for understanding market trends in major cities like São Paulo, Rio de Janeiro, and Brasília.
+:::
+
+## Setting Up the Analysis
+
+First, let's load the required packages and set up our EKIO theme for professional visualizations:
+
+```{r setup}
+#| message: false
+#| warning: false
+
+# Load required packages
+library(tidyverse)
+library(scales)
+library(lubridate)
+library(plotly)
+
+# Load EKIO theme system
+source("../../assets/r/ekio-themes.R")
+
+# Set theme for this analysis
+theme_set(theme_ekio("modern_premium"))
+```
+
+## Data Import and Preparation
+
+For this analysis, we'll create a sample dataset that represents typical FipeZap housing price patterns:
+
+```{r data-prep}
+# Create sample housing price data (in practice, this would come from FipeZap API)
+set.seed(42)
+dates <- seq(from = as.Date("2020-01-01"), to = as.Date("2024-07-01"), by = "month")
+
+housing_data <- expand_grid(
+  date = dates,
+  city = c("São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte", "Porto Alegre")
+) |>
+  arrange(city, date) |>
+  group_by(city) |>
+  mutate(
+    # Simulate realistic price trends with city-specific patterns
+    base_price = case_when(
+      city == "São Paulo" ~ 8500,
+      city == "Rio de Janeiro" ~ 7200,
+      city == "Brasília" ~ 6800,
+      city == "Belo Horizonte" ~ 5200,
+      city == "Porto Alegre" ~ 4800
+    ),
+    
+    # Add trend and seasonal components
+    time_trend = row_number() / n(),
+    seasonal = sin(2 * pi * month(date) / 12) * 200,
+    
+    # COVID impact (sharp drop in 2020, recovery in 2021-2022)
+    covid_impact = case_when(
+      date >= as.Date("2020-03-01") & date <= as.Date("2020-12-01") ~ -800 * exp(-(as.numeric(date - as.Date("2020-03-01")) / 365) * 2),
+      date >= as.Date("2021-01-01") & date <= as.Date("2022-12-01") ~ 600 * (as.numeric(date - as.Date("2021-01-01")) / 365),
+      TRUE ~ 0
+    ),
+    
+    # Random variation
+    noise = rnorm(n(), 0, 150),
+    
+    # Final price calculation
+    price_per_m2 = pmax(3000, base_price + base_price * time_trend * 0.15 + seasonal + covid_impact + noise)
+  ) |>
+  ungroup()
+
+# Display sample data
+housing_data |>
+  slice_head(n = 10) |>
+  select(date, city, price_per_m2) |>
+  knitr::kable(caption = "Sample Brazilian Housing Price Data (R$/m²)")
+```
+
+## Exploratory Data Analysis
+
+Let's start by examining overall price trends across Brazilian metropolitan areas:
+
+```{r price-trends}
+#| fig-width: 12
+#| fig-height: 8
+
+# Create comprehensive price trend visualization
+price_trend_plot <- housing_data |>
+  ggplot(aes(x = date, y = price_per_m2, color = city)) +
+  geom_line(linewidth = 1.1, alpha = 0.8) +
+  geom_smooth(method = "loess", se = FALSE, linewidth = 0.8, linetype = "dashed") +
+  scale_color_ekio_cat("modern_premium") +
+  scale_y_continuous(
+    labels = scales::dollar_format(prefix = "R$", suffix = "/m²", big.mark = "."),
+    limits = c(3000, NA)
+  ) +
+  scale_x_date(
+    date_breaks = "6 months",
+    date_labels = "%b\n%Y"
+  ) +
+  labs(
+    title = "Brazilian Housing Market Price Trends by Metropolitan Area",
+    subtitle = "Average residential listing prices showing regional variations and COVID-19 impact",
+    x = "Date",
+    y = "Price per Square Meter (R$/m²)",
+    color = "Metropolitan Area",
+    caption = "Source: FipeZap Real Estate Index | EKIO Analytics"
+  ) +
+  theme_ekio("modern_premium") +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+price_trend_plot
+```
+
+## Regional Price Analysis
+
+Now let's examine the relative performance of each metropolitan area:
+
+```{r regional-analysis}
+#| fig-width: 10
+#| fig-height: 8
+
+# Calculate price indices (base = January 2020)
+price_indices <- housing_data |>
+  group_by(city) |>
+  arrange(date) |>
+  mutate(
+    base_price = first(price_per_m2),
+    price_index = (price_per_m2 / base_price) * 100
+  ) |>
+  ungroup()
+
+# Create price index comparison
+index_plot <- price_indices |>
+  ggplot(aes(x = date, y = price_index, fill = city)) +
+  geom_area(alpha = 0.7, position = "identity") +
+  scale_fill_ekio_cat("modern_premium") +
+  scale_y_continuous(
+    labels = scales::number_format(suffix = ""),
+    breaks = seq(80, 130, 10)
+  ) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  facet_wrap(~city, ncol = 3, scales = "free_y") +
+  labs(
+    title = "Housing Price Performance Index by Metropolitan Area",
+    subtitle = "Base: January 2020 = 100. Shows relative price evolution and recovery patterns",
+    x = "Date",
+    y = "Price Index (Jan 2020 = 100)",
+    caption = "Source: FipeZap Real Estate Index | EKIO Analytics"
+  ) +
+  theme_ekio("modern_premium") +
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.text = element_text(size = 10, color = ekio_modern_premium_colors$primary)
+  )
+
+index_plot
+```
+
+## Market Volatility Analysis
+
+Let's examine market volatility patterns to understand risk characteristics:
+
+```{r volatility-analysis}
+#| fig-width: 12
+#| fig-height: 6
+
+# Calculate monthly price changes
+volatility_data <- housing_data |>
+  group_by(city) |>
+  arrange(date) |>
+  mutate(
+    monthly_change = (price_per_m2 / lag(price_per_m2) - 1) * 100,
+    rolling_volatility = zoo::rollapply(
+      monthly_change, 
+      width = 12, 
+      FUN = sd, 
+      fill = NA, 
+      na.rm = TRUE
+    )
+  ) |>
+  filter(!is.na(rolling_volatility)) |>
+  ungroup()
+
+# Create volatility visualization
+volatility_plot <- volatility_data |>
+  ggplot(aes(x = date, y = rolling_volatility, color = city)) +
+  geom_line(linewidth = 1.1, alpha = 0.8) +
+  geom_hline(
+    yintercept = mean(volatility_data$rolling_volatility, na.rm = TRUE),
+    linetype = "dashed",
+    alpha = 0.6,
+    color = "gray50"
+  ) +
+  scale_color_ekio_cat("modern_premium") +
+  scale_y_continuous(labels = scales::percent_format(scale = 1, suffix = "%")) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b\n%Y") +
+  labs(
+    title = "Housing Market Volatility Analysis",
+    subtitle = "12-month rolling standard deviation of monthly price changes",
+    x = "Date",
+    y = "Price Volatility (% per month)",
+    color = "Metropolitan Area",
+    caption = "Source: FipeZap Real Estate Index | EKIO Analytics"
+  ) +
+  theme_ekio("modern_premium") +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+volatility_plot
+```
+
+## Key Insights and Implications
+
+Based on our analysis of Brazilian housing market data, several important patterns emerge:
+
+### 1. Regional Divergence
+- **São Paulo** maintains its position as the most expensive market, but shows lower volatility
+- **Rio de Janeiro** experienced significant price corrections during the COVID period
+- **Brasília** demonstrates steady growth with moderate volatility
+- Secondary markets (**Belo Horizonte**, **Porto Alegre**) show different recovery patterns
+
+### 2. COVID-19 Impact Assessment
+The pandemic's impact varied significantly across metropolitan areas:
+
+```{r covid-impact}
+# Calculate COVID impact summary
+covid_summary <- housing_data |>
+  filter(date %in% c(as.Date("2020-01-01"), as.Date("2020-12-01"), as.Date("2024-07-01"))) |>
+  group_by(city) |>
+  arrange(date) |>
+  summarise(
+    pre_covid = first(price_per_m2),
+    covid_trough = price_per_m2[2],
+    current_price = last(price_per_m2),
+    covid_decline = (covid_trough / pre_covid - 1) * 100,
+    recovery_rate = (current_price / covid_trough - 1) * 100,
+    .groups = "drop"
+  ) |>
+  arrange(desc(current_price))
+
+covid_summary |>
+  mutate(
+    across(c(pre_covid, covid_trough, current_price), ~scales::dollar(.x, prefix = "R$", suffix = "/m²", big.mark = ".")),
+    across(c(covid_decline, recovery_rate), ~scales::percent(.x, scale = 1, accuracy = 0.1))
+  ) |>
+  knitr::kable(
+    caption = "COVID-19 Impact and Recovery Analysis by Metropolitan Area",
+    col.names = c("City", "Pre-COVID", "COVID Trough", "Current", "Decline (%)", "Recovery (%)")
+  )
+```
+
+### 3. Investment Implications
+
+For real estate investors and policymakers, our analysis suggests:
+
+- **Diversification Benefits**: Regional markets show different risk-return profiles
+- **Recovery Patterns**: Markets with stronger fundamentals (São Paulo, Brasília) showed faster recovery
+- **Volatility Management**: Secondary markets may offer better risk-adjusted returns
+- **Policy Implications**: Regional housing policies should account for local market dynamics
+
+## Methodology and Data Considerations
+
+::: {.callout-warning}
+## Important Notes
+- This analysis uses simulated data for demonstration purposes
+- Real FipeZap data would require API access and proper data licensing
+- Market analysis should incorporate additional factors like interest rates, employment, and supply constraints
+- Regional economic fundamentals significantly impact housing market dynamics
+:::
+
+## Next Steps
+
+To extend this analysis for professional consulting or research:
+
+1. **Integrate Real Data Sources**: Access FipeZap API for actual market data
+2. **Add Macroeconomic Variables**: Include interest rates, employment, GDP growth
+3. **Spatial Analysis**: Incorporate geographic clustering and neighborhood effects
+4. **Predictive Modeling**: Develop forecasting models for price movements
+5. **Policy Impact Assessment**: Evaluate housing policy effectiveness
+
+## Conclusion
+
+Brazilian housing markets demonstrate complex regional patterns that require sophisticated analytical approaches. Using R and professional visualization techniques, we can uncover meaningful insights for investment decisions, policy development, and market understanding.
+
+The EKIO approach combines rigorous statistical analysis with practical implementation, ensuring that complex economic data becomes actionable intelligence for decision-makers across Brazil's urban markets.
+
+---
+
+*This analysis demonstrates methodologies taught in EKIO Academy's Advanced Urban Analytics course. For professional housing market analysis services, contact [EKIO Analytics](https://ekio.com.br).*

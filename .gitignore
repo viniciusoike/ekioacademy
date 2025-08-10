@@ -7,6 +7,9 @@ _site-pt/
 /_site-pt/
 /_combined/
 
+# Content archive (ignore old content being adapted)
+content-archive/
+
 # R
 .Rproj.user/
 .Rhistory

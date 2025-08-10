@@ -99,6 +99,22 @@ FipeZap
 Nossos tutoriais ensinam como acessar, limpar e analisar dados das principais instituições econômicas do Brasil, fornecendo habilidades práticas para análise econômica do mundo real.
 :::
 
+::: {.row style="margin: 4rem 0;"}
+::: {.col-md-8}
+## 📝 Posts Recentes do Blog
+
+Mantenha-se atualizado com os últimos insights sobre economia brasileira, técnicas avançadas de R e metodologias de consultoria profissional:
+
+- **[Analisando Tendências do Mercado Imobiliário Brasileiro com R](blog/posts/2024-08-10-analise-mercado-imobiliario-brasileiro.qmd)** - Usando dados FipeZap para análise de dinâmicas regionais de preços
+- **[Novos Pacotes R para Dados Econômicos Brasileiros em 2024](blog/posts/2024-08-05-novos-pacotes-r-dados-brasileiros.qmd)** - Ferramentas mais recentes para bases IBGE, BCB e IPEA
+
+:::
+
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Ler Todos os Posts →](blog/index.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
 ::: {.ekio-cta}
 ## Pronto para Implementação Profissional?
 

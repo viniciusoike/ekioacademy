@@ -21,6 +21,8 @@ website:
         href: pt/livros/index.qmd
       - text: "Cursos"
         href: pt/cursos/index.qmd
+      - text: "Blog"
+        href: pt/blog/index.qmd
       - text: "Sobre"
         href: pt/sobre.qmd
     right:

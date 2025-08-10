@@ -619,3 +619,322 @@ body {
     font-size: 0.75rem;
   }
 }
+
+// ===================================================================
+// BLOG-SPECIFIC STYLING
+// ===================================================================
+
+// Blog post listing
+.quarto-listing {
+  .card {
+    border: 1px solid #e3ecf5;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 188, 156, 0.1);
+      border-color: $academy-primary;
+    }
+    
+    .card-title {
+      color: $academy-primary;
+      font-weight: $font-weight-semibold;
+      
+      a {
+        color: inherit;
+        text-decoration: none;
+        
+        &:hover {
+          color: $academy-secondary;
+        }
+      }
+    }
+    
+    .card-subtitle {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+    
+    .card-footer {
+      background: transparent;
+      border-top: 1px solid #f1f3f5;
+      
+      .card-attribution {
+        font-size: 0.85rem;
+        color: #95a5a6;
+      }
+    }
+  }
+}
+
+// Blog post content
+.blog-post {
+  .post-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f1f3f5;
+    
+    .post-title {
+      color: $academy-primary;
+      font-size: 2.5rem;
+      font-weight: $font-weight-medium;
+      margin-bottom: 1rem;
+    }
+    
+    .post-subtitle {
+      color: #7f8c8d;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .post-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      color: #95a5a6;
+      
+      .post-author {
+        font-weight: $font-weight-medium;
+        color: $academy-primary;
+      }
+      
+      .post-date {
+        &::before {
+          content: "📅 ";
+        }
+      }
+      
+      .post-reading-time {
+        &::before {
+          content: "⏱️ ";
+        }
+      }
+    }
+    
+    .post-categories {
+      margin-top: 1rem;
+      
+      .category-badge {
+        background: $academy-primary;
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: $font-weight-medium;
+        margin-right: 0.5rem;
+        text-decoration: none;
+        
+        &:hover {
+          background: $academy-secondary;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// Category pages
+.category-header {
+  background: linear-gradient(135deg, #{$academy-primary}20, #{$academy-secondary}10);
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  text-align: center;
+  
+  .category-title {
+    color: $academy-primary;
+    font-size: 2.5rem;
+    font-weight: $font-weight-light;
+    margin-bottom: 1rem;
+  }
+  
+  .category-subtitle {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .category-description {
+    color: #2c3e50;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    line-height: 1.6;
+  }
+}
+
+// Blog sidebar elements
+.blog-sidebar {
+  .sidebar-widget {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid $academy-primary;
+    
+    .widget-title {
+      color: $academy-primary;
+      font-size: 1.2rem;
+      font-weight: $font-weight-semibold;
+      margin-bottom: 1rem;
+    }
+    
+    .widget-content {
+      color: #2c3e50;
+      line-height: 1.6;
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #e3ecf5;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          a {
+            color: #2c3e50;
+            text-decoration: none;
+            
+            &:hover {
+              color: $academy-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Newsletter signup
+.newsletter-signup {
+  background: linear-gradient(135deg, #{$academy-primary}, #{$academy-secondary});
+  color: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  margin: 3rem 0;
+  
+  .newsletter-title {
+    font-size: 1.5rem;
+    font-weight: $font-weight-medium;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-description {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    
+    input[type="email"] {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+      }
+    }
+    
+    button {
+      background: white;
+      color: $academy-primary;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: $font-weight-medium;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: #f8f9fa;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// RSS feed links
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f39c12;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: $font-weight-medium;
+  
+  &:hover {
+    background: #e67e22;
+    color: white;
+    text-decoration: none;
+  }
+  
+  &::before {
+    content: "📡";
+    font-size: 1rem;
+  }
+}
+
+// Mobile optimizations for blog
+@media (max-width: 768px) {
+  .blog-post {
+    .post-header {
+      .post-title {
+        font-size: 2rem;
+      }
+      
+      .post-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  }
+  
+  .newsletter-signup {
+    padding: 2rem 1rem;
+    
+    .newsletter-form {
+      flex-direction: column;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+  
+  .category-header {
+    padding: 2rem 1rem;
+    
+    .category-title {
+      font-size: 2rem;
+    }
+    
+    .category-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+}

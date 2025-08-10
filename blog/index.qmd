@@ -1,0 +1,106 @@
+---
+title: "Blog"
+subtitle: "Insights on Brazilian Economics, Urban Analysis & R Programming"
+lang: en
+format:
+  html:
+    page-layout: full
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [image, date, title, subtitle, author, categories]
+  feed: true
+---
+
+::: {.hero-section style="padding: 4rem 0; margin-bottom: 2rem;"}
+::: {.container}
+::: {.hero-content}
+# EKIO Academy Blog {.hero-title style="font-size: 3rem;"}
+## Insights on Brazilian Economics, Urban Analysis & R Programming {.hero-subtitle style="font-size: 1.2rem;"}
+
+Stay up-to-date with the latest developments in Brazilian urban economics, learn advanced R techniques, and get insights from EKIO's consulting experience.
+
+::: {style="margin-top: 2rem;"}
+[Subscribe to RSS](index.xml){.btn .btn-outline-light} [All Categories](#categories){.btn .btn-outline-light style="margin-left: 1rem;"}
+:::
+:::
+:::
+:::
+
+::: {.row style="margin: 3rem 0;"}
+::: {.col-md-3}
+::: {.tutorial-card style="text-align: center;"}
+### 📊 Data Analysis
+Expert insights on Brazilian economic data, visualization techniques, and statistical methods using R.
+:::
+:::
+
+::: {.col-md-3}
+::: {.tutorial-card style="text-align: center;"}
+### 🏙️ Urban Economics
+Analysis of Brazilian cities, housing markets, municipal finance, and urban development trends.
+:::
+:::
+
+::: {.col-md-3}
+::: {.tutorial-card style="text-align: center;"}
+### 📈 R Programming
+Advanced R techniques, package reviews, and tutorials for economic analysis and data visualization.
+:::
+:::
+
+::: {.col-md-3}
+::: {.tutorial-card style="text-align: center;"}
+### 💼 Consulting Insights
+Real-world case studies and methodologies from EKIO's professional consulting practice.
+:::
+:::
+:::
+
+## Recent Posts
+
+::: {#categories}
+## Categories
+
+Browse posts by category to find content most relevant to your interests:
+
+::: {.row style="margin-top: 2rem;"}
+::: {.col-md-6}
+- **[Data Analysis](categories/data-analysis.qmd)** - Brazilian economic data, visualization, statistical methods
+- **[Urban Economics](categories/urban-economics.qmd)** - Cities, housing markets, municipal analysis
+- **[R Programming](categories/r-programming.qmd)** - Advanced techniques, packages, tutorials
+:::
+
+::: {.col-md-6}
+- **[Consulting](categories/consulting.qmd)** - Professional insights, case studies, methodologies
+- **[Brazilian Data](categories/brazilian-data.qmd)** - IBGE, BCB, IPEA data sources and analysis
+- **[Education](categories/education.qmd)** - Teaching methods, course updates, learning tips
+:::
+:::
+:::
+
+## Stay Connected
+
+::: {.row style="margin: 3rem 0; padding: 2rem; background: #f8f9fa; border-radius: 12px;"}
+::: {.col-md-8}
+### 📧 Get New Posts via Email
+
+Subscribe to our newsletter to receive new blog posts, course updates, and exclusive insights directly in your inbox.
+
+**What you'll get:**
+- Weekly digest of new blog posts
+- Advanced R tips and tricks
+- Brazilian economic data updates
+- Early access to new courses and resources
+:::
+
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Subscribe Now](../contact.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
+{{< include ../_includes/ekio-cta.qmd >}}

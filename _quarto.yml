@@ -32,6 +32,8 @@ website:
         href: books/index.qmd
       - text: "Courses"
         href: courses/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
       - text: "About"
         href: about.qmd
     right:

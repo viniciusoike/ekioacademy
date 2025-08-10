@@ -99,4 +99,20 @@ FipeZap
 Our tutorials teach you to access, clean, and analyze data from Brazil's key economic institutions, giving you practical skills for real-world economic analysis.
 :::
 
+::: {.row style="margin: 4rem 0;"}
+::: {.col-md-8}
+## 📝 Latest Blog Posts
+
+Stay updated with the latest insights on Brazilian economics, advanced R techniques, and professional consulting methodologies:
+
+- **[Analyzing Brazilian Housing Market Trends with R](blog/posts/2024-08-10-brazilian-housing-market-analysis.qmd)** - Using FipeZap data for regional price dynamics analysis
+- **[New R Packages for Brazilian Economic Data in 2024](blog/posts/2024-08-05-new-r-packages-brazilian-data.qmd)** - Latest tools for IBGE, BCB, and IPEA databases
+
+:::
+
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Read All Posts →](blog/index.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
 {{< include _includes/ekio-cta.qmd >}}
