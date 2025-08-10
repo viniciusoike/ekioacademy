@@ -1,0 +1,338 @@
+# _quarto.yml - Main project configuration
+project:
+  type: website
+  title: "EKIO Academy"
+  
+website:
+  title: "EKIO Academy"
+  description: "R & Data Science for Economics and Urban Analysis"
+  site-url: "https://academy.ekio.com.br"
+  
+  navbar:
+    logo: "assets/ekio-academy-logo.png"
+    title: "EKIO Academy"
+    background: "#2C6BB3"
+    foreground: white
+    left:
+      - text: "Tutorials"
+        href: tutorials/index.qmd
+      - text: "Books" 
+        href: books/index.qmd
+      - text: "Courses"
+        href: courses/index.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: "github"
+        href: "https://github.com/yourusername"
+      - icon: "linkedin"
+        href: "https://linkedin.com/in/yourprofile"
+      - text: "🇺🇸"
+        href: "/en/"
+      - text: "🇧🇷" 
+        href: "/pt/"
+
+  sidebar:
+    - title: "Tutorials"
+      href: tutorials/index.qmd
+      contents:
+        - section: "R Fundamentals"
+          contents:
+            - tutorials/r-basics/index.qmd
+            - tutorials/data-import/index.qmd
+            - tutorials/brazilian-data/index.qmd
+        - section: "Data Visualization"
+          contents:
+            - tutorials/ggplot2-basics/index.qmd
+            - tutorials/ekio-visual-identity/index.qmd
+            - tutorials/choropleth-maps/index.qmd
+        - section: "Econometrics"
+          contents:
+            - tutorials/linear-regression/index.qmd
+            - tutorials/time-series/index.qmd
+            - tutorials/panel-data/index.qmd
+        - section: "Urban Economics"
+          contents:
+            - tutorials/housing-market/index.qmd
+            - tutorials/municipal-finance/index.qmd
+            - tutorials/transport-analysis/index.qmd
+    
+    - title: "Books"
+      href: books/index.qmd
+      contents:
+        - books/r-urban-economics/index.qmd
+        - books/brazilian-data-guide/index.qmd
+        - books/ekio-methods/index.qmd
+    
+    - title: "Courses"
+      href: courses/index.qmd
+      contents:
+        - courses/complete-r-economists/index.qmd
+        - courses/advanced-urban-analytics/index.qmd
+        - courses/brazilian-data-mastery/index.qmd
+
+  page-footer:
+    background: "#2c3e50"
+    foreground: white
+    left: |
+      EKIO Academy - Professional R training for economists and urban planners.
+    center: |
+      Part of the [EKIO Analytics](https://ekio.com.br) ecosystem.
+    right: |
+      © 2024 EKIO Academy. All rights reserved.
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
+    code-fold: false
+    code-tools: true
+    highlight-style: github
+    css: styles.css
+    
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: true
+
+---
+
+# custom.scss - EKIO Academy theme customization
+/*-- scss:defaults --*/
+
+// EKIO Modern Premium Colors
+$primary: #2C6BB3;
+$secondary: #1abc9c; 
+$success: #27ae60;
+$info: #3498db;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #f8f9fa;
+$dark: #2c3e50;
+
+// Typography
+$font-family-sans-serif: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-monospace: 'Fira Code', 'Source Code Pro', 'Monaco', monospace;
+
+// Navbar
+$navbar-bg: linear-gradient(135deg, #{$primary}, #3c7bc3);
+$navbar-fg: white;
+
+/*-- scss:rules --*/
+
+// Custom EKIO styling
+.navbar-brand {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #{$primary}, #{$secondary});
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.ekio-cta {
+  background: linear-gradient(135deg, #{$secondary}, #16a085);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+
+.ekio-message {
+  background: rgba(255,255,255,0.15);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-ekio {
+  background: #{$primary};
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-ekio:hover {
+  background: darken($primary, 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+// Code blocks
+.sourceCode {
+  background: #f8f9fa;
+  border: 1px solid #e3ecf5;
+  border-radius: 6px;
+}
+
+// Language toggle
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lang-flag:hover {
+  transform: scale(1.1);
+}
+
+.lang-flag.br {
+  background: linear-gradient(to bottom, #009c3b 33%, #ffdf00 33%, #ffdf00 66%, #009c3b 66%);
+}
+
+.lang-flag.us {
+  background: linear-gradient(to bottom, #b22234 46%, white 46%, white 54%, #b22234 54%);
+  position: relative;
+}
+
+.lang-flag.us::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 46%;
+  background: #3c3b6e;
+  top: 0;
+  left: 0;
+}
+
+---
+
+# styles.css - Additional custom styles
+/* Language content management */
+.lang-content {
+  display: block;
+}
+
+.lang-content.hidden {
+  display: none !important;
+}
+
+/* EKIO specific components */
+.tutorial-card {
+  background: white;
+  border: 1px solid #e3ecf5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tutorial-level {
+  background: #e3ecf5;
+  color: #2C6BB3;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.tutorial-level.beginner {
+  background: #d4edda;
+  color: #155724;
+}
+
+.tutorial-level.intermediate {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.tutorial-level.advanced {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* EKIO visual identity elements */
+.ekio-watermark {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(44, 107, 179, 0.3);
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+/* Brazilian data specific styling */
+.brazil-highlight {
+  background: linear-gradient(135deg, #009c3b, #ffdf00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* Code output styling */
+.cell-output-display {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e3ecf5;
+  border-radius: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .language-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 1rem 0;
+  }
+}

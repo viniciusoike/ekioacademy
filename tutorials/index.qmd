@@ -1,0 +1,109 @@
+---
+title: "Tutorials"
+subtitle: "Step-by-step R guides for economists"
+lang: en
+---
+
+Welcome to EKIO Academy's comprehensive tutorial collection. Each tutorial includes practical examples using real Brazilian economic data and follows professional consulting methodologies.
+
+## 🔰 R Fundamentals
+
+Perfect for economists new to R programming.
+
+::: {.tutorial-card}
+### [R Basics for Economists](r-fundamentals/r-basics/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Learn R syntax, data types, and basic operations with economic examples. Covers variables, functions, and the R environment setup specifically for economic analysis.
+
+**Topics:** Installation, RStudio, basic syntax, economic data types  
+**Estimated time:** 2 hours
+:::
+
+::: {.tutorial-card}
+### [Data Import & Cleaning](r-fundamentals/data-import/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Master importing Brazilian economic data from various sources (IBGE, BCB, FipeZap) and cleaning techniques for analysis.
+
+**Topics:** CSV, Excel, APIs, data cleaning, missing values  
+**Estimated time:** 3 hours
+:::
+
+::: {.tutorial-card}
+### [Working with Brazilian Data Sources](r-fundamentals/brazilian-data/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Navigate and utilize major Brazilian data sources including IBGE, Banco Central, IPEA, and municipal databases.
+
+**Topics:** SIDRA API, BCB API, geobr package, municipal data  
+**Estimated time:** 4 hours
+:::
+
+## 📊 Data Visualization
+
+Create professional charts with EKIO's visual identity.
+
+::: {.tutorial-card}
+### [ggplot2 Essentials](data-visualization/ggplot2-basics/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Master the grammar of graphics with ggplot2, creating publication-ready charts for economic analysis.
+
+**Topics:** Grammar of graphics, aesthetics, geometries, themes  
+**Estimated time:** 3 hours
+:::
+
+::: {.tutorial-card}
+### [EKIO Visual Identity in R](data-visualization/ekio-visual-identity/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Implement EKIO's complete visual identity system in your R plots, including colors, typography, and layout standards.
+
+**Topics:** Custom themes, color palettes, fonts, branding  
+**Estimated time:** 2 hours
+:::
+
+## 📈 Econometrics
+
+Statistical analysis and modeling in R.
+
+::: {.tutorial-card}
+### [Linear Regression in R](econometrics/linear-regression/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Comprehensive guide to linear regression analysis for economic data, including diagnostics and interpretation.
+
+**Topics:** OLS, assumptions, diagnostics, interpretation  
+**Estimated time:** 4 hours
+:::
+
+## 🏙️ Urban Economics Applications
+
+Specialized tutorials for urban economic analysis.
+
+::: {.tutorial-card}
+### [Housing Market Analysis](urban-economics/housing-market/index.qmd)
+::: {.tutorial-level .advanced}
+Advanced
+:::
+
+Complete econometric analysis of Brazilian housing markets using FipeZap and IBGE data.
+
+**Topics:** Price indices, hedonic models, spatial analysis  
+**Estimated time:** 5 hours
+:::
+
+{{< include ../_includes/ekio-cta.qmd >}}

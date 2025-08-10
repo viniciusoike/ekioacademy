@@ -1,0 +1,58 @@
+{
+  "name": "ekio-academy",
+  "version": "1.0.0",
+  "description": "EKIO Academy - R & Data Science for Economics and Urban Analysis",
+  "keywords": ["R", "economics", "data-science", "Brazil", "urban-economics", "education", "quarto"],
+  "author": "EKIO Analytics",
+  "license": "MIT",
+  "homepage": "https://academy.ekio.com.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekio-brazil/ekio-academy.git"
+  },
+  "scripts": {
+    "build": "npm run build:css && quarto render",
+    "build:en": "quarto render --profile default",
+    "build:pt": "quarto render --profile portuguese", 
+    "build:css": "sass custom.scss assets/css/ekio-theme.css --style compressed",
+    "build:css-dev": "sass custom.scss assets/css/ekio-theme.css --style expanded --source-map",
+    "watch": "sass --watch custom.scss assets/css/ekio-theme.css --style expanded",
+    "preview": "quarto preview",
+    "preview:en": "quarto preview --profile default",
+    "preview:pt": "quarto preview --profile portuguese",
+    "dev": "concurrently \"npm run watch\" \"npm run preview\"",
+    "test": "npm run test:links && npm run test:r-code",
+    "test:links": "python tests/test-links.py",
+    "test:r-code": "Rscript tests/test-r-code.R",
+    "deploy": "npm run build && netlify deploy --prod --dir=_combined",
+    "deploy:preview": "npm run build && netlify deploy --dir=_combined",
+    "clean": "rm -rf _site _site-pt .quarto _combined",
+    "lint:css": "stylelint \"**/*.scss\" \"**/*.css\"",
+    "format:md": "prettier --write \"**/*.md\" \"**/*.qmd\"",
+    "optimize:images": "imagemin assets/images/**/* --out-dir=assets/images --plugin=imagemin-webp",
+    "analyze": "lighthouse-ci autorun"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "netlify-cli": "^17.10.1",
+    "concurrently": "^8.2.2",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "prettier": "^3.1.0",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
+    "lighthouse-ci": "^0.12.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

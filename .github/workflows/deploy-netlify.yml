@@ -1,0 +1,113 @@
+name: Deploy EKIO Academy to Netlify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        r-version: ['4.3.2']
+        node-version: [18.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: ${{ matrix.r-version }}
+        use-public-rspm: true
+
+    - name: Setup R dependencies
+      uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        packages: |
+          tidyverse
+          ggplot2
+          scales
+          DT
+          plotly
+          sf
+          geobr
+          sidrar
+
+    - name: Install Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        tinytex: true
+
+    - name: Install Node.js dependencies
+      run: npm ci
+
+    - name: Build EKIO Academy site
+      run: |
+        # Build CSS themes
+        npm run build:css
+        
+        # Build both language versions
+        chmod +x scripts/build.sh
+        ./scripts/build.sh
+
+    - name: Deploy to Netlify (Production)
+      if: github.ref == 'refs/heads/main'
+      uses: nwtgck/actions-netlify@v3.0
+      with:
+        publish-dir: '_combined'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions - ${{ github.sha }}"
+        enable-pull-request-comment: true
+        enable-commit-comment: true
+        enable-commit-status: true
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    - name: Deploy Preview to Netlify 
+      if: github.event_name == 'pull_request'
+      uses: nwtgck/actions-netlify@v3.0
+      with:
+        publish-dir: '_combined'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Preview deploy from PR #${{ github.event.number }}"
+        alias: pr-${{ github.event.number }}
+        enable-pull-request-comment: true
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    - name: Run link checker
+      run: |
+        # Basic link checking (can be enhanced with proper tools)
+        echo "🔗 Checking for basic link issues..."
+        # Find any obvious broken internal links
+        grep -r "href.*\.qmd" _combined/ || echo "No .qmd links found (good)"
+        grep -r "src.*\.qmd" _combined/ || echo "No .qmd sources found (good)"
+        echo "✅ Basic link check completed"
+
+    - name: Generate deployment summary
+      run: |
+        echo "🎓 EKIO Academy Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "=================================" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **Build Statistics:**" >> $GITHUB_STEP_SUMMARY
+        echo "- English pages: $(find _site -name "*.html" | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- Portuguese pages: $(find _site-pt -name "*.html" | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- Total combined pages: $(find _combined -name "*.html" | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- R tutorials with code: $(find . -name "*.qmd" -exec grep -l "```{r" {} \; | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🚀 **Deployment Status:** ✅ Successful" >> $GITHUB_STEP_SUMMARY
+        echo "🌐 **Site:** https://academy.ekio.com.br" >> $GITHUB_STEP_SUMMARY

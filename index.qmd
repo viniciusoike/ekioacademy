@@ -1,0 +1,102 @@
+---
+title: "EKIO Academy"
+subtitle: "R & Data Science for Economics and Urban Analysis"
+lang: en
+format:
+  html:
+    page-layout: full
+---
+
+::: {.hero-section}
+::: {.container}
+::: {.hero-content}
+# Learn R & Data Science {.hero-title}
+## for Economics & Urban Analysis {.hero-subtitle}
+
+Master R programming, econometrics, and data visualization with practical tutorials designed specifically for economists and urban planners working with Brazilian data.
+
+::: {style="margin-top: 2rem;"}
+[Start Learning](tutorials/index.qmd){.btn .btn-ekio .btn-lg} [Free Resources](books/index.qmd){.btn .btn-outline-light .btn-lg style="margin-left: 1rem;"}
+:::
+:::
+:::
+:::
+
+## What You'll Find Here
+
+::: {.row style="margin-top: 3rem;"}
+::: {.col-md-4}
+::: {.tutorial-card}
+### 📚 Tutorials
+Step-by-step guides covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
+
+**Featured Topics:**
+- R Fundamentals for Economists  
+- ggplot2 with EKIO Visual Identity
+- Brazilian Municipal Data Analysis
+- Housing Market Econometrics
+- Interactive Dashboards with Shiny
+
+[Explore Tutorials →](tutorials/index.qmd){.btn .btn-ekio}
+:::
+:::
+
+::: {.col-md-4}
+::: {.tutorial-card}
+### 📖 Books
+Comprehensive resources and eBooks covering specialized topics in urban economics, R programming, and Brazilian data analysis.
+
+**Available Resources:**
+- R for Urban Economics (eBook)
+- Brazilian Data Sources Guide  
+- EKIO Methods Handbook
+- Econometrics with R Cookbook
+- Data Visualization Best Practices
+
+[Browse Books →](books/index.qmd){.btn .btn-ekio}
+:::
+:::
+
+::: {.col-md-4}
+::: {.tutorial-card}
+### 🎓 Courses
+Structured learning paths taking you from beginner to expert in R-based economic analysis and urban data science.
+
+**Course Tracks:**
+- Complete R for Economists (R$ 497)
+- Advanced Urban Analytics (R$ 697)
+- Brazilian Economic Data Mastery (R$ 397)
+- Professional Consulting Methods (R$ 1,297)
+
+[View Courses →](courses/index.qmd){.btn .btn-ekio}
+:::
+:::
+:::
+
+::: {.brazil-data-showcase style="margin: 4rem 0;"}
+## Brazilian Economic Data Integration
+
+Learn to work with real Brazilian data sources that power economic research and policy decisions:
+
+::: {style="text-align: center; margin: 2rem 0;"}
+::: {.data-source-badge}
+IBGE
+:::
+::: {.data-source-badge}
+Banco Central
+:::
+::: {.data-source-badge}
+IPEA
+:::
+::: {.data-source-badge}
+FINBRA
+:::
+::: {.data-source-badge}
+FipeZap
+:::
+:::
+
+Our tutorials teach you to access, clean, and analyze data from Brazil's key economic institutions, giving you practical skills for real-world economic analysis.
+:::
+
+{{< include _includes/ekio-cta.qmd >}}

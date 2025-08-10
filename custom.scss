@@ -1,0 +1,621 @@
+/*-- scss:defaults --*/
+
+// EKIO Academy Complete 6-Theme System
+// Based on mediakit specifications for educational platform
+
+// ===================================================================
+// THEME 1: ACADEMY PRIMARY (Main Educational Theme)
+// ===================================================================
+$academy-primary: #1abc9c;
+$academy-secondary: #16a085;
+$academy-tertiary: #138d75;
+
+// ===================================================================
+// THEME 2: MODERN PREMIUM (Professional/Business)
+// ===================================================================
+$modern-premium: #2C6BB3;
+$modern-premium-light: #3c7bc3;
+$modern-premium-dark: #1E5F9F;
+
+// ===================================================================
+// THEME 3: ACADEMIC AUTHORITY (Research/Government)
+// ===================================================================
+$academic-authority: #0F3A65;
+$academic-authority-light: #1f4a75;
+$academic-authority-dark: #092238;
+
+// ===================================================================
+// THEME 4: SOPHISTICATED UNIQUE (International Clients)
+// ===================================================================
+$sophisticated-unique: #5F9EA0;
+$sophisticated-unique-light: #6faeb0;
+$sophisticated-unique-dark: #2c4e50;
+
+// ===================================================================
+// THEME 5: INSTITUTIONAL OXFORD (Banking/Financial)
+// ===================================================================
+$institutional-oxford: #1E5F9F;
+$institutional-oxford-light: #2e6faf;
+$institutional-oxford-dark: #0e2b47;
+
+// ===================================================================
+// THEME 6: PREMIUM STEEL (Executive/Investment)
+// ===================================================================
+$premium-steel: #4682B4;
+$premium-steel-light: #5692c4;
+$premium-steel-dark: #193664;
+
+// ===================================================================
+// PRIMARY COLOR SYSTEM (Academy Primary for main website)
+// ===================================================================
+$primary: $academy-primary !default;
+$secondary: $academy-secondary !default;
+$success: #27ae60;
+$info: $modern-premium;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #f8f9fa;
+$dark: #2c3e50;
+
+// ===================================================================
+// TYPOGRAPHY SYSTEM
+// ===================================================================
+$font-family-sans-serif: 'Avenir', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-monospace: 'Fira Code', 'Source Code Pro', 'Monaco', monospace;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ===================================================================
+// SEQUENTIAL COLOR SCALES FOR DATA VISUALIZATION
+// ===================================================================
+
+// Academy Primary Sequential (Educational Content)
+$academy-sequential: (
+  50: #e8f8f5,
+  100: #a3e4d7,
+  200: #1abc9c,
+  300: #16a085,
+  400: #138d75,
+  500: $academy-primary,
+  600: $academy-secondary,
+  700: $academy-tertiary,
+  800: #0e6b5c,
+  900: #0a4f44
+);
+
+// Modern Premium Sequential (Professional Content)
+$modern-premium-sequential: (
+  50: #f4f7fb,
+  100: #e3ecf5,
+  200: #d2e1ef,
+  300: #a0bfdb,
+  400: #6d9dc7,
+  500: $modern-premium,
+  600: #265c9a,
+  700: #204d81,
+  800: #1a3e68,
+  900: #142f4f
+);
+
+// ===================================================================
+// NAVBAR AND NAVIGATION
+// ===================================================================
+$navbar-bg: linear-gradient(135deg, #{$academy-primary}, #{$academy-secondary});
+$navbar-fg: white;
+$navbar-brand-font-size: 1.5rem;
+$navbar-brand-font-weight: $font-weight-light;
+$navbar-brand-letter-spacing: 3px;
+
+// ===================================================================
+// EDUCATIONAL COMPONENTS
+// ===================================================================
+
+// Tutorial cards
+$tutorial-card-bg: #ffffff;
+$tutorial-card-border: #e3ecf5;
+$tutorial-card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+$tutorial-card-hover-shadow: 0 8px 25px rgba(26, 188, 156, 0.15);
+
+// Difficulty levels
+$beginner-color: #27ae60;
+$beginner-bg: #d4edda;
+$intermediate-color: #f39c12;
+$intermediate-bg: #fff3cd;
+$advanced-color: #e74c3c;
+$advanced-bg: #f8d7da;
+
+// ===================================================================
+// COURSE AND ENROLLMENT SYSTEM
+// ===================================================================
+$course-price-color: $modern-premium;
+$course-cta-bg: $academy-primary;
+$course-cta-hover-bg: $academy-secondary;
+$enrollment-form-bg: #f8f9fa;
+
+/*-- scss:rules --*/
+
+// ===================================================================
+// GLOBAL STYLES
+// ===================================================================
+
+body {
+  font-family: $font-family-sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background: #f8f9fa;
+}
+
+// ===================================================================
+// EKIO ACADEMY BRANDING COMPONENTS
+// ===================================================================
+
+.navbar-brand {
+  font-weight: $font-weight-light;
+  letter-spacing: $navbar-brand-letter-spacing;
+  font-size: $navbar-brand-font-size;
+}
+
+// Hero section for educational content
+.hero-section {
+  background: linear-gradient(135deg, #{$academy-primary}, #{$academy-secondary});
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: $font-weight-light;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  font-weight: $font-weight-light;
+}
+
+// ===================================================================
+// EDUCATIONAL CALL-TO-ACTION SECTIONS
+// ===================================================================
+
+.ekio-cta {
+  background: linear-gradient(135deg, #{$academy-primary}, #{$academy-secondary});
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+  }
+}
+
+.ekio-message {
+  background: rgba(255,255,255,0.15);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+  z-index: 1;
+}
+
+// ===================================================================
+// BUTTONS AND INTERACTIVE ELEMENTS
+// ===================================================================
+
+.btn-ekio {
+  background: $academy-primary;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: $font-weight-medium;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  
+  &:hover {
+    background: $academy-secondary;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+    color: white;
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.25);
+  }
+}
+
+.btn-ekio-outline {
+  background: transparent;
+  color: $academy-primary;
+  border: 2px solid $academy-primary;
+  
+  &:hover {
+    background: $academy-primary;
+    color: white;
+  }
+}
+
+// Professional/Business context buttons
+.btn-professional {
+  background: $modern-premium;
+  
+  &:hover {
+    background: $modern-premium-light;
+    box-shadow: 0 6px 20px rgba(44, 107, 179, 0.3);
+  }
+}
+
+// ===================================================================
+// TUTORIAL AND COURSE CARDS
+// ===================================================================
+
+.tutorial-card {
+  background: $tutorial-card-bg;
+  border: 1px solid $tutorial-card-border;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: $tutorial-card-shadow;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $tutorial-card-hover-shadow;
+    border-color: $academy-primary;
+  }
+  
+  h3 {
+    color: $academy-primary;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1rem;
+  }
+}
+
+.tutorial-level {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: $font-weight-medium;
+  display: inline-block;
+  margin-bottom: 1rem;
+  
+  &.beginner {
+    background: $beginner-bg;
+    color: $beginner-color;
+  }
+  
+  &.intermediate {
+    background: $intermediate-bg;
+    color: $intermediate-color;
+  }
+  
+  &.advanced {
+    background: $advanced-bg;
+    color: $advanced-color;
+  }
+}
+
+// Course pricing cards
+.course-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  }
+  
+  .course-price {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: $course-price-color;
+    margin-bottom: 1rem;
+  }
+  
+  .course-duration {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// ===================================================================
+// BRAZILIAN DATA VISUALIZATION COMPONENTS
+// ===================================================================
+
+.brazil-data-showcase {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 3rem;
+  margin: 3rem 0;
+  
+  .data-source-badge {
+    background: $modern-premium;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: $font-weight-medium;
+    margin: 0.2rem;
+    display: inline-block;
+  }
+}
+
+.choropleth-demo {
+  text-align: center;
+  padding: 2rem;
+  
+  .state-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 2px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .state-shape {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: $font-weight-medium;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+}
+
+// ===================================================================
+// LANGUAGE SWITCHING
+// ===================================================================
+
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+  
+  .lang-flag {
+    width: 32px;
+    height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    &.br {
+      background: linear-gradient(to bottom, #009c3b 33%, #ffdf00 33%, #ffdf00 66%, #009c3b 66%);
+    }
+    
+    &.us {
+      background: linear-gradient(to bottom, #b22234 46%, white 46%, white 54%, #b22234 54%);
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 46%;
+        background: #3c3b6e;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+// ===================================================================
+// RESPONSIVE DESIGN
+// ===================================================================
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .ekio-cta {
+    padding: 2rem 1rem;
+  }
+  
+  .tutorial-card {
+    padding: 1.5rem;
+  }
+  
+  .language-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 4rem 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .course-card {
+    padding: 1.5rem;
+    
+    .course-price {
+      font-size: 2rem;
+    }
+  }
+}
+
+// ===================================================================
+// THEME VARIATIONS FOR DIFFERENT CONTEXTS
+// ===================================================================
+
+// Professional/Business context
+.theme-professional {
+  .hero-section {
+    background: linear-gradient(135deg, #{$modern-premium}, #{$modern-premium-light});
+  }
+  
+  .btn-ekio {
+    background: $modern-premium;
+    
+    &:hover {
+      background: $modern-premium-light;
+      box-shadow: 0 6px 20px rgba(44, 107, 179, 0.3);
+    }
+  }
+  
+  .tutorial-card h3 {
+    color: $modern-premium;
+  }
+}
+
+// Academic/Research context
+.theme-academic {
+  .hero-section {
+    background: linear-gradient(135deg, #{$academic-authority}, #{$academic-authority-light});
+  }
+  
+  .btn-ekio {
+    background: $academic-authority;
+    
+    &:hover {
+      background: $academic-authority-light;
+      box-shadow: 0 6px 20px rgba(15, 58, 101, 0.3);
+    }
+  }
+  
+  .tutorial-card h3 {
+    color: $academic-authority;
+  }
+}
+
+// ===================================================================
+// CODE BLOCKS AND SYNTAX HIGHLIGHTING
+// ===================================================================
+
+.sourceCode {
+  background: #f8f9fa;
+  border: 1px solid #e3ecf5;
+  border-radius: 8px;
+  
+  pre {
+    margin: 0;
+    padding: 1.5rem;
+    font-family: $font-family-monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    
+    code {
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+}
+
+// R code output
+.cell-output-display {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e3ecf5;
+  border-radius: 8px;
+  border-left: 4px solid $academy-primary;
+}
+
+// ===================================================================
+// EKIO WATERMARK AND BRANDING
+// ===================================================================
+
+.ekio-watermark {
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-light;
+  letter-spacing: 2px;
+  color: rgba(26, 188, 156, 0.3);
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+// Chart and visualization branding
+.chart-container {
+  position: relative;
+  
+  &::after {
+    content: "EKIO";
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-light;
+    letter-spacing: 2px;
+    color: rgba(26, 188, 156, 0.4);
+    font-size: 0.75rem;
+  }
+}

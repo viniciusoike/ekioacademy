@@ -1,0 +1,1024 @@
+# index.qmd - Homepage
+---
+title: "EKIO Academy"
+subtitle: "R & Data Science for Economics and Urban Analysis"
+lang: en
+---
+
+::: {.hero-section}
+::: {.container}
+# Learn R & Data Science {.hero-title}
+## for Economics & Urban Analysis {.hero-subtitle}
+
+Master R programming, econometrics, and data visualization with practical tutorials designed specifically for economists and urban planners working with Brazilian data.
+
+[Start Learning](tutorials/index.qmd){.btn .btn-ekio .btn-lg}
+[Free Resources](books/index.qmd){.btn .btn-outline-light .btn-lg}
+:::
+:::
+
+## What You'll Find Here
+
+::: {.row}
+::: {.col-md-4}
+### 📚 Tutorials
+Step-by-step guides covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
+
+**Featured Topics:**
+- R Fundamentals for Economists  
+- ggplot2 with EKIO Visual Identity
+- Brazilian Municipal Data Analysis
+- Housing Market Econometrics
+- Interactive Dashboards with Shiny
+:::
+
+::: {.col-md-4}
+### 📖 Books
+Comprehensive resources and eBooks covering specialized topics in urban economics, R programming, and Brazilian data analysis.
+
+**Available Resources:**
+- R for Urban Economics (eBook)
+- Brazilian Data Sources Guide  
+- EKIO Methods Handbook
+- Econometrics with R Cookbook
+- Data Visualization Best Practices
+:::
+
+::: {.col-md-4}
+### 🎓 Courses
+Structured learning paths taking you from beginner to expert in R-based economic analysis and urban data science.
+
+**Course Tracks:**
+- Complete R for Economists
+- Advanced Urban Analytics
+- Brazilian Economic Data Mastery
+- Professional Consulting Methods
+- Research Paper Workflow
+:::
+:::
+
+::: {.ekio-cta}
+## Need Professional Support?
+
+::: {.row}
+::: {.col-md-6}
+::: {.ekio-message}
+### 🎯 Ready to apply these skills to real projects?
+EKIO provides professional consulting services for complex urban economic analysis
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### ⚡ Whatever your data challenge, EKIO has the solution
+From municipal budget analysis to housing market forecasting
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### 👥 Want a more personalized learning experience?
+Consult directly with EKIO for custom training and analysis
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### 🚀 Transform your organization's data capabilities
+EKIO offers team training and institutional partnerships
+:::
+:::
+:::
+
+[Discover EKIO Professional Services →](https://ekio.com.br){.btn .btn-light .btn-lg}
+:::
+
+---
+
+# tutorials/index.qmd - Tutorials Index
+---
+title: "Tutorials"
+subtitle: "Step-by-step R guides for economists"
+lang: en
+---
+
+Welcome to EKIO Academy's comprehensive tutorial collection. Each tutorial includes practical examples using real Brazilian economic data.
+
+## 🔰 R Fundamentals
+
+Perfect for economists new to R programming.
+
+::: {.tutorial-card}
+### [R Basics for Economists](r-basics/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Learn R syntax, data types, and basic operations with economic examples. Covers variables, functions, and the R environment setup specifically for economic analysis.
+
+**Topics:** Installation, RStudio, basic syntax, economic data types
+**Estimated time:** 2 hours
+:::
+
+::: {.tutorial-card}
+### [Data Import & Cleaning](data-import/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Master importing Brazilian economic data from various sources (IBGE, BCB, FipeZap) and cleaning techniques for analysis.
+
+**Topics:** CSV, Excel, APIs, data cleaning, missing values
+**Estimated time:** 3 hours
+:::
+
+::: {.tutorial-card}
+### [Working with Brazilian Data Sources](brazilian-data/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Navigate and utilize major Brazilian data sources including IBGE, Banco Central, IPEA, and municipal databases.
+
+**Topics:** SIDRA API, BCB API, geobr package, municipal data
+**Estimated time:** 4 hours
+:::
+
+## 📊 Data Visualization
+
+Create professional charts with EKIO's visual identity.
+
+::: {.tutorial-card}
+### [ggplot2 Essentials](ggplot2-basics/index.qmd)
+::: {.tutorial-level .beginner}
+Beginner
+:::
+
+Master the grammar of graphics with ggplot2, creating publication-ready charts for economic analysis.
+
+**Topics:** Grammar of graphics, aesthetics, geometries, themes
+**Estimated time:** 3 hours
+:::
+
+::: {.tutorial-card}
+### [EKIO Visual Identity in R](ekio-visual-identity/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Implement EKIO's complete visual identity system in your R plots, including colors, typography, and layout standards.
+
+**Topics:** Custom themes, color palettes, fonts, branding
+**Estimated time:** 2 hours
+:::
+
+::: {.tutorial-card}
+### [Brazilian Maps & Choropleth](choropleth-maps/index.qmd)
+::: {.tutorial-level .advanced}
+Advanced
+:::
+
+Create professional choropleth maps of Brazilian states and municipalities using economic indicators.
+
+**Topics:** geobr, sf package, spatial joins, map projections
+**Estimated time:** 4 hours
+:::
+
+## 📈 Econometrics
+
+Statistical analysis and modeling in R.
+
+::: {.tutorial-card}
+### [Linear Regression in R](linear-regression/index.qmd)
+::: {.tutorial-level .intermediate}
+Intermediate
+:::
+
+Comprehensive guide to linear regression analysis for economic data, including diagnostics and interpretation.
+
+**Topics:** OLS, assumptions, diagnostics, interpretation
+**Estimated time:** 4 hours
+:::
+
+::: {.tutorial-card}
+### [Time Series Analysis](time-series/index.qmd)
+::: {.tutorial-level .advanced}
+Advanced
+:::
+
+Analyze Brazilian economic time series data including inflation, GDP, and financial indicators.
+
+**Topics:** ARIMA, seasonality, forecasting, structural breaks
+**Estimated time:** 6 hours
+:::
+
+## 🏙️ Urban Economics Applications
+
+Specialized tutorials for urban economic analysis.
+
+::: {.tutorial-card}
+### [Housing Market Analysis](housing-market/index.qmd)
+::: {.tutorial-level .advanced}
+Advanced
+:::
+
+Complete econometric analysis of Brazilian housing markets using FipeZap and IBGE data.
+
+**Topics:** Price indices, hedonic models, spatial analysis
+**Estimated time:** 5 hours
+:::
+
+::: {.tutorial-card}
+### [Municipal Finance Analysis](municipal-finance/index.qmd)
+::: {.tutorial-level .advanced}
+Advanced
+:::
+
+Analyze municipal budgets, debt levels, and fiscal performance across Brazilian cities.
+
+**Topics:** FINBRA data, fiscal indicators, panel analysis
+**Estimated time:** 4 hours
+:::
+
+---
+
+# tutorials/ekio-visual-identity/index.qmd - Sample Tutorial
+---
+title: "EKIO Visual Identity in R"
+subtitle: "Professional Data Visualization with Brand Consistency"
+author: "EKIO Academy"
+date: "2024-03-15"
+lang: en
+categories: [visualization, branding, ggplot2]
+image: "thumbnail.png"
+---
+
+## Overview
+
+Learn how to implement EKIO's complete visual identity system in your R visualizations. This tutorial covers the Modern Premium theme, color scales, typography, and professional styling techniques.
+
+::: {.callout-tip}
+## Prerequisites
+- Basic ggplot2 knowledge
+- R and RStudio installed
+- Understanding of data visualization principles
+:::
+
+## Learning Objectives
+
+By the end of this tutorial, you will be able to:
+
+1. Install and configure EKIO's visual identity system
+2. Apply EKIO themes to your ggplot2 charts
+3. Use EKIO color scales for different data types
+4. Create professional, branded visualizations
+5. Export charts with consistent styling
+
+## Setup
+
+First, let's load the required packages and set up our environment:
+
+```{r setup}
+#| message: false
+#| warning: false
+
+# Load required packages
+library(tidyverse)
+library(scales)
+library(extrafont)
+library(geobr)
+
+# Source EKIO theme functions
+source("https://raw.githubusercontent.com/ekio-brazil/ekio-r-theme/main/ekio_theme.R")
+
+# Set global theme
+theme_set(theme_ekio())
+```
+
+## EKIO Color System
+
+The EKIO Modern Premium theme uses a sophisticated blue-based color palette:
+
+```{r color-system}
+# EKIO color definitions
+ekio_colors <- list(
+  primary = "#2C6BB3",
+  secondary = "#1abc9c",
+  accent = c("#f39c12", "#e74c3c", "#9b59b6"),
+  sequential = c("#f4f7fb", "#e3ecf5", "#d2e1ef", "#a0bfdb", 
+                 "#6d9dc7", "#2C6BB3", "#265c9a", "#204d81", "#1a3e68"),
+  categorical = c("#2C6BB3", "#1abc9c", "#f39c12", "#e74c3c", "#9b59b6")
+)
+
+# Display color palette
+tibble(
+  color = ekio_colors$sequential,
+  value = 1:length(ekio_colors$sequential)
+) %>%
+  ggplot(aes(x = value, y = 1, fill = color)) +
+  geom_col(width = 1) +
+  scale_fill_identity() +
+  theme_void() +
+  labs(title = "EKIO Sapphire Sequential Scale")
+```
+
+## Basic Chart with EKIO Theme
+
+Let's create a simple chart using Brazilian economic data:
+
+```{r basic-chart}
+# Sample Brazilian GDP data
+gdp_data <- tibble(
+  year = 2015:2024,
+  gdp_growth = c(-3.5, -3.3, 1.3, 1.8, 1.2, -3.9, 4.2, 2.9, 3.1, 2.8),
+  region = "Brazil"
+)
+
+# Create chart with EKIO theme
+gdp_chart <- gdp_data %>%
+  ggplot(aes(x = year, y = gdp_growth)) +
+  geom_line(size = 1.2, color = ekio_colors$primary) +
+  geom_point(size = 3, color = ekio_colors$primary) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.6) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  labs(
+    title = "Brazilian GDP Growth Rate",
+    subtitle = "Annual percentage change in real GDP, 2015-2024",
+    x = "Year",
+    y = "GDP Growth Rate (%)",
+    caption = "Source: IBGE (2024) | EKIO Analytics"
+  ) +
+  theme_ekio()
+
+gdp_chart
+```
+
+## Choropleth Map with EKIO Colors
+
+Now let's create a professional choropleth map using Brazilian state data:
+
+```{r choropleth-map}
+#| fig-width: 10
+#| fig-height: 8
+
+# Load Brazilian states
+states <- read_state(year = 2020, showProgress = FALSE)
+
+# Sample economic data for states
+set.seed(123)
+state_data <- states %>%
+  select(code_state, name_state) %>%
+  st_drop_geometry() %>%
+  mutate(
+    gdp_index = runif(n(), min = 60, max = 140),
+    gdp_category = case_when(
+      gdp_index < 80 ~ "Low",
+      gdp_index < 100 ~ "Medium-Low", 
+      gdp_index < 120 ~ "Medium-High",
+      TRUE ~ "High"
+    )
+  )
+
+# Create choropleth map
+brazil_map <- states %>%
+  left_join(state_data, by = "code_state") %>%
+  ggplot() +
+  geom_sf(aes(fill = gdp_index), color = "white", size = 0.2) +
+  scale_fill_gradientn(
+    colors = ekio_colors$sequential,
+    name = "GDP Index",
+    guide = guide_colorbar(
+      title.position = "top",
+      barwidth = 15,
+      barheight = 0.8
+    )
+  ) +
+  theme_ekio() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    legend.position = "bottom"
+  ) +
+  labs(
+    title = "Brazilian States Economic Performance Index",
+    subtitle = "Relative economic development indicators by state",
+    caption = "Source: IBGE Regional Accounts | EKIO Analytics"
+  )
+
+brazil_map
+```
+
+## Multiple Series Chart
+
+For categorical data, use EKIO's categorical color palette:
+
+```{r multiple-series}
+# Sample sectoral data
+sector_data <- expand_grid(
+  year = 2020:2024,
+  sector = c("Agriculture", "Industry", "Services")
+) %>%
+  mutate(
+    employment_growth = case_when(
+      sector == "Agriculture" ~ c(2.1, -1.2, 3.4, 1.8, 2.3),
+      sector == "Industry" ~ c(-8.7, 4.5, 2.1, 3.2, 1.9),
+      sector == "Services" ~ c(-7.8, 8.2, 4.1, 2.8, 3.1)
+    )
+  )
+
+# Create multi-series chart
+sector_chart <- sector_data %>%
+  ggplot(aes(x = year, y = employment_growth, color = sector)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 3) +
+  scale_color_manual(values = ekio_colors$categorical[1:3]) +
+  scale_y_continuous(labels = percent_format(scale = 1)) +
+  labs(
+    title = "Employment Growth by Economic Sector",
+    subtitle = "Annual percentage change in employment, Brazil 2020-2024",
+    x = "Year",
+    y = "Employment Growth (%)",
+    color = "Sector",
+    caption = "Source: IBGE, PNAD Contínua | EKIO Analytics"
+  ) +
+  theme_ekio()
+
+sector_chart
+```
+
+## Professional Export Settings
+
+To maintain quality across different formats:
+
+```{r export-settings}
+#| eval: false
+
+# Export settings for presentations
+ggsave("gdp_chart_presentation.png", gdp_chart,
+       width = 12, height = 8, dpi = 300, bg = "white")
+
+# Export settings for reports  
+ggsave("brazil_map_report.pdf", brazil_map,
+       width = 10, height = 8, device = "pdf")
+
+# Export for web use
+ggsave("sector_chart_web.png", sector_chart,
+       width = 10, height = 6, dpi = 150, bg = "white")
+```
+
+## Customization Options
+
+### Alternative Color Schemes
+
+For different contexts, you can use alternative EKIO themes:
+
+```{r alternative-themes}
+#| eval: false
+
+# Academic Authority theme (for government reports)
+theme_ekio("academic_authority")
+
+# Sophisticated Unique theme (for international presentations)  
+theme_ekio("sophisticated_unique")
+
+# Professional Deep theme (for serious analysis)
+theme_ekio("professional_deep")
+```
+
+### Adding EKIO Watermark
+
+```{r watermark}
+#| eval: false
+
+# Function to add EKIO watermark
+add_ekio_watermark <- function(plot) {
+  plot + 
+    annotate("text", 
+             x = Inf, y = -Inf,
+             label = "EKIO", 
+             hjust = 1.1, vjust = -0.5,
+             color = "grey70", 
+             size = 3, 
+             alpha = 0.6,
+             family = "Avenir")
+}
+
+# Apply watermark
+gdp_chart %>% add_ekio_watermark()
+```
+
+## Best Practices
+
+::: {.callout-important}
+## EKIO Visual Identity Standards
+
+1. **Always use EKIO color palettes** for consistency
+2. **Include proper source attribution** in captions
+3. **Use Avenir font family** when available
+4. **Maintain adequate white space** around elements
+5. **Export at high resolution** for professional use
+:::
+
+## Next Steps
+
+Now that you've mastered EKIO's visual identity system:
+
+- Apply these techniques to your own economic data
+- Explore advanced customization options
+- Check out our [Brazilian Municipal Data Analysis](../brazilian-data/index.qmd) tutorial
+- Learn about [Interactive Dashboards](../shiny-dashboards/index.qmd)
+
+::: {.ekio-cta}
+## Ready for Professional Implementation?
+
+These visual identity techniques are just the beginning. For complex economic analysis projects requiring professional presentation standards, [EKIO's consulting services](https://ekio.com.br) provide complete analytical solutions with branded deliverables.
+
+[Contact EKIO for Professional Services →](https://ekio.com.br)
+:::
+
+---
+
+# books/index.qmd - Books Index
+---
+title: "Books & Resources"
+subtitle: "Comprehensive guides for R and economic analysis"
+lang: en
+---
+
+## 📖 Available Books
+
+Our collection of comprehensive resources covering R programming, econometrics, and Brazilian data analysis.
+
+::: {.row}
+::: {.col-md-6}
+### [R for Urban Economics](r-urban-economics/index.qmd)
+::: {.badge .bg-success}
+Free Download
+:::
+
+Complete guide to using R for urban economic analysis, covering data import, visualization, and econometric modeling with Brazilian urban data.
+
+**Topics covered:**
+- Urban data sources in Brazil
+- Spatial analysis techniques  
+- Housing market modeling
+- Municipal finance analysis
+- Transport economics
+
+**Format:** PDF, 250 pages
+**Last updated:** March 2024
+
+[Download Free →](r-urban-economics/download.qmd){.btn .btn-ekio}
+:::
+
+::: {.col-md-6}
+### [Brazilian Data Sources Guide](brazilian-data-guide/index.qmd)
+::: {.badge .bg-success}
+Free Download
+:::
+
+Comprehensive reference for accessing and using Brazilian economic data sources including IBGE, BCB, IPEA, and municipal databases.
+
+**Data sources covered:**
+- IBGE (Census, PNAD, PME)
+- Banco Central APIs
+- IPEA databases
+- Municipal FINBRA data
+- Real estate indices
+
+**Format:** PDF + R scripts, 180 pages
+**Last updated:** February 2024
+
+[Download Free →](brazilian-data-guide/download.qmd){.btn .btn-ekio}
+:::
+
+::: {.col-md-6}
+### [EKIO Methods Handbook](ekio-methods/index.qmd)
+::: {.badge .bg-warning}
+Premium
+:::
+
+Professional methodologies used in EKIO's consulting practice, including advanced econometric techniques and visualization standards.
+
+**Advanced topics:**
+- Causal inference methods
+- Panel data techniques
+- Spatial econometrics
+- Professional reporting
+- Client presentation standards
+
+**Format:** PDF + R package, 320 pages
+**Price:** R$ 197
+
+[Purchase →](ekio-methods/purchase.qmd){.btn .btn-ekio}
+:::
+
+::: {.col-md-6}
+### [Econometrics with R Cookbook](econometrics-cookbook/index.qmd)
+::: {.badge .bg-info}
+Coming Soon
+:::
+
+Practical recipes for common econometric problems using R, with emphasis on Brazilian economic applications.
+
+**Release date:** May 2024
+**Estimated pages:** 280
+**Pre-order price:** R$ 147
+
+[Join Waitlist →](econometrics-cookbook/waitlist.qmd){.btn .btn-outline-primary}
+:::
+:::
+
+## 🎯 Learning Paths
+
+**For Beginners:**
+1. Start with [R for Urban Economics](r-urban-economics/index.qmd) chapters 1-3
+2. Complete [R Basics tutorial](../tutorials/r-basics/index.qmd)
+3. Practice with [Brazilian Data Sources Guide](brazilian-data-guide/index.qmd)
+
+**For Intermediate Users:**
+1. [R for Urban Economics](r-urban-economics/index.qmd) chapters 4-8
+2. [Brazilian Data Sources Guide](brazilian-data-guide/index.qmd) advanced sections
+3. Selected [advanced tutorials](../tutorials/index.qmd)
+
+**For Advanced Practitioners:**
+1. [EKIO Methods Handbook](ekio-methods/index.qmd) 
+2. [Econometrics with R Cookbook](econometrics-cookbook/index.qmd) (when available)
+3. [Professional courses](../courses/index.qmd)
+
+::: {.ekio-cta}
+## Need Custom Training Materials?
+
+EKIO creates custom training materials and workshops tailored to your organization's specific needs and data challenges.
+
+**Custom services include:**
+- Organization-specific R training manuals
+- Industry-focused econometric guides  
+- Custom data analysis templates
+- Team training workshops
+
+[Request Custom Training →](https://ekio.com.br/training)
+:::
+
+---
+
+# courses/index.qmd - Courses Index  
+---
+title: "Courses"
+subtitle: "Structured learning paths for mastering R and economic analysis"
+lang: en
+---
+
+## 🎓 Available Courses
+
+Comprehensive, structured courses that take you from beginner to expert in R-based economic analysis.
+
+### [Complete R for Economists](complete-r-economists/index.qmd)
+::: {.badge .bg-success}
+Most Popular
+:::
+
+**Duration:** 8 weeks | **Level:** Beginner to Intermediate | **Price:** R$ 497
+
+Master R programming specifically for economic analysis, from basic syntax to advanced econometric modeling.
+
+**What you'll learn:**
+- R fundamentals with economic examples
+- Data import and cleaning for Brazilian sources
+- Professional data visualization
+- Statistical analysis and hypothesis testing
+- Linear and multiple regression
+- Time series basics
+- Report generation with R Markdown
+
+**Course structure:**
+- 8 weekly modules with video lessons
+- Hands-on exercises with Brazilian data
+- Weekly live Q&A sessions
+- Final capstone project
+- Certificate of completion
+
+[Enroll Now →](complete-r-economists/enroll.qmd){.btn .btn-ekio .btn-lg}
+[View Curriculum →](complete-r-economists/curriculum.qmd){.btn .btn-outline-primary}
+
+---
+
+### [Advanced Urban Analytics](advanced-urban-analytics/index.qmd)
+::: {.badge .bg-warning}
+Advanced
+:::
+
+**Duration:** 6 weeks | **Level:** Advanced | **Price:** R$ 697
+
+Specialized course focusing on urban economics applications using Brazilian municipal data.
+
+**What you'll learn:**
+- Spatial data analysis in R
+- Urban economic indicators
+- Housing market econometrics  
+- Municipal finance analysis
+- Transport accessibility metrics
+- Urban development modeling
+
+**Prerequisites:** Basic R knowledge or completion of "Complete R for Economists"
+
+[Enroll Now →](advanced-urban-analytics/enroll.qmd){.btn .btn-ekio}
+[View Sample Lessons →](advanced-urban-analytics/preview.qmd){.btn .btn-outline-primary}
+
+---
+
+### [Brazilian Economic Data Mastery](brazilian-data-mastery/index.qmd)
+
+**Duration:** 4 weeks | **Level:** Intermediate | **Price:** R$ 397
+
+Deep dive into Brazilian data sources and practical applications for economic research.
+
+**What you'll learn:**
+- IBGE data ecosystem navigation
+- Banco Central API integration
+- IPEA and government databases
+- Municipal and state-level data
+- Data quality and validation
+- Automated data pipelines
+
+[Enroll Now →](brazilian-data-mastery/enroll.qmd){.btn .btn-ekio}
+
+---
+
+### [Professional Consulting Methods](professional-consulting/index.qmd)
+::: {.badge .bg-danger}
+Premium
+:::
+
+**Duration:** 10 weeks | **Level:** Expert | **Price:** R$ 1,297
+
+Learn EKIO's professional consulting methodologies and business application techniques.
+
+**What you'll learn:**
+- Client-ready analysis frameworks
+- Professional presentation techniques
+- Business problem structuring
+- Advanced econometric methods
+- Project management for analysts
+- Building consulting proposals
+
+**Includes:**
+- 1-on-1 mentoring sessions
+- Real client project case studies
+- Professional toolkit and templates
+- Networking with EKIO consultants
+
+[Apply Now →](professional-consulting/apply.qmd){.btn .btn-ekio}
+
+---
+
+## 💼 Corporate Training
+
+::: {.row}
+::: {.col-md-8}
+**Custom courses for teams and organizations**
+
+We offer tailored training programs for:
+- Government agencies
+- Financial institutions  
+- Urban planning departments
+- Research organizations
+- Economic consulting firms
+
+**Formats available:**
+- In-person workshops
+- Virtual training sessions
+- Hybrid learning programs
+- Self-paced team licenses
+:::
+
+::: {.col-md-4}
+[Request Corporate Training →](corporate-training.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
+## 🎯 Learning Path Recommendations
+
+**New to R?**
+→ [Complete R for Economists](complete-r-economists/index.qmd)
+
+**Have R basics?**  
+→ [Brazilian Economic Data Mastery](brazilian-data-mastery/index.qmd) + [Advanced Urban Analytics](advanced-urban-analytics/index.qmd)
+
+**Want to consult professionally?**
+→ Complete sequence ending with [Professional Consulting Methods](professional-consulting/index.qmd)
+
+## 💳 Payment & Policies
+
+- **Payment plans available** for all courses
+- **30-day money-back guarantee**
+- **Lifetime access** to course materials
+- **Brazilian tax invoices** provided (CPF/CNPJ)
+- **Student discounts** available with proof of enrollment
+
+::: {.ekio-cta}
+## Ready to Advance Your Career?
+
+These courses represent the same methodologies used in EKIO's professional consulting practice. 
+
+**But if you need immediate, expert-level support for a specific project:**
+
+[Get Professional EKIO Consulting →](https://ekio.com.br/consulting)
+:::
+
+---
+
+# _quarto-pt.yml - Portuguese version configuration
+project:
+  type: website
+  title: "EKIO Academy"
+  
+website:
+  title: "EKIO Academy"
+  description: "R & Ciência de Dados para Economia e Análise Urbana"
+  site-url: "https://academy.ekio.com.br"
+  
+  navbar:
+    logo: "assets/ekio-academy-logo.png"
+    title: "EKIO Academy"
+    background: "#2C6BB3"
+    foreground: white
+    left:
+      - text: "Tutoriais"
+        href: pt/tutoriais/index.qmd
+      - text: "Livros" 
+        href: pt/livros/index.qmd
+      - text: "Cursos"
+        href: pt/cursos/index.qmd
+      - text: "Sobre"
+        href: pt/sobre.qmd
+    right:
+      - text: "🇺🇸"
+        href: "/en/"
+      - text: "🇧🇷" 
+        href: "/pt/"
+
+# JavaScript for language switching
+---
+
+# language-switch.js
+function switchLanguage(lang) {
+  const currentUrl = window.location.pathname;
+  let newUrl;
+  
+  if (lang === 'pt') {
+    if (currentUrl.startsWith('/en/')) {
+      newUrl = currentUrl.replace('/en/', '/pt/');
+    } else {
+      newUrl = '/pt' + currentUrl;
+    }
+  } else {
+    if (currentUrl.startsWith('/pt/')) {
+      newUrl = currentUrl.replace('/pt/', '/en/');
+    } else {
+      newUrl = '/en' + currentUrl;
+    }
+  }
+  
+  window.location.href = newUrl;
+}
+
+// Auto-detect browser language on first visit
+document.addEventListener('DOMContentLoaded', function() {
+  const hasVisited = localStorage.getItem('ekio-academy-visited');
+  
+  if (!hasVisited) {
+    const browserLang = navigator.language.slice(0, 2);
+    if (browserLang === 'pt' && !window.location.pathname.startsWith('/pt/')) {
+      switchLanguage('pt');
+    }
+    localStorage.setItem('ekio-academy-visited', 'true');
+  }
+});
+
+---
+
+# README.md - Setup Instructions
+# EKIO Academy - Quarto Website
+
+This repository contains the source code for EKIO Academy, a bilingual educational website built with Quarto.
+
+## Quick Start
+
+1. **Install Quarto**
+   ```bash
+   # Download from https://quarto.org/docs/get-started/
+   ```
+
+2. **Clone and Setup**
+   ```bash
+   git clone https://github.com/yourusername/ekio-academy
+   cd ekio-academy
+   ```
+
+3. **Install R Dependencies**
+   ```r
+   install.packages(c("tidyverse", "scales", "extrafont", "geobr"))
+   ```
+
+4. **Preview Site**
+   ```bash
+   quarto preview
+   ```
+
+5. **Build Site**
+   ```bash
+   quarto render
+   ```
+
+## Structure
+
+```
+ekio-academy/
+├── _quarto.yml           # Main configuration
+├── _quarto-pt.yml        # Portuguese configuration  
+├── index.qmd             # Homepage (EN)
+├── custom.scss           # EKIO theme styles
+├── styles.css            # Additional styles
+├── language-switch.js    # Language switching
+├── tutorials/            # Tutorial content
+│   ├── index.qmd
+│   ├── r-basics/
+│   ├── ggplot2-basics/
+│   └── ekio-visual-identity/
+├── books/               # Book resources
+│   ├── index.qmd
+│   ├── r-urban-economics/
+│   └── brazilian-data-guide/
+├── courses/             # Course content
+│   ├── index.qmd
+│   └── complete-r-economists/
+├── pt/                  # Portuguese content
+│   ├── index.qmd
+│   ├── tutoriais/
+│   ├── livros/
+│   └── cursos/
+└── assets/              # Images, logos, etc.
+```
+
+## Content Management
+
+### Adding New Tutorial
+
+1. Create folder: `tutorials/new-tutorial/`
+2. Add `index.qmd` with YAML header:
+   ```yaml
+   ---
+   title: "Tutorial Title"
+   author: "EKIO Academy"
+   date: "2024-03-15"
+   categories: [tag1, tag2]
+   ---
+   ```
+3. Update `tutorials/index.qmd` with link
+
+### Bilingual Content
+
+- English content in root folders
+- Portuguese content in `pt/` folders
+- Use language switching JavaScript for navigation
+- Maintain parallel structure
+
+### EKIO Branding
+
+- Use EKIO color palette in `custom.scss`
+- Apply EKIO themes to R code chunks
+- Include EKIO watermarks in visualizations
+- Add professional CTA sections
+
+## Deployment
+
+### GitHub Pages
+```bash
+quarto publish gh-pages
+```
+
+### Netlify
+```bash
+quarto publish netlify
+```
+
+### Custom Domain
+- Point domain to hosting service
+- Update `site-url` in `_quarto.yml`
+- Configure SSL certificate
+
+## Maintenance
+
+- **Weekly:** Update tutorial content
+- **Monthly:** Add new resources and courses
+- **Quarterly:** Review and update book content
+- **As needed:** Update EKIO branding and themes
+
+## Support
+
+For technical issues or content suggestions:
+- Create GitHub issue
+- Email: academy@ekio.com.br
+- Main site: https://ekio.com.br

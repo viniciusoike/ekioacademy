@@ -1,0 +1,36 @@
+# Quarto
+_site/
+_site-pt/
+.quarto/
+*.html
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+# renv removed - using direct package management
+*.Rproj
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Build outputs
+_combined/
+dist/

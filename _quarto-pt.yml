@@ -1,0 +1,84 @@
+project:
+  type: website
+  title: "EKIO Academy"
+  output-dir: _site-pt
+  
+website:
+  title: "EKIO Academy"
+  description: "R & Ciência de Dados para Economia e Análise Urbana | Plataforma Educacional de Economia Urbana Brasileira"
+  site-url: "https://academy.ekio.com.br/pt"
+  
+  navbar:
+    logo: "assets/images/logos/ekio-academy-logo.png"
+    title: false
+    background: "#1abc9c"
+    foreground: white
+    collapse: true
+    left:
+      - text: "Tutoriais"
+        href: pt/tutoriais/index.qmd
+      - text: "Livros" 
+        href: pt/livros/index.qmd
+      - text: "Cursos"
+        href: pt/cursos/index.qmd
+      - text: "Sobre"
+        href: pt/sobre.qmd
+    right:
+      - icon: "github"
+        href: "https://github.com/ekio-brazil/ekio-academy"
+        aria-label: "GitHub"
+      - icon: "linkedin"
+        href: "https://linkedin.com/company/ekio-analytics"
+        aria-label: "LinkedIn"
+      - text: "🇺🇸/🇧🇷"
+        menu:
+          - text: "🇺🇸 English"
+            href: "/"
+          - text: "🇧🇷 Português" 
+            href: "/pt/"
+
+  search: 
+    type: overlay
+    placeholder: "Buscar tutoriais, livros, cursos..."
+    copy-button: true
+
+  page-footer:
+    background: "#2c3e50"
+    foreground: white
+    left: |
+      © 2024 EKIO Academy. Parte da [EKIO Analytics](https://ekio.com.br).
+    center: |
+      Treinamento profissional em R para economistas e planejadores urbanos.
+    right: |
+      [Política de Privacidade](pt/privacidade.qmd) | [Termos](pt/termos.qmd)
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    lang: pt-BR
+    toc: true
+    toc-depth: 3
+    toc-title: "Conteúdo"
+    number-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
+    code-fold: false
+    code-tools: 
+      caption: "Código"
+    highlight-style: github
+    css: 
+      - styles.css
+      - assets/css/ekio-theme.css
+    include-in-header: _includes/head-custom.html
+    include-after-body: _includes/analytics.html
+    
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: true
+  freeze: auto

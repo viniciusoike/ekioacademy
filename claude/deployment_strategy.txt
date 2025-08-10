@@ -1,0 +1,1033 @@
+# DEPLOYMENT STRATEGY: GitHub + Netlify
+
+# =================
+# 1. REPOSITORY SETUP
+# =================
+
+# .gitignore
+# Quarto
+_site/
+_site-pt/
+.quarto/
+*.html
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+*.Rproj
+
+# Temporary files
+*.log
+*.tmp
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+---
+
+# .github/workflows/deploy-netlify.yml
+# GitHub Actions workflow for Netlify deployment
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: pre-release
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.3.2'
+        use-public-rspm: true
+
+    - name: Setup renv
+      uses: r-lib/actions/setup-renv@v2
+
+    - name: Install R dependencies
+      run: |
+        renv::restore()
+      shell: Rscript {0}
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev
+
+    - name: Setup Node.js (for analytics/widgets)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install Node dependencies
+      run: npm ci
+
+    - name: Build English site
+      run: |
+        quarto render --profile default
+        
+    - name: Build Portuguese site  
+      run: |
+        quarto render --profile portuguese
+
+    - name: Combine sites for deployment
+      run: |
+        mkdir -p _combined
+        cp -r _site/* _combined/
+        mkdir -p _combined/pt
+        cp -r _site-pt/* _combined/pt/
+
+    - name: Deploy to Netlify (Production)
+      if: github.ref == 'refs/heads/main'
+      uses: netlify/actions/cli@master
+      with:
+        args: deploy --prod --dir=_combined
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    - name: Deploy to Netlify (Preview)
+      if: github.event_name == 'pull_request'
+      uses: netlify/actions/cli@master
+      with:
+        args: deploy --dir=_combined
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+---
+
+# .github/workflows/pr-preview.yml
+# Generate preview links for pull requests
+
+name: PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v2
+
+    - name: Setup renv
+      uses: r-lib/actions/setup-renv@v2
+
+    - name: Build preview
+      run: |
+        quarto render --profile default
+        quarto render --profile portuguese
+        
+    - name: Deploy to Netlify Preview
+      uses: netlify/actions/cli@master
+      with:
+        args: deploy --dir=_combined --alias=pr-${{ github.event.number }}
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+    - name: Comment PR
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🔍 **Preview Ready!**
+            
+            📖 **English**: https://pr-${{ github.event.number }}--ekio-academy.netlify.app/
+            🇧🇷 **Portuguese**: https://pr-${{ github.event.number }}--ekio-academy.netlify.app/pt/
+            
+            This preview will be automatically updated when you push new commits.`
+          })
+
+---
+
+# .github/workflows/link-checker.yml
+# Check for broken links weekly
+
+name: Link Checker
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9 AM
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 lxml
+
+    - name: Check links
+      run: python scripts/check-links.py
+
+    - name: Create issue if broken links found
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '🔗 Broken Links Detected',
+            body: 'Automated link checker found broken links. Please review and fix.',
+            labels: ['bug', 'maintenance']
+          })
+
+---
+
+# netlify.toml
+# Netlify configuration
+
+[build]
+  command = "chmod +x scripts/netlify-build.sh && ./scripts/netlify-build.sh"
+  publish = "_combined"
+
+[build.environment]
+  R_VERSION = "4.3.2"
+  QUARTO_VERSION = "1.4.550"
+
+# Redirect rules for language switching
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  conditions = {Language = ["en"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pt/"
+  status = 302
+  conditions = {Language = ["pt"]}
+
+# Fallback to English for unmatched paths
+[[redirects]]
+  from = "/*"
+  to = "/en/:splat"
+  status = 302
+  conditions = {Language = ["en"]}
+
+# SPA-style routing for search
+[[redirects]]
+  from = "/search/*"
+  to = "/search/index.html"
+  status = 200
+
+# API routes for dynamic content
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Form handling
+[[redirects]]
+  from = "/submit-form"
+  to = "/.netlify/functions/submit-form"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+---
+
+# scripts/netlify-build.sh
+#!/bin/bash
+# Netlify build script
+
+set -e
+
+echo "🚀 Starting EKIO Academy build..."
+
+# Setup R environment
+echo "📦 Setting up R environment..."
+Rscript -e "if(!require(renv)) install.packages('renv'); renv::restore()"
+
+# Install system dependencies for R packages
+echo "🔧 Installing system dependencies..."
+sudo apt-get update
+sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev libfontconfig1-dev
+
+# Build English version
+echo "🇺🇸 Building English site..."
+quarto render --profile default
+
+# Build Portuguese version  
+echo "🇧🇷 Building Portuguese site..."
+quarto render --profile portuguese
+
+# Combine sites
+echo "🔗 Combining sites..."
+mkdir -p _combined
+cp -r _site/* _combined/
+mkdir -p _combined/pt
+cp -r _site-pt/* _combined/pt/
+
+# Copy additional assets
+cp -r assets _combined/
+cp robots.txt _combined/ 2>/dev/null || true
+cp sitemap.xml _combined/ 2>/dev/null || true
+
+# Generate sitemap
+echo "🗺️ Generating sitemap..."
+Rscript scripts/generate-sitemap.R
+
+echo "✅ Build complete!"
+
+---
+
+# scripts/generate-sitemap.R
+# Generate XML sitemap for both languages
+
+library(xml2)
+library(glue)
+library(fs)
+
+# Site configuration
+base_url <- "https://academy.ekio.com.br"
+pages <- list()
+
+# Scan for pages
+scan_pages <- function(path, lang_prefix = "") {
+  qmd_files <- dir_ls(path, glob = "*.qmd", recurse = TRUE)
+  
+  for (file in qmd_files) {
+    # Skip index files in subdirectories
+    rel_path <- path_rel(file, path)
+    if (path_file(rel_path) == "index.qmd") {
+      url_path <- path_dir(rel_path)
+      if (url_path == ".") url_path <- ""
+    } else {
+      url_path <- path_ext_remove(rel_path)
+    }
+    
+    # Add language prefix
+    if (lang_prefix != "") {
+      url_path <- file.path(lang_prefix, url_path)
+    }
+    
+    # Clean up path
+    url_path <- str_replace_all(url_path, "//+", "/")
+    url_path <- str_remove(url_path, "^/")
+    
+    # Get modification time
+    mod_time <- file_info(file)$modification_time
+    
+    pages <<- append(pages, list(list(
+      url = file.path(base_url, url_path),
+      lastmod = format(mod_time, "%Y-%m-%d"),
+      changefreq = "weekly",
+      priority = if_else(str_detect(url_path, "index|^$"), "1.0", "0.8")
+    )))
+  }
+}
+
+# Scan English pages
+scan_pages(".", "")
+
+# Scan Portuguese pages  
+scan_pages("pt", "pt")
+
+# Create XML sitemap
+sitemap <- xml_new_root("urlset", xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9")
+
+for (page in pages) {
+  url_node <- xml_add_child(sitemap, "url")
+  xml_add_child(url_node, "loc", page$url)
+  xml_add_child(url_node, "lastmod", page$lastmod)
+  xml_add_child(url_node, "changefreq", page$changefreq)
+  xml_add_child(url_node, "priority", page$priority)
+}
+
+# Write sitemap
+write_xml(sitemap, "_combined/sitemap.xml")
+cat("✅ Sitemap generated with", length(pages), "pages\n")
+
+---
+
+# scripts/check-links.py
+# Check for broken links in the site
+
+import requests
+import re
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
+import sys
+import time
+
+def check_links(base_url, max_pages=100):
+    """Check links in a website for broken links"""
+    
+    visited = set()
+    to_visit = [base_url]
+    broken_links = []
+    
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'EKIO Academy Link Checker 1.0'
+    })
+    
+    while to_visit and len(visited) < max_pages:
+        url = to_visit.pop(0)
+        
+        if url in visited:
+            continue
+            
+        visited.add(url)
+        print(f"Checking: {url}")
+        
+        try:
+            response = session.get(url, timeout=10)
+            
+            if response.status_code >= 400:
+                broken_links.append((url, response.status_code))
+                continue
+                
+            # Parse HTML and find links
+            if 'text/html' in response.headers.get('content-type', ''):
+                soup = BeautifulSoup(response.content, 'html.parser')
+                
+                # Find all links
+                for link in soup.find_all('a', href=True):
+                    href = link['href']
+                    full_url = urljoin(url, href)
+                    
+                    # Only check internal links
+                    if urlparse(full_url).netloc == urlparse(base_url).netloc:
+                        if full_url not in visited and full_url not in to_visit:
+                            to_visit.append(full_url)
+                            
+        except requests.RequestException as e:
+            broken_links.append((url, str(e)))
+        
+        # Be nice to the server
+        time.sleep(0.1)
+    
+    return broken_links
+
+if __name__ == "__main__":
+    # Check both language versions
+    sites = [
+        "https://ekio-academy.netlify.app/",
+        "https://ekio-academy.netlify.app/pt/"
+    ]
+    
+    all_broken = []
+    
+    for site in sites:
+        print(f"\n🔍 Checking {site}")
+        broken = check_links(site)
+        all_broken.extend(broken)
+        
+    if all_broken:
+        print(f"\n❌ Found {len(all_broken)} broken links:")
+        for url, error in all_broken:
+            print(f"  • {url} - {error}")
+        sys.exit(1)
+    else:
+        print("\n✅ No broken links found!")
+
+---
+
+# _quarto.yml (Updated for deployment)
+project:
+  type: website
+  title: "EKIO Academy"
+  
+profiles:
+  default:
+    output-dir: _site
+    website:
+      site-url: "https://academy.ekio.com.br"
+      
+  portuguese:
+    output-dir: _site-pt  
+    website:
+      site-url: "https://academy.ekio.com.br/pt"
+
+website:
+  title: "EKIO Academy"
+  description: "R & Data Science for Economics and Urban Analysis"
+  
+  google-analytics: "G-XXXXXXXXXX"  # Your Google Analytics ID
+  
+  navbar:
+    logo: "assets/images/logos/ekio-academy-logo.png"
+    title: false  # Hide text when logo is present
+    background: "#2C6BB3"
+    foreground: white
+    collapse: true
+    left:
+      - text: "Tutorials"
+        href: tutorials/index.qmd
+      - text: "Books" 
+        href: books/index.qmd
+      - text: "Courses"
+        href: courses/index.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: "github"
+        href: "https://github.com/yourusername/ekio-academy"
+        aria-label: "GitHub"
+      - icon: "linkedin"
+        href: "https://linkedin.com/in/yourprofile"
+        aria-label: "LinkedIn"
+      - text: "🇺🇸/🇧🇷"
+        menu:
+          - text: "🇺🇸 English"
+            href: "/"
+          - text: "🇧🇷 Português" 
+            href: "/pt/"
+
+  search: 
+    type: overlay
+    placeholder: "Search tutorials, books, courses..."
+    copy-button: true
+
+  page-footer:
+    background: "#2c3e50"
+    foreground: white
+    left: |
+      © 2024 EKIO Academy. Part of [EKIO Analytics](https://ekio.com.br).
+    center: |
+      Professional R training for economists and urban planners.
+    right: |
+      [Privacy Policy](privacy.qmd) | [Terms](terms.qmd)
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
+    code-fold: false
+    code-tools: true
+    highlight-style: github
+    css: 
+      - styles.css
+      - assets/css/ekio-theme.css
+    include-in-header: _includes/head-custom.html
+    include-after-body: _includes/analytics.html
+    
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: true
+  freeze: auto
+
+---
+
+# renv.lock (R Environment Lock File)
+{
+  "R": {
+    "Version": "4.3.2",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.rstudio.com"
+      }
+    ]
+  },
+  "Packages": {
+    "tidyverse": {
+      "Package": "tidyverse",
+      "Version": "2.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggplot2": {
+      "Package": "ggplot2", 
+      "Version": "3.4.4",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "scales": {
+      "Package": "scales",
+      "Version": "1.3.0",
+      "Source": "Repository", 
+      "Repository": "CRAN"
+    },
+    "extrafont": {
+      "Package": "extrafont",
+      "Version": "0.19",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "geobr": {
+      "Package": "geobr",
+      "Version": "1.7.0",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "sf": {
+      "Package": "sf",
+      "Version": "1.0-14",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "DT": {
+      "Package": "DT",
+      "Version": "0.30",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "plotly": {
+      "Package": "plotly",
+      "Version": "4.10.4",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "shiny": {
+      "Package": "shiny",
+      "Version": "1.8.0",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "rmarkdown": {
+      "Package": "rmarkdown",
+      "Version": "2.25",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    }
+  }
+}
+
+---
+
+# package.json (Node.js dependencies for analytics/widgets)
+{
+  "name": "ekio-academy",
+  "version": "1.0.0",
+  "description": "EKIO Academy website dependencies",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "sass custom.scss assets/css/ekio-theme.css",
+    "watch": "sass --watch custom.scss assets/css/ekio-theme.css",
+    "serve": "quarto preview",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "netlify-cli": "^17.10.1"
+  }
+}
+
+---
+
+# .Rprofile (R Profile for consistent setup)
+# EKIO Academy R Profile
+
+# Set CRAN mirror
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "https://cran.rstudio.com/"
+  options(repos = r)
+})
+
+# Load renv for package management
+if (file.exists("renv/activate.R")) {
+  source("renv/activate.R")
+}
+
+# Set default options for better output
+options(
+  digits = 4,
+  scipen = 999,
+  width = 80,
+  pillar.subtle = FALSE,
+  pillar.neg = FALSE
+)
+
+# Load common packages for tutorials
+if (interactive()) {
+  suppressMessages({
+    library(tidyverse)
+    library(scales)
+  })
+  
+  cat("🎯 EKIO Academy R Environment Loaded\n")
+  cat("📦 Packages ready: tidyverse, scales\n")
+  cat("🎨 EKIO theme available via source('assets/r/ekio-theme.R')\n")
+}
+
+---
+
+# robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://academy.ekio.com.br/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Block crawling of admin/private areas
+Disallow: /admin/
+Disallow: /_includes/
+Disallow: /_extensions/
+Disallow: /scripts/
+
+# Block temporary files
+Disallow: /*.tmp
+Disallow: /*.log
+
+---
+
+# DEPLOYMENT STEPS & CHECKLIST
+
+# =================
+# STEP 1: LOCAL SETUP
+# =================
+
+# 1. Initialize repository
+git init
+git add .
+git commit -m "Initial EKIO Academy setup"
+
+# 2. Create GitHub repository
+# - Go to GitHub.com
+# - Create new repository: ekio-academy
+# - Connect local repo:
+git remote add origin https://github.com/yourusername/ekio-academy.git
+git branch -M main
+git push -u origin main
+
+# 3. Install local dependencies
+# R packages:
+install.packages("renv")
+renv::init()
+renv::install(c("tidyverse", "scales", "extrafont", "geobr", "sf", "DT", "plotly", "shiny"))
+renv::snapshot()
+
+# Node.js packages (optional):
+npm install
+
+# =================
+# STEP 2: NETLIFY SETUP  
+# =================
+
+# 1. Create Netlify account (netlify.com)
+# 2. Connect GitHub repository
+# 3. Configure build settings:
+#    - Build command: chmod +x scripts/netlify-build.sh && ./scripts/netlify-build.sh
+#    - Publish directory: _combined
+#    - Production branch: main
+
+# 4. Set environment variables in Netlify:
+#    - R_VERSION: 4.3.2
+#    - QUARTO_VERSION: 1.4.550
+
+# 5. Configure custom domain:
+#    - Domain: academy.ekio.com.br
+#    - Enable HTTPS
+#    - Set up redirects for language switching
+
+# =================
+# STEP 3: GITHUB SECRETS
+# =================
+
+# Add these secrets to GitHub repository settings:
+# NETLIFY_AUTH_TOKEN: (from Netlify account settings)
+# NETLIFY_SITE_ID: (from Netlify site settings)
+
+# =================
+# STEP 4: DOMAIN CONFIGURATION
+# =================
+
+# DNS Records for academy.ekio.com.br:
+# Type: CNAME
+# Name: academy
+# Value: ekio-academy.netlify.app
+
+# Alternative with A records:
+# Type: A
+# Name: academy  
+# Value: 75.2.60.5 (Netlify load balancer)
+
+# =================
+# STEP 5: TESTING & MONITORING
+# =================
+
+# 1. Test deployment pipeline:
+#    - Push changes to trigger build
+#    - Check build logs in Netlify
+#    - Verify both EN and PT sites
+
+# 2. Set up monitoring:
+#    - Google Analytics
+#    - Netlify Analytics
+#    - Uptime monitoring
+
+# 3. Performance optimization:
+#    - Enable Netlify CDN
+#    - Optimize images
+#    - Enable compression
+
+# =================
+# ONGOING MAINTENANCE
+# =================
+
+# Daily:
+# - Check site uptime
+# - Monitor build status
+
+# Weekly: 
+# - Review analytics
+# - Check for broken links (automated)
+# - Update content
+
+# Monthly:
+# - Update R packages: renv::update()
+# - Review and update dependencies
+# - Performance audit
+
+# Quarterly:
+# - Security audit
+# - Backup content
+# - Review deployment strategy
+
+# =================
+# DISASTER RECOVERY
+# =================
+
+# Backup strategy:
+# 1. GitHub repository (primary backup)
+# 2. Local development environment
+# 3. Netlify site backup (automated)
+# 4. Manual content export monthly
+
+# Recovery procedures:
+# 1. Repository corruption: restore from local or GitHub
+# 2. Netlify issues: redeploy from GitHub
+# 3. Domain issues: update DNS records
+# 4. Build failures: check logs and dependencies
+
+# =================
+# SCALING CONSIDERATIONS
+# =================
+
+# Performance optimization:
+# - Implement lazy loading for images
+# - Use progressive web app features
+# - Optimize Quarto rendering
+
+# Content delivery:
+# - Netlify CDN (included)
+# - Image optimization
+# - Compression enabled
+
+# Analytics and monitoring:
+# - Google Analytics 4
+# - Netlify Analytics
+# - Error tracking with Sentry
+
+# SEO optimization:
+# - XML sitemap generation
+# - Structured data markup
+# - Meta tags optimization
+# - Social media previews
+
+---
+
+# ALTERNATIVE DEPLOYMENT: GitHub Pages
+
+# .github/workflows/github-pages.yml
+# Alternative deployment to GitHub Pages
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v2
+
+    - name: Setup renv
+      uses: r-lib/actions/setup-renv@v2
+
+    - name: Render site
+      run: |
+        quarto render --profile default
+        quarto render --profile portuguese
+        mkdir -p _combined
+        cp -r _site/* _combined/
+        mkdir -p _combined/pt  
+        cp -r _site-pt/* _combined/pt/
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _combined
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+---
+
+# COST ANALYSIS
+
+# Netlify (Recommended):
+# - Free tier: 100GB bandwidth, 300 build minutes
+# - Pro tier: $19/month (500GB bandwidth, 1000 build minutes)
+# - Includes: CDN, SSL, forms, analytics
+# - Custom domain: Free
+
+# GitHub Pages (Alternative):
+# - Completely free
+# - 1GB storage limit
+# - 100GB bandwidth per month
+# - No server-side processing
+# - Custom domain: Free
+
+# Additional costs:
+# - Domain registration: ~$10-15/year
+# - Email service (if needed): $5-10/month
+# - Premium analytics: $0-50/month
+
+# Recommended setup for EKIO Academy:
+# - Netlify Free tier initially
+# - Upgrade to Pro when traffic grows
+# - Total monthly cost: $0-19
+
+---
+
+# PERFORMANCE TARGETS
+
+# Core Web Vitals:
+# - Largest Contentful Paint: < 2.5s
+# - First Input Delay: < 100ms  
+# - Cumulative Layout Shift: < 0.1
+
+# Additional metrics:
+# - Time to First Byte: < 800ms
+# - First Contentful Paint: < 1.8s
+# - Speed Index: < 3.4s
+
+# Optimization strategies:
+# 1. Image optimization (WebP format)
+# 2. Code splitting and lazy loading
+# 3. CDN utilization
+# 4. Efficient caching strategies
+# 5. Minimal JavaScript bundles
+
+# Monitoring tools:
+# - Google PageSpeed Insights
+# - Lighthouse CI
+# - Netlify Analytics
+# - Real User Monitoring
