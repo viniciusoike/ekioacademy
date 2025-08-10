@@ -1,0 +1,156 @@
+<!-- EKIO Academy Enhanced Head Configuration -->
+
+<!-- SEO Meta Tags for Brazilian Market -->
+<meta name="keywords" content="R programming, economics, urban analysis, Brazil, data science, econometrics, Brazilian data, IBGE, statistics, urban planning, consulting">
+<meta name="author" content="EKIO Analytics">
+<meta name="robots" content="index, follow">
+<meta name="language" content="en, pt-BR">
+<meta name="geo.region" content="BR">
+<meta name="geo.country" content="Brazil">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:site_name" content="EKIO Academy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EKIO Academy - R & Data Science for Economics">
+<meta property="og:description" content="Learn R programming and econometrics for Brazilian urban economics analysis. Professional training for economists, urban planners, and data scientists.">
+<meta property="og:image" content="https://academy.ekio.com.br/assets/images/og-image.png">
+<meta property="og:url" content="https://academy.ekio.com.br">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ekio_analytics">
+<meta name="twitter:creator" content="@ekio_analytics">
+<meta name="twitter:title" content="EKIO Academy - R & Data Science for Economics">
+<meta name="twitter:description" content="Master R programming for Brazilian urban economics analysis with professional tutorials and courses.">
+<meta name="twitter:image" content="https://academy.ekio.com.br/assets/images/twitter-card.png">
+
+<!-- Structured Data for Educational Content -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "EKIO Academy",
+  "description": "Educational platform for R programming and urban economics analysis focused on Brazilian data and methodologies",
+  "url": "https://academy.ekio.com.br",
+  "sameAs": [
+    "https://linkedin.com/company/ekio-analytics",
+    "https://github.com/ekio-brazil"
+  ],
+  "founder": {
+    "@type": "Organization",
+    "name": "EKIO Analytics",
+    "url": "https://ekio.com.br"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "educational support",
+    "email": "academy@ekio.com.br"
+  }
+}
+</script>
+
+<!-- Progressive Web App Support -->
+<meta name="theme-color" content="#1abc9c">
+<link rel="manifest" href="/manifest.json">
+
+<!-- Favicon and App Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logos/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logos/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
+
+<!-- Font Loading Optimization -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="/assets/css/ekio-theme.css" as="style">
+<link rel="preload" href="/assets/images/logos/ekio-academy-logo.png" as="image">
+
+<!-- Brazilian Portuguese Language Detection -->
+<script>
+// Auto-detect Brazilian Portuguese preference on first visit
+(function() {
+  // Check if this is first visit and not already on Portuguese site
+  if (!localStorage.getItem('ekio-academy-visited') && !window.location.pathname.startsWith('/pt/')) {
+    const browserLang = navigator.language || navigator.userLanguage;
+    
+    // If browser language is Portuguese (Brazil or general Portuguese)
+    if (browserLang === 'pt-BR' || browserLang === 'pt') {
+      // Redirect to Portuguese version with current path
+      const currentPath = window.location.pathname;
+      const newPath = '/pt' + currentPath;
+      window.location.href = newPath;
+    }
+    
+    // Mark as visited
+    localStorage.setItem('ekio-academy-visited', 'true');
+  }
+})();
+</script>
+
+<!-- Performance and Analytics Preparation -->
+<script>
+// Initialize performance monitoring
+window.ekioAcademy = window.ekioAcademy || {};
+window.ekioAcademy.startTime = Date.now();
+
+// Track educational engagement
+window.ekioAcademy.trackTutorialStart = function(tutorialName) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'tutorial_start', {
+      'tutorial_name': tutorialName,
+      'content_group': 'education'
+    });
+  }
+};
+
+window.ekioAcademy.trackCourseInterest = function(courseName) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'course_interest', {
+      'course_name': courseName,
+      'content_group': 'courses'
+    });
+  }
+};
+
+window.ekioAcademy.trackDownload = function(resourceName, resourceType) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'file_download', {
+      'file_name': resourceName,
+      'file_type': resourceType,
+      'content_group': 'resources'
+    });
+  }
+};
+</script>
+
+<!-- Brazilian Economic Data Sources Meta -->
+<meta name="data-sources" content="IBGE, Banco Central do Brasil, IPEA, FINBRA, FipeZap">
+<meta name="coverage-area" content="Brazil, Brazilian municipalities, Brazilian states">
+<meta name="educational-level" content="undergraduate, graduate, professional development">
+
+<!-- Course and Tutorial Schema Markup Preparation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Complete R for Economists",
+  "description": "Comprehensive course covering R programming for Brazilian economic analysis",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "EKIO Academy"
+  },
+  "coursePrerequisites": "Basic understanding of economics and statistics",
+  "educationalLevel": "intermediate",
+  "teaches": ["R Programming", "Data Analysis", "Econometrics", "Brazilian Data Sources"],
+  "inLanguage": ["en", "pt-BR"],
+  "courseMode": "online"
+}
+</script>

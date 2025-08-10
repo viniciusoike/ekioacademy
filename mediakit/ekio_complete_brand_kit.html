@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EKIO - Complete Brand & Design Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #2C6BB3, #1E5F9F, #0F3A65);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 12px 40px rgba(44, 107, 179, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 16px;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .hero-tagline {
+            font-size: 1.6rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            border: 1px solid #e3ecf5;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #2C6BB3;
+            border-left: 4px solid #2C6BB3;
+            padding-left: 1.5rem;
+        }
+        
+        .philosophy-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #f4f7fb, #e3ecf5);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2C6BB3;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .logo-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border: 2px solid #e3ecf5;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(44, 107, 179, 0.15);
+            border-color: #2C6BB3;
+        }
+        
+        .logo-card.dark {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+        
+        .logo-display {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            color: #2C6BB3;
+        }
+        
+        .logo-card.dark .logo-display {
+            color: white;
+        }
+        
+        .logo-description {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 1rem;
+        }
+        
+        .logo-card.dark .logo-description {
+            color: #bdc3c7;
+        }
+        
+        .logo-specs {
+            font-size: 0.8rem;
+            color: #95a5a6;
+            margin-top: 0.5rem;
+            font-family: 'Monaco', monospace;
+        }
+        
+        .theme-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .theme-card {
+            border: 2px solid #ecf0f1;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        
+        .theme-header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .primary-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        
+        .theme-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .theme-combo {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .theme-personality {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .theme-content {
+            padding: 1.5rem;
+            background: #f8f9fa;
+        }
+        
+        .color-preview {
+            display: flex;
+            height: 40px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .color-segment {
+            flex: 1;
+        }
+        
+        .use-cases {
+            font-size: 0.85rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        
+        .modern-premium { background: linear-gradient(135deg, #2C6BB3, #3c7bc3); }
+        .academic-authority { background: linear-gradient(135deg, #0F3A65, #1f4a75); }
+        .sophisticated-unique { background: linear-gradient(135deg, #5F9EA0, #6faeb0); }
+        .institutional-oxford { background: linear-gradient(135deg, #1E5F9F, #2e6faf); }
+        .professional-deep { background: linear-gradient(135deg, #0F3A65, #1f4a75); }
+        .premium-steel { background: linear-gradient(135deg, #4682B4, #5692c4); }
+        
+        .typography-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .font-display {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e3ecf5;
+        }
+        
+        .font-display:last-child {
+            border-bottom: none;
+        }
+        
+        .font-sample {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .font-spec {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-family: 'Monaco', monospace;
+        }
+        
+        .code-section {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .code-title {
+            font-size: 1.8rem;
+            color: #3498db;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .code-block {
+            background: #34495e;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            font-family: 'Monaco', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            border: 1px solid #4a5f7a;
+        }
+        
+        .code-comment { color: #95a5a6; }
+        .code-function { color: #3498db; }
+        .code-string { color: #1abc9c; }
+        .code-number { color: #f39c12; }
+        
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .application-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border: 2px solid #e3ecf5;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(44, 107, 179, 0.1);
+            border-color: #2C6BB3;
+        }
+        
+        .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .app-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2C6BB3;
+            margin-bottom: 1rem;
+        }
+        
+        .app-description {
+            font-size: 0.9rem;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        
+        .downloads-section {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .downloads-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .download-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .download-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        
+        .download-format {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .download-description {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .Brazilian-map-demo {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 3px;
+            max-width: 500px;
+            margin: 1rem auto;
+        }
+        
+        .state-shape {
+            aspect-ratio: 1;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .footer-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-logo">EKIO</div>
+                <div class="hero-tagline">Brazilian Urban Economics & Data Analytics</div>
+                <div class="hero-description">
+                    Complete Brand & Design System • Professional Visual Identity • 
+                    Six Strategic Themes • R/ggplot2 Integration
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Philosophy -->
+        <div class="section">
+            <h2 class="section-title">🎯 Design Philosophy & Aesthetic Vision</h2>
+            
+            <div class="philosophy-text">
+                <strong>EKIO's visual identity embodies the intersection of analytical rigor and Brazilian sophistication.</strong> 
+                Our design philosophy draws from three core principles: <em>Minimalist Clarity</em> (every element serves a purpose, removing unnecessary decoration to let data speak), 
+                <em>Professional Authority</em> (conveying credibility through consistent typography, strategic color use, and attention to detail), 
+                and <em>Brazilian Context</em> (understanding that our visualizations represent real places and people, with colors and styling that respect both international standards and local sensibilities).
+                <br><br>
+                The aesthetic choices reflect modern data journalism standards—think The Economist's analytical clarity meets Japanese minimalism, 
+                optimized for Brazilian urban economics. We prioritize accessibility, scalability across platforms, and professional trust. 
+                Every color, font, and spacing decision reinforces EKIO's position as Brazil's leading urban economics consultancy, 
+                capable of communicating complex insights with elegance and precision to audiences ranging from municipal governments to international organizations.
+            </div>
+        </div>
+
+        <!-- Logo System -->
+        <div class="section">
+            <h2 class="section-title">📋 EKIO Logo System</h2>
+            
+            <div class="logo-grid">
+                <div class="logo-card">
+                    <div class="logo-display">EKIO</div>
+                    <div style="font-size: 0.9rem; color: #7f8c8d; margin-bottom: 1rem;">Urban Economics & Data Analytics</div>
+                    <div class="logo-description">
+                        <strong>Primary Wordmark</strong><br>
+                        Main brand application for presentations, reports, and digital use
+                    </div>
+                    <div class="logo-specs">Avenir Light • #2C6BB3 • Min width: 120px</div>
+                </div>
+
+                <div class="logo-card dark">
+                    <div class="logo-display">EKIO</div>
+                    <div style="font-size: 0.9rem; color: #bdc3c7; margin-bottom: 1rem;">Urban Economics & Data Analytics</div>
+                    <div class="logo-description">
+                        <strong>Dark Version</strong><br>
+                        For dark backgrounds, presentations, and dashboards
+                    </div>
+                    <div class="logo-specs">Avenir Light • White • Dark backgrounds</div>
+                </div>
+
+                <div class="logo-card">
+                    <div style="background: #2C6BB3; width: 80px; height: 80px; border-radius: 12px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 300; letter-spacing: 2px;">EK</div>
+                    <div style="font-size: 1.2rem; color: #2C6BB3; font-weight: 300;">EKIO</div>
+                    <div class="logo-description">
+                        <strong>Icon + Text</strong><br>
+                        App icons, favicons, social media profiles
+                    </div>
+                    <div class="logo-specs">Square format • Minimum 32px</div>
+                </div>
+
+                <div class="logo-card">
+                    <div style="font-size: 2rem; color: #7f8c8d; font-weight: 300; letter-spacing: 4px; opacity: 0.6;">EKIO</div>
+                    <div class="logo-description">
+                        <strong>Watermark Version</strong><br>
+                        Subtle chart watermarks, background applications
+                    </div>
+                    <div class="logo-specs">60% opacity • Chart corners • Subtle presence</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Six-Theme System -->
+        <div class="section">
+            <h2 class="section-title">🎨 Complete Six-Theme System</h2>
+            
+            <div class="theme-showcase">
+                <div class="theme-card">
+                    <div class="theme-header modern-premium">
+                        <div class="primary-badge">PRIMARY</div>
+                        <div class="theme-name">Modern Premium</div>
+                        <div class="theme-combo">Avenir + Sapphire Blue</div>
+                        <div class="theme-personality">Contemporary • Tech-Forward • Premium</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f4f7fb;"></div>
+                            <div class="color-segment" style="background: #d2e1ef;"></div>
+                            <div class="color-segment" style="background: #6d9dc7;"></div>
+                            <div class="color-segment" style="background: #2C6BB3;"></div>
+                            <div class="color-segment" style="background: #204d81;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Primary Use:</strong> Standard client presentations, website, marketing materials, 
+                            business reports, social media, choropleth maps, 80% of EKIO's work
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="theme-header academic-authority">
+                        <div class="theme-name">Academic Authority</div>
+                        <div class="theme-combo">Lato + Deep Ocean</div>
+                        <div class="theme-personality">Research-Focused • Institutional • Authoritative</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f2f4f7;"></div>
+                            <div class="color-segment" style="background: #ced8e3;"></div>
+                            <div class="color-segment" style="background: #7090b5;"></div>
+                            <div class="color-segment" style="background: #0F3A65;"></div>
+                            <div class="color-segment" style="background: #092238;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Specialized Use:</strong> Government reports, academic publications, policy analysis, 
+                            Ministry presentations, white papers, serious analytical work
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="theme-header sophisticated-unique">
+                        <div class="theme-name">Sophisticated Unique</div>
+                        <div class="theme-combo">Avenir + Cadet Blue</div>
+                        <div class="theme-personality">Distinctive • Elegant • Memorable</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f6fafa;"></div>
+                            <div class="color-segment" style="background: #d9efef;"></div>
+                            <div class="color-segment" style="background: #96ced1;"></div>
+                            <div class="color-segment" style="background: #5F9EA0;"></div>
+                            <div class="color-segment" style="background: #2c4e50;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Specialized Use:</strong> International clients, environmental reports, 
+                            premium proposals, World Bank presentations, differentiated positioning
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="theme-header institutional-oxford">
+                        <div class="theme-name">Institutional Oxford</div>
+                        <div class="theme-combo">Helvetica Neue + Oxford Blue</div>
+                        <div class="theme-personality">Classic • Institutional • Trusted</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f3f6fa;"></div>
+                            <div class="color-segment" style="background: #d1deee;"></div>
+                            <div class="color-segment" style="background: #659cc4;"></div>
+                            <div class="color-segment" style="background: #1E5F9F;"></div>
+                            <div class="color-segment" style="background: #0e2b47;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Specialized Use:</strong> Banking reports, financial institutions, 
+                            regulatory compliance, traditional corporate environments, formal submissions
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="theme-header professional-deep">
+                        <div class="theme-name">Professional Deep</div>
+                        <div class="theme-combo">Helvetica Neue + Deep Ocean</div>
+                        <div class="theme-personality">Serious • Professional • Universal</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f2f4f7;"></div>
+                            <div class="color-segment" style="background: #ced8e3;"></div>
+                            <div class="color-segment" style="background: #7090b5;"></div>
+                            <div class="color-segment" style="background: #0F3A65;"></div>
+                            <div class="color-segment" style="background: #071a29;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Specialized Use:</strong> Crisis analysis, technical documentation, 
+                            data-heavy reports, professional conferences, serious economic conditions
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="theme-header premium-steel">
+                        <div class="theme-name">Premium Steel</div>
+                        <div class="theme-combo">Avenir + Steel Blue</div>
+                        <div class="theme-personality">Refined • Sophisticated • Balanced</div>
+                    </div>
+                    <div class="theme-content">
+                        <div class="color-preview">
+                            <div class="color-segment" style="background: #f4f7fa;"></div>
+                            <div class="color-segment" style="background: #cddde9;"></div>
+                            <div class="color-segment" style="background: #7da9c4;"></div>
+                            <div class="color-segment" style="background: #4682B4;"></div>
+                            <div class="color-segment" style="background: #193664;"></div>
+                        </div>
+                        <div class="use-cases">
+                            <strong>Specialized Use:</strong> Executive presentations, investor materials, 
+                            M&A documentation, premium client onboarding, high-stakes proposals
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography System -->
+        <div class="section">
+            <h2 class="section-title">✍️ Typography System</h2>
+            
+            <div class="typography-section">
+                <div class="font-display">
+                    <div class="font-sample" style="font-family: 'Avenir', sans-serif; font-size: 2.5rem; font-weight: 300; color: #2C6BB3;">
+                        Brazilian Urban Economics Analysis
+                    </div>
+                    <div class="font-spec">Avenir Light, 40px, #2C6BB3 - Primary Headlines</div>
+                </div>
+                
+                <div class="font-display">
+                    <div class="font-sample" style="font-family: 'Avenir', sans-serif; font-size: 1.8rem; font-weight: 400; color: #2c3e50;">
+                        Regional Development Indicators Q4 2024
+                    </div>
+                    <div class="font-spec">Avenir Regular, 28px, #2c3e50 - Section Headers</div>
+                </div>
+                
+                <div class="font-display">
+                    <div class="font-sample" style="font-family: 'Avenir', sans-serif; font-size: 1.3rem; font-weight: 500; color: #2C6BB3;">
+                        Housing Price Index by Metropolitan Area
+                    </div>
+                    <div class="font-spec">Avenir Medium, 20px, #2C6BB3 - Chart Titles</div>
+                </div>
+                
+                <div class="font-display">
+                    <div class="font-sample" style="font-family: 'Avenir', sans-serif; font-size: 1rem; color: #2c3e50;">
+                        EKIO's analysis reveals significant trends in Brazilian urban development patterns, highlighting the intersection of economic growth and infrastructure investment across major metropolitan areas.
+                    </div>
+                    <div class="font-spec">Avenir Regular, 16px, #2c3e50 - Body Text</div>
+                </div>
+                
+                <div class="font-display">
+                    <div class="font-sample" style="font-family: 'Avenir', sans-serif; font-size: 0.9rem; color: #7f8c8d;">
+                        Source: IBGE, Municipal Urban Development Database (2024) | EKIO Analytics
+                    </div>
+                    <div class="font-spec">Avenir Regular, 14px, #7f8c8d - Sources & Captions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brazilian Map Visualization -->
+        <div class="section">
+            <h2 class="section-title">🗺️ Brazilian Data Visualization Example</h2>
+            
+            <div class="Brazilian-map-demo">
+                <h3 style="color: #2C6BB3; margin-bottom: 1rem;">Regional GDP Index by State</h3>
+                <p style="color: #7f8c8d; margin-bottom: 2rem;">EKIO Sapphire Blue Sequential Scale Applied to Brazilian States</p>
+                
+                <div class="state-grid">
+                    <div class="state-shape" style="background: #f4f7fb; color: #2c3e50;">AC</div>
+                    <div class="state-shape" style="background: #e3ecf5; color: #2c3e50;">RO</div>
+                    <div class="state-shape" style="background: #d2e1ef; color: #2c3e50;">AM</div>
+                    <div class="state-shape" style="background: #a0bfdb;">RR</div>
+                    <div class="state-shape" style="background: #6d9dc7;">PA</div>
+                    <div class="state-shape" style="background: #2C6BB3;">AP</div>
+                    
+                    <div class="state-shape" style="background: #e3ecf5; color: #2c3e50;">MT</div>
+                    <div class="state-shape" style="background: #d2e1ef; color: #2c3e50;">TO</div>
+                    <div class="state-shape" style="background: #a0bfdb;">MA</div>
+                    <div class="state-shape" style="background: #6d9dc7;">PI</div>
+                    <div class="state-shape" style="background: #2C6BB3;">CE</div>
+                    <div class="state-shape" style="background: #265c9a;">RN</div>
+                    
+                    <div class="state-shape" style="background: #f4f7fb; color: #2c3e50;">MS</div>
+                    <div class="state-shape" style="background: #d2e1ef; color: #2c3e50;">GO</div>
+                    <div class="state-shape" style="background: #2C6BB3;">DF</div>
+                    <div class="state-shape" style="background: #a0bfdb;">BA</div>
+                    <div class="state-shape" style="background: #6d9dc7;">PB</div>
+                    <div class="state-shape" style="background: #265c9a;">PE</div>
+                    
+                    <div class="state-shape" style="background: #e3ecf5; color: #2c3e50;">PR</div>
+                    <div class="state-shape" style="background: #6d9dc7;">MG</div>
+                    <div class="state-shape" style="background: #a0bfdb;">ES</div>
+                    <div class="state-shape" style="background: #2C6BB3;">RJ</div>
+                    <div class="state-shape" style="background: #204d81;">SP</div>
+                    <div class="state-shape" style="background: #265c9a;">AL</div>
+                    
+                    <div class="state-shape" style="background: #d2e1ef; color: #2c3e50;">SC</div>
+                    <div class="state-shape" style="background: #a0bfdb;">RS</div>
+                    <div class="state-shape" style="background: #f4f7fb; color: #2c3e50;"></div>
+                    <div class="state-shape" style="background: #f4f7fb; color: #2c3e50;"></div>
+                    <div class="state-shape" style="background: #f4f7fb; color: #2c3e50;"></div>
+                    <div class="state-shape" style="background: #6d9dc7;">SE</div>
+                </div>
+                
+                <div style="margin-top: 2rem; font-size: 0.8rem; color: #7f8c8d;">
+                    Source: IBGE Regional Accounts (2024) | EKIO Analytics
+                </div>
+            </div>
+        </div>
+
+        <!-- R Implementation -->
+        <div class="code-section">
+            <div class="code-title">💻 Complete R/ggplot2 Implementation</div>
+            
+            <div class="code-block">
+<span class="code-comment"># EKIO Complete Six-Theme System for R/ggplot2</span>
+<span class="code-function">library</span>(ggplot2)
+<span class="code-function">library</span>(scales)
+<span class="code-function">library</span>(extrafont)
+
+<span class="code-comment"># ==== EKIO MODERN PREMIUM (PRIMARY THEME) ====</span>
+<span class="code-function">ekio_modern_premium</span> <- <span class="code-function">list</span>(
+  colors = <span class="code-function">c</span>(<span class="code-string">"#f4f7fb"</span>, <span class="code-string">"#e3ecf5"</span>, <span class="code-string">"#d2e1ef"</span>, <span class="code-string">"#a0bfdb"</span>, 
+              <span class="code-string">"#6d9dc7"</span>, <span class="code-string">"#2C6BB3"</span>, <span class="code-string">"#265c9a"</span>, <span class="code-string">"#204d81"</span>, <span class="code-string">"#1a3e68"</span>),
+  primary = <span class="code-string">"#2C6BB3"</span>,
+  font = <span class="code-string">"Avenir"</span>,
+  categorical = <span class="code-function">c</span>(<span class="code-string">"#2C6BB3"</span>, <span class="code-string">"#1abc9c"</span>, <span class="code-string">"#f39c12"</span>, <span class="code-string">"#e74c3c"</span>, <span class="code-string">"#9b59b6"</span>)
+)
+
+<span class="code-comment"># ==== UNIVERSAL THEME FUNCTION ====</span>
+<span class="code-function">theme_ekio</span> <- <span class="code-function">function</span>(style = <span class="code-string">"modern_premium"</span>, base_size = <span class="code-number">12</span>) {
+  
+  <span class="code-comment"># Theme configurations</span>
+  themes <- <span class="code-function">list</span>(
+    <span class="code-string">"modern_premium"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#2C6BB3"</span>, font = <span class="code-string">"Avenir"</span>, 
+                             colors = <span class="code-function">c</span>(<span class="code-string">"#f4f7fb"</span>, <span class="code-string">"#e3ecf5"</span>, <span class="code-string">"#2C6BB3"</span>)),
+    <span class="code-string">"academic_authority"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#0F3A65"</span>, font = <span class="code-string">"Lato"</span>, 
+                               colors = <span class="code-function">c</span>(<span class="code-string">"#f2f4f7"</span>, <span class="code-string">"#e0e6ed"</span>, <span class="code-string">"#0F3A65"</span>)),
+    <span class="code-string">"sophisticated_unique"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#5F9EA0"</span>, font = <span class="code-string">"Avenir"</span>, 
+                                  colors = <span class="code-function">c</span>(<span class="code-string">"#f6fafa"</span>, <span class="code-string">"#e8f4f4"</span>, <span class="code-string">"#5F9EA0"</span>)),
+    <span class="code-string">"institutional_oxford"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#1E5F9F"</span>, font = <span class="code-string">"Helvetica Neue"</span>, 
+                                 colors = <span class="code-function">c</span>(<span class="code-string">"#f3f6fa"</span>, <span class="code-string">"#e2eaf4"</span>, <span class="code-string">"#1E5F9F"</span>)),
+    <span class="code-string">"professional_deep"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#0F3A65"</span>, font = <span class="code-string">"Helvetica Neue"</span>, 
+                              colors = <span class="code-function">c</span>(<span class="code-string">"#f2f4f7"</span>, <span class="code-string">"#e0e6ed"</span>, <span class="code-string">"#0F3A65"</span>)),
+    <span class="code-string">"premium_steel"</span> = <span class="code-function">list</span>(primary = <span class="code-string">"#4682B4"</span>, font = <span class="code-string">"Avenir"</span>, 
+                         colors = <span class="code-function">c</span>(<span class="code-string">"#f4f7fa"</span>, <span class="code-string">"#e1eaf2"</span>, <span class="code-string">"#4682B4"</span>))
+  )
+  
+  theme_config <- themes[[style]] %||% themes$modern_premium
+  
+  <span class="code-function">theme_minimal</span>(base_size = base_size, base_family = theme_config$font) +
+  <span class="code-function">theme</span>(
+    text = <span class="code-function">element_text</span>(family = theme_config$font, color = <span class="code-string">"#2c3e50"</span>),
+    plot.title = <span class="code-function">element_text</span>(size = base_size * <span class="code-number">1.6</span>, color = theme_config$primary, 
+                           margin = <span class="code-function">margin</span>(b = <span class="code-number">20</span>)),
+    plot.subtitle = <span class="code-function">element_text</span>(size = base_size * <span class="code-number">1.1</span>, color = <span class="code-string">"#7f8c8d"</span>, 
+                             margin = <span class="code-function">margin</span>(b = <span class="code-number">25</span>)),
+    plot.caption = <span class="code-function">element_text</span>(size = base_size * <span class="code-number">0.8</span>, color = <span class="code-string">"#7f8c8d"</span>, 
+                            hjust = <span class="code-number">0</span>, margin = <span class="code-function">margin</span>(t = <span class="code-number">15</span>)),
+    axis.title = <span class="code-function">element_text</span>(size = base_size * <span class="code-number">0.9</span>, color = <span class="code-string">"#7f8c8d"</span>),
+    axis.text = <span class="code-function">element_text</span>(size = base_size * <span class="code-number">0.8</span>, color = <span class="code-string">"#2c3e50"</span>),
+    panel.grid.major = <span class="code-function">element_line</span>(color = theme_config$colors[<span class="code-number">2</span>], size = <span class="code-number">0.5</span>),
+    panel.grid.minor = <span class="code-function">element_blank</span>(),
+    panel.background = <span class="code-function">element_rect</span>(fill = <span class="code-string">"white"</span>, color = <span class="code-function">NA</span>),
+    legend.position = <span class="code-string">"bottom"</span>,
+    plot.margin = <span class="code-function">margin</span>(<span class="code-number">25</span>, <span class="code-number">25</span>, <span class="code-number">25</span>, <span class="code-number">25</span>)
+  )
+}
+
+<span class="code-comment"># ==== SEQUENTIAL COLOR SCALES ====</span>
+<span class="code-function">scale_fill_ekio</span> <- <span class="code-function">function</span>(style = <span class="code-string">"modern_premium"</span>, n = <span class="code-number">7</span>, ...) {
+  colors <- <span class="code-function">switch</span>(style,
+    <span class="code-string">"modern_premium"</span> = <span class="code-function">c</span>(<span class="code-string">"#f4f7fb"</span>, <span class="code-string">"#d2e1ef"</span>, <span class="code-string">"#6d9dc7"</span>, <span class="code-string">"#2C6BB3"</span>, <span class="code-string">"#204d81"</span>),
+    <span class="code-string">"academic_authority"</span> = <span class="code-function">c</span>(<span class="code-string">"#f2f4f7"</span>, <span class="code-string">"#ced8e3"</span>, <span class="code-string">"#7090b5"</span>, <span class="code-string">"#0F3A65"</span>, <span class="code-string">"#092238"</span>),
+    <span class="code-string">"sophisticated_unique"</span> = <span class="code-function">c</span>(<span class="code-string">"#f6fafa"</span>, <span class="code-string">"#d9efef"</span>, <span class="code-string">"#96ced1"</span>, <span class="code-string">"#5F9EA0"</span>, <span class="code-string">"#2c4e50"</span>),
+    <span class="code-function">c</span>(<span class="code-string">"#f4f7fb"</span>, <span class="code-string">"#d2e1ef"</span>, <span class="code-string">"#6d9dc7"</span>, <span class="code-string">"#2C6BB3"</span>, <span class="code-string">"#204d81"</span>)  <span class="code-comment"># default</span>
+  )
+  <span class="code-function">scale_fill_gradientn</span>(colors = <span class="code-function">colorRampPalette</span>(colors)(n), ...)
+}
+
+<span class="code-comment"># ==== USAGE EXAMPLES ====</span>
+
+<span class="code-comment"># Standard client presentation</span>
+client_plot <- <span class="code-function">ggplot</span>(mtcars, <span class="code-function">aes</span>(x = wt, y = mpg)) +
+  <span class="code-function">geom_point</span>(color = <span class="code-string">"#2C6BB3"</span>, size = <span class="code-number">3</span>, alpha = <span class="code-number">0.8</span>) +
+  <span class="code-function">theme_ekio</span>(<span class="code-string">"modern_premium"</span>) +
+  <span class="code-function">labs</span>(
+    title = <span class="code-string">"Brazilian Urban Vehicle Usage Analysis"</span>,
+    subtitle = <span class="code-string">"Fuel efficiency patterns across metropolitan areas"</span>,
+    x = <span class="code-string">"Vehicle Weight (tons)"</span>,
+    y = <span class="code-string">"Fuel Efficiency (km/L)"</span>,
+    caption = <span class="code-string">"Source: DETRAN Municipal Data | EKIO Analytics"</span>
+  )
+
+<span class="code-comment"># Brazilian state choropleth with EKIO styling</span>
+brazil_map <- states %>%
+  <span class="code-function">left_join</span>(economic_data, by = <span class="code-string">"code_state"</span>) %>%
+  <span class="code-function">ggplot</span>() +
+  <span class="code-function">geom_sf</span>(<span class="code-function">aes</span>(fill = gdp_index), color = <span class="code-string">"white"</span>, size = <span class="code-number">0.3</span>) +
+  <span class="code-function">scale_fill_ekio</span>(<span class="code-string">"modern_premium"</span>, <span class="code-number">7</span>) +
+  <span class="code-function">theme_ekio</span>(<span class="code-string">"modern_premium"</span>) +
+  <span class="code-function">theme</span>(
+    axis.text = <span class="code-function">element_blank</span>(),
+    axis.ticks = <span class="code-function">element_blank</span>(),
+    panel.grid = <span class="code-function">element_blank</span>()
+  ) +
+  <span class="code-function">labs</span>(
+    title = <span class="code-string">"Brazilian Regional Economic Performance"</span>,
+    subtitle = <span class="code-string">"GDP Index by state with EKIO sequential scale"</span>,
+    fill = <span class="code-string">"GDP Index"</span>,
+    caption = <span class="code-string">"Source: IBGE Regional Accounts | EKIO Analytics"</span>
+  )
+            </div>
+        </div>
+
+        <!-- Application Examples -->
+        <div class="section">
+            <h2 class="section-title">📊 Strategic Applications</h2>
+            
+            <div class="application-grid">
+                <div class="application-card">
+                    <div class="app-icon">🎯</div>
+                    <div class="app-title">Client Presentations</div>
+                    <div class="app-description">
+                        Professional PowerPoint templates with EKIO branding, optimized for urban economics presentations 
+                        to municipal governments, developers, and international organizations.
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-icon">📈</div>
+                    <div class="app-title">Data Visualizations</div>
+                    <div class="app-description">
+                        R/ggplot2 themes for Brazilian maps, economic indicators, housing market analysis, 
+                        and urban development metrics with consistent EKIO styling.
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-icon">📋</div>
+                    <div class="app-title">Research Reports</div>
+                    <div class="app-description">
+                        Word templates for white papers, policy analysis, and academic publications 
+                        with proper typography hierarchy and professional formatting.
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-icon">💻</div>
+                    <div class="app-title">Digital Presence</div>
+                    <div class="app-description">
+                        Website styling, social media templates, and digital marketing materials 
+                        that establish EKIO as Brazil's leading urban economics consultancy.
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-icon">🏛️</div>
+                    <div class="app-title">Government Work</div>
+                    <div class="app-description">
+                        Institutional themes for Ministry presentations, IPEA collaborations, 
+                        and regulatory submissions with appropriate gravitas and credibility.
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-icon">🌍</div>
+                    <div class="app-title">International Clients</div>
+                    <div class="app-description">
+                        Sophisticated themes for World Bank, IDB, and UN-Habitat projects 
+                        that position EKIO as a globally competitive consultancy.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="downloads-section">
+            <div class="downloads-title">📦 Complete EKIO Brand Kit Downloads</div>
+            <p style="opacity: 0.9; margin-bottom: 2rem;">
+                Everything you need to implement EKIO's visual identity across all platforms and applications
+            </p>
+            
+            <div class="downloads-grid">
+                <div class="download-item">
+                    <div class="download-format">Logo Package</div>
+                    <div class="download-description">SVG, PNG, PDF versions<br>All variations & sizes</div>
+                </div>
+                <div class="download-item">
+                    <div class="download-format">R Code Package</div>
+                    <div class="download-description">Complete ggplot2 themes<br>All six color systems</div>
+                </div>
+                <div class="download-item">
+                    <div class="download-format">PowerPoint Templates</div>
+                    <div class="download-description">Master slides & layouts<br>Brazilian context ready</div>
+                </div>
+                <div class="download-item">
+                    <div class="download-format">Word Templates</div>
+                    <div class="download-description">Report formatting<br>Academic & business styles</div>
+                </div>
+                <div class="download-item">
+                    <div class="download-format">Color Palettes</div>
+                    <div class="download-description">HEX, RGB, CMYK values<br>Sequential scales included</div>
+                </div>
+                <div class="download-item">
+                    <div class="download-format">Font Guidelines</div>
+                    <div class="download-description">Avenir, Lato, Helvetica<br>Usage specifications</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-section">
+            <div class="footer-logo">EKIO</div>
+            <div class="footer-text">
+                <strong>Ready to transform Brazilian urban economics analysis.</strong><br>
+                This complete brand system positions EKIO as the definitive authority in urban economics consulting, 
+                combining analytical rigor with visual sophistication. From municipal presentations to international 
+                collaborations, every touchpoint reinforces our commitment to data-driven insights and professional excellence.
+                <br><br>
+                <em>Analytical precision. Visual clarity. Brazilian expertise.</em>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

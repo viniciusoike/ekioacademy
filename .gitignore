@@ -2,7 +2,10 @@
 _site/
 _site-pt/
 .quarto/
-*.html
+# Generated HTML files (but keep include templates)
+/_site/
+/_site-pt/
+/_combined/
 
 # R
 .Rproj.user/
