@@ -65,7 +65,7 @@ website:
     center: |
       Professional R training for economists and urban planners.
     right: |
-      [Privacy Policy](privacy.qmd) | [Terms](terms.qmd)
+      [Privacy Policy](https://ekio.io/privacy) | [Terms](https://ekio.io/terms)
 
 format:
   html:
@@ -93,4 +93,4 @@ execute:
   warning: false
   message: false
   cache: true
-  freeze: auto
+  freeze: true

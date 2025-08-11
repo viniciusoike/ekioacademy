@@ -5,7 +5,7 @@ description: "Learn how to create bump plots to visualize rankings and compariso
 author: "EKIO Academy Team"
 date: "2024-01-15"
 categories: [data-visualization, ggplot2, rankings]
-image: "../../../static/images/tutorials/replication_economist_bump_plot.jpeg"
+image: "static/images/tutorials/replication_economist_bump_plot.jpeg"
 format:
   html:
     code-fold: false
@@ -21,7 +21,7 @@ library(tidyr)
 library(dplyr)
 library(ggbump)
 
-dat <- readr::read_csv("../../../static/data/tutorials/gdp_over_hours_worked_with_estimated_hours_worked.csv")
+dat <- readr::read_csv(here::here("static/data/tutorials/gdp_over_hours_worked_with_estimated_hours_worked.csv"))
 
 knitr::opts_chunk$set(
   fig.align = "center",
@@ -33,9 +33,9 @@ knitr::opts_chunk$set(
   )
 
 print_table <- function(x) {
-  
-  x |> 
-    knitr::kable(align = "c", digits = 0) |> 
+
+  x |>
+    knitr::kable(align = "c", digits = 0) |>
     kableExtra::kable_styling(
         full_width = FALSE,
         bootstrap_options = c("condensed", "hover")
@@ -60,7 +60,7 @@ In bump plots, we want to compare the value of a variable across different conte
 
 - Olympic gold medals by country over different years
 - Most popular music genres by user over time
-- Population rankings of countries across decades  
+- Population rankings of countries across decades
 - Real estate rankings across different criteria
 - Team rankings in sports leagues week by week
 - Country wealth rankings using different wealth metrics
@@ -82,7 +82,7 @@ This first example is borrowed from the package documentation and illustrates th
 year <- rep(2019:2021, 4)
 position <- c(4, 2, 2, 3, 1, 4, 2, 3, 1, 1, 4, 3)
 player <- c("A", "A", "A",
-            "B", "B", "B", 
+            "B", "B", "B",
             "C", "C", "C",
             "D", "D", "D")
 
@@ -111,24 +111,24 @@ I'll remove 2015 since it's incomplete in the sample. Since there are over forty
 
 ```{r}
 # Find top-15 cities with highest sales in 2014
-top_cities <- txhousing |> 
+top_cities <- txhousing |>
   # Select only 2014
-  filter(year == 2014) |> 
+  filter(year == 2014) |>
   # Calculate total sales in each city
-  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |> 
+  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |>
   # Select top-15
-  slice_max(total, n = 15) |> 
+  slice_max(total, n = 15) |>
   pull(city)
 
 # Calculate annual sales totals for the city subset and create annual ranking
-rank_housing <- txhousing |> 
+rank_housing <- txhousing |>
   # Select only cities in the subset
-  filter(city %in% top_cities, year > 2005, year < 2015) |> 
+  filter(city %in% top_cities, year > 2005, year < 2015) |>
   # Calculate total sales each year
   summarise(
     listing_year = sum(listings, na.rm = TRUE),
     .by = c("city", "year")
-    ) |> 
+    ) |>
   # Rank cities within each year
   mutate(rank = rank(-listing_year, "first"), .by = "year")
 ```
@@ -166,7 +166,7 @@ Even with city names, there are many lines to follow. Let's highlight just a few
 ```{r}
 sel_cities <- c("Bay Area", "El Paso", "Corpus Christi", "Tyler")
 
-rank_housing <- rank_housing |> 
+rank_housing <- rank_housing |>
   mutate(
     highlight = if_else(city %in% sel_cities, city, ""),
     is_highlight = factor(if_else(city %in% sel_cities, 1L, 0L))
@@ -192,7 +192,7 @@ ggplot() +
     linewidth = 2,
     smooth = 8
   ) +
-  # Points 
+  # Points
   geom_point(
     data = rank_housing,
     aes(year, rank, color = highlight),
@@ -240,7 +240,7 @@ The chart shows a ranking of the world's richest countries according to three me
 2. **GDP per capita in PPP** (purchasing power parity) - adjusted for cost of living
 3. **GDP per capita in PPP adjusted for hours worked** - shows how productive countries are per hour
 
-![Original chart from The Economist](../../../static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
+![Original chart from The Economist](static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
 
 Note how this measure considerably elevates European countries like Belgium, Germany, Austria, and Denmark, while lowering some countries like the USA and Singapore.
 
@@ -264,24 +264,24 @@ countries_sel <- c("Norway", "Belgium", "Austria", "United States", "Germany")
 
 measures <- c("gdp_over_pop", "gdp_ppp_over_pop", "gdp_ppp_over_k_hours_worked")
 
-sub <- dat |> 
-  select(country, year, all_of(measures)) |> 
+sub <- dat |>
+  select(country, year, all_of(measures)) |>
   na.omit()
 ```
 
 The essential transformation is converting data to tidy format and ranking observations within each GDP metric:
 
 ```{r}
-ranking <- sub |> 
-  filter(year == max(year)) |> 
-  pivot_longer(cols = -c(country, year), names_to = "measure") |> 
+ranking <- sub |>
+  filter(year == max(year)) |>
+  pivot_longer(cols = -c(country, year), names_to = "measure") |>
   mutate(rank = rank(-value), .by = "measure")
 ```
 
 Now I'll create auxiliary variables useful for mapping different aesthetic elements:
 
 ```{r}
-ranking <- ranking |> 
+ranking <- ranking |>
   mutate(
     highlight = if_else(country %in% countries_sel, country, ""),
     highlight = factor(highlight, levels = c(countries_sel, "")),
@@ -307,7 +307,7 @@ df_gdp <- tibble(
   position = -1.2
 )
 
-df_gdp <- df_gdp |> 
+df_gdp <- df_gdp |>
   mutate(
     measure = factor(measure, levels = measures),
     measure_label = stringr::str_wrap(measure_label, width = 12),

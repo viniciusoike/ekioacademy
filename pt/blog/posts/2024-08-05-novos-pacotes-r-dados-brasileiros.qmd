@@ -10,9 +10,6 @@ format:
   html:
     code-fold: false
     toc: true
-execute:
-  eval: false
-  echo: true
 ---
 
 ## Introdução

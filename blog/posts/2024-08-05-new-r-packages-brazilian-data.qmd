@@ -10,9 +10,6 @@ format:
   html:
     code-fold: false
     toc: true
-execute:
-  eval: false
-  echo: true
 ---
 
 ## Introduction
@@ -171,7 +168,7 @@ library(GetBCBData)
 library(scales)
 
 # Set EKIO theme
-source("../../assets/r/ekio-themes.R")
+source(here::here("assets/r/ekio-themes.R"))
 theme_set(theme_ekio("modern_premium"))
 
 # 1. Get municipal GDP data from SIDRA
