@@ -1,0 +1,10 @@
+---
+title: "Brazilian Data Guide"
+subtitle: "Complete Reference for Economic Data Sources"
+---
+
+# The Complete Brazilian Data Guide
+
+Comprehensive reference for accessing and working with Brazilian economic and social data.
+
+*Book details coming soon.*

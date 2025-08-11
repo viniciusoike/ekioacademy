@@ -10,7 +10,7 @@ listing:
   sort-ui: true
   filter-ui: true
   include:
-    categories: "r-programming"
+    categories: ["r-programming"]
 ---
 
 ## R Programming Posts

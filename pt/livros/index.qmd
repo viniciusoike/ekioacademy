@@ -1,0 +1,11 @@
+---
+title: "Livros"
+subtitle: "Recursos para Análise Econômica"
+lang: pt
+---
+
+# Biblioteca de Recursos
+
+Guias completos para análise de dados econômicos brasileiros.
+
+*Conteúdo em desenvolvimento.*

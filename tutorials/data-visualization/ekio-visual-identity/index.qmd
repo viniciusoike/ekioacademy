@@ -46,7 +46,7 @@ library(tidyverse)
 library(scales)
 
 # Load EKIO theme system
-source("../../../assets/r/ekio-themes.R")
+source(here::here("assets/r/ekio-themes.R"))
 
 # Set global theme for this session
 theme_set(theme_ekio())
@@ -117,14 +117,22 @@ For categorical data, use EKIO's categorical color palette:
 sector_data <- expand_grid(
   year = 2020:2024,
   sector = c("Agriculture", "Industry", "Services")
-) |>
-  mutate(
-    employment_growth = case_when(
-      sector == "Agriculture" ~ c(2.1, -1.2, 3.4, 1.8, 2.3),
-      sector == "Industry" ~ c(-8.7, 4.5, 2.1, 3.2, 1.9),
-      sector == "Services" ~ c(-7.8, 8.2, 4.1, 2.8, 3.1)
-    )
-  )
+)
+
+tbl_growth <- tibble(
+  year = 2020:2024,
+  Agriculture = c(2.1, -1.2, 3.4, 1.8, 2.3),
+  Industry = c(-8.7, 4.5, 2.1, 3.2, 1.9),
+  Services = c(-7.8, 8.2, 4.1, 2.8, 3.1)
+)
+
+tbl_growth <- tbl_growth |>
+  tidyr::pivot_longer(
+    cols = -year,
+    names_to = "sector",
+    values_to = "employment_growth")
+
+sector_data <- left_join(sector_data, tbl_growth, by = c("year", "sector"))
 
 # Create professional multi-series chart
 sector_chart <- sector_data |>
@@ -201,7 +209,7 @@ states_chart <- states_demo |>
     title = "Brazilian States Economic Performance Index",
     subtitle = "Relative economic development indicators by state",
     x = "GDP Index",
-    y = "State", 
+    y = "State",
     caption = "Source: IBGE Regional Accounts | EKIO Analytics"
   ) +
   theme_ekio("academy_primary")
@@ -242,7 +250,7 @@ To maintain quality across different formats:
 ggsave("gdp_chart_presentation.png", gdp_chart,
        width = 12, height = 8, dpi = 300, bg = "white")
 
-# Export settings for reports  
+# Export settings for reports
 ggsave("sector_chart_report.pdf", sector_chart,
        width = 10, height = 6, device = "pdf")
 

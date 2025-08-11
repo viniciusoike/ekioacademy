@@ -1,0 +1,10 @@
+---
+title: "Econometrics Cookbook"
+subtitle: "Practical Recipes for Economic Analysis"
+---
+
+# The Econometrics Cookbook
+
+Step-by-step recipes for econometric analysis with R and Brazilian data.
+
+*Book details coming soon.*

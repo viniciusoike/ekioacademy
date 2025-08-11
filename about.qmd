@@ -1,0 +1,53 @@
+---
+title: "About EKIO Academy"
+description: "Learn about our mission to make Brazilian economic data accessible through R programming education"
+format:
+  html:
+    toc: true
+---
+
+## Our Mission
+
+EKIO Academy is a bilingual educational platform dedicated to making Brazilian economic data analysis accessible through R programming. We bridge the gap between complex economic datasets and practical data science skills, empowering economists, urban planners, and data analysts to unlock insights from Brazil's rich information landscape.
+
+## What We Offer
+
+### Comprehensive R Training
+From basic programming concepts to advanced econometric modeling, our tutorials cover the complete spectrum of R skills needed for economic analysis.
+
+### Brazilian Data Expertise  
+We specialize in working with major Brazilian data sources including IBGE (Census), Banco Central (BCB), IPEA, FINBRA, and geographic data through the geobr package.
+
+### Professional Resources
+Our platform includes books, courses, and consulting frameworks developed through years of experience in Brazilian urban economics research.
+
+### Bilingual Support
+All content is available in both English and Portuguese, making advanced data analysis techniques accessible to the broader Brazilian academic and professional community.
+
+## About EKIO Analytics
+
+EKIO Academy is part of [EKIO Analytics](https://ekio.io), a specialized consultancy in Brazilian urban economics analysis. Our team combines academic rigor with practical industry experience to deliver insights that drive policy and business decisions.
+
+### Our Expertise
+- Urban and regional economics
+- Housing market analysis  
+- Demographic and migration studies
+- Municipal finance and policy evaluation
+- Data visualization and interactive dashboards
+
+## Our Approach
+
+We believe in learning by doing. Our tutorials use real Brazilian economic data and address practical challenges faced by researchers and analysts. Every lesson includes:
+
+- Executable R code with real datasets
+- Professional visualization techniques
+- Best practices for reproducible research
+- Integration with Brazilian institutional data sources
+
+## Get Started
+
+Ready to master R for Brazilian economic analysis? Explore our [tutorials](tutorials/index.qmd), browse our [resource library](books/index.qmd), or enroll in our [professional courses](courses/index.qmd).
+
+---
+
+*Have questions? [Contact us](contact.qmd) or connect with us on [LinkedIn](https://linkedin.com/company/ekio-analytics).*

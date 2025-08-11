@@ -9,12 +9,12 @@ profiles:
   default:
     output-dir: _site
     website:
-      site-url: "https://academy.ekio.com.br"
+      site-url: "https://academy.ekio.io"
       
   portuguese:
     output-dir: _site-pt  
     website:
-      site-url: "https://academy.ekio.com.br/pt"
+      site-url: "https://academy.ekio.io/pt"
 
 website:
   title: "EKIO Academy"
@@ -61,7 +61,7 @@ website:
     background: "#2c3e50"
     foreground: white
     left: |
-      © 2024 EKIO Academy. Part of [EKIO Analytics](https://ekio.com.br).
+      © 2024 EKIO Academy. Part of [EKIO Analytics](https://ekio.io).
     center: |
       Professional R training for economists and urban planners.
     right: |

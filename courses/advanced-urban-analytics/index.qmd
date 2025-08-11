@@ -1,0 +1,10 @@
+---
+title: "Advanced Urban Analytics"
+subtitle: "Spatial Analysis and Urban Economics"
+---
+
+# Advanced Urban Analytics
+
+Specialized course in urban data analysis, spatial econometrics, and Brazilian city analysis.
+
+*Course details coming soon.*

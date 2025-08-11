@@ -1,0 +1,18 @@
+---
+title: "Brazilian Data Sources"
+subtitle: "Accessing IBGE, BCB, IPEA and Other Official Data"
+---
+
+# Working with Brazilian Economic Data
+
+Learn to access and analyze data from Brazil's major statistical and economic institutions.
+
+## Data Sources Covered
+
+- IBGE (Census and surveys)
+- Banco Central (BCB)
+- IPEA databases
+- FINBRA municipal data
+- Geographic data with geobr
+
+*This tutorial is currently being developed.*

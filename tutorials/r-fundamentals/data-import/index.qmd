@@ -1,0 +1,17 @@
+---
+title: "Data Import in R"
+subtitle: "Reading Files and Connecting to Databases"
+---
+
+# Data Import Techniques
+
+Master the essential skills for importing data from various sources into R.
+
+## Topics Covered
+
+- Reading CSV, Excel, and text files
+- Connecting to databases
+- Working with APIs
+- Data cleaning and validation
+
+*This tutorial is currently being developed.*

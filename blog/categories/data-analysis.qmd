@@ -10,7 +10,7 @@ listing:
   sort-ui: true
   filter-ui: true
   include:
-    categories: "data-analysis"
+    categories: ["data-analysis", "brazilian-data"]
 ---
 
 ## Data Analysis Posts

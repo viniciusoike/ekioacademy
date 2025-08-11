@@ -1,0 +1,11 @@
+---
+title: "Cursos"
+subtitle: "Treinamento Profissional em R"
+lang: pt
+---
+
+# Cursos Profissionais
+
+Treinamento completo em R para economistas e analistas urbanos.
+
+*Conteúdo em desenvolvimento.*

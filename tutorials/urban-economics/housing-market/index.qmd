@@ -1,0 +1,17 @@
+---
+title: "Housing Market Analysis"
+subtitle: "Urban Economics Applications"
+---
+
+# Brazilian Housing Market Analysis
+
+Analyze housing markets using urban economics principles and R.
+
+## Topics Covered
+
+- Housing price indices
+- Affordability metrics
+- Regional comparisons
+- Policy evaluation
+
+*This tutorial is currently being developed.*
