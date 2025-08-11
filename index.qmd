@@ -16,7 +16,7 @@ format:
 Master R programming, econometrics, and data visualization with practical tutorials designed specifically for economists and urban planners working with Brazilian data.
 
 ::: {style="margin-top: 2rem;"}
-[Start Learning](tutorials/index.qmd){.btn .btn-ekio .btn-lg} [Free Resources](books/index.qmd){.btn .btn-outline-light .btn-lg style="margin-left: 1rem;"}
+[Start Learning](tutorials/index.qmd){.btn .btn-ekio .btn-lg} [Research & Insights](insights/index.qmd){.btn .btn-outline-light .btn-lg style="margin-left: 1rem;"}
 :::
 :::
 :::
@@ -27,8 +27,8 @@ Master R programming, econometrics, and data visualization with practical tutori
 ::: {.row style="margin-top: 3rem;"}
 ::: {.col-md-4}
 ::: {.tutorial-card}
-### 📚 Tutorials
-Step-by-step guides covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
+### 📚 Mini Courses
+Comprehensive learning modules covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
 
 **Featured Topics:**
 - R Fundamentals for Economists  
@@ -37,7 +37,7 @@ Step-by-step guides covering everything from R basics to advanced econometric te
 - Housing Market Econometrics
 - Interactive Dashboards with Shiny
 
-[Explore Tutorials →](tutorials/index.qmd){.btn .btn-ekio}
+[Explore Mini Courses →](tutorials/index.qmd){.btn .btn-ekio}
 :::
 :::
 
@@ -101,17 +101,17 @@ Our tutorials teach you to access, clean, and analyze data from Brazil's key eco
 
 ::: {.row style="margin: 4rem 0;"}
 ::: {.col-md-8}
-## 📝 Latest Blog Posts
+## 📊 Research & Insights
 
-Stay updated with the latest insights on Brazilian economics, advanced R techniques, and professional consulting methodologies:
+Stay updated with data-driven analysis of Brazilian economics, urban development, and evidence-based policy recommendations:
 
-- **[Analyzing Brazilian Housing Market Trends with R](blog/posts/2024-08-10-brazilian-housing-market-analysis.qmd)** - Using FipeZap data for regional price dynamics analysis
-- **[New R Packages for Brazilian Economic Data in 2024](blog/posts/2024-08-05-new-r-packages-brazilian-data.qmd)** - Latest tools for IBGE, BCB, and IPEA databases
+- **[Brazil's Housing Affordability Crisis: A Data-Driven Analysis](insights/posts/brazil-housing-crisis.qmd)** - Comprehensive examination of price trends and policy solutions
+- **[Municipal Service Efficiency Benchmarking Study](insights/posts/municipal-efficiency.qmd)** - Performance analysis across 5,570 Brazilian municipalities
 
 :::
 
 ::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Read All Posts →](blog/index.qmd){.btn .btn-ekio .btn-lg}
+[View All Research →](insights/index.qmd){.btn .btn-ekio .btn-lg}
 :::
 :::
 

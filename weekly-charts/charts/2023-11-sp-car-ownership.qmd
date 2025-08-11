@@ -1,0 +1,37 @@
+---
+title: "São Paulo's Car Ownership Divide"
+description: "Wealthy neighborhoods own 4x more cars per household than peripheral areas, while the historic center mirrors low-income patterns"
+date: "2023-11-17"
+image: "../../assets/images/weekly-charts/sp-car-ownership-map.png"
+categories: ["transportation", "urban-economics", "sao-paulo"]
+format:
+  html:
+    page-layout: article
+---
+
+![Car Ownership Rates Across São Paulo](../../assets/images/weekly-charts/sp-car-ownership-map.png){fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones. Wealthy central neighborhoods like Pacaembu and Jardim Europa show dark green (1.4-1.6 cars/household) while peripheral areas show light colors (0.2-0.4 cars/household). The historic downtown also shows surprisingly low ownership rates."}
+
+## Key Insights
+
+**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+
+**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo  
+
+**4x** - Difference between highest and lowest car ownership areas
+
+## The Surprising Pattern
+
+São Paulo's car ownership reveals an expected wealth gradient - but with a twist. While peripheral low-income areas predictably have low car ownership, **the historic downtown also mirrors these patterns** despite its central location.
+
+This suggests that:
+- **Urban density** and transit access can substitute for private vehicles
+- **Historic downtown residents** may prioritize proximity over car ownership
+- **Car-centric development** in wealthy suburbs drives higher ownership rates
+
+## Policy Implications
+
+The data supports transit-oriented development policies, showing that well-connected central areas can maintain low car dependency regardless of proximity to jobs and services.
+
+---
+
+*Data: São Paulo Metro Origin-Destination Survey 2017. Chart design: ColorBrewer PuBuGn palette.*

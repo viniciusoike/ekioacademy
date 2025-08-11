@@ -1,0 +1,37 @@
+---
+title: "Brazil's Housing Price Surge"
+description: "Real estate prices increased 127% in major cities since 2019, outpacing income growth by 85 percentage points"
+date: "2025-01-10"
+image: "../../assets/images/weekly-charts/housing-prices-2025.png"
+categories: ["housing", "urban-economics"]
+format:
+  html:
+    page-layout: article
+---
+
+![Brazil Housing Price Growth 2019-2024](../../assets/images/weekly-charts/housing-prices-2025.png){fig-alt="Chart showing housing price growth across Brazilian metropolitan areas from 2019-2024, with São Paulo leading at 142% growth, followed by Rio de Janeiro at 128%, and other major cities. A comparison line shows median income growth at only 42% over the same period."}
+
+## Key Insights
+
+**127%** - Average housing price increase in Brazil's 12 largest metropolitan areas since 2019
+
+**42%** - Median household income growth over the same period
+
+**85 pp** - Gap between housing cost and income growth, creating unprecedented affordability crisis
+
+## What This Means
+
+The dramatic divergence between housing prices and income growth represents the most severe housing affordability crisis in Brazil's modern history. This trend is:
+
+- **Concentrating wealth** among existing property owners
+- **Excluding young professionals** from homeownership
+- **Driving migration** to smaller cities with more affordable housing
+- **Creating political pressure** for expanded government housing programs
+
+## Next Week
+
+We'll examine which cities are bucking this trend and what policy interventions might help restore housing affordability.
+
+---
+
+*Data: FipeZap housing price index, IBGE household income surveys. Analysis: EKIO Academy research team.*

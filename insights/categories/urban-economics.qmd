@@ -1,0 +1,95 @@
+---
+title: "Urban Economics Research"
+subtitle: "Housing markets, transportation, and city development in Brazil"
+description: "In-depth analysis of Brazilian urban economics, covering housing affordability, transportation systems, municipal finance, and urban development patterns."
+listing:
+  contents: "../posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: ["urban-economics"]
+format:
+  html:
+    page-layout: full
+---
+
+# Urban Economics Research
+
+Brazil's rapid urbanization presents unique challenges and opportunities. Our research examines the economic dynamics shaping Brazilian cities.
+
+## Key Research Areas
+
+### 🏠 Housing Markets
+- Affordability crisis in major metropolitan areas
+- Government housing program effectiveness
+- Regional price variation analysis
+- Impact of financial regulation on homeownership
+
+### 🚇 Transportation Economics
+- Public transit investment returns
+- Congestion costs and productivity impacts
+- Modal choice and urban mobility
+- Transportation equity across income levels
+
+### 🏛️ Municipal Finance
+- Property tax efficiency and collection
+- Inter-governmental transfers
+- Municipal debt sustainability
+- Public service delivery costs
+
+### 📈 Urban Development Patterns
+- Spatial growth models and predictions
+- Gentrification and displacement patterns
+- Mixed-use development economic impacts
+- Urban sprawl costs and benefits
+
+## Featured Research
+
+### Recent Publications
+- **Brazil's Housing Affordability Crisis: A Comprehensive Analysis** (Jan 2025)
+- **Municipal Service Efficiency Benchmarking Study** (Dec 2024)  
+- **São Paulo Metro Expansion: Economic Impact Assessment** (Nov 2024)
+- **Regional Housing Policy Effectiveness Review** (Oct 2024)
+
+### Ongoing Projects
+- National Urban Development Index (2025)
+- Brazilian Metropolitan Area Competitiveness Study
+- Housing Policy Impact Evaluation Framework
+- Urban Climate Adaptation Economic Analysis
+
+## Methodology
+
+Our urban economics research employs:
+
+- **Spatial econometric models** for geographic analysis
+- **Hedonic pricing models** for real estate valuation
+- **Cost-benefit analysis** for policy evaluation
+- **Machine learning** for pattern recognition in urban data
+- **Microsimulation models** for policy scenario analysis
+
+## Data Sources
+
+We integrate data from multiple Brazilian institutions:
+
+- **IBGE**: Census, municipal statistics, geographic boundaries
+- **IPEA**: Urban development indicators
+- **Municipal governments**: Budget, service delivery, planning data
+- **Private sector**: Real estate prices, mobility patterns
+- **Satellite imagery**: Urban growth monitoring
+
+## Research Impact
+
+Our urban economics research informs:
+
+- Municipal government policy decisions
+- Private sector investment strategies  
+- Academic research and teaching
+- International development programs
+- Urban planning best practices
+
+---
+
+*Interested in collaborating on urban economics research? [Contact our research team](../../contact.qmd).*

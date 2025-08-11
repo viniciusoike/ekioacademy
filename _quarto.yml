@@ -31,14 +31,16 @@ website:
     foreground: white
     collapse: true
     left:
-      - text: "Tutorials"
+      - text: "Mini Courses"
         href: tutorials/index.qmd
       - text: "Books" 
         href: books/index.qmd
       - text: "Courses"
         href: courses/index.qmd
-      - text: "Blog"
-        href: blog/index.qmd
+      - text: "Research & Insights"
+        href: insights/index.qmd
+      - text: "Weekly Charts"
+        href: weekly-charts/index.qmd
       - text: "About"
         href: about.qmd
     right:

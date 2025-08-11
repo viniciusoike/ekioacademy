@@ -1,10 +1,10 @@
 ---
-title: "Tutorials"
-subtitle: "Step-by-step R guides for economists"
+title: "Mini Courses"
+subtitle: "Comprehensive R learning modules for economists"
 lang: en
 ---
 
-Welcome to EKIO Academy's comprehensive tutorial collection. Each tutorial includes practical examples using real Brazilian economic data and follows professional consulting methodologies.
+Welcome to EKIO Academy's comprehensive mini-course collection. Each mini-course is designed as a complete learning module with practical examples using real Brazilian economic data and professional consulting methodologies.
 
 ## 🔰 R Fundamentals
 
