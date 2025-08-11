@@ -1,0 +1,177 @@
+---
+title: "Professional Data Consulting Program"
+subtitle: "Transform Your Skills into a Thriving Consulting Practice"
+description: "Learn how to build and scale a successful data consulting business specializing in economic analysis and urban research."
+---
+
+# Professional Data Consulting Program
+
+Turn your data science and economic analysis skills into a profitable consulting practice. Learn the business side of data science and how to build lasting client relationships.
+
+## Program Overview
+
+This intensive program combines technical skill advancement with business development, helping you launch or grow your independent consulting practice.
+
+- **Duration**: 12 weeks + 6 months mentorship
+- **Format**: Small cohorts (max 12 participants)
+- **Investment**: Premium program - contact for details
+- **Next Intake**: Limited seats available
+
+## Who This Program is For
+
+### Ideal Candidates
+- Experienced data analysts ready to go independent
+- Economists looking to expand into consulting
+- Current freelancers wanting to scale their practice
+- Corporate analysts planning a transition
+
+### Prerequisites
+- 3+ years experience in data analysis or economics
+- Proficiency in R or Python
+- Existing portfolio of analytical work
+- Entrepreneurial mindset
+
+## What You'll Learn
+
+### Technical Excellence
+- Advanced analytical techniques for client projects
+- Building robust, scalable analysis pipelines
+- Quality control and validation methods
+- Effective data visualization for executive audiences
+
+### Business Development
+- Identifying your niche and value proposition
+- Building a professional brand and online presence
+- Networking and relationship building strategies
+- Proposal writing and project scoping
+
+### Client Management
+- Discovery and needs assessment techniques
+- Managing client expectations and communications
+- Handling difficult conversations and scope creep
+- Building long-term client relationships
+
+### Pricing and Contracts
+- Value-based pricing strategies
+- Contract negotiation and terms
+- Project management and delivery
+- Scaling from freelancer to agency
+
+## Program Structure
+
+### Phase 1: Foundation (Weeks 1-4)
+- **Week 1**: Consulting mindset and market analysis
+- **Week 2**: Defining your specialty and value proposition  
+- **Week 3**: Building your professional toolkit
+- **Week 4**: Setting up your business infrastructure
+
+### Phase 2: Client Acquisition (Weeks 5-8)
+- **Week 5**: Personal branding and online presence
+- **Week 6**: Networking and lead generation
+- **Week 7**: Proposal writing and pricing
+- **Week 8**: Sales conversations and closing
+
+### Phase 3: Delivery Excellence (Weeks 9-12)
+- **Week 9**: Project management and client communication
+- **Week 10**: Advanced analytical techniques for consulting
+- **Week 11**: Presenting insights and recommendations
+- **Week 12**: Building systems for scalability
+
+### Phase 4: Mentorship (6 months)
+- Monthly one-on-one coaching sessions
+- Peer mastermind groups
+- Real project feedback and guidance
+- Business growth strategy sessions
+
+## Specialization Tracks
+
+Choose your focus area for specialized training:
+
+### Economic Policy Consulting
+- Government and NGO clients
+- Policy impact analysis
+- Regulatory research and compliance
+- Public sector procurement processes
+
+### Corporate Analytics
+- Market research and competitive analysis
+- Customer analytics and segmentation
+- Financial modeling and forecasting
+- Strategic planning support
+
+### Urban Development Consulting
+- Municipal government projects
+- Real estate and development analysis
+- Transportation and infrastructure planning
+- Smart city initiatives
+
+## Success Metrics
+
+Program graduates typically achieve:
+
+- **50-100% increase** in hourly rates within 6 months
+- **3-5 recurring clients** by program completion
+- **$10K+ monthly revenue** within first year
+- **Professional network** of 50+ industry contacts
+
+## Investment and ROI
+
+### Program Investment
+- Tuition covers all training materials and mentorship
+- Payment plans available
+- ROI guarantee: Increase income by 2x tuition cost or get additional coaching
+
+### What's Included
+- 12 weeks of intensive training
+- 6 months of mentorship
+- All templates and resources
+- Professional headshots and branding session
+- Access to client referral network
+
+## Application Process
+
+This is a selective program with limited enrollment.
+
+### Step 1: Initial Application
+Complete our [application form](apply.qmd) including:
+- Professional background and experience
+- Current income and business goals
+- Sample of your analytical work
+- Written responses to scenario questions
+
+### Step 2: Interview Process
+- 30-minute phone screening
+- Technical skills assessment
+- 1-hour final interview with program director
+
+### Step 3: Enrollment
+- Program agreement and payment
+- Pre-work assignments
+- Welcome to the cohort community
+
+## Faculty and Mentors
+
+### Lead Instructor: Vinicius Oike
+- 15+ years in data consulting
+- Former World Bank consultant
+- Built and sold successful analytics firm
+- Currently serves Fortune 500 and government clients
+
+### Guest Faculty
+- Successful independent consultants
+- Corporate procurement specialists
+- Business development experts
+- Legal and accounting professionals
+
+## Alumni Network
+
+Join a growing network of successful data consultants:
+
+- Private LinkedIn group for ongoing collaboration
+- Annual reunion and networking events
+- Referral partnership opportunities
+- Guest speaking opportunities
+
+---
+
+*Ready to build your consulting practice? [Apply now](apply.qmd) or [schedule a consultation call](../../contact.qmd) to learn if this program is right for you.*

@@ -1,0 +1,131 @@
+---
+title: "Advanced Urban Analytics - Course Preview"
+subtitle: "Explore What You'll Learn"
+description: "Preview materials and sample content from our Advanced Urban Analytics course."
+---
+
+# Course Preview: Advanced Urban Analytics
+
+Get a taste of what you'll learn in our comprehensive urban analytics program.
+
+## Sample Lesson: Mapping Brazilian Urban Growth
+
+### Overview
+In this preview lesson, you'll learn to create professional urban growth visualizations using R and Brazilian municipal data.
+
+### Learning Objectives
+- Import and process Brazilian urban boundary data
+- Calculate urban growth metrics over time
+- Create animated maps showing urban expansion
+- Generate professional reports for policy makers
+
+### Tools We'll Use
+```r
+library(sf)          # Spatial data handling
+library(dplyr)       # Data manipulation
+library(ggplot2)     # Visualization
+library(gganimate)   # Animated plots
+library(geobr)       # Brazilian geographic data
+```
+
+### Sample Visualization
+*[Interactive urban growth map would be displayed here]*
+
+## Course Modules Preview
+
+### Module 1: Foundations of Urban Data Science
+- **Preview Topic**: Introduction to spatial thinking
+- **Hands-on**: Mapping your first Brazilian city
+- **Duration**: 1 week
+
+### Module 2: Advanced Spatial Analysis
+- **Preview Topic**: Network analysis for transportation planning
+- **Hands-on**: São Paulo metro accessibility analysis  
+- **Duration**: 2 weeks
+
+### Module 3: Housing Market Analytics
+- **Preview Topic**: Predicting neighborhood gentrification
+- **Hands-on**: Rio de Janeiro housing price modeling
+- **Duration**: 2 weeks
+
+### Module 4: Environmental Urban Data
+- **Preview Topic**: Air quality and urban heat islands
+- **Hands-on**: Integrating satellite data with ground sensors
+- **Duration**: 2 weeks
+
+### Module 5: Smart City Indicators
+- **Preview Topic**: Building urban performance dashboards
+- **Hands-on**: Creating a municipal KPI system
+- **Duration**: 2 weeks
+
+### Module 6: Capstone Project
+- **Preview Topic**: Real-world urban challenge
+- **Deliverable**: Professional consulting report
+- **Duration**: 1 week
+
+## Sample Dataset: Brazilian Urban Indicators
+
+Preview the types of data you'll work with:
+
+- **Municipal boundaries** from IBGE
+- **Population census** data by census tract
+- **Transportation networks** from OpenStreetMap
+- **Economic indicators** from municipal governments
+- **Environmental data** from satellite imagery
+- **Real estate prices** from online marketplaces
+
+## Student Project Examples
+
+### Project 1: Transportation Equity Analysis
+*Analyzing bus stop accessibility across São Paulo's income levels*
+
+### Project 2: Green Space Optimization
+*Identifying optimal locations for new parks in Brasília*
+
+### Project 3: Housing Affordability Dashboard
+*Interactive tool for monitoring rental prices in Brazilian cities*
+
+## Technical Requirements
+
+### Software (All Free/Open Source)
+- R and RStudio
+- QGIS
+- Google Earth Engine account
+- GitHub account
+
+### Hardware Recommendations
+- 8GB RAM minimum (16GB preferred)
+- Stable internet connection
+- Dual monitor setup recommended
+
+## Instructor Meet & Greet
+
+### Dr. Vinicius Oike
+*Lead Urban Data Scientist*
+- 10+ years in urban analytics
+- Former World Bank consultant
+- Author of 'Urban Data Science in Brazil'
+
+### Prof. Maria Santos
+*Transportation Planning Expert*
+- PhD in Urban Planning, USP
+- 15 years municipal government experience
+- Smart mobility consultant
+
+## Next Steps
+
+Ready to dive deeper? 
+
+1. **[Enroll Now](enroll.qmd)** - Join the next cohort
+2. **Schedule a Call** - Discuss your specific learning goals
+3. **Download Sample Data** - Start exploring on your own
+
+### Free Resources to Get Started
+
+- [Brazilian Urban Data Toolkit](../../../tutorials/r-fundamentals/brazilian-data/index.qmd)
+- [Introduction to Spatial Analysis](../../../tutorials/data-visualization/choropleth-maps/index.qmd)
+- [EKIO Urban Analytics Blog](../../../blog/index.qmd)
+
+---
+
+*Questions about the program? Contact us at [academy@ekio.io](mailto:academy@ekio.io) or [schedule a consultation](../../../contact.qmd).*

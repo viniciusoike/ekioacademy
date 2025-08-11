@@ -1,0 +1,47 @@
+---
+title: "Dados Brasileiros"
+subtitle: "Explorando o Rico Ecossistema de Dados do Brasil"
+description: "Artigos sobre trabalho com datasets brasileiros, fontes de dados governamentais e indicadores econômicos do IBGE, BCB, IPEA e outras instituições."
+listing:
+  contents: "../posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: ["dados-brasileiros"]
+format:
+  html:
+    page-layout: full
+lang: pt
+---
+
+# Dados Brasileiros
+
+O Brasil possui um dos sistemas estatísticos mais abrangentes do mundo. Nossos artigos nesta categoria exploram como acessar, analisar e visualizar dados das principais instituições brasileiras.
+
+## Fontes de Dados em Destaque
+
+### Instituições Governamentais
+- **IBGE** - Instituto Brasileiro de Geografia e Estatística
+- **BCB** - Banco Central do Brasil
+- **IPEA** - Instituto de Pesquisa Econômica Aplicada  
+- **SIDRA** - Sistema IBGE de Recuperação Automática
+
+### Dados Regionais e Municipais
+- Fundações estaduais de estatística
+- APIs municipais e portais de dados abertos
+- Órgãos de desenvolvimento regional
+
+## Tópicos Populares
+
+- Configuração de pacotes R para dados brasileiros (sidrar, GetBCBData, geobr)
+- Trabalhando com divisões geográficas e administrativas brasileiras
+- Análise de indicadores econômicos e séries temporais
+- Exploração de dados censitários e de pesquisas
+- Indicadores de desenvolvimento municipal
+
+---
+
+*Novo em fontes de dados brasileiros? Comece com nosso tutorial [Guia de Dados Brasileiros](../../../tutoriais/fundamentos-r/dados-brasileiros/index.qmd).*

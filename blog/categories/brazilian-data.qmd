@@ -1,0 +1,46 @@
+---
+title: "Brazilian Data"
+subtitle: "Insights from Brazil's Rich Data Ecosystem"
+description: "Articles about working with Brazilian datasets, government data sources, and economic indicators from IBGE, BCB, IPEA and other institutions."
+listing:
+  contents: "../posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: ["brazilian-data"]
+format:
+  html:
+    page-layout: full
+---
+
+# Brazilian Data
+
+Brazil has one of the world's most comprehensive statistical systems. Our articles in this category explore how to access, analyze, and visualize data from key Brazilian institutions.
+
+## Featured Data Sources
+
+### Government Institutions
+- **IBGE** - Brazilian Institute of Geography and Statistics
+- **BCB** - Central Bank of Brazil  
+- **IPEA** - Institute for Applied Economic Research
+- **SIDRA** - IBGE's multidimensional statistical database
+
+### Regional and Municipal Data
+- State statistical offices
+- Municipal APIs and open data portals
+- Regional development agencies
+
+## Popular Topics
+
+- Setting up R packages for Brazilian data (sidrar, GetBCBData, geobr)
+- Working with Brazilian geographic and administrative divisions
+- Economic indicators and time series analysis
+- Census and survey data exploration
+- Municipal development indicators
+
+---
+
+*New to Brazilian data sources? Start with our [Brazilian Data Guide](../../tutorials/r-fundamentals/brazilian-data/index.qmd) tutorial.*

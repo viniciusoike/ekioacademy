@@ -1,0 +1,57 @@
+---
+title: "Consulting"
+subtitle: "Building Your Data Consulting Practice"
+description: "Practical advice for data scientists and economists building consulting practices, client management, and business development."
+listing:
+  contents: "../posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: ["consulting"]
+format:
+  html:
+    page-layout: full
+---
+
+# Consulting
+
+Whether you're starting your own practice or working as an independent consultant, this collection covers the business side of data science and economic consulting.
+
+## Key Topics
+
+### Getting Started
+- Transitioning from employee to consultant
+- Setting up your consulting business
+- Building your professional brand
+- Creating a compelling portfolio
+
+### Client Management
+- Finding and attracting clients
+- Proposal writing and project scoping
+- Managing client relationships
+- Handling difficult conversations
+
+### Technical Excellence
+- Delivering high-quality analysis
+- Creating executive-ready reports
+- Building scalable analysis workflows
+- Quality control and validation
+
+### Business Growth
+- Pricing strategies and value proposition
+- Scaling your practice
+- Building a team
+- Passive income and productization
+
+## Featured Resources
+
+- [Professional Consulting Program](../../courses/professional-consulting/index.qmd)
+- [Consulting Toolkit Templates](#) *(Coming Soon)*
+- [Client Case Studies](#) *(Coming Soon)*
+
+---
+
+*Interested in building your own consulting practice? Learn more about our [Professional Data Consulting Program](../../courses/professional-consulting/index.qmd).*

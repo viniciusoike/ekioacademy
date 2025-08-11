@@ -1,0 +1,157 @@
+---
+title: "Contato"
+subtitle: "Entre em Contato Conosco"
+description: "Entre em contato com a equipe da EKIO Academy para dúvidas sobre cursos, consultoria e parcerias."
+lang: pt
+---
+
+# Contato
+
+Tem alguma dúvida sobre nossos cursos, serviços ou quer explorar uma parceria? Estamos aqui para ajudar!
+
+## Como Podemos Ajudar
+
+### 📚 Informações sobre Cursos
+- Detalhes sobre cronograma e conteúdo
+- Requisitos técnicos e pré-requisitos  
+- Opções de pagamento e financiamento
+- Descontos e bolsas disponíveis
+
+### 🏢 Treinamento Corporativo
+- Programas customizados para sua equipe
+- Treinamento in-company ou remoto
+- Consultoria em projetos de dados
+- Parcerias institucionais
+
+### 🤝 Parcerias Acadêmicas
+- Colaboração com universidades
+- Programas de estágio e pesquisa
+- Desenvolvimento de conteúdo conjunto
+- Palestras e workshops
+
+## Formas de Contato
+
+### 📧 Email Principal
+**[academy@ekio.io](mailto:academy@ekio.io)**
+
+Para agilizar o atendimento, inclua no assunto:
+- **"Curso - [Nome do Curso]"** para informações sobre cursos
+- **"Corporativo"** para treinamentos empresariais  
+- **"Parceria"** para oportunidades de colaboração
+- **"Suporte"** para questões técnicas
+
+### 💬 WhatsApp
+**[+55 11 99999-9999](https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20EKIO%20Academy)**
+
+Horário de atendimento: Segunda a sexta, 9h às 18h (horário de Brasília)
+
+### 🔗 Redes Sociais
+- **LinkedIn**: [EKIO Academy](https://linkedin.com/company/ekio-academy)
+- **Twitter**: [@EKIOAcademy](https://twitter.com/EKIOAcademy)
+- **YouTube**: [Canal EKIO Academy](https://youtube.com/@EKIOAcademy)
+
+## Formulário de Contato
+
+### Interesse em Cursos
+
+<form name="course-interest" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="course-interest" />
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="name">Nome Completo *</label><br>
+    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem;">
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="email">Email *</label><br>
+    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem;">
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="phone">Telefone/WhatsApp</label><br>
+    <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.5rem;">
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="course">Curso de Interesse</label><br>
+    <select id="course" name="course" style="width: 100%; padding: 0.5rem;">
+      <option value="">Selecione um curso</option>
+      <option value="r-completo-economistas">R Completo para Economistas</option>
+      <option value="dominio-dados-brasileiros">Domínio de Dados Brasileiros</option>
+      <option value="analise-urbana-avancada">Análise Urbana Avançada</option>
+      <option value="consultoria-profissional">Consultoria Profissional em Dados</option>
+      <option value="corporativo">Treinamento Corporativo</option>
+      <option value="outros">Outros</option>
+    </select>
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="background">Sua Formação/Área de Atuação</label><br>
+    <input type="text" id="background" name="background" placeholder="Ex: Economista, Analista de Dados, Estudante..." style="width: 100%; padding: 0.5rem;">
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="experience">Experiência com R/Análise de Dados</label><br>
+    <select id="experience" name="experience" style="width: 100%; padding: 0.5rem;">
+      <option value="iniciante">Iniciante (pouca ou nenhuma experiência)</option>
+      <option value="basico">Básico (já usei algumas vezes)</option>
+      <option value="intermediario">Intermediário (uso regularmente)</option>
+      <option value="avancado">Avançado (uso profissionalmente)</option>
+    </select>
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <label for="message">Mensagem</label><br>
+    <textarea id="message" name="message" rows="4" placeholder="Conte-nos sobre seus objetivos, dúvidas ou necessidades específicas..." style="width: 100%; padding: 0.5rem;"></textarea>
+  </div>
+  
+  <div style="margin-bottom: 1rem;">
+    <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+    <label for="newsletter">Quero receber novidades sobre cursos e conteúdos da EKIO Academy</label>
+  </div>
+  
+  <button type="submit" style="background-color: #1abc9c; color: white; padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">
+    Enviar Mensagem
+  </button>
+</form>
+
+## Localização
+
+### Sede Virtual
+Operamos 100% remotamente, atendendo todo o Brasil e países de língua portuguesa.
+
+### Endereço para Correspondência
+EKIO Academy  
+Caixa Postal: A definir  
+São Paulo - SP  
+CEP: 01000-000  
+
+## Perguntas Frequentes
+
+### Quanto tempo demora para responder?
+Respondemos emails em até 24 horas úteis. WhatsApp é mais rápido para questões simples.
+
+### Posso agendar uma conversa?
+Sim! Para interessados em cursos ou parcerias corporativas, oferecemos consultas gratuitas de 30 minutos.
+
+### Vocês atendem empresas de outros países?
+Sim, atendemos empresas do Brasil e exterior, com adaptações culturais e linguísticas.
+
+### Como posso me tornar instrutor?
+Enviamos periodicamente chamadas para instrutores especialistas. Cadastre-se em nossa newsletter para ficar sabendo.
+
+---
+
+## Outros Contatos EKIO
+
+### EKIO Analytics (Consultoria)
+**Site**: [ekio.io](https://ekio.io)  
+**Email**: [contato@ekio.io](mailto:contato@ekio.io)
+
+### Equipe Técnica
+Para questões técnicas sobre cursos ou plataforma:  
+**Email**: [suporte@ekio.io](mailto:suporte@ekio.io)
+
+---
+
+*Estamos ansiosos para fazer parte da sua jornada de aprendizado em ciência de dados e análise econômica!*
