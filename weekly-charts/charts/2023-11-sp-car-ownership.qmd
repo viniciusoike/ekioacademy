@@ -1,23 +1,45 @@
 ---
 title: "São Paulo's Car Ownership Divide"
 description: "Wealthy neighborhoods own 4x more cars per household than peripheral areas, while the historic center mirrors low-income patterns"
-date: "2023-11-17"
-image: "../../assets/images/weekly-charts/sp-car-ownership-map.png"
+date: "2025-08-01"
+image: "/assets/images/weekly-charts/sp-car-ownership-map.svg"
 categories: ["transportation", "urban-economics", "sao-paulo"]
 format:
   html:
     page-layout: article
 ---
 
-![Car Ownership Rates Across São Paulo](../../assets/images/weekly-charts/sp-car-ownership-map.png){fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones. Wealthy central neighborhoods like Pacaembu and Jardim Europa show dark green (1.4-1.6 cars/household) while peripheral areas show light colors (0.2-0.4 cars/household). The historic downtown also shows surprisingly low ownership rates."}
+```{=html}
+<div>
+    <div style="float: left; position: relative; top: 0px; padding: 30px;">
+    ![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg)
+    </div>
 
-## Key Insights
+Some text, some text, some text, some text, some text, [...] some text, some text
+</div>
+```
+
+
+
+
+::: {.grid}
+
+::: {.g-col-8}
+![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+:::
+
+::: {.g-col-4}
+### Key Insights
 
 **1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
 
-**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo  
+**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
 
 **4x** - Difference between highest and lowest car ownership areas
+:::
+
+:::
+
 
 ## The Surprising Pattern
 
@@ -34,4 +56,4 @@ The data supports transit-oriented development policies, showing that well-conne
 
 ---
 
-*Data: São Paulo Metro Origin-Destination Survey 2017. Chart design: ColorBrewer PuBuGn palette.*
+*Data: São Paulo Metro Origin-Destination Survey 2017.*

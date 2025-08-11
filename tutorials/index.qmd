@@ -18,7 +18,7 @@ Beginner
 
 Learn R syntax, data types, and basic operations with economic examples. Covers variables, functions, and the R environment setup specifically for economic analysis.
 
-**Topics:** Installation, RStudio, basic syntax, economic data types  
+**Topics:** Installation, RStudio, basic syntax, economic data types
 **Estimated time:** 2 hours
 :::
 
@@ -30,7 +30,7 @@ Beginner
 
 Master importing Brazilian economic data from various sources (IBGE, BCB, FipeZap) and cleaning techniques for analysis.
 
-**Topics:** CSV, Excel, APIs, data cleaning, missing values  
+**Topics:** CSV, Excel, APIs, data cleaning, missing values
 **Estimated time:** 3 hours
 :::
 
@@ -42,7 +42,7 @@ Intermediate
 
 Navigate and utilize major Brazilian data sources including IBGE, Banco Central, IPEA, and municipal databases.
 
-**Topics:** SIDRA API, BCB API, geobr package, municipal data  
+**Topics:** SIDRA API, BCB API, geobr package, municipal data
 **Estimated time:** 4 hours
 :::
 
@@ -58,7 +58,7 @@ Beginner
 
 Master the grammar of graphics with ggplot2, creating publication-ready charts for economic analysis.
 
-**Topics:** Grammar of graphics, aesthetics, geometries, themes  
+**Topics:** Grammar of graphics, aesthetics, geometries, themes
 **Estimated time:** 3 hours
 :::
 
@@ -70,7 +70,7 @@ Intermediate
 
 Implement EKIO's complete visual identity system in your R plots, including colors, typography, and layout standards.
 
-**Topics:** Custom themes, color palettes, fonts, branding  
+**Topics:** Custom themes, color palettes, fonts, branding
 **Estimated time:** 2 hours
 :::
 
@@ -86,7 +86,7 @@ Intermediate
 
 Comprehensive guide to linear regression analysis for economic data, including diagnostics and interpretation.
 
-**Topics:** OLS, assumptions, diagnostics, interpretation  
+**Topics:** OLS, assumptions, diagnostics, interpretation
 **Estimated time:** 4 hours
 :::
 
@@ -102,7 +102,7 @@ Advanced
 
 Complete econometric analysis of Brazilian housing markets using FipeZap and IBGE data.
 
-**Topics:** Price indices, hedonic models, spatial analysis  
+**Topics:** Price indices, hedonic models, spatial analysis
 **Estimated time:** 5 hours
 :::
 

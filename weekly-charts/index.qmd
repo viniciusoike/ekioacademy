@@ -1,6 +1,6 @@
 ---
 title: "Weekly Charts"
-subtitle: "Data visualizations that tell Brazil's economic story"
+subtitle: "Data visualizations that tell stories"
 lang: en
 format:
   html:
@@ -35,7 +35,7 @@ listing:
   <div id="charts-grid" class="charts-grid">
     <!-- Charts will be loaded here via infinite scroll -->
   </div>
-  
+
   <div id="loading-indicator" class="loading-indicator">
     <div class="spinner"></div>
     <p>Loading more charts...</p>
@@ -127,8 +127,8 @@ function createChartCard(chart) {
 
 function formatDate(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    month: 'short', 
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
     day: 'numeric',
     year: 'numeric'
   });
@@ -136,30 +136,30 @@ function formatDate(dateString) {
 
 function loadCharts(page = 1) {
   if (isLoading || !hasMoreContent) return;
-  
+
   isLoading = true;
   document.getElementById('loading-indicator').style.display = 'block';
-  
+
   // Simulate API delay
   setTimeout(() => {
     const startIndex = (page - 1) * 5;
     const endIndex = startIndex + 5;
     const pageCharts = chartData.slice(startIndex, endIndex);
-    
+
     if (pageCharts.length === 0) {
       hasMoreContent = false;
       document.getElementById('loading-indicator').innerHTML = '<p>No more charts to load</p>';
       return;
     }
-    
+
     const chartsGrid = document.getElementById('charts-grid');
     pageCharts.forEach(chart => {
       chartsGrid.innerHTML += createChartCard(chart);
     });
-    
+
     isLoading = false;
     document.getElementById('loading-indicator').style.display = 'none';
-    
+
     if (endIndex >= chartData.length) {
       hasMoreContent = false;
     }
