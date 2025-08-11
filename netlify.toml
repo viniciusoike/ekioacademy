@@ -1,10 +1,9 @@
 [build]
-  command = "npm run build"
-  publish = "_combined"
+  command = "npm install && npm run build:css && mkdir -p _site && echo 'Coming Soon - EKIO Academy' > _site/index.html"
+  publish = "_site"
   
 [build.environment]
   NODE_VERSION = "18"
-  R_VERSION = "4.3.2"
 
 # Language-based redirects
 [[redirects]]

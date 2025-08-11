@@ -1,0 +1,53 @@
+# Docker Compose configuration for EKIO Academy (self-hosted option)
+version: '3.8'
+
+services:
+  ekio-academy:
+    image: nginx:alpine
+    container_name: ekio-academy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./_combined:/usr/share/nginx/html:ro
+      - ./deployment/nginx-docker.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    environment:
+      - NGINX_HOST=academy.ekio.com.br
+      - NGINX_PORT=80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - ekio-network
+
+  # Optional: Add certbot for SSL certificates
+  certbot:
+    image: certbot/certbot
+    container_name: ekio-certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - ./_combined:/var/www/html
+    depends_on:
+      - ekio-academy
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@ekio.com.br --agree-tos --no-eff-email -d academy.ekio.com.br
+    networks:
+      - ekio-network
+
+  # Optional: Automatic container updates
+  watchtower:
+    image: containrrr/watchtower
+    container_name: ekio-watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=86400
+    networks:
+      - ekio-network
+
+networks:
+  ekio-network:
+    driver: bridge
