@@ -19,6 +19,7 @@ profiles:
 website:
   title: "EKIO Academy"
   description: "R & Data Science for Economics and Urban Analysis | Brazilian Urban Economics Education Platform"
+  site-url: "https://academy.ekio.io"
   
   google-analytics: "G-XXXXXXXXXX"  # To be configured
   

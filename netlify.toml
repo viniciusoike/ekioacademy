@@ -1,5 +1,5 @@
 [build]
-  command = "curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.550/quarto-1.4.550-linux-amd64.tar.gz && tar -xzf quarto-1.4.550-linux-amd64.tar.gz && export PATH=$PATH:$PWD/quarto-1.4.550/bin && npm install && npm run build"
+  command = "curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.32/quarto-1.7.32-linux-amd64.tar.gz && tar -xzf quarto-1.7.32-linux-amd64.tar.gz && export PATH=$PATH:$PWD/quarto-1.7.32/bin && npm install && npm run build"
   publish = "_site"
   
 [build.environment]
