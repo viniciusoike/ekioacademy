@@ -3,7 +3,7 @@ title: "New R Packages for Brazilian Economic Data in 2024"
 subtitle: "Latest tools for accessing IBGE, BCB, and IPEA databases"
 author: "EKIO Academy Team"
 date: "2024-08-05"
-categories: [r-programming, brazilian-data]
+categories: [r-programming, brazilian-data, data-analysis]
 image: "r-packages-thumbnail.jpg"
 lang: en
 format:
