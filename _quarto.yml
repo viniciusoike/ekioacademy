@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!content-archive/"
+    - "!quarto-*/"
   
 profiles:
   default:
