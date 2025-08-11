@@ -3,7 +3,7 @@ title: "Urban Economics"
 subtitle: "Brazilian Cities, Housing Markets & Municipal Analysis"
 lang: en
 listing:
-  contents: "../posts"
+  contents: "../posts/*.qmd"
   sort: "date desc"
   type: default
   categories: false

@@ -3,7 +3,7 @@ title: "Economia Urbana"
 subtitle: "Cidades Brasileiras, Mercados Imobiliários e Análise Municipal"
 lang: pt-BR
 listing:
-  contents: "../posts"
+  contents: "../posts/*.qmd"
   sort: "date desc"
   type: default
   categories: false

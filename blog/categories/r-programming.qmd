@@ -3,7 +3,7 @@ title: "R Programming"
 subtitle: "Advanced Techniques, Packages & Tutorials for Economic Analysis"
 lang: en
 listing:
-  contents: "../posts"
+  contents: "../posts/*.qmd"
   sort: "date desc"
   type: default
   categories: false

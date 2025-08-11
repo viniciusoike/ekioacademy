@@ -3,7 +3,7 @@ title: "Data Analysis"
 subtitle: "Brazilian Economic Data, Visualization & Statistical Methods"
 lang: en
 listing:
-  contents: "../posts"
+  contents: "../posts/*.qmd"
   sort: "date desc"
   type: default
   categories: false
