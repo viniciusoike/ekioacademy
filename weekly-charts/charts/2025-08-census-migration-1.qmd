@@ -1,0 +1,31 @@
+---
+title: "Gaúcho Migration to Santa Catarina Cities"
+description: "Census 2022 reveals cities in Santa Catarina with highest concentration of Rio Grande do Sul migrants, led by Florianópolis"
+date: "2025-08-01"
+image: "/assets/images/weekly-charts/censo-migration/thumbnails/census-migration-1-medium.png"
+categories: ["demographics", "migration", "santa-catarina"]
+format:
+  html:
+    font-size: 1.5em
+    page-layout: article
+    toc: false
+    grid:
+      body-width: 700px
+---
+
+![](/assets/images/weekly-charts/charts/census-migration-1-chart.png)
+
+## Visualization Strengths
+
+This horizontal bar chart effectively displays migration data by using **proportional bar lengths** that make volume comparisons immediate and intuitive. The **clean typography** and **consistent teal color scheme** maintain focus on the data while the **right-aligned numbers** provide precise values without cluttering the visualization.
+
+The chart reveals that **Florianópolis leads significantly** with over 84,000 Rio Grande do Sul migrants, nearly double the second-place Chapecó. This pattern shows how **major urban centers** and **border cities** attract different migration flows - Florianópolis as a capital city destination versus Chapecó's proximity advantage.
+
+## Key Learning Points
+
+- **Horizontal bars excel** for categorical data with long labels (city names)
+- **Single color schemes** work well when comparing within one category
+- **Strategic ordering** (highest to lowest) immediately highlights leaders and patterns
+- This approach scales well for showing migration flows between specific regions
+
+*Data: IBGE Census 2022. Chart shows cities with highest absolute numbers of gaúcho emigrants.*

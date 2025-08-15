@@ -1,0 +1,28 @@
+---
+title: "Replicating Pew Research: Global Religious Demographics"
+description: "Recreation of Pew Research stacked bar chart showing age distributions across religious groups using ggplot2"
+date: "2025-08-14"
+image: "/assets/images/weekly-charts/replication-pew-1/charts/pew-1-chart.png"
+categories: ["data-replication", "demographics", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-pew-1/charts/pew-1-chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This stacked bar chart excels at showing **compositional differences** across religious groups through consistent 100% scaling. The **three-shade blue color palette** creates clear age group distinctions while maintaining visual harmony. The **strategic ordering** places Muslims at the top to emphasize the title's main finding about their younger demographic profile.
+
+The chart's **horizontal layout** accommodates longer category labels comfortably, while **percentage labels inside bars** provide precise values without external clutter. Notice how the **consistent bar width** focuses attention on proportional differences rather than absolute population sizes.
+
+## Key Learning Points
+
+- **Stacked bars** are ideal for showing part-to-whole relationships across categories
+- **Monochromatic color schemes** with varying saturation work well for ordered data (age groups)
+- **Strategic category ordering** can reinforce the narrative (youngest populations first)
+- **Internal labeling** maintains clean chart boundaries while preserving precision
+- This replication technique teaches both demographic analysis and professional chart styling
+
+*Data: Pew Research Center global religious surveys. Replication demonstrates ggplot2 stacked bar techniques.*

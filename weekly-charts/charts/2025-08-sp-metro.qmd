@@ -1,0 +1,35 @@
+---
+title: "São Paulo Metro Line 4-Yellow: Post-Pandemic Recovery"
+description: "Analysis of passenger ridership trends on SP Metro's Line 4-Yellow showing incomplete recovery and fare increase impacts"
+date: "2025-08-16"
+image: "/assets/images/weekly-charts/spo_metro/line_4_overview.png"
+categories: ["transportation", "urban-economics", "sao-paulo"]
+format:
+  html:
+    page-layout: article
+---
+
+# Linha 4-Amarela do Metrô
+
+![](/assets/images/weekly-charts/spo_metro/line_4_overview.png){fig-align="center"}
+
+## Visualization Strengths
+
+This time series effectively combines **multiple visual elements** to tell a complex story about transportation recovery. The **annotated timeline** uses vertical lines and labels to mark key events (station openings, pandemic period, fare increases), while the **trend line overlay** helps distinguish long-term patterns from monthly volatility.
+
+The **shaded pandemic period** immediately contextualizes the dramatic ridership drop, while **strategic color contrast** (yellow line, gray background) maintains the metro line's brand identity. The **dual y-axis approach** allows comparison of absolute numbers with trend direction.
+
+## Key Insights
+
+- **Post-pandemic recovery remains incomplete** with weekday ridership still 10% below pre-pandemic levels
+- **Weekend recovery is stronger** (only 3.6% below), suggesting leisure travel returned faster than commuting
+- **New station openings** show limited impact on overall ridership trends
+- **Fare increases** may have dampened recovery momentum, though causation requires further analysis
+
+## Key Learning Points
+
+- **Annotated timelines** effectively show cause-and-effect relationships in longitudinal data
+- **Trend lines** help separate signal from noise in volatile monthly data
+- **Contextual shading** (pandemic period) provides essential historical framework
+
+*Data: ViaQuatro Metro operator. Analysis: EKIO Academy transportation research.*
