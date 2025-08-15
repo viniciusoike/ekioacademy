@@ -7,28 +7,14 @@ categories: ["transportation", "urban-economics", "sao-paulo"]
 format:
   html:
     page-layout: article
+    toc: false
+    sidebar-width: 300px
 ---
 
-```{=html}
-<div>
-    <div style="float: left; position: relative; top: 0px; padding: 30px;">
-    ![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg)
-    </div>
 
-Some text, some text, some text, some text, some text, [...] some text, some text
-</div>
-```
-
-
-
-
-::: {.grid}
-
-::: {.g-col-8}
 ![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
-:::
 
-::: {.g-col-4}
+::: {.column-margin}
 ### Key Insights
 
 **1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
@@ -38,7 +24,50 @@ Some text, some text, some text, some text, some text, [...] some text, some tex
 **4x** - Difference between highest and lowest car ownership areas
 :::
 
+::: {.grid}
+
+::: {.g-col-8}
+This column takes 1/3 of the page
 :::
+
+::: {.g-col-8}
+::: {.column-page-right}
+![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+:::
+:::
+
+:::
+
+
+::: {.columns}
+::: {.column}
+### Key Insights
+
+**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+
+**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
+
+**4x** - Difference between highest and lowest car ownership areas
+:::
+::: {.column-page-inset-right}
+![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+:::
+::: <!-- end columns -->
+
+
+::: {.column-page-inset-right}
+![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+:::
+
+
+### Key Insights
+
+**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+
+**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
+
+**4x** - Difference between highest and lowest car ownership areas
+
 
 
 ## The Surprising Pattern
