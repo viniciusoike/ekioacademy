@@ -2,7 +2,7 @@
 title: "Gaúcho Migration to Santa Catarina Cities"
 description: "Census 2022 reveals cities in Santa Catarina with highest concentration of Rio Grande do Sul migrants, led by Florianópolis"
 date: "2025-08-01"
-image: "/assets/images/weekly-charts/censo-migration/thumbnails/census-migration-1-medium.png"
+image: "/assets/images/weekly-charts/census_migration/thumbnails/census-migration-1-medium.png"
 categories: ["demographics", "migration", "santa-catarina"]
 format:
   html:

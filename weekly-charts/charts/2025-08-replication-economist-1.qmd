@@ -1,0 +1,29 @@
+---
+title: "Replicating The Economist: GDP Rankings Across Measures"
+description: "Recreation of The Economist's renowned slope chart showing how country GDP rankings change across different measurement approaches using ggplot2"
+date: "2025-08-18"
+image: "/assets/images/weekly-charts/replication-economist-1/chart.png"
+categories: ["data-replication", "economics", "international", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-economist-1/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This slope chart exemplifies **The Economist's world-renowned data visualization excellence**, representing the publication that sets the global standard for clarity and insight in economic journalism. The Economist's data team, recent **2024 Royal Statistical Society Excellence in Journalism Award winners**, have mastered their core principle: *"the viewer should learn the primary message of the chart after only a few seconds."*
+
+The chart demonstrates The Economist's **signature visual hierarchy** through strategic use of **selective color highlighting** - only Belgium, Germany, Austria, and the United States are emphasized while other countries remain in neutral gray. This follows their famous design philosophy that **effective visualization often means showing less to communicate more**. The **clean slope connections** make dramatic ranking shifts immediately apparent, particularly Belgium's rise from 15th to 5th place when adjusting for costs and hours worked.
+
+## Key Learning Points
+
+- **Slope charts excel** at showing ranking changes across different measures or time periods
+- **Strategic color selection** guides attention to the most interesting stories in the data
+- **The Economist's minimalist approach** removes all non-essential elements for maximum impact
+- **Selective highlighting** (4 out of 20+ countries) demonstrates restraint in visual emphasis
+- **Custom typography and spacing** create The Economist's instantly recognizable style
+- This replication teaches both ranking visualization techniques and The Economist's legendary design principles
+
+*Data: OECD GDP statistics across different measurement approaches. Replication demonstrates ggplot2 slope chart techniques with The Economist's world-class styling standards.*
