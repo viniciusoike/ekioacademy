@@ -1,0 +1,28 @@
+---
+title: "Replicating Folha SP: São Paulo Housing Affordability"
+description: "Recreation of Folha de São Paulo housing affordability chart showing stark neighborhood differences between family types using ggplot2"
+date: "2025-08-10"
+image: "/assets/images/weekly-charts/replication-folhasp-1/chart.png"
+categories: ["data-replication", "housing", "sao-paulo", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-folhasp-1/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This horizontal bar chart masterfully demonstrates **Folha SP's clean editorial style** through its strategic use of a **two-color legend system** that immediately distinguishes between family types. The **graduated blue color scheme** creates visual hierarchy while the **right-aligned percentage labels** provide precise affordability values without cluttering the visualization.
+
+The chart reveals a striking pattern: **República leads in affordability** for single residents at 80.1%, but family housing shows dramatic variation across São Paulo neighborhoods. The **clear categorical separation** between high-affordability areas (darker blue) and lower-affordability areas (lighter blue) makes the housing inequality immediately apparent.
+
+## Key Learning Points
+
+- **Horizontal bars** excel for categorical data with longer neighborhood names
+- **Two-color legends** work effectively when comparing two distinct groups
+- **Strategic color gradation** helps distinguish data categories while maintaining visual coherence
+- **Right-aligned labels** keep charts clean while preserving numerical precision
+- This replication teaches both housing analysis and Brazilian media visualization standards
+
+*Data: Folha de São Paulo housing affordability analysis. Replication demonstrates ggplot2 horizontal bar techniques with categorical styling.*

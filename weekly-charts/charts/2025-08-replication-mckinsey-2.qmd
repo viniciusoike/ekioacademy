@@ -1,0 +1,29 @@
+---
+title: "Replicating McKinsey: European Job Change Drivers"
+description: "Recreation of McKinsey's sophisticated bubble chart showing job change priorities across European countries by age group using ggplot2"
+date: "2025-08-15"
+image: "/assets/images/weekly-charts/replication-mckinsey-2/mckinsey-2-chart.png"
+categories: ["data-replication", "employment", "europe", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-mckinsey-2/mckinsey-2-chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This sophisticated bubble chart showcases **McKinsey's premium visualization approach** through its **three-dimensional data encoding**: job factors (rows), countries (columns), and age groups (bubble colors). The **blue gradient color scheme** effectively distinguishes age cohorts while maintaining professional consistency. The **grid-based layout** creates natural comparison zones both horizontally (across countries) and vertically (across job factors).
+
+The visualization reveals that **remuneration dominates** as the primary job change driver across all European countries, with remarkable consistency. The **bubble size consistency** focuses attention on the percentage values rather than creating false hierarchies, while the **strategic factor ordering** places the most important drivers at the top.
+
+## Key Learning Points
+
+- **Bubble charts** excel at showing three dimensions of data simultaneously
+- **Grid layouts** facilitate both row-wise and column-wise comparisons
+- **Monochromatic color gradients** work well for ordered categorical data (age groups)
+- **Consistent bubble sizing** prevents visual distortion of the underlying data
+- **Strategic variable ordering** (highest to lowest importance) guides reader attention
+- This replication teaches advanced ggplot2 techniques for complex multi-dimensional data
+
+*Data: McKinsey HR Monitor Survey, Dec 2024. Replication demonstrates ggplot2 bubble chart techniques with professional grid styling.*
