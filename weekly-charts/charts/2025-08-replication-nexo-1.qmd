@@ -1,0 +1,29 @@
+---
+title: "Replicating Nexo: Latin America Economic Cycles"
+description: "Recreation of Nexo's timeline visualization showing GDP growth and recession patterns across Latin American countries from 1900-2016 using ggplot2"
+date: "2025-08-19"
+image: "/assets/images/weekly-charts/replication-nexo-1/chart.png"
+categories: ["data-replication", "economics", "latin-america", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-nexo-1/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This timeline chart showcases **Nexo's sophisticated approach to historical data visualization** through its **binary color encoding system** that makes economic cycles immediately readable across a century of Latin American history. The **coral and teal color scheme** creates strong visual contrast while the **horizontal timeline format** allows for easy country-by-country comparison of economic volatility patterns.
+
+The visualization reveals fascinating insights about **regional economic synchronization** - note how the **Great Depression (1930s)** appears as widespread coral bands across most countries, while more recent crises show **varying national responses**. The **consistent scale** from 1900-2016 provides historical perspective that shorter-term analyses often miss, making it particularly effective for understanding long-term economic development patterns.
+
+## Key Learning Points
+
+- **Timeline charts** excel at showing historical patterns and cyclical behaviors over long periods
+- **Binary color encoding** (growth vs. recession) simplifies complex economic data into immediate insights
+- **Country stacking** enables simultaneous comparison of multiple time series
+- **Consistent time scaling** reveals both synchronized regional events and country-specific patterns
+- **Historical perspective** (100+ years) provides context often lost in shorter-term economic analysis
+- This replication teaches both economic data storytelling and long-term visualization techniques
+
+*Data: Latin American GDP growth rates 1900-2016. Replication demonstrates ggplot2 timeline techniques with effective color encoding for economic cycles.*

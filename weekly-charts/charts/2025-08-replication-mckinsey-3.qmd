@@ -1,0 +1,29 @@
+---
+title: "Replicating McKinsey: US Commerce Media Market Dashboard"
+description: "Recreation of McKinsey's three-panel dashboard showing projected explosive growth of US commerce media market from $40B to $100B by 2027"
+date: "2025-08-21"
+image: "/assets/images/weekly-charts/replication-mckinsey-3/chart.png"
+categories: ["data-replication", "commerce", "advertising", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-mckinsey-3/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This sophisticated **three-panel dashboard** exemplifies **McKinsey's premium multi-dimensional storytelling approach**, building on their reputation as the global standard for management consulting visualizations. The dashboard demonstrates McKinsey's **coordinated visualization strategy** - each panel tells part of a comprehensive story about commerce media's explosive growth trajectory.
+
+The **left panel's exponential line chart** establishes the dramatic growth narrative ($40B to $100B), while the **middle panel's stacked bars** show increasing market penetration (12% to 22% of ad spend), and the **right panel's simple bars** reveal the emerging opportunity in gross merchandise value (0.6% to 1.3%). McKinsey's **strategic use of blue accent color** creates visual cohesion while their **clean typography hierarchy** ensures each insight is immediately accessible.
+
+## Key Learning Points
+
+- **Multi-panel dashboards** excel at telling comprehensive stories through coordinated visualizations
+- **Chart type diversity** (line + stacked bars + bars) maintains engagement while serving different analytical purposes
+- **Consistent color schemes** across panels create visual unity in complex dashboards
+- **Progressive narrative structure** guides readers from overall growth to market share to emerging opportunities
+- **McKinsey's spacing and typography** demonstrate how professional design elevates data credibility
+- This replication teaches advanced dashboard design principles and multi-chart storytelling techniques
+
+*Data: eMarketer, Magna, McKinsey analysis of US commerce media market 2023-2027. Replication demonstrates ggplot2 dashboard techniques with McKinsey's world-class styling.*
