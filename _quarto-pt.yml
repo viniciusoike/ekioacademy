@@ -17,6 +17,8 @@ website:
     left:
       - text: "Tutoriais"
         href: pt/tutoriais/index.qmd
+      - text: "Gráficos Semanais"
+        href: pt/graficos-semanais/index.qmd
       - text: "Livros"
         href: pt/livros/index.qmd
       - text: "Cursos"

@@ -1,0 +1,35 @@
+---
+title: "Metrô de São Paulo Linha 4-Amarela: Recuperação Pós-Pandemia"
+description: "Análise das tendências de passageiros na Linha 4-Amarela do Metrô SP mostrando recuperação incompleta e impactos dos aumentos tarifários"
+date: "2025-08-16"
+image: "/assets/images/weekly-charts/spo_metro/line_4_overview.png"
+categories: ["transporte", "economia-urbana", "sao-paulo"]
+format:
+  html:
+    page-layout: article
+---
+
+# Linha 4-Amarela do Metrô
+
+![](/assets/images/weekly-charts/spo_metro/line_4_overview.png){fig-align="center"}
+
+## Pontos Fortes da Visualização
+
+Esta série temporal combina efetivamente **múltiplos elementos visuais** para contar uma história complexa sobre recuperação do transporte. A **linha temporal anotada** usa linhas verticais e rótulos para marcar eventos-chave (aberturas de estações, período pandêmico, aumentos tarifários), enquanto a **sobreposição de linha de tendência** ajuda distinguir padrões de longo prazo da volatilidade mensal.
+
+O **período pandêmico sombreado** imediatamente contextualiza a queda dramática de passageiros, enquanto **contraste estratégico de cores** (linha amarela, fundo cinza) mantém a identidade da marca da linha do metrô. A **abordagem de eixo y duplo** permite comparação de números absolutos com direção da tendência.
+
+## Principais Insights
+
+- **Recuperação pós-pandemia permanece incompleta** com passageiros de dias úteis ainda 10% abaixo dos níveis pré-pandêmicos
+- **Recuperação de fins de semana é mais forte** (apenas 3,6% abaixo), sugerindo que viagens de lazer retornaram mais rapidamente que deslocamentos para trabalho
+- **Aberturas de novas estações** mostram impacto limitado nas tendências gerais de passageiros
+- **Aumentos tarifários** podem ter prejudicado o momentum de recuperação, embora causalidade requeira análise adicional
+
+## Principais Pontos de Aprendizado
+
+- **Linhas temporais anotadas** efetivamente mostram relações de causa-efeito em dados longitudinais
+- **Linhas de tendência** ajudam separar sinal do ruído em dados mensais voláteis
+- **Sombreamento contextual** (período pandêmico) fornece estrutura histórica essencial
+
+*Dados: Operadora ViaQuatro Metro. Análise: Pesquisa em transporte EKIO Academy.*
