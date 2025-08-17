@@ -1,0 +1,30 @@
+---
+title: "Replicando Nexo: Demografia de Carteiras de Motorista no Brasil (Português)"
+description: "Recriação do gráfico de barras empilhadas horizontais do Nexo mostrando distribuição de carteiras de motorista por idade e gênero no Brasil usando ggplot2"
+date: "2025-08-20"
+image: "/assets/images/weekly-charts/replication-nexo-2/chart.png"
+categories: ["replicacao-dados", "demografia", "transporte", "tutorial-visualizacao"]
+lang: pt-BR
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-nexo-2/chart.png){fig-align="center"}
+
+## Pontos Fortes da Visualização
+
+Este gráfico de barras empilhadas percentuais horizontais demonstra **a abordagem limpa do Nexo para análise demográfica** através de seu **sistema de codificação de cores duplo** que torna disparidades de gênero imediatamente aparentes entre faixas etárias. O **esquema de cores verde-azulado e azul escuro** fornece forte contraste mantendo estética profissional, e os **rótulos percentuais dentro das barras** eliminam a necessidade de legendas complexas ou pontos de referência externos.
+
+A visualização revela um padrão demográfico marcante: **a diferença de gênero em carteiras de motorista aumenta significativamente com a idade**, de representação quase igual entre jovens adultos (18-30: 62,7% masculino) até disparidades dramáticas entre idosos (71+: 77,4% masculino). A **orientação horizontal das barras** acomoda rótulos de faixas etárias efetivamente, enquanto o **escalamento consistente de 100%** permite comparações imediatas entre grupos.
+
+## Principais Pontos de Aprendizado
+
+- **Barras empilhadas percentuais horizontais** se destacam ao mostrar mudanças composicionais entre categorias
+- **Análise baseada em idade** revela diferenças geracionais no acesso ao transporte e comportamento
+- **Codificação de gênero através de cores** torna disparidades imediatamente visíveis sem requerer legendas complexas
+- **Rotulagem percentual dentro das barras** mantém limpeza do gráfico preservando precisão
+- **Técnicas de visualização demográfica** ajudam identificar padrões sociais e potenciais implicações políticas
+- Esta replicação ensina tanto análise populacional quanto apresentação eficaz de dados demográficos
+
+*Dados: Estatísticas brasileiras de carteiras de motorista por idade e gênero, janeiro 2024. Replicação demonstra técnicas de percentuais empilhados ggplot2 com insights demográficos.*

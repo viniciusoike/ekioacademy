@@ -6,7 +6,7 @@ lang: en
 
 Welcome to EKIO Academy's comprehensive mini-course collection. Each mini-course is designed as a complete learning module with practical examples using real Brazilian economic data and professional consulting methodologies.
 
-## 🔰 R Fundamentals
+## R Fundamentals
 
 Perfect for economists new to R programming.
 
@@ -46,7 +46,7 @@ Navigate and utilize major Brazilian data sources including IBGE, Banco Central,
 **Estimated time:** 4 hours
 :::
 
-## 📊 Data Visualization
+## Data Visualization
 
 Create professional charts with EKIO's visual identity.
 
@@ -74,7 +74,7 @@ Implement EKIO's complete visual identity system in your R plots, including colo
 **Estimated time:** 2 hours
 :::
 
-## 📈 Econometrics
+## Econometrics
 
 Statistical analysis and modeling in R.
 
@@ -90,7 +90,7 @@ Comprehensive guide to linear regression analysis for economic data, including d
 **Estimated time:** 4 hours
 :::
 
-## 🏙️ Urban Economics Applications
+## Urban Economics Applications
 
 Specialized tutorials for urban economic analysis.
 

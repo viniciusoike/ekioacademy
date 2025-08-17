@@ -1,0 +1,29 @@
+---
+title: "Replicando McKinsey: Representação de Gênero na Nigéria (Português)"
+description: "Recriação do gráfico de barras empilhadas da McKinsey mostrando ~29% de representação feminina estável em todos os níveis hierárquicos corporativos usando ggplot2"
+date: "2025-07-15"
+image: "/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_2.png"
+categories: ["replicacao-dados", "genero", "tutorial-visualizacao", "diversidade-corporativa"]
+lang: pt-BR
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_1.png){fig-align="center"}
+
+## Pontos Fortes da Visualização
+
+Este gráfico de barras empilhadas demonstra magistralmente **o estilo visual característico da McKinsey** através de sua tipografia limpa, escolhas estratégicas de cores e layout sofisticado. O **contraste ousado entre preto e ciano** cria hierarquia visual imediata, enquanto as **anotações de texto integradas** eliminam a necessidade de legendas ou eixos tradicionais.
+
+O gráfico revela um padrão marcante: **a representação feminina permanece notavelmente estável** em ~29% em todos os níveis de senioridade no setor privado da Nigéria, desde cargos de entrada até o C-suite. Esta consistência contradiz a narrativa típica do "pipeline com vazamento" frequentemente vista em estudos corporativos de gênero.
+
+## Principais Pontos de Aprendizado
+
+- **Anotações integradas** funcionam melhor que rótulos de eixo tradicionais para apresentações executivas
+- **Barras empilhadas com divisões percentuais** mostram claramente dados composicionais entre categorias
+- **Escolhas estratégicas de cores** (preto/ciano) criam contraste profissional mantendo legibilidade
+- **Linhas de grade mínimas** focam atenção nos dados em vez da infraestrutura do gráfico
+- Esta replicação ensina tanto análise de gênero quanto técnicas de visualização estilo McKinsey
+
+*Dados: Pesquisa McKinsey conduzida mar–jun 2024. Replicação demonstra técnicas de barras empilhadas ggplot2 com estilo profissional.*

@@ -1,0 +1,33 @@
+---
+title: "Termos de Uso (Português)"
+lang: pt-BR
+---
+
+# Termos de Uso
+
+Estes termos de uso estabelecem as regras para utilização da EKIO Academy.
+
+## Aceitação dos Termos
+
+Ao usar este site, você concorda com estes termos de uso.
+
+## Uso Permitido
+
+- Uso educacional e profissional dos recursos disponíveis
+- Download de materiais gratuitos para uso pessoal
+- Participação respeitosa na comunidade
+
+## Propriedade Intelectual
+
+- Todo o conteúdo é protegido por direitos autorais
+- Código fornecido está sob licenças open source quando aplicável
+- Atribuição é requerida para uso de materiais
+
+## Limitações
+
+- Não é permitido revender ou redistribuir conteúdo pago
+- Uso comercial requer autorização prévia
+
+## Contato
+
+Para questões legais, entre em contato através do site [EKIO Analytics](https://ekio.com.br/contato).

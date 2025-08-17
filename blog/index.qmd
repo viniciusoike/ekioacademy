@@ -6,7 +6,9 @@ format:
   html:
     page-layout: full
 listing:
-  contents: posts
+  contents: 
+    - "posts/*.qmd"
+    - "!posts/*-pt.qmd"
   sort: "date desc"
   type: default
   categories: true

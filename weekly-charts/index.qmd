@@ -9,7 +9,9 @@ format:
 listing:
   type: grid
   grid-columns: 3
-  contents: charts
+  contents: 
+    - "charts/*.qmd"
+    - "!charts/*-pt.qmd"
   sort: "date desc"
   categories: false
   sort-ui: false
