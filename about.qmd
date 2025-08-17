@@ -15,7 +15,7 @@ EKIO Academy is a bilingual educational platform dedicated to making Brazilian e
 ### Comprehensive R Training
 From basic programming concepts to advanced econometric modeling, our tutorials cover the complete spectrum of R skills needed for economic analysis.
 
-### Brazilian Data Expertise  
+### Brazilian Data Expertise
 We specialize in working with major Brazilian data sources including IBGE (Census), Banco Central (BCB), IPEA, FINBRA, and geographic data through the geobr package.
 
 ### Professional Resources
@@ -30,7 +30,7 @@ EKIO Academy is part of [EKIO Analytics](https://ekio.io), a specialized consult
 
 ### Our Expertise
 - Urban and regional economics
-- Housing market analysis  
+- Housing market analysis
 - Demographic and migration studies
 - Municipal finance and policy evaluation
 - Data visualization and interactive dashboards

@@ -31,7 +31,7 @@ Master R programming, econometrics, and data visualization with practical tutori
 Comprehensive learning modules covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
 
 **Featured Topics:**
-- R Fundamentals for Economists  
+- R Fundamentals for Economists
 - ggplot2 with EKIO Visual Identity
 - Brazilian Municipal Data Analysis
 - Housing Market Econometrics
@@ -48,7 +48,7 @@ Comprehensive resources and eBooks covering specialized topics in urban economic
 
 **Available Resources:**
 - R for Urban Economics (eBook)
-- Brazilian Data Sources Guide  
+- Brazilian Data Sources Guide
 - EKIO Methods Handbook
 - Econometrics with R Cookbook
 - Data Visualization Best Practices
