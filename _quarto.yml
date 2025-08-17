@@ -1,29 +1,18 @@
 project:
   type: website
-  title: "EKIO Academy"
   render:
     - "*.qmd"
     - "!content-archive/"
     - "!quarto-*/"
-  
-profiles:
-  default:
-    output-dir: _site
-    website:
-      site-url: "https://academy.ekio.io"
-      
-  portuguese:
-    output-dir: _site-pt  
-    website:
-      site-url: "https://academy.ekio.io/pt"
+
 
 website:
   title: "EKIO Academy"
   description: "R & Data Science for Economics and Urban Analysis | Brazilian Urban Economics Education Platform"
   site-url: "https://academy.ekio.io"
-  
+
   google-analytics: "G-XXXXXXXXXX"  # To be configured
-  
+
   navbar:
     logo: "assets/images/logos/ekio-academy-logo.png"
     title: false  # Hide text when logo is present
@@ -32,15 +21,37 @@ website:
     collapse: true
     left:
       - text: "Mini Courses"
-        href: tutorials/index.qmd
-      - text: "Books" 
-        href: books/index.qmd
+        menu:
+          - text: "English"
+            href: tutorials/index.qmd
+          - text: "Português"
+            href: tutorials/index-pt.qmd
+      - text: "Books"
+        menu:
+          - text: "English"
+            href: books/index.qmd
+          - text: "Português"
+            href: books/index-pt.qmd
       - text: "Courses"
-        href: courses/index.qmd
+        menu:
+          - text: "English"
+            href: courses/index.qmd
+          - text: "Português"
+            href: courses/index-pt.qmd
+      - text: "Blog"
+        menu:
+          - text: "English"
+            href: blog/index.qmd
+          - text: "Português"
+            href: blog/index-pt.qmd
       - text: "Research & Insights"
         href: insights/index.qmd
       - text: "Weekly Charts"
-        href: weekly-charts/index.qmd
+        menu:
+          - text: "English"
+            href: weekly-charts/index.qmd
+          - text: "Português"
+            href: weekly-charts/index-pt.qmd
       - text: "About"
         href: about.qmd
     right:
@@ -50,14 +61,8 @@ website:
       - icon: "linkedin"
         href: "https://linkedin.com/company/ekio-analytics"
         aria-label: "LinkedIn"
-      - text: "🇺🇸/🇧🇷"
-        menu:
-          - text: "🇺🇸 English"
-            href: "/"
-          - text: "🇧🇷 Português" 
-            href: "/pt/"
 
-  search: 
+  search:
     type: overlay
     copy-button: true
 
@@ -73,7 +78,7 @@ website:
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
       - custom.scss
     toc: true
@@ -83,15 +88,13 @@ format:
     link-external-newwindow: true
     citations-hover: true
     footnotes-hover: true
-    code-fold: false
-    code-tools: true
     highlight-style: github
-    css: 
+    css:
       - styles.css
       - assets/css/ekio-theme.css
     include-in-header: _includes/head-custom.html
     include-after-body: _includes/analytics.html
-    
+
 execute:
   echo: true
   warning: false

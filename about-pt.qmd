@@ -1,0 +1,23 @@
+---
+title: "Sobre a EKIO Academy (Português)"
+lang: pt-BR
+---
+
+# Sobre a EKIO Academy
+
+A EKIO Academy é a plataforma educacional da EKIO Analytics, dedicada ao ensino de programação em R, ciência de dados e econometria para profissionais que trabalham com economia urbana e análise de dados brasileiros.
+
+## Nossa Missão
+
+Democratizar o acesso ao conhecimento em análise de dados econômicos, proporcionando aos profissionais brasileiros as ferramentas e metodologias necessárias para tomar decisões baseadas em evidências.
+
+## O Que Oferecemos
+
+- **Tutoriais Práticos**: Guias passo a passo usando dados reais brasileiros
+- **Cursos Estruturados**: Trilhas de aprendizado do básico ao avançado
+- **Recursos Gratuitos**: eBooks, datasets e códigos de exemplo
+- **Suporte à Comunidade**: Fórum e suporte direto aos estudantes
+
+## Contato
+
+Para mais informações sobre nossos serviços profissionais, visite [EKIO Analytics](https://ekio.com.br).

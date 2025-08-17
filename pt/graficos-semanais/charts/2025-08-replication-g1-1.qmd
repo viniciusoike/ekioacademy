@@ -1,0 +1,28 @@
+---
+title: "Replicando G1: Evolução do Desemprego no Brasil"
+description: "Recriação da visualização da taxa de desemprego trimestral do G1 mostrando recuperação econômica do Brasil com design limpo de gráfico de barras usando ggplot2"
+date: "2025-08-12"
+image: "/assets/images/weekly-charts/replication-g1-1/chart.png"
+categories: ["replicacao-dados", "economia", "desemprego", "tutorial-visualizacao"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-g1-1/chart.png){fig-align="center"}
+
+## Pontos Fortes da Visualização
+
+Este gráfico de barras de série temporal exemplifica **o estilo característico de visualização de notícias do G1** através de seu **esquema de cores vermelho forte** e **hierarquia tipográfica limpa**. A **rotulagem percentual direta** em cada barra elimina a necessidade de linhas de grade no eixo y, criando uma experiência de leitura focada. A **formatação em português** (usando vírgulas como separadores decimais) demonstra localização adequada para audiências brasileiras.
+
+A visualização captura efetivamente a trajetória do desemprego brasileiro, mostrando um **pico de 9,3% em abril-junho de 2022** seguido por um **declínio constante para 7,9%** até o final de 2022. A **largura consistente das barras** e **ordenação cronológica** tornam tendências temporais imediatamente aparentes.
+
+## Principais Pontos de Aprendizado
+
+- **Gráficos de barras de cor única** funcionam excelentemente para séries temporais quando a ênfase está na tendência em vez de categorias
+- **Rotulagem direta de dados** pode substituir elementos de eixo tradicionais para design mais limpo
+- **Escolhas de cores fortes** ajudam gráficos a se destacarem em contextos de mídia noticiosa
+- **Formatação decimal adequada** é crucial para audiências em português brasileiro (vírgula vs. ponto)
+- Esta replicação ensina tanto visualização de dados econômicos quanto padrões de design da mídia brasileira
+
+*Dados: IBGE PNAD Contínua pesquisa trimestral de desemprego. Replicação demonstra técnicas de barras de série temporal ggplot2 com formatação brasileira.*

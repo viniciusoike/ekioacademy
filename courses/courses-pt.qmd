@@ -1,0 +1,151 @@
+---
+title: "Cursos (Português)"
+subtitle: "Educação Especializada em R e Economia de Dados"
+description: "Cursos profissionais em ciência de dados, programação R e análise econômica com foco em dados brasileiros."
+lang: pt-BR
+---
+
+# Cursos EKIO Academy
+
+Desenvolva suas habilidades em ciência de dados e análise econômica com nossos cursos especializados, desenhados para profissionais brasileiros.
+
+## Cursos Principais
+
+### [R Completo para Economistas](r-completo-economistas/index.qmd)
+**12 semanas • Online ao vivo**
+
+Aprenda R desde o básico até análises econômicas avançadas, com foco em dados brasileiros e aplicações práticas para economistas e analistas de políticas.
+
+- Fundamentos de R e RStudio
+- Manipulação de dados com tidyverse  
+- Visualização profissional com ggplot2
+- Análise econométrica e estatística
+- Relatórios automatizados com R Markdown
+
+**Status**: Em desenvolvimento  
+**Próxima Turma**: Em breve
+
+---
+
+### [Domínio de Dados Brasileiros](dominio-dados-brasileiros/index.qmd)
+**8 semanas • Online intensivo**
+
+Torne-se expert no ecossistema de dados brasileiro. Aprenda a acessar, limpar e analisar dados do IBGE, BCB, IPEA e outras fontes essenciais.
+
+- Sistema estatístico brasileiro
+- APIs e coleta automatizada de dados
+- Análise de indicadores econômicos
+- Dados municipais e regionais
+- Projetos práticos com dados reais
+
+**Status**: Lançamento em breve  
+**Idioma**: Português e Inglês
+
+---
+
+### [Análise Urbana Avançada](analise-urbana-avancada/index.qmd)
+**10 semanas • Híbrido**
+
+Domine análise espacial e ciência de dados aplicada ao planejamento urbano e políticas públicas municipais.
+
+- Análise espacial com R e QGIS
+- Dados de transporte e acessibilidade
+- Modelagem do mercado imobiliário
+- Indicadores de cidades inteligentes
+- Projetos com prefeituras brasileiras
+
+**Status**: Em desenvolvimento  
+**Público**: Planejadores urbanos e gestores públicos
+
+---
+
+### [Consultoria Profissional em Dados](consultoria-profissional-dados/index.qmd)
+**12 semanas + 6 meses mentoria**
+
+Transforme suas habilidades analíticas em um negócio de consultoria próspero. Aprenda tanto o lado técnico quanto empresarial da consultoria em dados.
+
+- Desenvolvimento de negócios e marca pessoal
+- Gestão de clientes e projetos
+- Precificação e propostas comerciais
+- Técnicas analíticas avançadas para consultoria
+- Rede de contatos e parcerias
+
+**Status**: Vagas limitadas  
+**Investimento**: Programa premium
+
+## Formatos de Aprendizado
+
+### 🎥 Online ao Vivo
+Aulas interativas com instrutores experientes, sessões de dúvidas e networking com colegas.
+
+### 📚 Autoaprendizado
+Materiais estruturados para estudo no seu ritmo, com suporte da comunidade EKIO.
+
+### 🏢 Treinamento Corporativo
+Programas customizados para equipes e organizações, adaptados às necessidades específicas.
+
+### 👥 Workshops Intensivos
+Imersões de fim de semana em tópicos específicos, ideais para aprimoramento rápido.
+
+## Diferenciais EKIO Academy
+
+### 🇧🇷 Foco em Dados Brasileiros
+Todos os cursos incluem datasets reais brasileiros e cases de empresas e governos nacionais.
+
+### 👨‍💼 Instrutores Experientes
+Professores com experiência prática em consultoria, governo e academia no Brasil.
+
+### 🤝 Rede Profissional
+Acesso à comunidade EKIO com mais de 500 profissionais de dados no Brasil.
+
+### 🎯 Aplicação Prática
+Projetos reais com dados brasileiros, focando em problemas econômicos e urbanos concretos.
+
+## Próximos Passos
+
+### 1. Avalie seu Nível
+- **Iniciante**: Comece com R Completo para Economistas
+- **Intermediário**: Domínio de Dados Brasileiros
+- **Avançado**: Análise Urbana ou Consultoria Profissional
+
+### 2. Escolha seu Formato
+- Prefere interação ao vivo ou flexibilidade de horário?
+- Quer foco técnico ou desenvolvimento de carreira?
+
+### 3. Inscreva-se ou Manifeste Interesse
+- [Contate-nos](../../contato.qmd) para mais informações
+- Entre na lista de interesse para receber atualizações
+- Agende uma conversa para discutir seus objetivos
+
+## Investimento e Financiamento
+
+### Opções de Pagamento
+- Pagamento à vista com desconto
+- Parcelamento em até 12x
+- Planos corporativos para equipes
+
+### Bolsas e Descontos
+- Desconto para estudantes e professores
+- Bolsas para profissionais do setor público
+- Programas de diversidade e inclusão
+
+## Depoimentos
+
+> *"O curso transformou minha carreira. Hoje trabalho com dados que nem sabia que existiam e minha produtividade triplicou."*  
+> — **Ana Silva**, Analista Econômica, Ministério da Fazenda
+
+> *"A didática é excelente e o foco em dados brasileiros fez toda a diferença. Recomendo para qualquer economista."*  
+> — **Carlos Santos**, Consultor Independente
+
+---
+
+## Contato
+
+**Email**: [academy@ekio.io](mailto:academy@ekio.io)  
+**Assunto**: Interesse em Cursos  
+
+**WhatsApp**: [Clique aqui](https://wa.me/5511999999999?text=Olá,%20tenho%20interesse%20nos%20cursos%20da%20EKIO%20Academy)
+
+---
+
+*Também oferecemos [tutoriais gratuitos](../../tutoriais/index.qmd) e mantemos um [blog](../../blog/index.qmd) com conteúdo regular sobre análise de dados e economia brasileira.*

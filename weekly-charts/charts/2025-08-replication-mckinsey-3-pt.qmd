@@ -1,0 +1,30 @@
+---
+title: "Replicando McKinsey: Dashboard do Mercado de Commerce Media dos EUA (Português)"
+description: "Recriação do dashboard de três painéis da McKinsey mostrando crescimento explosivo projetado do mercado de commerce media dos EUA de $40B para $100B até 2027"
+date: "2025-08-21"
+image: "/assets/images/weekly-charts/replication-mckinsey-3/chart.png"
+categories: ["replicacao-dados", "comercio", "publicidade", "tutorial-visualizacao"]
+lang: pt-BR
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-mckinsey-3/chart.png){fig-align="center"}
+
+## Pontos Fortes da Visualização
+
+Este **dashboard sofisticado de três painéis** exemplifica **a abordagem premium de storytelling multidimensional da McKinsey**, baseando-se em sua reputação como padrão global para visualizações de consultoria gerencial. O dashboard demonstra a **estratégia de visualização coordenada da McKinsey** - cada painel conta parte de uma história abrangente sobre a trajetória de crescimento explosivo do commerce media.
+
+O **gráfico de linha exponencial do painel esquerdo** estabelece a narrativa dramática de crescimento ($40B para $100B), enquanto as **barras empilhadas do painel central** mostram penetração crescente no mercado (12% para 22% do gasto publicitário), e as **barras simples do painel direito** revelam a oportunidade emergente no valor bruto de mercadorias (0,6% para 1,3%). O **uso estratégico da cor azul de destaque da McKinsey** cria coesão visual, enquanto sua **hierarquia tipográfica limpa** garante que cada insight seja imediatamente acessível.
+
+## Principais Pontos de Aprendizado
+
+- **Dashboards multipainéis** se destacam em contar histórias abrangentes através de visualizações coordenadas
+- **Diversidade de tipos de gráfico** (linha + barras empilhadas + barras) mantém engajamento servindo diferentes propósitos analíticos
+- **Esquemas de cores consistentes** entre painéis criam unidade visual em dashboards complexos
+- **Estrutura narrativa progressiva** guia leitores do crescimento geral para participação de mercado até oportunidades emergentes
+- **Espaçamento e tipografia da McKinsey** demonstram como design profissional eleva a credibilidade dos dados
+- Esta replicação ensina princípios avançados de design de dashboard e técnicas de storytelling multi-gráfico
+
+*Dados: eMarketer, Magna, análise McKinsey do mercado de commerce media dos EUA 2023-2027. Replicação demonstra técnicas de dashboard ggplot2 com o estilo mundialmente reconhecido da McKinsey.*

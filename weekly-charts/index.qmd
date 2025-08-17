@@ -9,11 +9,13 @@ format:
 listing:
   type: grid
   grid-columns: 3
-  contents: charts
+  contents: 
+    - "charts/*.qmd"
+    - "!charts/*-pt.qmd"
   sort: "date desc"
   categories: false
   sort-ui: false
   filter-ui: false
-  page-size: 10
+  page-size: 24
   fields: [image, date, title, description]
 ---
