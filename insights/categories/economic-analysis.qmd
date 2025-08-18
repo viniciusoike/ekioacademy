@@ -1,7 +1,7 @@
 ---
-title: "Economic Analysis Research"
-subtitle: "Macroeconomic trends and regional development analysis"
-description: "Comprehensive analysis of Brazilian macroeconomic indicators, regional development patterns, and economic policy impacts."
+title: "Pesquisa em Análise Econômica"
+subtitle: "Tendências macroeconômicas e análise de desenvolvimento regional"
+description: "Análise abrangente de indicadores macroeconômicos brasileiros, padrões de desenvolvimento regional e impactos de políticas econômicas."
 listing:
   contents: "../posts/*.qmd"
   sort: "date desc"
@@ -10,96 +10,96 @@ listing:
   sort-ui: true
   filter-ui: true
   include:
-    categories: ["economic-analysis"]
+    categories: ["analise-economica"]
 format:
   html:
     page-layout: full
 ---
 
-# Economic Analysis Research
+# Pesquisa em Análise Econômica
 
-Understanding Brazil's complex economic landscape through rigorous data analysis and evidence-based insights.
+Compreendendo o complexo cenário econômico brasileiro através de análise rigorosa de dados e insights baseados em evidências.
 
-## Research Focus Areas
+## Áreas de Foco da Pesquisa
 
-### 📊 Macroeconomic Indicators
-- GDP growth patterns and drivers
-- Inflation dynamics and regional variations
-- Labor market trends and productivity
-- Business cycle analysis and forecasting
+### 📊 Indicadores Macroeconômicos
+- Padrões de crescimento do PIB e seus direcionadores
+- Dinâmicas da inflação e variações regionais
+- Tendências do mercado de trabalho e produtividade
+- Análise de ciclos econômicos e previsões
 
-### 🌎 Regional Development
-- Economic inequality across Brazilian regions
-- Cluster development and specialization patterns  
-- Infrastructure investment impacts
-- Inter-regional trade and migration flows
+### 🌎 Desenvolvimento Regional
+- Desigualdade econômica entre regiões brasileiras
+- Desenvolvimento de clusters e padrões de especialização
+- Impactos de investimentos em infraestrutura
+- Fluxos de comércio e migração inter-regionais
 
-### 💰 Monetary and Fiscal Policy
-- Central Bank policy effectiveness
-- Government spending multipliers
-- Tax policy impact analysis
-- Debt sustainability assessments
+### 💰 Política Monetária e Fiscal
+- Efetividade das políticas do Banco Central
+- Multiplicadores de gastos governamentais
+- Análise de impacto de políticas tributárias
+- Avaliações de sustentabilidade da dívida
 
-### 🏭 Sectoral Analysis
-- Industry competitiveness and productivity
-- Agricultural modernization and exports
-- Service sector growth and innovation
-- Energy transition economic impacts
+### 🏭 Análise Setorial
+- Competitividade e produtividade industrial
+- Modernização agrícola e exportações
+- Crescimento e inovação do setor de serviços
+- Impactos econômicos da transição energética
 
-## Current Research Initiatives
+## Iniciativas de Pesquisa Atuais
 
-### Active Projects
-- **Brazilian Regional Competitiveness Index 2025**
-- **Post-pandemic economic recovery analysis**
-- **Green economy transition pathways**
-- **Digital transformation economic impacts**
+### Projetos Ativos
+- **Índice de Competitividade Regional Brasileira 2025**
+- **Análise de recuperação econômica pós-pandemia**
+- **Caminhos de transição para economia verde**
+- **Impactos econômicos da transformação digital**
 
-### Recent Publications
-- Regional Inflation Patterns: Beyond the National Average (Nov 2024)
-- Brazil's Economic Cycles: Historical Analysis and Future Prospects (Oct 2024)
-- Municipality-level Economic Resilience Assessment (Sep 2024)
+### Publicações Recentes
+- Padrões Regionais de Inflação: Além da Média Nacional (Nov 2024)
+- Ciclos Econômicos do Brasil: Análise Histórica e Perspectivas Futuras (Out 2024)
+- Avaliação de Resiliência Econômica em Nível Municipal (Set 2024)
 
-## Analytical Methods
+## Métodos Analíticos
 
-Our economic analysis combines:
+Nossa análise econômica combina:
 
-- **Time series econometrics** for trend analysis
-- **Panel data models** for regional comparisons
-- **Input-output analysis** for sectoral linkages
-- **Machine learning** for pattern recognition
-- **Microsimulation** for policy impact assessment
+- **Econometria de séries temporais** para análise de tendências
+- **Modelos de dados em painel** para comparações regionais
+- **Análise de insumo-produto** para ligações setoriais
+- **Aprendizado de máquina** para reconhecimento de padrões
+- **Microssimulação** para avaliação de impacto de políticas
 
-## Key Findings & Insights
+## Principais Descobertas e Insights
 
-### Regional Economic Patterns
-Brazil's economic development shows persistent regional disparities, with the Southeast maintaining its dominance while the Northeast shows signs of convergence in specific sectors.
+### Padrões Econômicos Regionais
+O desenvolvimento econômico do Brasil mostra disparidades regionais persistentes, com o Sudeste mantendo sua dominância enquanto o Nordeste mostra sinais de convergência em setores específicos.
 
-### Inflation Heterogeneity
-Regional price levels vary significantly, with transportation costs and housing driving much of the geographic variation in living costs.
+### Heterogeneidade da Inflação
+Os níveis regionais de preços variam significativamente, com custos de transporte e habitação impulsionando muito da variação geográfica nos custos de vida.
 
-### Productivity Challenges
-Manufacturing productivity growth has stagnated since 2010, while service sectors show more dynamic patterns across different metropolitan areas.
+### Desafios de Produtividade
+O crescimento da produtividade manufatureira estagnou desde 2010, enquanto setores de serviços mostram padrões mais dinâmicos em diferentes áreas metropolitanas.
 
-## Data Infrastructure
+## Infraestrutura de Dados
 
-Our analysis draws on comprehensive databases including:
+Nossa análise se baseia em bancos de dados abrangentes incluindo:
 
-- **BCB**: Monetary policy, financial sector indicators
-- **IBGE**: National accounts, price indices, surveys
-- **IPEA**: Regional development indicators
-- **MTE**: Labor market and employment data
-- **International sources**: World Bank, IMF, OECD
+- **BCB**: Política monetária, indicadores do setor financeiro
+- **IBGE**: Contas nacionais, índices de preços, pesquisas
+- **IPEA**: Indicadores de desenvolvimento regional
+- **MTE**: Dados do mercado de trabalho e emprego
+- **Fontes internacionais**: Banco Mundial, FMI, OCDE
 
-## Policy Applications
+## Aplicações Políticas
 
-Our research directly informs:
+Nossa pesquisa informa diretamente:
 
-- Regional development strategy formulation
-- Investment location decisions
-- Economic forecasting models
-- Public policy evaluation frameworks
-- International economic assessments
+- Formulação de estratégias de desenvolvimento regional
+- Decisões de localização de investimentos
+- Modelos de previsão econômica
+- Frameworks de avaliação de políticas públicas
+- Avaliações econômicas internacionais
 
 ---
 
-*Access our full research database and methodology documentation through our [Research Portal](../research-portal.qmd).*
+*Acesse nosso banco de dados completo de pesquisa e documentação metodológica através do nosso [Portal de Pesquisa](../research-portal.qmd).*

@@ -1,11 +1,11 @@
 ---
-title: "Demographic Pyramids in R"
-subtitle: "Visualizing Population Age and Gender Structure"
-description: "Learn how to create demographic pyramids using ggplot2 to visualize population structure, providing insights into demographic trends and patterns."
-author: "EKIO Academy Team"
+title: "Pirâmides Demográficas no R"
+subtitle: "Visualizando Estrutura Etária e de Gênero da População"
+description: "Aprenda a criar pirâmides demográficas usando ggplot2 para visualizar estrutura populacional, fornecendo insights sobre tendências e padrões demográficos."
+author: "Equipe EKIO Academy"
 date: "2024-01-20"
-categories: [data-visualization, ggplot2, demographics, brazilian-data]
-image: "static/images/thumbnails/ggplot2_demographic_pyramid.png"
+categories: [visualizacao-dados, ggplot2, demografia, dados-brasileiros]
+lang: pt-BR
 format:
   html:
     code-fold: false
@@ -26,17 +26,17 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Introduction to Demographic Pyramids
+# Introdução às Pirâmides Demográficas
 
-A **demographic pyramid** is a graphical representation of the age and gender distribution of a population. It typically shows the population in horizontal bars, with males represented on the left and females on the right. Each bar represents a specific age group, and the length of the bar indicates the number of people in that group.
+Uma **pirâmide demográfica** é uma representação gráfica da distribuição etária e de gênero de uma população. Tipicamente mostra a população em barras horizontais, com homens representados à esquerda e mulheres à direita. Cada barra representa um grupo etário específico, e o comprimento da barra indica o número de pessoas naquele grupo.
 
-Demographic pyramids are widely used in demographic analysis to visualize the structure of a population, providing valuable insights into trends like population growth, aging, and gender distribution.
+As pirâmides demográficas são amplamente utilizadas em análises demográficas para visualizar a estrutura de uma população, fornecendo insights valiosos sobre tendências como crescimento populacional, envelhecimento e distribuição de gênero.
 
-These pyramids are crucial for understanding the socio-economic dynamics of a country, as they highlight the proportions of young versus older populations and reveal patterns related to fertility rates, life expectancy, and migration.
+Essas pirâmides são cruciais para entender as dinâmicas socioeconômicas de um país, pois destacam as proporções de populações jovens versus idosas e revelam padrões relacionados a taxas de fertilidade, expectativa de vida e migração.
 
-By analyzing demographic pyramids, policymakers, businesses, and researchers can make informed decisions related to healthcare, education, and workforce planning.
+Ao analisar pirâmides demográficas, formuladores de políticas, empresas e pesquisadores podem tomar decisões informadas relacionadas à saúde, educação e planejamento da força de trabalho.
 
-## Required Packages
+## Pacotes Necessários
 
 ```{r}
 library(ggplot2)
@@ -45,49 +45,49 @@ library(tidyr)
 library(stringr)
 library(showtext)
 
-# Optional for better plotting
+# Opcional para melhor plotagem
 font_add_google("Open Sans", "Open Sans")
 showtext_auto()
 ```
 
-## Sample Data Creation
+## Criação de Dados Exemplo
 
-Since demographic data can be sensitive to access, we'll create realistic sample data that demonstrates the key concepts of demographic pyramid creation:
+Como dados demográficos podem ser sensíveis ao acesso, criaremos dados amostrais realistas que demonstram os conceitos principais da criação de pirâmides demográficas:
 
 ```{r}
-# Create sample demographic data for Brazil-like population structure
+# Criar dados demográficos amostrais para estrutura populacional tipo Brasil
 set.seed(42)
 
 create_demo_data <- function(country, year, pattern = "young") {
-  # Age groups
+  # Grupos etários
   age_groups <- c("0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", 
                   "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", 
                   "65-69", "70-74", "75-79", "80-84", "85+")
   
-  # Create different population patterns
+  # Criar diferentes padrões populacionais
   if (pattern == "young") {
-    # Young population - typical developing country
+    # População jovem - país em desenvolvimento típico
     base_pop <- c(8.5, 8.2, 7.8, 7.5, 7.0, 6.8, 6.5, 6.2, 5.8, 5.5, 
                   5.0, 4.5, 4.0, 3.5, 2.8, 2.0, 1.2, 0.7)
   } else if (pattern == "aging") {
-    # Aging population - developed country
+    # População envelhecida - país desenvolvido
     base_pop <- c(4.5, 4.8, 5.2, 5.5, 5.8, 6.2, 6.8, 7.2, 7.5, 7.0,
                   6.5, 6.2, 5.8, 5.5, 5.0, 4.2, 3.0, 1.8)
   } else {
-    # Balanced population
+    # População balanceada
     base_pop <- c(6.5, 6.2, 6.0, 6.5, 7.0, 7.2, 7.0, 6.8, 6.5, 6.0,
                   5.5, 5.0, 4.5, 4.0, 3.5, 2.5, 1.5, 0.8)
   }
   
-  # Add some random variation
+  # Adicionar variação aleatória
   male_pop <- base_pop + rnorm(length(base_pop), 0, 0.2)
   female_pop <- base_pop + rnorm(length(base_pop), 0, 0.2)
   
-  # Ensure positive values
+  # Garantir valores positivos
   male_pop <- pmax(male_pop, 0.1)
   female_pop <- pmax(female_pop, 0.1)
   
-  # Create data frame
+  # Criar data frame
   data.frame(
     country = country,
     year = year,
@@ -97,18 +97,22 @@ create_demo_data <- function(country, year, pattern = "young") {
   )
 }
 
-# Create sample data for different countries and years
-brazil_1990 <- create_demo_data("Brazil", 1990, "young")
-brazil_2020 <- create_demo_data("Brazil", 2020, "balanced")
-japan_2020 <- create_demo_data("Japan", 2020, "aging")
+# Criar dados amostrais para diferentes países e anos
+brazil_1990 <- create_demo_data("Brasil", 1990, "young")
+brazil_2020 <- create_demo_data("Brasil", 2020, "balanced")
+japan_2020 <- create_demo_data("Japão", 2020, "aging")
 
-# Combine data
+# Combinar dados
 demo_data <- bind_rows(brazil_1990, brazil_2020, japan_2020)
 
-# Process the data for pyramid plotting
+# Processar os dados para plotagem da pirâmide
 demo_data <- demo_data |>
   mutate(
-    sex = factor(sex, levels = c("Male", "Female")),
+    sex = case_when(
+      sex == "Male" ~ "Masculino",
+      sex == "Female" ~ "Feminino"
+    ),
+    sex = factor(sex, levels = c("Masculino", "Feminino")),
     age_group = factor(age_group, levels = c("0-4", "5-9", "10-14", "15-19", "20-24", 
                                            "25-29", "30-34", "35-39", "40-44", "45-49", 
                                            "50-54", "55-59", "60-64", "65-69", "70-74", 
@@ -117,23 +121,23 @@ demo_data <- demo_data |>
   group_by(country, year) |>
   mutate(
     share = population / sum(population) * 100,
-    share = if_else(sex == "Male", -share, share)
+    share = if_else(sex == "Masculino", -share, share)
   ) |>
   ungroup()
 ```
 
-## Basic Demographic Pyramid
+## Pirâmide Demográfica Básica
 
-Let's start with a basic population pyramid using Brazil's 1990 demographic data. Each bar shows what percentage of the total population belongs to a specific age group and sex combination.
+Vamos começar com uma pirâmide populacional básica usando dados demográficos do Brasil de 1990. Cada barra mostra que porcentagem da população total pertence a um grupo etário e sexo específico.
 
-The visualization is called a "pyramid" because of its distinctive shape: wide at the bottom (many young people), gradually narrowing through the middle ages (fewer adults), and smallest at the top (very few elderly). This triangular shape was typical for most countries in the past and is still common in developing nations today.
+A visualização é chamada de "pirâmide" devido à sua forma distintiva: larga na base (muitos jovens), gradualmente estreitando pelas idades médias (menos adultos) e menor no topo (muito poucos idosos). Esta forma triangular era típica da maioria dos países no passado e ainda é comum em nações em desenvolvimento.
 
 ```{r}
-# Filter data for Brazil 1990
+# Filtrar dados para Brasil 1990
 brazil_90 <- demo_data |> 
-  filter(country == "Brazil", year == 1990)
+  filter(country == "Brasil", year == 1990)
 
-# Basic pyramid plot
+# Gráfico básico da pirâmide
 ggplot(brazil_90, aes(x = age_group, y = share)) +
   geom_col(aes(fill = sex, color = sex)) +
   coord_flip() +
@@ -142,15 +146,15 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
     breaks = seq(-8, 8, 2),
     labels = c("8", "6", "4", "2", "0", "2", "4", "6", "8")
   ) +
-  labs(x = "Age Group", y = "Share of Population (%)")
+  labs(x = "Grupo Etário", y = "Participação da População (%)")
 ```
 
-## Enhanced Pyramid with Colors and Labels
+## Pirâmide Melhorada com Cores e Rótulos
 
-Let's enhance our pyramid with better colors and explanatory labels. For gender representation, we'll use green for males and purple for females, avoiding traditional stereotypes while ensuring the colors are clearly distinguishable and accessible.
+Vamos melhorar nossa pirâmide com melhores cores e rótulos explicativos. Para representação de gênero, usaremos verde para homens e roxo para mulheres, evitando estereótipos tradicionais enquanto garantimos que as cores sejam claramente distinguíveis e acessíveis.
 
 ```{r}
-colors <- c("#1B9E77", "#7570B3")  # Green for males, purple for females
+colors <- c("#1B9E77", "#7570B3")  # Verde para homens, roxo para mulheres
 font <- "Open Sans"
 
 ggplot(brazil_90, aes(x = age_group, y = share)) +
@@ -162,7 +166,7 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
     "text",
     x = 16,
     y = -6,
-    label = "Male",
+    label = "Masculino",
     color = colors[1],
     family = font,
     size = 4,
@@ -172,7 +176,7 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
     "text",
     x = 16,
     y = 6,
-    label = "Female",
+    label = "Feminino",
     color = colors[2],
     family = font,
     size = 4,
@@ -185,9 +189,9 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
   scale_color_manual(values = colors) +
   scale_fill_manual(values = colors) +
   labs(
-    title = "Brazil Population Pyramid - 1990",
-    x = "Age Group", 
-    y = "Share of Population (%)"
+    title = "Pirâmide Populacional do Brasil - 1990",
+    x = "Grupo Etário", 
+    y = "Participação da População (%)"
   ) +
   theme_minimal(base_size = 12, base_family = font) +
   theme(
@@ -197,14 +201,14 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
   )
 ```
 
-## Temporal Comparison
+## Comparação Temporal
 
-One of the most powerful uses of demographic pyramids is to show how population structure changes over time. Let's compare Brazil in 1990 versus 2020:
+Um dos usos mais poderosos das pirâmides demográficas é mostrar como a estrutura populacional muda ao longo do tempo. Vamos comparar o Brasil em 1990 versus 2020:
 
 ```{r}
-# Compare Brazil across time periods
+# Comparar Brasil ao longo dos períodos
 brazil_comparison <- demo_data |> 
-  filter(country == "Brazil")
+  filter(country == "Brasil")
 
 ggplot(brazil_comparison, aes(x = age_group, y = share)) +
   geom_col(aes(fill = sex, color = sex)) +
@@ -219,10 +223,10 @@ ggplot(brazil_comparison, aes(x = age_group, y = share)) +
   scale_color_manual(values = colors) +
   scale_fill_manual(values = colors) +
   labs(
-    title = "Brazil's Demographic Transition: 1990 vs 2020",
-    x = "Age Group", 
-    y = "Share of Population (%)",
-    caption = "Note the shift from a young population (pyramid shape) to a more balanced structure"
+    title = "Transição Demográfica do Brasil: 1990 vs 2020",
+    x = "Grupo Etário", 
+    y = "Participação da População (%)",
+    caption = "Note a mudança de uma população jovem (formato pirâmide) para uma estrutura mais balanceada"
   ) +
   theme_minimal(base_size = 12, base_family = font) +
   theme(
@@ -233,12 +237,12 @@ ggplot(brazil_comparison, aes(x = age_group, y = share)) +
   )
 ```
 
-## Cross-Country Comparison
+## Comparação Entre Países
 
-Let's compare different countries to see how demographic structures vary. We'll compare Brazil (balanced) with Japan (aging population):
+Vamos comparar diferentes países para ver como as estruturas demográficas variam. Compararemos Brasil (balanceado) com Japão (população envelhecida):
 
 ```{r}
-# Compare different countries in 2020
+# Comparar diferentes países em 2020
 country_comparison <- demo_data |> 
   filter(year == 2020)
 
@@ -255,10 +259,10 @@ ggplot(country_comparison, aes(x = age_group, y = share)) +
   scale_color_manual(values = colors) +
   scale_fill_manual(values = colors) +
   labs(
-    title = "Population Structure Comparison: 2020",
-    x = "Age Group", 
-    y = "Share of Population (%)",
-    caption = "Brazil shows a balanced structure while Japan displays an aging population pattern"
+    title = "Comparação da Estrutura Populacional: 2020",
+    x = "Grupo Etário", 
+    y = "Participação da População (%)",
+    caption = "O Brasil mostra estrutura balanceada enquanto o Japão exibe padrão de população envelhecida"
   ) +
   theme_minimal(base_size = 12, base_family = font) +
   theme(
@@ -269,13 +273,13 @@ ggplot(country_comparison, aes(x = age_group, y = share)) +
   )
 ```
 
-## Overlay Comparison
+## Comparação por Sobreposição
 
-For a more direct comparison between time periods, we can overlay different years using lines and bars:
+Para uma comparação mais direta entre períodos, podemos sobrepor diferentes anos usando linhas e barras:
 
 ```{r}
 brazil_overlay <- demo_data |> 
-  filter(country == "Brazil")
+  filter(country == "Brasil")
 
 breaks_share <- seq(-8, 8, 2)
 labels_share <- c("8", "6", "4", "2", "0", "2", "4", "6", "8")
@@ -300,10 +304,10 @@ ggplot() +
     labels = labels_share
   ) +
   labs(
-    title = "Brazil's Demographic Evolution: 1990 → 2020",
-    subtitle = "Black lines show 1990 structure, colored bars show 2020 structure",
-    x = "Age Group", 
-    y = "Share of Population (%)"
+    title = "Evolução Demográfica do Brasil: 1990 → 2020",
+    subtitle = "Linhas pretas mostram estrutura de 1990, barras coloridas mostram estrutura de 2020",
+    x = "Grupo Etário", 
+    y = "Participação da População (%)"
   ) +
   scale_color_manual(values = colors) +
   scale_fill_manual(values = colors) +
@@ -316,59 +320,59 @@ ggplot() +
   )
 ```
 
-## Working with Brazilian Data Sources
+## Trabalhando com Fontes de Dados Brasileiros
 
-For real Brazilian demographic data, you can use several official sources:
+Para dados demográficos brasileiros reais, você pode usar várias fontes oficiais:
 
-### IBGE (Brazilian Institute of Geography and Statistics)
+### IBGE (Instituto Brasileiro de Geografia e Estatística)
 
-The `{sidrar}` package provides access to IBGE's SIDRA system:
+O pacote `{sidrar}` fornece acesso ao sistema SIDRA do IBGE:
 
 ```{r}
 #| eval: false
 library(sidrar)
 
-# Example: Population by age groups and sex
-# Table 6579 - Population estimates by sex and age groups
-population_data <- sidrar::get_sidra(
+# Exemplo: População por grupos etários e sexo
+# Tabela 6579 - Estimativas da população por sexo e grupos de idade
+dados_populacao <- sidrar::get_sidra(
   api = "/t/6579/n1/all/v/9324/p/last%201/c2/all/c287/all"
 )
 ```
 
-### Using the geobr Package
+### Usando o Pacote geobr
 
-The `{geobr}` package includes some demographic data and can be combined with Census information:
+O pacote `{geobr}` inclui alguns dados demográficos e pode ser combinado com informações do Censo:
 
 ```{r}
 #| eval: false
 library(geobr)
 
-# Population data for municipalities can be combined with geographic data
-# for creating maps with demographic information
-municipalities <- read_municipality(year = 2020)
+# Dados populacionais para municípios podem ser combinados com dados geográficos
+# para criar mapas com informações demográficas
+municipios <- read_municipality(year = 2020)
 ```
 
-## Key Insights from Demographic Pyramids
+## Principais Insights das Pirâmides Demográficas
 
-When analyzing demographic pyramids, look for these key patterns:
+Ao analisar pirâmides demográficas, procure por estes padrões principais:
 
-1. **Young Population (Pyramid Shape)**: Wide base indicates high birth rates and short life expectancy
-2. **Aging Population (Inverted Pyramid)**: Narrow base with wider top shows declining birth rates and increased longevity
-3. **Stable Population (Barrel Shape)**: Relatively even distribution across age groups
-4. **Population Bulges**: Can indicate baby booms, migration patterns, or historical events
+1. **População Jovem (Formato Pirâmide)**: Base larga indica altas taxas de natalidade e baixa expectativa de vida
+2. **População Envelhecida (Pirâmide Invertida)**: Base estreita com topo mais largo mostra declínio nas taxas de natalidade e aumento da longevidade
+3. **População Estável (Formato Barril)**: Distribuição relativamente equilibrada entre grupos etários
+4. **Bônus Demográfico**: Pode indicar baby booms, padrões migratórios ou eventos históricos
 
-## Summary
+## Resumo
 
-Demographic pyramids are powerful tools for visualizing population structure and understanding demographic trends. Key takeaways:
+As pirâmides demográficas são ferramentas poderosas para visualizar estrutura populacional e entender tendências demográficas. Pontos principais:
 
-- Use consistent color schemes that avoid gender stereotypes
-- Consider both temporal and cross-country comparisons
-- Overlay techniques can effectively show demographic transitions
-- Brazilian demographic data is available through IBGE via the sidrar package
-- Always provide clear labels and context for your visualizations
+- Use esquemas de cores consistentes que evitem estereótipos de gênero
+- Considere comparações temporais e entre países
+- Técnicas de sobreposição podem mostrar efetivamente transições demográficas
+- Dados demográficos brasileiros estão disponíveis através do IBGE via pacote sidrar
+- Sempre forneça rótulos claros e contexto para suas visualizações
 
-The shift from traditional pyramid shapes to more balanced or even inverted structures reflects global demographic transitions and has important implications for policy planning, economic development, and social services.
+A mudança de formatos tradicionais de pirâmide para estruturas mais balanceadas ou até invertidas reflete transições demográficas globais e tem implicações importantes para planejamento de políticas, desenvolvimento econômico e serviços sociais.
 
 ---
 
-*Ready to explore more Brazilian data visualizations? Check out our tutorial on [Brazilian Data Sources](../../r-fundamentals/brazilian-data/index.qmd) or learn about [Interactive Maps](../choropleth-maps/index.qmd).*
+*Pronto para explorar mais visualizações de dados brasileiros? Confira nosso tutorial sobre [Fontes de Dados Brasileiros](../../../fundamentos-r/dados-brasileiros/index.qmd) ou aprenda sobre [Mapas Interativos](../mapas-coropleticos/index.qmd).*

@@ -1,9 +1,10 @@
 ---
-title: "Replicating Nexo: Latin America Economic Cycles"
-description: "Recreation of Nexo's timeline visualization showing GDP growth and recession patterns across Latin American countries from 1900-2016 using ggplot2"
+title: "Replicando Nexo: Ciclos Econômicos da América Latina"
+description: "Recriação da visualização temporal do Nexo mostrando padrões de crescimento do PIB e recessão em países latino-americanos de 1900-2016 usando ggplot2"
 date: "2025-08-19"
 image: "/assets/images/weekly-charts/replication-nexo-1/chart.png"
-categories: ["data-replication", "economics", "latin-america", "visualization-tutorial"]
+categories: ["replicacao-dados", "economia", "america-latina", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,19 +12,19 @@ format:
 
 ![](/assets/images/weekly-charts/replication-nexo-1/chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This timeline chart showcases **Nexo's sophisticated approach to historical data visualization** through its **binary color encoding system** that makes economic cycles immediately readable across a century of Latin American history. The **coral and teal color scheme** creates strong visual contrast while the **horizontal timeline format** allows for easy country-by-country comparison of economic volatility patterns.
+Este gráfico temporal demonstra **a abordagem sofisticada do Nexo para visualização de dados históricos** através de seu **sistema de codificação de cores binário** que torna ciclos econômicos imediatamente legíveis ao longo de um século de história latino-americana. O **esquema de cores coral e verde-azulado** cria forte contraste visual, enquanto o **formato de linha temporal horizontal** permite fácil comparação país-a-país de padrões de volatilidade econômica.
 
-The visualization reveals fascinating insights about **regional economic synchronization** - note how the **Great Depression (1930s)** appears as widespread coral bands across most countries, while more recent crises show **varying national responses**. The **consistent scale** from 1900-2016 provides historical perspective that shorter-term analyses often miss, making it particularly effective for understanding long-term economic development patterns.
+A visualização revela insights fascinantes sobre **sincronização econômica regional** - note como a **Grande Depressão (anos 1930)** aparece como faixas coral generalizadas na maioria dos países, enquanto crises mais recentes mostram **respostas nacionais variadas**. A **escala consistente** de 1900-2016 fornece perspectiva histórica que análises de prazo mais curto frequentemente perdem, tornando-a particularmente eficaz para entender padrões de desenvolvimento econômico de longo prazo.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Timeline charts** excel at showing historical patterns and cyclical behaviors over long periods
-- **Binary color encoding** (growth vs. recession) simplifies complex economic data into immediate insights
-- **Country stacking** enables simultaneous comparison of multiple time series
-- **Consistent time scaling** reveals both synchronized regional events and country-specific patterns
-- **Historical perspective** (100+ years) provides context often lost in shorter-term economic analysis
-- This replication teaches both economic data storytelling and long-term visualization techniques
+- **Gráficos temporais** se destacam ao mostrar padrões históricos e comportamentos cíclicos em longos períodos
+- **Codificação de cores binária** (crescimento vs. recessão) simplifica dados econômicos complexos em insights imediatos
+- **Empilhamento de países** permite comparação simultânea de múltiplas séries temporais
+- **Escalamento temporal consistente** revela tanto eventos regionais sincronizados quanto padrões específicos de países
+- **Perspectiva histórica** (100+ anos) fornece contexto frequentemente perdido em análises econômicas de prazo mais curto
+- Esta replicação ensina tanto storytelling de dados econômicos quanto técnicas de visualização de longo prazo
 
-*Data: Latin American GDP growth rates 1900-2016. Replication demonstrates ggplot2 timeline techniques with effective color encoding for economic cycles.*
+*Dados: Taxas de crescimento do PIB latino-americano 1900-2016. Replicação demonstra técnicas de linha temporal ggplot2 com codificação eficaz de cores para ciclos econômicos.*

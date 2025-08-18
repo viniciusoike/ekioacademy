@@ -3,12 +3,13 @@ project:
   render:
     - "*.qmd"
     - "!content-archive/"
+    - "!old_website/"
     - "!quarto-*/"
 
 
 website:
   title: "EKIO Academy"
-  description: "R & Data Science for Economics and Urban Analysis | Brazilian Urban Economics Education Platform"
+  description: "R & Ciência de Dados para Economia e Análise Urbana | Plataforma Educacional Brasileira de Economia Urbana"
   site-url: "https://academy.ekio.io"
 
   google-analytics: "G-XXXXXXXXXX"  # To be configured
@@ -20,39 +21,23 @@ website:
     foreground: white
     collapse: true
     left:
-      - text: "Mini Courses"
+      - text: "Aprender"
         menu:
-          - text: "English"
+          - text: "Tutoriais"
             href: tutorials/index.qmd
-          - text: "Português"
-            href: tutorials/index-pt.qmd
-      - text: "Books"
-        menu:
-          - text: "English"
-            href: books/index.qmd
-          - text: "Português"
-            href: books/index-pt.qmd
-      - text: "Courses"
-        menu:
-          - text: "English"
+          - text: "Mini Cursos"
+            href: tutorials/index.qmd
+          - text: "Cursos Completos"
             href: courses/index.qmd
-          - text: "Português"
-            href: courses/index-pt.qmd
       - text: "Blog"
-        menu:
-          - text: "English"
-            href: blog/index.qmd
-          - text: "Português"
-            href: blog/index-pt.qmd
-      - text: "Research & Insights"
+        href: blog/index.qmd
+      - text: "Livros"
+        href: books/index.qmd
+      - text: "Insights e Análises"
         href: insights/index.qmd
-      - text: "Weekly Charts"
-        menu:
-          - text: "English"
-            href: weekly-charts/index.qmd
-          - text: "Português"
-            href: weekly-charts/index-pt.qmd
-      - text: "About"
+      - text: "Gráficos Semanais"
+        href: weekly-charts/index.qmd
+      - text: "Sobre"
         href: about.qmd
     right:
       - icon: "github"
@@ -70,11 +55,11 @@ website:
     background: "#2c3e50"
     foreground: white
     left: |
-      © 2024 EKIO Academy. Part of [EKIO Analytics](https://ekio.io).
+      © 2024 EKIO Academy. Parte da [EKIO Analytics](https://ekio.io).
     center: |
-      Professional R training for economists and urban planners.
+      Treinamento profissional em R para economistas e planejadores urbanos.
     right: |
-      [Privacy Policy](https://ekio.io/privacy) | [Terms](https://ekio.io/terms)
+      [Política de Privacidade](privacy.qmd) | [Termos](terms.qmd)
 
 format:
   html:

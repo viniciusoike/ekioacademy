@@ -1,17 +1,15 @@
 ---
-title: "Weekly Charts"
-subtitle: "Data visualizations that tell stories"
-lang: en
+title: "Gráficos Semanais"
+subtitle: "Visualizações de dados que contam histórias"
+lang: pt-BR
 format:
   html:
     page-layout: full
-    css: weekly-charts-style.css
+    css: graficos-semanais-style.css
 listing:
   type: grid
   grid-columns: 3
-  contents: 
-    - "charts/*.qmd"
-    - "!charts/*-pt.qmd"
+  contents: "charts/*.qmd"
   sort: "date desc"
   categories: false
   sort-ui: false

@@ -1,9 +1,10 @@
 ---
-title: "São Paulo's Car Ownership Divide"
-description: "Wealthy neighborhoods own 4x more cars per household than peripheral areas, while the historic center mirrors low-income patterns"
+title: "Divisão de Propriedade de Carros em São Paulo"
+description: "Bairros ricos possuem 4x mais carros por domicílio que áreas periféricas, enquanto o centro histórico espelha padrões de baixa renda"
 date: "2025-08-01"
 image: "/assets/images/weekly-charts/sp-car-ownership-map.svg"
-categories: ["transportation", "urban-economics", "sao-paulo"]
+categories: ["transporte", "economia-urbana", "sao-paulo"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -12,27 +13,27 @@ format:
 ---
 
 
-![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+![Taxas de Propriedade de Carros em São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Mapa coroplético de São Paulo mostrando taxas de propriedade de carros por domicílio por zonas da pesquisa Origem-Destino."}
 
 ::: {.column-margin}
-### Key Insights
+### Principais Insights
 
-**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+**1,6** - Carros por domicílio em bairros ricos como Jardim Europa e Alto de Pinheiros
 
-**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
+**0,4** - Carros por domicílio em áreas periféricas como Cidade Tiradentes e Capão Redondo
 
-**4x** - Difference between highest and lowest car ownership areas
+**4x** - Diferença entre as áreas com maior e menor propriedade de carros
 :::
 
 ::: {.grid}
 
 ::: {.g-col-8}
-This column takes 1/3 of the page
+Esta coluna ocupa 1/3 da página
 :::
 
 ::: {.g-col-8}
 ::: {.column-page-right}
-![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+![Taxas de Propriedade de Carros em São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Mapa coroplético de São Paulo mostrando taxas de propriedade de carros por domicílio por zonas da pesquisa Origem-Destino."}
 :::
 :::
 
@@ -41,48 +42,48 @@ This column takes 1/3 of the page
 
 ::: {.columns}
 ::: {.column}
-### Key Insights
+### Principais Insights
 
-**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+**1,6** - Carros por domicílio em bairros ricos como Jardim Europa e Alto de Pinheiros
 
-**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
+**0,4** - Carros por domicílio em áreas periféricas como Cidade Tiradentes e Capão Redondo
 
-**4x** - Difference between highest and lowest car ownership areas
+**4x** - Diferença entre as áreas com maior e menor propriedade de carros
 :::
 ::: {.column-page-inset-right}
-![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+![Taxas de Propriedade de Carros em São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Mapa coroplético de São Paulo mostrando taxas de propriedade de carros por domicílio por zonas da pesquisa Origem-Destino."}
 :::
 ::: <!-- end columns -->
 
 
 ::: {.column-page-inset-right}
-![Car Ownership Rates Across São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Choropleth map of São Paulo showing car ownership rates per household by Origin-Destination survey zones.."}
+![Taxas de Propriedade de Carros em São Paulo](/assets/images/weekly-charts/sp-car-ownership-map.svg){fig-width="100%" fig-alt="Mapa coroplético de São Paulo mostrando taxas de propriedade de carros por domicílio por zonas da pesquisa Origem-Destino."}
 :::
 
 
-### Key Insights
+### Principais Insights
 
-**1.6** - Cars per household in wealthy neighborhoods like Jardim Europa and Alto de Pinheiros
+**1,6** - Carros por domicílio em bairros ricos como Jardim Europa e Alto de Pinheiros
 
-**0.4** - Cars per household in peripheral areas like Cidade Tiradentes and Capão Redondo
+**0,4** - Carros por domicílio em áreas periféricas como Cidade Tiradentes e Capão Redondo
 
-**4x** - Difference between highest and lowest car ownership areas
+**4x** - Diferença entre as áreas com maior e menor propriedade de carros
 
 
 
-## The Surprising Pattern
+## O Padrão Surpreendente
 
-São Paulo's car ownership reveals an expected wealth gradient - but with a twist. While peripheral low-income areas predictably have low car ownership, **the historic downtown also mirrors these patterns** despite its central location.
+A propriedade de carros em São Paulo revela um gradiente de renda esperado - mas com uma surpresa. Enquanto áreas periféricas de baixa renda previsivelmente têm baixa propriedade de carros, **o centro histórico também espelha esses padrões** apesar de sua localização central.
 
-This suggests that:
-- **Urban density** and transit access can substitute for private vehicles
-- **Historic downtown residents** may prioritize proximity over car ownership
-- **Car-centric development** in wealthy suburbs drives higher ownership rates
+Isso sugere que:
+- **Densidade urbana** e acesso ao transporte público podem substituir veículos privados
+- **Moradores do centro histórico** podem priorizar proximidade sobre propriedade de carros
+- **Desenvolvimento centrado no carro** em subúrbios ricos impulsiona taxas maiores de propriedade
 
-## Policy Implications
+## Implicações para Políticas Públicas
 
-The data supports transit-oriented development policies, showing that well-connected central areas can maintain low car dependency regardless of proximity to jobs and services.
+Os dados apoiam políticas de desenvolvimento orientado ao transporte público, mostrando que áreas centrais bem conectadas podem manter baixa dependência de carros independentemente da proximidade a empregos e serviços.
 
 ---
 
-*Data: São Paulo Metro Origin-Destination Survey 2017.*
+*Dados: Pesquisa Origem-Destino do Metrô de São Paulo 2017.*

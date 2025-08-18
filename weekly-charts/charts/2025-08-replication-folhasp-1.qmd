@@ -1,9 +1,10 @@
 ---
-title: "Replicating Folha SP: São Paulo Housing Affordability"
-description: "Recreation of Folha de São Paulo housing affordability chart showing stark neighborhood differences between family types using ggplot2"
+title: "Replicando Folha SP: Acessibilidade Habitacional em São Paulo"
+description: "Recriação do gráfico de acessibilidade habitacional da Folha de São Paulo mostrando diferenças marcantes entre bairros por tipos de família usando ggplot2"
 date: "2025-08-10"
 image: "/assets/images/weekly-charts/replication-folhasp-1/chart.png"
-categories: ["data-replication", "housing", "sao-paulo", "visualization-tutorial"]
+categories: ["replicacao-dados", "habitacao", "sao-paulo", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,18 +12,18 @@ format:
 
 ![](/assets/images/weekly-charts/replication-folhasp-1/chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This horizontal bar chart masterfully demonstrates **Folha SP's clean editorial style** through its strategic use of a **two-color legend system** that immediately distinguishes between family types. The **graduated blue color scheme** creates visual hierarchy while the **right-aligned percentage labels** provide precise affordability values without cluttering the visualization.
+Este gráfico de barras horizontais demonstra magistralmente **o estilo editorial limpo da Folha SP** através de seu uso estratégico de um **sistema de legenda de duas cores** que distingue imediatamente entre tipos de família. O **esquema de cores azul graduado** cria hierarquia visual, enquanto os **rótulos percentuais alinhados à direita** fornecem valores precisos de acessibilidade sem desordenar a visualização.
 
-The chart reveals a striking pattern: **República leads in affordability** for single residents at 80.1%, but family housing shows dramatic variation across São Paulo neighborhoods. The **clear categorical separation** between high-affordability areas (darker blue) and lower-affordability areas (lighter blue) makes the housing inequality immediately apparent.
+O gráfico revela um padrão marcante: **República lidera em acessibilidade** para residentes solteiros com 80,1%, mas habitação familiar mostra variação dramática entre bairros de São Paulo. A **separação categórica clara** entre áreas de alta acessibilidade (azul mais escuro) e áreas de menor acessibilidade (azul mais claro) torna a desigualdade habitacional imediatamente aparente.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Horizontal bars** excel for categorical data with longer neighborhood names
-- **Two-color legends** work effectively when comparing two distinct groups
-- **Strategic color gradation** helps distinguish data categories while maintaining visual coherence
-- **Right-aligned labels** keep charts clean while preserving numerical precision
-- This replication teaches both housing analysis and Brazilian media visualization standards
+- **Barras horizontais** se destacam para dados categóricos com nomes de bairros mais longos
+- **Legendas de duas cores** funcionam efetivamente ao comparar dois grupos distintos
+- **Gradação estratégica de cores** ajuda distinguir categorias de dados mantendo coerência visual
+- **Rótulos alinhados à direita** mantêm gráficos limpos preservando precisão numérica
+- Esta replicação ensina tanto análise habitacional quanto padrões de visualização da mídia brasileira
 
-*Data: Folha de São Paulo housing affordability analysis. Replication demonstrates ggplot2 horizontal bar techniques with categorical styling.*
+*Dados: Análise de acessibilidade habitacional da Folha de São Paulo. Replicação demonstra técnicas de barras horizontais ggplot2 com estilo categórico.*

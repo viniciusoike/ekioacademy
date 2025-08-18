@@ -1,9 +1,10 @@
 ---
-title: "São Paulo Metro Line 4-Yellow: Post-Pandemic Recovery"
-description: "Analysis of passenger ridership trends on SP Metro's Line 4-Yellow showing incomplete recovery and fare increase impacts"
+title: "Metrô de São Paulo Linha 4-Amarela: Recuperação Pós-Pandemia"
+description: "Análise das tendências de passageiros na Linha 4-Amarela do Metrô SP mostrando recuperação incompleta e impactos dos aumentos tarifários"
 date: "2025-08-16"
 image: "/assets/images/weekly-charts/spo_metro/line_4_overview.png"
-categories: ["transportation", "urban-economics", "sao-paulo"]
+categories: ["transporte", "economia-urbana", "sao-paulo"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -13,23 +14,23 @@ format:
 
 ![](/assets/images/weekly-charts/spo_metro/line_4_overview.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This time series effectively combines **multiple visual elements** to tell a complex story about transportation recovery. The **annotated timeline** uses vertical lines and labels to mark key events (station openings, pandemic period, fare increases), while the **trend line overlay** helps distinguish long-term patterns from monthly volatility.
+Esta série temporal combina efetivamente **múltiplos elementos visuais** para contar uma história complexa sobre recuperação do transporte. A **linha temporal anotada** usa linhas verticais e rótulos para marcar eventos-chave (aberturas de estações, período pandêmico, aumentos tarifários), enquanto a **sobreposição de linha de tendência** ajuda distinguir padrões de longo prazo da volatilidade mensal.
 
-The **shaded pandemic period** immediately contextualizes the dramatic ridership drop, while **strategic color contrast** (yellow line, gray background) maintains the metro line's brand identity. The **dual y-axis approach** allows comparison of absolute numbers with trend direction.
+O **período pandêmico sombreado** imediatamente contextualiza a queda dramática de passageiros, enquanto **contraste estratégico de cores** (linha amarela, fundo cinza) mantém a identidade da marca da linha do metrô. A **abordagem de eixo y duplo** permite comparação de números absolutos com direção da tendência.
 
-## Key Insights
+## Principais Insights
 
-- **Post-pandemic recovery remains incomplete** with weekday ridership still 10% below pre-pandemic levels
-- **Weekend recovery is stronger** (only 3.6% below), suggesting leisure travel returned faster than commuting
-- **New station openings** show limited impact on overall ridership trends
-- **Fare increases** may have dampened recovery momentum, though causation requires further analysis
+- **Recuperação pós-pandemia permanece incompleta** com passageiros de dias úteis ainda 10% abaixo dos níveis pré-pandêmicos
+- **Recuperação de fins de semana é mais forte** (apenas 3,6% abaixo), sugerindo que viagens de lazer retornaram mais rapidamente que deslocamentos para trabalho
+- **Aberturas de novas estações** mostram impacto limitado nas tendências gerais de passageiros
+- **Aumentos tarifários** podem ter prejudicado o momentum de recuperação, embora causalidade requeira análise adicional
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Annotated timelines** effectively show cause-and-effect relationships in longitudinal data
-- **Trend lines** help separate signal from noise in volatile monthly data
-- **Contextual shading** (pandemic period) provides essential historical framework
+- **Linhas temporais anotadas** efetivamente mostram relações de causa-efeito em dados longitudinais
+- **Linhas de tendência** ajudam separar sinal do ruído em dados mensais voláteis
+- **Sombreamento contextual** (período pandêmico) fornece estrutura histórica essencial
 
-*Data: ViaQuatro Metro operator. Analysis: EKIO Academy transportation research.*
+*Dados: Operadora ViaQuatro Metro. Análise: Pesquisa em transporte EKIO Academy.*

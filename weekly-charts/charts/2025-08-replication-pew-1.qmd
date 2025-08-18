@@ -1,9 +1,10 @@
 ---
-title: "Replicating Pew Research: Global Religious Demographics"
-description: "Recreation of Pew Research stacked bar chart showing age distributions across religious groups using ggplot2"
+title: "Replicando Pew Research: Demografia Religiosa Global"
+description: "Recriação do gráfico de barras empilhadas do Pew Research mostrando distribuições etárias entre grupos religiosos usando ggplot2"
 date: "2025-08-14"
 image: "/assets/images/weekly-charts/replication-pew-1/charts/pew-1-chart.png"
-categories: ["data-replication", "demographics", "visualization-tutorial"]
+categories: ["replicacao-dados", "demografia", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,18 +12,18 @@ format:
 
 ![](/assets/images/weekly-charts/replication-pew-1/charts/pew-1-chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This stacked bar chart excels at showing **compositional differences** across religious groups through consistent 100% scaling. The **three-shade blue color palette** creates clear age group distinctions while maintaining visual harmony. The **strategic ordering** places Muslims at the top to emphasize the title's main finding about their younger demographic profile.
+Este gráfico de barras empilhadas se destaca ao mostrar **diferenças composicionais** entre grupos religiosos através de escala consistente de 100%. A **paleta de cores azul de três tons** cria distinções claras entre faixas etárias mantendo harmonia visual. A **ordenação estratégica** coloca muçulmanos no topo para enfatizar o principal achado do título sobre seu perfil demográfico mais jovem.
 
-The chart's **horizontal layout** accommodates longer category labels comfortably, while **percentage labels inside bars** provide precise values without external clutter. Notice how the **consistent bar width** focuses attention on proportional differences rather than absolute population sizes.
+O **layout horizontal** do gráfico acomoda rótulos de categoria mais longos confortavelmente, enquanto **rótulos percentuais dentro das barras** fornecem valores precisos sem desordem externa. Note como a **largura consistente das barras** foca atenção nas diferenças proporcionais em vez de tamanhos populacionais absolutos.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Stacked bars** are ideal for showing part-to-whole relationships across categories
-- **Monochromatic color schemes** with varying saturation work well for ordered data (age groups)
-- **Strategic category ordering** can reinforce the narrative (youngest populations first)
-- **Internal labeling** maintains clean chart boundaries while preserving precision
-- This replication technique teaches both demographic analysis and professional chart styling
+- **Barras empilhadas** são ideais para mostrar relações parte-todo entre categorias
+- **Esquemas de cores monocromáticos** com saturação variável funcionam bem para dados ordenados (faixas etárias)
+- **Ordenação estratégica de categorias** pode reforçar a narrativa (populações mais jovens primeiro)
+- **Rotulagem interna** mantém limites limpos do gráfico preservando precisão
+- Esta técnica de replicação ensina tanto análise demográfica quanto estilo profissional de gráficos
 
-*Data: Pew Research Center global religious surveys. Replication demonstrates ggplot2 stacked bar techniques.*
+*Dados: Pesquisas religiosas globais do Pew Research Center. Replicação demonstra técnicas de barras empilhadas ggplot2.*

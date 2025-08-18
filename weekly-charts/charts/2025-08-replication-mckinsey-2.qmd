@@ -1,9 +1,10 @@
 ---
-title: "Replicating McKinsey: European Job Change Drivers"
-description: "Recreation of McKinsey's sophisticated bubble chart showing job change priorities across European countries by age group using ggplot2"
+title: "Replicando McKinsey: Motivadores de Mudança de Emprego na Europa"
+description: "Recriação do gráfico de bolhas sofisticado da McKinsey mostrando prioridades de mudança de emprego entre países europeus por faixa etária usando ggplot2"
 date: "2025-08-15"
 image: "/assets/images/weekly-charts/replication-mckinsey-2/mckinsey-2-chart.png"
-categories: ["data-replication", "employment", "europe", "visualization-tutorial"]
+categories: ["replicacao-dados", "emprego", "europa", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,19 +12,19 @@ format:
 
 ![](/assets/images/weekly-charts/replication-mckinsey-2/mckinsey-2-chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This sophisticated bubble chart showcases **McKinsey's premium visualization approach** through its **three-dimensional data encoding**: job factors (rows), countries (columns), and age groups (bubble colors). The **blue gradient color scheme** effectively distinguishes age cohorts while maintaining professional consistency. The **grid-based layout** creates natural comparison zones both horizontally (across countries) and vertically (across job factors).
+Este gráfico de bolhas sofisticado demonstra **a abordagem premium de visualização da McKinsey** através de sua **codificação tridimensional de dados**: fatores de trabalho (linhas), países (colunas) e faixas etárias (cores das bolhas). O **esquema de cores em gradiente azul** distingue efetivamente as coortes de idade mantendo consistência profissional. O **layout baseado em grade** cria zonas naturais de comparação tanto horizontalmente (entre países) quanto verticalmente (entre fatores de trabalho).
 
-The visualization reveals that **remuneration dominates** as the primary job change driver across all European countries, with remarkable consistency. The **bubble size consistency** focuses attention on the percentage values rather than creating false hierarchies, while the **strategic factor ordering** places the most important drivers at the top.
+A visualização revela que **remuneração domina** como principal motivador de mudança de emprego em todos os países europeus, com consistência notável. A **consistência do tamanho das bolhas** foca atenção nos valores percentuais em vez de criar hierarquias falsas, enquanto a **ordenação estratégica dos fatores** coloca os motivadores mais importantes no topo.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Bubble charts** excel at showing three dimensions of data simultaneously
-- **Grid layouts** facilitate both row-wise and column-wise comparisons
-- **Monochromatic color gradients** work well for ordered categorical data (age groups)
-- **Consistent bubble sizing** prevents visual distortion of the underlying data
-- **Strategic variable ordering** (highest to lowest importance) guides reader attention
-- This replication teaches advanced ggplot2 techniques for complex multi-dimensional data
+- **Gráficos de bolhas** se destacam ao mostrar três dimensões de dados simultaneamente
+- **Layouts em grade** facilitam comparações tanto por linha quanto por coluna
+- **Gradientes de cores monocromáticos** funcionam bem para dados categóricos ordenados (faixas etárias)
+- **Dimensionamento consistente de bolhas** previne distorção visual dos dados subjacentes
+- **Ordenação estratégica de variáveis** (maior para menor importância) guia a atenção do leitor
+- Esta replicação ensina técnicas avançadas de ggplot2 para dados multidimensionais complexos
 
-*Data: McKinsey HR Monitor Survey, Dec 2024. Replication demonstrates ggplot2 bubble chart techniques with professional grid styling.*
+*Dados: Pesquisa McKinsey HR Monitor, dez 2024. Replicação demonstra técnicas de gráfico de bolhas ggplot2 com estilo profissional em grade.*

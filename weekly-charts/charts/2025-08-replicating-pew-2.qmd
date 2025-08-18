@@ -1,9 +1,10 @@
 ---
-title: "Replicating Pew Research: US Housing Construction Trends"
-description: "Recreation of Pew Research chart showing decline in starter home construction using ggplot2 and custom styling"
+title: "Replicando Pew Research: Tendências de Construção Habitacional dos EUA"
+description: "Recriação do gráfico do Pew Research mostrando declínio na construção de casas iniciais usando ggplot2 e estilo personalizado"
 date: "2025-08-15"
 image: "/assets/images/weekly-charts/replication-pew-2/charts/pew-2-chart.png"
-categories: ["data-replication", "housing", "visualization-tutorial"]
+categories: ["replicacao-dados", "habitacao", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,17 +12,17 @@ format:
 
 ![](/assets/images/weekly-charts/replication-pew-2/charts/pew-2-chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This chart replication demonstrates excellent **hierarchical visual design** with the callout box drawing attention to the most striking finding - the dramatic 53% decline in starter homes under 1,400 sq ft. The **dual-color approach** (dark bars for 2023, light bars for 2004) creates immediate temporal comparison across all size categories.
+Esta replicação de gráfico demonstra excelente **design visual hierárquico** com a caixa de destaque chamando atenção para o achado mais marcante - o declínio dramático de 53% em casas iniciais com menos de 1.400 pés quadrados. A **abordagem de duas cores** (barras escuras para 2023, barras claras para 2004) cria comparação temporal imediata em todas as categorias de tamanho.
 
-The **clean typography** and **strategic whitespace** mirror Pew Research's professional style, while the **left-aligned category labels** maintain readability even with varying text lengths. Notice how the **proportional bar widths** make the magnitude differences clear - larger homes show smaller percentage changes.
+A **tipografia limpa** e **espaçamento estratégico** espelham o estilo profissional do Pew Research, enquanto os **rótulos de categoria alinhados à esquerda** mantêm legibilidade mesmo com textos de comprimentos variados. Note como as **larguras proporcionais das barras** tornam as diferenças de magnitude claras - casas maiores mostram mudanças percentuais menores.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Callout boxes** effectively highlight key insights without cluttering the main visualization
-- **Consistent color encoding** across categories reduces cognitive load for readers
-- **Professional styling** (fonts, spacing, alignment) significantly impacts credibility and readability
-- This replication approach helps students understand both data analysis and visual design principles
+- **Caixas de destaque** efetivamente realçam insights principais sem desordenar a visualização principal
+- **Codificação de cores consistente** entre categorias reduz carga cognitiva para leitores
+- **Estilo profissional** (fontes, espaçamento, alinhamento) impacta significativamente credibilidade e legibilidade
+- Esta abordagem de replicação ajuda estudantes a entender tanto princípios de análise de dados quanto design visual
 
-*Data: US Census Bureau Survey of Construction. Replication using ggplot2 and custom theme development.*
+*Dados: Pesquisa de Construção do US Census Bureau. Replicação usando ggplot2 e desenvolvimento de tema personalizado.*
