@@ -1,9 +1,10 @@
 ---
-title: "Gaúcho Migration to Santa Catarina Cities"
-description: "Census 2022 reveals cities in Santa Catarina with highest concentration of Rio Grande do Sul migrants, led by Florianópolis"
+title: "Migração Gaúcha para Cidades Catarinenses"
+description: "Censo 2022 revela cidades de Santa Catarina com maior concentração de migrantes do Rio Grande do Sul, lideradas por Florianópolis"
 date: "2025-08-01"
 image: "/assets/images/weekly-charts/census_migration/thumbnails/census-migration-1-medium.png"
-categories: ["demographics", "migration", "santa-catarina"]
+categories: ["demografia", "migracao", "santa-catarina"]
+lang: pt-BR
 format:
   html:
     font-size: 1.5em
@@ -15,17 +16,17 @@ format:
 
 ![](/assets/images/weekly-charts/charts/census-migration-1-chart.png)
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This horizontal bar chart effectively displays migration data by using **proportional bar lengths** that make volume comparisons immediate and intuitive. The **clean typography** and **consistent teal color scheme** maintain focus on the data while the **right-aligned numbers** provide precise values without cluttering the visualization.
+Este gráfico de barras horizontais exibe efetivamente dados de migração usando **comprimentos de barras proporcionais** que tornam comparações de volume imediatas e intuitivas. A **tipografia limpa** e **esquema de cores verde-azulado consistente** mantêm foco nos dados, enquanto os **números alinhados à direita** fornecem valores precisos sem desordenar a visualização.
 
-The chart reveals that **Florianópolis leads significantly** with over 84,000 Rio Grande do Sul migrants, nearly double the second-place Chapecó. This pattern shows how **major urban centers** and **border cities** attract different migration flows - Florianópolis as a capital city destination versus Chapecó's proximity advantage.
+O gráfico revela que **Florianópolis lidera significativamente** com mais de 84.000 migrantes do Rio Grande do Sul, quase o dobro do segundo colocado Chapecó. Este padrão mostra como **grandes centros urbanos** e **cidades fronteiriças** atraem fluxos migratórios diferentes - Florianópolis como destino de capital versus a vantagem de proximidade de Chapecó.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Horizontal bars excel** for categorical data with long labels (city names)
-- **Single color schemes** work well when comparing within one category
-- **Strategic ordering** (highest to lowest) immediately highlights leaders and patterns
-- This approach scales well for showing migration flows between specific regions
+- **Barras horizontais se destacam** para dados categóricos com rótulos longos (nomes de cidades)
+- **Esquemas de cores únicos** funcionam bem ao comparar dentro de uma categoria
+- **Ordenação estratégica** (maior para menor) imediatamente destaca líderes e padrões
+- Esta abordagem escala bem para mostrar fluxos migratórios entre regiões específicas
 
-*Data: IBGE Census 2022. Chart shows cities with highest absolute numbers of gaúcho emigrants.*
+*Dados: Censo IBGE 2022. Gráfico mostra cidades com maiores números absolutos de emigrantes gaúchos.*

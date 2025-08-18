@@ -10,6 +10,9 @@ _site-pt/
 # Content archive (ignore old content being adapted)
 content-archive/
 
+# Archive of old English website content
+old_website/
+
 # R
 .Rproj.user/
 .Rhistory

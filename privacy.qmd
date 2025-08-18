@@ -1,65 +1,28 @@
 ---
-title: "Privacy Policy"
-description: "EKIO Academy privacy policy and data protection information"
+title: "Política de Privacidade"
+lang: pt-BR
 ---
 
-# Privacy Policy
+# Política de Privacidade
 
-*Last updated: January 2024*
+Esta política de privacidade descreve como a EKIO Academy coleta, usa e protege as informações pessoais dos usuários.
 
-## Overview
+## Informações que Coletamos
 
-EKIO Academy ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website.
+- Dados de navegação e uso do site
+- Informações fornecidas voluntariamente em formulários
+- Dados de analytics para melhorar nossos serviços
 
-## Information We Collect
+## Como Usamos as Informações
 
-### Automatically Collected Information
-- Website usage analytics through Google Analytics
-- IP addresses and browser information
-- Pages visited and time spent on site
+- Melhorar a experiência do usuário
+- Fornecer conteúdo personalizado
+- Comunicar atualizações e novos recursos
 
-### Information You Provide
-- Contact form submissions
-- Course enrollment information
-- Newsletter subscription data
-- Comments and feedback
+## Proteção de Dados
 
-## How We Use Your Information
+Seguimos as melhores práticas de segurança e estamos em conformidade com a LGPD (Lei Geral de Proteção de Dados).
 
-We use collected information to:
-- Improve our website and educational content
-- Provide customer support
-- Send educational resources and updates (with consent)
-- Analyze website performance and user engagement
+## Contato
 
-## Information Sharing
-
-We do not sell, trade, or rent your personal information to third parties. We may share information with:
-- Service providers who assist with website operations
-- Analytics services (Google Analytics)
-- Legal authorities if required by law
-
-## Data Security
-
-We implement appropriate security measures to protect your information, including:
-- Secure server infrastructure
-- Regular security assessments
-- Limited access to personal information
-
-## Your Rights
-
-You have the right to:
-- Access your personal information
-- Request corrections to your data
-- Opt-out of communications
-- Request deletion of your information
-
-## Contact Us
-
-For privacy-related questions or requests, contact us at:
-- Email: privacy@ekio.com.br
-- Website: [Contact Form](contact.qmd)
-
-## Changes to This Policy
-
-We may update this Privacy Policy periodically. Changes will be posted on this page with an updated revision date.
+Para questões sobre privacidade, entre em contato através do site [EKIO Analytics](https://ekio.com.br/contato).

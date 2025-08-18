@@ -1,9 +1,10 @@
 ---
-title: "Replicating McKinsey: Nigeria's Gender Representation"
-description: "Recreation of McKinsey stacked bar chart showing steady ~29% women representation across corporate hierarchy levels using ggplot2"
+title: "Replicando McKinsey: Representação de Gênero na Nigéria"
+description: "Recriação do gráfico de barras empilhadas da McKinsey mostrando ~29% de representação feminina estável em todos os níveis hierárquicos corporativos usando ggplot2"
 date: "2025-07-15"
 image: "/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_2.png"
-categories: ["data-replication", "gender", "visualization-tutorial", "corporate-diversity"]
+categories: ["replicacao-dados", "genero", "tutorial-visualizacao", "diversidade-corporativa"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,18 +12,18 @@ format:
 
 ![](/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_1.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This stacked bar chart masterfully demonstrates **McKinsey's signature visual style** through its clean typography, strategic color choices, and sophisticated layout. The **bold black and cyan color contrast** creates immediate visual hierarchy while the **integrated text annotations** eliminate the need for traditional legends or axes.
+Este gráfico de barras empilhadas demonstra magistralmente **o estilo visual característico da McKinsey** através de sua tipografia limpa, escolhas estratégicas de cores e layout sofisticado. O **contraste ousado entre preto e ciano** cria hierarquia visual imediata, enquanto as **anotações de texto integradas** eliminam a necessidade de legendas ou eixos tradicionais.
 
-The chart reveals a striking pattern: **women's representation remains remarkably stable** at ~29% across all seniority levels in Nigeria's private sector, from entry-level to C-suite positions. This consistency contradicts the typical "leaky pipeline" narrative often seen in corporate gender studies.
+O gráfico revela um padrão marcante: **a representação feminina permanece notavelmente estável** em ~29% em todos os níveis de senioridade no setor privado da Nigéria, desde cargos de entrada até o C-suite. Esta consistência contradiz a narrativa típica do "pipeline com vazamento" frequentemente vista em estudos corporativos de gênero.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Integrated annotations** work better than traditional axis labels for executive presentations
-- **Stacked bars with percentage splits** clearly show compositional data across categories
-- **Strategic color choices** (black/cyan) create professional contrast while maintaining readability
-- **Minimal grid lines** focus attention on data rather than chart infrastructure
-- This replication teaches both gender analytics and McKinsey-style visualization techniques
+- **Anotações integradas** funcionam melhor que rótulos de eixo tradicionais para apresentações executivas
+- **Barras empilhadas com divisões percentuais** mostram claramente dados composicionais entre categorias
+- **Escolhas estratégicas de cores** (preto/ciano) criam contraste profissional mantendo legibilidade
+- **Linhas de grade mínimas** focam atenção nos dados em vez da infraestrutura do gráfico
+- Esta replicação ensina tanto análise de gênero quanto técnicas de visualização estilo McKinsey
 
-*Data: McKinsey survey conducted Mar–June 2024. Replication demonstrates ggplot2 stacked bar techniques with professional styling.*
+*Dados: Pesquisa McKinsey conduzida mar–jun 2024. Replicação demonstra técnicas de barras empilhadas ggplot2 com estilo profissional.*

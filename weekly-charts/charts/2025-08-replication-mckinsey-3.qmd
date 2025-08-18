@@ -1,9 +1,10 @@
 ---
-title: "Replicating McKinsey: US Commerce Media Market Dashboard"
-description: "Recreation of McKinsey's three-panel dashboard showing projected explosive growth of US commerce media market from $40B to $100B by 2027"
+title: "Replicando McKinsey: Dashboard do Mercado de Commerce Media dos EUA"
+description: "Recriação do dashboard de três painéis da McKinsey mostrando crescimento explosivo projetado do mercado de commerce media dos EUA de $40B para $100B até 2027"
 date: "2025-08-21"
 image: "/assets/images/weekly-charts/replication-mckinsey-3/chart.png"
-categories: ["data-replication", "commerce", "advertising", "visualization-tutorial"]
+categories: ["replicacao-dados", "comercio", "publicidade", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,19 +12,19 @@ format:
 
 ![](/assets/images/weekly-charts/replication-mckinsey-3/chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This sophisticated **three-panel dashboard** exemplifies **McKinsey's premium multi-dimensional storytelling approach**, building on their reputation as the global standard for management consulting visualizations. The dashboard demonstrates McKinsey's **coordinated visualization strategy** - each panel tells part of a comprehensive story about commerce media's explosive growth trajectory.
+Este **dashboard sofisticado de três painéis** exemplifica **a abordagem premium de storytelling multidimensional da McKinsey**, baseando-se em sua reputação como padrão global para visualizações de consultoria gerencial. O dashboard demonstra a **estratégia de visualização coordenada da McKinsey** - cada painel conta parte de uma história abrangente sobre a trajetória de crescimento explosivo do commerce media.
 
-The **left panel's exponential line chart** establishes the dramatic growth narrative ($40B to $100B), while the **middle panel's stacked bars** show increasing market penetration (12% to 22% of ad spend), and the **right panel's simple bars** reveal the emerging opportunity in gross merchandise value (0.6% to 1.3%). McKinsey's **strategic use of blue accent color** creates visual cohesion while their **clean typography hierarchy** ensures each insight is immediately accessible.
+O **gráfico de linha exponencial do painel esquerdo** estabelece a narrativa dramática de crescimento ($40B para $100B), enquanto as **barras empilhadas do painel central** mostram penetração crescente no mercado (12% para 22% do gasto publicitário), e as **barras simples do painel direito** revelam a oportunidade emergente no valor bruto de mercadorias (0,6% para 1,3%). O **uso estratégico da cor azul de destaque da McKinsey** cria coesão visual, enquanto sua **hierarquia tipográfica limpa** garante que cada insight seja imediatamente acessível.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Multi-panel dashboards** excel at telling comprehensive stories through coordinated visualizations
-- **Chart type diversity** (line + stacked bars + bars) maintains engagement while serving different analytical purposes
-- **Consistent color schemes** across panels create visual unity in complex dashboards
-- **Progressive narrative structure** guides readers from overall growth to market share to emerging opportunities
-- **McKinsey's spacing and typography** demonstrate how professional design elevates data credibility
-- This replication teaches advanced dashboard design principles and multi-chart storytelling techniques
+- **Dashboards multipainéis** se destacam em contar histórias abrangentes através de visualizações coordenadas
+- **Diversidade de tipos de gráfico** (linha + barras empilhadas + barras) mantém engajamento servindo diferentes propósitos analíticos
+- **Esquemas de cores consistentes** entre painéis criam unidade visual em dashboards complexos
+- **Estrutura narrativa progressiva** guia leitores do crescimento geral para participação de mercado até oportunidades emergentes
+- **Espaçamento e tipografia da McKinsey** demonstram como design profissional eleva a credibilidade dos dados
+- Esta replicação ensina princípios avançados de design de dashboard e técnicas de storytelling multi-gráfico
 
-*Data: eMarketer, Magna, McKinsey analysis of US commerce media market 2023-2027. Replication demonstrates ggplot2 dashboard techniques with McKinsey's world-class styling.*
+*Dados: eMarketer, Magna, análise McKinsey do mercado de commerce media dos EUA 2023-2027. Replicação demonstra técnicas de dashboard ggplot2 com o estilo mundialmente reconhecido da McKinsey.*

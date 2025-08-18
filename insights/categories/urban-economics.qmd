@@ -1,7 +1,7 @@
 ---
-title: "Urban Economics Research"
-subtitle: "Housing markets, transportation, and city development in Brazil"
-description: "In-depth analysis of Brazilian urban economics, covering housing affordability, transportation systems, municipal finance, and urban development patterns."
+title: "Pesquisa em Economia Urbana"
+subtitle: "Mercados imobiliários, transporte e desenvolvimento urbano no Brasil"
+description: "Análise aprofundada da economia urbana brasileira, cobrindo acessibilidade habitacional, sistemas de transporte, finanças municipais e padrões de desenvolvimento urbano."
 listing:
   contents: "../posts/*.qmd"
   sort: "date desc"
@@ -10,86 +10,86 @@ listing:
   sort-ui: true
   filter-ui: true
   include:
-    categories: ["urban-economics"]
+    categories: ["economia-urbana"]
 format:
   html:
     page-layout: full
 ---
 
-# Urban Economics Research
+# Pesquisa em Economia Urbana
 
-Brazil's rapid urbanization presents unique challenges and opportunities. Our research examines the economic dynamics shaping Brazilian cities.
+A rápida urbanização do Brasil apresenta desafios e oportunidades únicos. Nossa pesquisa examina as dinâmicas econômicas que moldam as cidades brasileiras.
 
-## Key Research Areas
+## Principais Áreas de Pesquisa
 
-### 🏠 Housing Markets
-- Affordability crisis in major metropolitan areas
-- Government housing program effectiveness
-- Regional price variation analysis
-- Impact of financial regulation on homeownership
+### 🏠 Mercados Imobiliários
+- Crise de acessibilidade nas principais áreas metropolitanas
+- Efetividade dos programas habitacionais governamentais
+- Análise de variação regional de preços
+- Impacto da regulamentação financeira na propriedade imobiliária
 
-### 🚇 Transportation Economics
-- Public transit investment returns
-- Congestion costs and productivity impacts
-- Modal choice and urban mobility
-- Transportation equity across income levels
+### 🚇 Economia dos Transportes
+- Retornos de investimento em transporte público
+- Custos de congestionamento e impactos na produtividade
+- Escolha modal e mobilidade urbana
+- Equidade de transporte entre níveis de renda
 
-### 🏛️ Municipal Finance
-- Property tax efficiency and collection
-- Inter-governmental transfers
-- Municipal debt sustainability
-- Public service delivery costs
+### 🏛️ Finanças Municipais
+- Eficiência e arrecadação de impostos prediais
+- Transferências intergovernamentais
+- Sustentabilidade da dívida municipal
+- Custos de prestação de serviços públicos
 
-### 📈 Urban Development Patterns
-- Spatial growth models and predictions
-- Gentrification and displacement patterns
-- Mixed-use development economic impacts
-- Urban sprawl costs and benefits
+### 📈 Padrões de Desenvolvimento Urbano
+- Modelos espaciais de crescimento e previsões
+- Padrões de gentrificação e deslocamento
+- Impactos econômicos do desenvolvimento de uso misto
+- Custos e benefícios do espraiamento urbano
 
-## Featured Research
+## Pesquisas em Destaque
 
-### Recent Publications
-- **Brazil's Housing Affordability Crisis: A Comprehensive Analysis** (Jan 2025)
-- **Municipal Service Efficiency Benchmarking Study** (Dec 2024)  
-- **São Paulo Metro Expansion: Economic Impact Assessment** (Nov 2024)
-- **Regional Housing Policy Effectiveness Review** (Oct 2024)
+### Publicações Recentes
+- **Crise de Acessibilidade Habitacional no Brasil: Uma Análise Abrangente** (Jan 2025)
+- **Estudo de Benchmarking da Eficiência de Serviços Municipais** (Dez 2024)  
+- **Expansão do Metrô de São Paulo: Avaliação de Impacto Econômico** (Nov 2024)
+- **Revisão da Efetividade da Política Habitacional Regional** (Out 2024)
 
-### Ongoing Projects
-- National Urban Development Index (2025)
-- Brazilian Metropolitan Area Competitiveness Study
-- Housing Policy Impact Evaluation Framework
-- Urban Climate Adaptation Economic Analysis
+### Projetos em Andamento
+- Índice Nacional de Desenvolvimento Urbano (2025)
+- Estudo de Competitividade das Áreas Metropolitanas Brasileiras
+- Framework de Avaliação do Impacto de Políticas Habitacionais
+- Análise Econômica da Adaptação Climática Urbana
 
-## Methodology
+## Metodologia
 
-Our urban economics research employs:
+Nossa pesquisa em economia urbana emprega:
 
-- **Spatial econometric models** for geographic analysis
-- **Hedonic pricing models** for real estate valuation
-- **Cost-benefit analysis** for policy evaluation
-- **Machine learning** for pattern recognition in urban data
-- **Microsimulation models** for policy scenario analysis
+- **Modelos econométricos espaciais** para análise geográfica
+- **Modelos de preços hedônicos** para avaliação imobiliária
+- **Análise custo-benefício** para avaliação de políticas
+- **Aprendizado de máquina** para reconhecimento de padrões em dados urbanos
+- **Modelos de microssimulação** para análise de cenários políticos
 
-## Data Sources
+## Fontes de Dados
 
-We integrate data from multiple Brazilian institutions:
+Integramos dados de múltiplas instituições brasileiras:
 
-- **IBGE**: Census, municipal statistics, geographic boundaries
-- **IPEA**: Urban development indicators
-- **Municipal governments**: Budget, service delivery, planning data
-- **Private sector**: Real estate prices, mobility patterns
-- **Satellite imagery**: Urban growth monitoring
+- **IBGE**: Censo, estatísticas municipais, limites geográficos
+- **IPEA**: Indicadores de desenvolvimento urbano
+- **Governos municipais**: Orçamento, prestação de serviços, dados de planejamento
+- **Setor privado**: Preços imobiliários, padrões de mobilidade
+- **Imagens de satélite**: Monitoramento de crescimento urbano
 
-## Research Impact
+## Impacto da Pesquisa
 
-Our urban economics research informs:
+Nossa pesquisa em economia urbana informa:
 
-- Municipal government policy decisions
-- Private sector investment strategies  
-- Academic research and teaching
-- International development programs
-- Urban planning best practices
+- Decisões políticas de governos municipais
+- Estratégias de investimento do setor privado  
+- Pesquisa acadêmica e ensino
+- Programas de desenvolvimento internacional
+- Melhores práticas de planejamento urbano
 
 ---
 
-*Interested in collaborating on urban economics research? [Contact our research team](../../contact.qmd).*
+*Interessado em colaborar em pesquisa de economia urbana? [Entre em contato com nossa equipe de pesquisa](../../contato.qmd).*

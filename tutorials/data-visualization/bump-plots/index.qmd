@@ -1,11 +1,12 @@
 ---
-title: "Bump Plots with ggplot2"
-subtitle: "Creating Professional Ranking Visualizations"
-description: "Learn how to create bump plots to visualize rankings and comparisons over time using ggplot2 and the ggbump package."
-author: "EKIO Academy Team"
+title: "Bump Plots com ggplot2"
+subtitle: "Criando Visualizações Profissionais de Rankings"
+description: "Aprenda a criar bump plots para visualizar rankings e comparações ao longo do tempo usando ggplot2 e o pacote ggbump."
+author: "Equipe EKIO Academy"
 date: "2024-01-15"
-categories: [data-visualization, ggplot2, rankings]
+categories: [visualizacao-dados, ggplot2, rankings]
 image: "static/images/tutorials/replication_economist_bump_plot.jpeg"
+lang: pt-BR
 format:
   html:
     code-fold: false
@@ -33,9 +34,9 @@ knitr::opts_chunk$set(
   )
 
 print_table <- function(x) {
-
-  x |>
-    knitr::kable(align = "c", digits = 0) |>
+  
+  x |> 
+    knitr::kable(align = "c", digits = 0) |> 
     kableExtra::kable_styling(
         full_width = FALSE,
         bootstrap_options = c("condensed", "hover")
@@ -44,28 +45,28 @@ print_table <- function(x) {
 }
 ```
 
-# Introduction to Bump Plots
+# Introdução aos Bump Plots
 
-A **bump plot** shows different values of a variable across distinct contexts. It's similar to parallel trend charts but with smoother lines. This tutorial demonstrates how to create professional bump plots in R using ggplot2 and the specialized ggbump package.
+Um **bump plot** mostra diferentes valores de uma variável em contextos distintos. É similar a um gráfico de tendências paralelas mas com linhas mais suaves. Este tutorial demonstra como criar bump plots profissionais no R usando ggplot2 e o pacote especializado ggbump.
 
-Bump plots are particularly useful for visualizing rankings and comparisons. They help viewers track how different entities (countries, companies, teams) change position relative to each other across different metrics or time periods.
+Os bump plots são particularmente úteis para visualizar rankings e comparações. Eles ajudam os visualizadores a acompanhar como diferentes entidades (países, empresas, times) mudam de posição em relação umas às outras através de diferentes métricas ou períodos de tempo.
 
 ## Setup
 
-We'll use the specialized [{ggbump}](https://github.com/davidsjoberg/ggbump) package designed specifically for creating bump charts. The package is available on both CRAN and GitHub.
+Usaremos o pacote especializado [{ggbump}](https://github.com/davidsjoberg/ggbump) desenvolvido especificamente para criar bump charts. O pacote está disponível tanto no CRAN quanto no GitHub.
 
-In bump plots, we want to compare the value of a variable across different contexts. We can compare the same groups over time or the same groups across different variables. These plots are typically organized as rankings to facilitate easy comparison between groups.
+Neste tipo de gráfico, queremos comparar o valor de uma variável em diferentes contextos. Podemos ter uma comparação entre os mesmos grupos ao longo do tempo ou os mesmos grupos ao longo de variáveis distintas. Em geral, estes gráficos são organizados em forma de rankings e têm como objetivo facilitar a comparação entre grupos.
 
-### Common Applications
+### Aplicações Comuns
 
-- Olympic gold medals by country over different years
-- Most popular music genres by user over time
-- Population rankings of countries across decades
-- Real estate rankings across different criteria
-- Team rankings in sports leagues week by week
-- Country wealth rankings using different wealth metrics
+- Medalhas de ouro nas olimpíadas por país ao longo dos anos
+- Gêneros musicais mais populares por usuário ao longo do tempo
+- Rankings populacionais de países ao longo de décadas
+- Rankings imobiliários através de diferentes critérios
+- Rankings de times em ligas esportivas semana a semana
+- Rankings de riqueza de países usando diferentes métricas
 
-## Required Packages
+## Pacotes Necessários
 
 ```{r}
 library(ggplot2)
@@ -74,15 +75,15 @@ library(dplyr)
 library(tidyr)
 ```
 
-## Basic Example
+## Exemplo Básico
 
-This first example is borrowed from the package documentation and illustrates the basics of `geom_bump`. The data must be in 'tidy' (longitudinal) format where point positions are specified by x and y arguments and groups are identified via the group aesthetic.
+Este primeiro exemplo é emprestado da documentação do pacote e ilustra o básico da função `geom_bump`. Os dados devem estar em formato 'tidy' (longitudinal) onde as posições dos pontos são especificadas pelos argumentos x e y e os grupos identificados via estética group.
 
 ```{r}
 year <- rep(2019:2021, 4)
 position <- c(4, 2, 2, 3, 1, 4, 2, 3, 1, 1, 4, 3)
 player <- c("A", "A", "A",
-            "B", "B", "B",
+            "B", "B", "B", 
             "C", "C", "C",
             "D", "D", "D")
 
@@ -96,44 +97,44 @@ df <- data.frame(x = year,
 df |> arrange(group) |> print_table()
 ```
 
-Take time to carefully compare the entries in the table above with the result in the plot below:
+Vale tirar um tempo para comparar, com calma, as entradas na tabela acima e o resultado no gráfico abaixo:
 
 ```{r}
 ggplot(df, aes(year, position, color = player)) +
   geom_bump()
 ```
 
-## Texas Housing Sales Example
+## Exemplo: Venda de Imóveis no Texas
 
-Let's analyze cities with the highest number of sales over the years using the familiar `txhousing` dataset. We'll create a plot showing the sales ranking over time.
+Podemos analisar as cidades com maior número de vendas ao longo dos anos usando a já conhecida `txhousing`. Vamos criar um gráfico que mostra o ranking de vendas de imóveis ao longo dos anos.
 
-I'll remove 2015 since it's incomplete in the sample. Since there are over forty cities, I'll create a subset containing only cities with the highest sales in 2014.
+Removo o ano de 2015, pois este ano não está completo na amostra. Como há mais de quarenta cidades na amostra, crio uma subamostra que contém apenas as cidades com maior número de vendas em 2014.
 
 ```{r}
-# Find top-15 cities with highest sales in 2014
-top_cities <- txhousing |>
-  # Select only 2014
-  filter(year == 2014) |>
-  # Calculate total sales in each city
-  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |>
-  # Select top-15
-  slice_max(total, n = 15) |>
+# Encontra as top-15 cidades com maior número de vendas em 2014
+top_cities <- txhousing |> 
+  # Seleciona apenas o ano de 2014
+  filter(year == 2014) |> 
+  # Calcula o total de vendas em cada cidade
+  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |> 
+  # Seleciona o top-15
+  slice_max(total, n = 15) |> 
   pull(city)
 
-# Calculate annual sales totals for the city subset and create annual ranking
-rank_housing <- txhousing |>
-  # Select only cities in the subset
-  filter(city %in% top_cities, year > 2005, year < 2015) |>
-  # Calculate total sales each year
+# Calcula o total de vendas anuais na subamostra de cidades e faz o ranking anual
+rank_housing <- txhousing |> 
+  # Seleciona apenas cidades dentro da subamostra
+  filter(city %in% top_cities, year > 2005, year < 2015) |> 
+  # Calcula o total de vendas a cada ano
   summarise(
     listing_year = sum(listings, na.rm = TRUE),
     .by = c("city", "year")
-    ) |>
-  # Rank cities within each year
+    ) |> 
+  # Faz o ranking das cidades dentro de cada ano
   mutate(rank = rank(-listing_year, "first"), .by = "year")
 ```
 
-In the plot below, each city has a different color, but I'll omit the color legend. Note the use of `scale_y_reverse` since we typically want to show the smallest values at the top.
+No gráfico abaixo, cada cidade tem uma cor diferente, mas omito a legenda de cores. Note o uso de `scale_y_reverse` já que, tipicamente, queremos mostrar os menores valores na parte superior do gráfico:
 
 ```{r}
 ggplot(rank_housing, aes(year, rank, group = city, color = city)) +
@@ -142,7 +143,7 @@ ggplot(rank_housing, aes(year, rank, group = city, color = city)) +
   guides(color = "none")
 ```
 
-To improve readability, we can add city names next to the lines using `geom_text`:
+Para melhorar a legibilidade do gráfico podemos colocar o nome das cidades ao lado das linhas usando `geom_text`:
 
 ```{r}
 ggplot() +
@@ -161,44 +162,44 @@ ggplot() +
   guides(color = "none")
 ```
 
-Even with city names, there are many lines to follow. Let's highlight just a few cities. Instead of the top 4 (Houston, Dallas, San Antonio, and Austin), which barely change ranking, let's highlight Bay Area, El Paso, Corpus Christi, and Tyler.
+Mesmo com o nome das cidades, há muitas linhas para acompanhar no gráfico. Vamos destacar apenas algumas cidades. Em vez do top 4 (Houston, Dallas, San Antonio e Austin), que praticamente não se alternam no ranking, vamos destacar Bay Area, El Paso, Corpus Christi e Tyler.
 
 ```{r}
 sel_cities <- c("Bay Area", "El Paso", "Corpus Christi", "Tyler")
 
-rank_housing <- rank_housing |>
+rank_housing <- rank_housing |> 
   mutate(
     highlight = if_else(city %in% sel_cities, city, ""),
     is_highlight = factor(if_else(city %in% sel_cities, 1L, 0L))
   )
 ```
 
-The plot below requires considerably more code but improves the original in several aspects. Now we have better highlighting for cities of interest, better-defined axes, and redundant background lines have been removed.
+O gráfico abaixo exige um código consideravelmente mais longo, mas melhora o gráfico original em vários aspectos. Agora temos um maior destaque para as cidades de interesse, eixos melhor definidos e linhas de fundo redundantes foram removidas:
 
 ```{r}
 #| code-fold: true
 ggplot() +
-  # Gray lines (non-highlighted)
+  # Linhas em cinza (sem destaque)
   geom_bump(
     data = filter(rank_housing, is_highlight == 0),
     aes(year, rank, group = city, color = highlight),
     linewidth = 0.8,
     smooth = 8
     ) +
-  # Colored lines (highlighted)
+  # Linhas coloridas (com destaque)
   geom_bump(
     data = filter(rank_housing, is_highlight == 1),
     aes(year, rank, group = city, color = highlight),
     linewidth = 2,
     smooth = 8
   ) +
-  # Points
+  # Pontos 
   geom_point(
     data = rank_housing,
     aes(year, rank, color = highlight),
     size = 4
   ) +
-  # Non-highlighted names
+  # Nomes sem destaque
   geom_text(
     data = filter(rank_housing, year == max(year), !(city %in% sel_cities)),
     aes(year, rank, label = city),
@@ -206,7 +207,7 @@ ggplot() +
     hjust = 0,
     color = "gray20"
   ) +
-  # Highlighted names (bold)
+  # Nome com destaque (em negrito)
   geom_text(
     data = filter(rank_housing, year == max(year), city %in% sel_cities),
     aes(year, rank, label = city),
@@ -214,14 +215,14 @@ ggplot() +
     hjust = 0,
     fontface = "bold"
   ) +
-  # Add axes for better readability
+  # Adiciona os eixos para melhorar leitura do gráfico
   scale_y_reverse(breaks = 1:15) +
   scale_x_continuous(limits = c(NA, 2017), breaks = 2006:2014) +
-  # Colors
+  # Cores
   scale_color_manual(
     values = c("gray70", "#2f4858", "#86bbd8", "#f6ae2d", "#f26419")
   ) +
-  # Theme elements
+  # Elementos temáticos
   labs(x = NULL, y = NULL) +
   theme_minimal() +
   theme(
@@ -230,21 +231,21 @@ ggplot() +
   )
 ```
 
-# Replicating The Economist
+# Replicando The Economist
 
-As a final exercise, let's replicate a chart from The Economist magazine. The [original article](https://www.economist.com/graphic-detail/2023/12/15/the-worlds-richest-countries-in-2023) discusses different ways to measure and compare wealth between countries.
+Como exercício final vamos replicar um gráfico da revista The Economist. O [artigo original](https://www.economist.com/graphic-detail/2023/12/15/the-worlds-richest-countries-in-2023) discute diferentes maneiras de mensurar e comparar a riqueza entre países.
 
-The chart shows a ranking of the world's richest countries according to three metrics:
+O gráfico mostra um ranking dos países mais ricos do mundo segundo três métricas:
 
-1. **GDP per capita** at current market rates - the most basic wealth measure
-2. **GDP per capita in PPP** (purchasing power parity) - adjusted for cost of living
-3. **GDP per capita in PPP adjusted for hours worked** - shows how productive countries are per hour
+1. **PIB per capita** a preços correntes - a medida mais básica de riqueza
+2. **PIB per capita em PPC** (paridade do poder de compra) - ajustado pelo custo de vida
+3. **PIB per capita em PPC ajustado por horas trabalhadas** - mostra quão produtivos são os países por hora
 
-![Original chart from The Economist](static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
+![Gráfico original do The Economist](static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
 
-Note how this measure considerably elevates European countries like Belgium, Germany, Austria, and Denmark, while lowering some countries like the USA and Singapore.
+Note como esta medida eleva consideravelmente a posição de países europeus como Bélgica, Alemanha, Áustria e Dinamarca, enquanto derruba alguns países como EUA e Singapura.
 
-The original data is available on [The Economist's GitHub](https://github.com/TheEconomist), though I couldn't find the specific code for this chart. I'll use the Lato font from Google Fonts instead of The Economist's proprietary font.
+Os dados originais estão disponíveis no [GitHub do The Economist](https://github.com/TheEconomist), mas não consegui encontrar o código específico para este gráfico. Vou utilizar a fonte Lato do Google Fonts em vez da fonte proprietária do The Economist.
 
 ```{r}
 library(showtext)
@@ -253,35 +254,35 @@ font_add_google("Lato", "Lato")
 showtext_auto()
 ```
 
-## Data Preparation
+## Preparação dos Dados
 
-Much of creating the visualization above involves data manipulation. Let's go step by step.
+Boa parte da construção da visualização acima está na manipulação dos dados. Vamos fazer um passo-a-passo.
 
-First, I'll define useful objects like the names of countries to highlight and columns containing GDP variables:
+Primeiro defino alguns objetos úteis como o nome dos países que serão destacados e o nome das colunas que contém as variáveis de PIB:
 
 ```{r}
 countries_sel <- c("Norway", "Belgium", "Austria", "United States", "Germany")
 
 measures <- c("gdp_over_pop", "gdp_ppp_over_pop", "gdp_ppp_over_k_hours_worked")
 
-sub <- dat |>
-  select(country, year, all_of(measures)) |>
+sub <- dat |> 
+  select(country, year, all_of(measures)) |> 
   na.omit()
 ```
 
-The essential transformation is converting data to tidy format and ranking observations within each GDP metric:
+A transformação essencial é converter os dados em formato tidy e ranquear as observações dentro de cada métrica de PIB:
 
 ```{r}
-ranking <- sub |>
-  filter(year == max(year)) |>
-  pivot_longer(cols = -c(country, year), names_to = "measure") |>
+ranking <- sub |> 
+  filter(year == max(year)) |> 
+  pivot_longer(cols = -c(country, year), names_to = "measure") |> 
   mutate(rank = rank(-value), .by = "measure")
 ```
 
-Now I'll create auxiliary variables useful for mapping different aesthetic elements:
+Agora, mais por conveniência, eu crio algumas variáveis auxiliares que serão úteis para mapear os diferentes elementos estéticos:
 
 ```{r}
-ranking <- ranking |>
+ranking <- ranking |> 
   mutate(
     highlight = if_else(country %in% countries_sel, country, ""),
     highlight = factor(highlight, levels = c(countries_sel, "")),
@@ -292,7 +293,7 @@ ranking <- ranking |>
     )
 ```
 
-Finally, I'll define line colors and create an auxiliary table with text for the top of the chart:
+Por fim, eu defino as cores das linhas e crio uma tabela auxiliar que contém apenas o texto que vai em cima do gráfico:
 
 ```{r}
 cores <- c("#101010", "#f7443e", "#8db0cc", "#fa9494", "#225d9f", "#c7c7c7")
@@ -300,14 +301,14 @@ cores <- c("#101010", "#f7443e", "#8db0cc", "#fa9494", "#225d9f", "#c7c7c7")
 df_gdp <- tibble(
   measure = measures,
   measure_label = c(
-    "GDP per person at market rates",
-    "Adjusted for cost differences*",
-    "Adjusted for costs and hours worked"
+    "PIB per capita a preços de mercado",
+    "Ajustado por diferenças de custo*",
+    "Ajustado por custos e horas trabalhadas"
   ),
   position = -1.2
 )
 
-df_gdp <- df_gdp |>
+df_gdp <- df_gdp |> 
   mutate(
     measure = factor(measure, levels = measures),
     measure_label = stringr::str_wrap(measure_label, width = 12),
@@ -315,7 +316,7 @@ df_gdp <- df_gdp |>
     )
 ```
 
-The simplified version of the chart is summarized below. Note the use of `coord_cartesian` to "crop the chart" without losing information. It's unusual to use `linewidth` as an aesthetic within `aes`, but you can see how this is quite simple and saves several lines of code compared to the previous chart:
+A versão simplificada do gráfico está resumida no código abaixo. Vale notar o uso da `coord_cartesian` para "cortar o gráfico" sem perder informação. Não é muito usual utilizar `linewidth` como um elemento estético dentro de `aes` mas pode-se ver como isto é bastante simples:
 
 ```{r}
 ggplot(ranking, aes(measure, rank, group = country)) +
@@ -334,14 +335,14 @@ ggplot(ranking, aes(measure, rank, group = country)) +
   scale_linewidth_manual(values = c(0.5, 1.2))
 ```
 
-The final code is quite extensive, but the result is very satisfactory:
+O código final é bastante extenso, mas o resultado é muito satisfatório:
 
 ```{r}
 #| code-fold: true
 ggplot(ranking, aes(measure, rank, group = country)) +
   geom_bump(aes(color = highlight, linewidth = is_highlight)) +
   geom_point(shape = 21, color = "white", aes(fill = highlight), size = 3) +
-  # Non-highlighted country names
+  # Nome dos países sem destaque
   geom_text(
     data = filter(ranking, measure == measures[[3]], is_highlight != 1L),
     aes(x = measure, y = rank, label = country),
@@ -349,7 +350,7 @@ ggplot(ranking, aes(measure, rank, group = country)) +
     hjust = 0,
     family = "Lato"
   ) +
-  # Highlighted country names (bold)
+  # Nome dos países com destaque (em negrito)
   geom_text(
     data = filter(ranking, measure == measures[[3]], is_highlight == 1L),
     aes(x = measure, y = rank, label = country),
@@ -358,7 +359,7 @@ ggplot(ranking, aes(measure, rank, group = country)) +
     family = "Lato",
     fontface = "bold"
   ) +
-  # Left axis (1st, 5, 10, 15, 20)
+  # "Eixo" na esquerda (1st, 5, 10, 15, 20)
   geom_text(
     data = filter(ranking, measure == measures[[1]]),
     aes(x = measure, y = rank, label = rank_labels),
@@ -366,7 +367,7 @@ ggplot(ranking, aes(measure, rank, group = country)) +
     hjust = 0,
     family = "Lato"
   ) +
-  # Descriptive text above the chart
+  # Texto descritivo acima do gráfico
   geom_text(
     data = df_gdp,
     aes(x = measure, y = position, label = measure_label),
@@ -375,18 +376,18 @@ ggplot(ranking, aes(measure, rank, group = country)) +
     family = "Lato",
     fontface = "bold"
   ) +
-  # Position downward arrows
+  # Posiciona as flechas apontando para baixo
   annotate("text", x = 1, y = -2.2, label = expression("\u2193")) +
   annotate("text", x = 2, y = -2.2, label = expression("\u2193")) +
   annotate("text", x = 3, y = -2.2, label = expression("\u2193")) +
-  # Crop the chart
+  # Corta o gráfico
   coord_cartesian(ylim = c(21, -2)) +
-  # Colors
+  # Cores
   scale_color_manual(values = cores) +
   scale_fill_manual(values = cores) +
-  # Line thickness
+  # Espessura das linhas
   scale_linewidth_manual(values = c(0.5, 1.2)) +
-  # Theme elements
+  # Elementos temáticos
   labs(x = NULL, y = NULL) +
   theme_minimal() +
   theme(
@@ -398,18 +399,18 @@ ggplot(ranking, aes(measure, rank, group = country)) +
   )
 ```
 
-## Summary
+## Resumo
 
-Bump plots are excellent for visualizing rankings and comparisons across different contexts. Key takeaways:
+Os bump plots são excelentes para visualizar rankings e comparações em diferentes contextos. Pontos principais:
 
-- Use the `ggbump` package for smooth, professional bump charts
-- Data must be in tidy/longitudinal format
-- `scale_y_reverse()` is useful for typical ranking displays
-- Highlighting specific groups improves readability in complex charts
-- Consider using `coord_cartesian()` to focus on relevant ranges
+- Use o pacote `ggbump` para bump charts suaves e profissionais
+- Dados devem estar em formato tidy/longitudinal
+- `scale_y_reverse()` é útil para exibições típicas de ranking
+- Destacar grupos específicos melhora a legibilidade em gráficos complexos
+- Considere usar `coord_cartesian()` para focar em ranges relevantes
 
-The goal of these tutorials is to accomplish as much as possible using `ggplot2`, though in practice, text boxes above charts can be created in external software for more complex designs.
+O objetivo destes posts é de sempre fazer o máximo possível usando `ggplot2` mas, na prática, as caixas de texto acima do gráfico podem ser feitas num software externo para designs mais complexos.
 
 ---
 
-*Ready to create more advanced visualizations? Check out our [Interactive Dashboards](../interactive-dashboards/index.qmd) tutorial or explore our [complete ggplot2 guide](../ggplot2-basics/index.qmd).*
+*Pronto para criar visualizações mais avançadas? Confira nosso tutorial de [Dashboards Interativos](../dashboards-interativos/index.qmd) ou explore nosso [guia completo de ggplot2](../ggplot2-basico/index.qmd).*

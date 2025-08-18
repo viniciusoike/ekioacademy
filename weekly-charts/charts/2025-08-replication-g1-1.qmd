@@ -1,9 +1,10 @@
 ---
-title: "Replicating G1: Brazil Unemployment Evolution"
-description: "Recreation of G1's quarterly unemployment rate visualization showing Brazil's economic recovery with clean bar chart design using ggplot2"
+title: "Replicando G1: Evolução do Desemprego no Brasil"
+description: "Recriação da visualização da taxa de desemprego trimestral do G1 mostrando recuperação econômica do Brasil com design limpo de gráfico de barras usando ggplot2"
 date: "2025-08-12"
 image: "/assets/images/weekly-charts/replication-g1-1/chart.png"
-categories: ["data-replication", "economics", "unemployment", "visualization-tutorial"]
+categories: ["replicacao-dados", "economia", "desemprego", "tutorial-visualizacao"]
+lang: pt-BR
 format:
   html:
     page-layout: article
@@ -11,18 +12,18 @@ format:
 
 ![](/assets/images/weekly-charts/replication-g1-1/chart.png){fig-align="center"}
 
-## Visualization Strengths
+## Pontos Fortes da Visualização
 
-This time series bar chart exemplifies **G1's signature news visualization style** through its **bold red color scheme** and **clean typography hierarchy**. The **direct percentage labeling** on each bar eliminates the need for y-axis gridlines, creating a focused reading experience. The **Portuguese language formatting** (using commas as decimal separators) demonstrates proper localization for Brazilian audiences.
+Este gráfico de barras de série temporal exemplifica **o estilo característico de visualização de notícias do G1** através de seu **esquema de cores vermelho forte** e **hierarquia tipográfica limpa**. A **rotulagem percentual direta** em cada barra elimina a necessidade de linhas de grade no eixo y, criando uma experiência de leitura focada. A **formatação em português** (usando vírgulas como separadores decimais) demonstra localização adequada para audiências brasileiras.
 
-The visualization effectively captures Brazil's unemployment trajectory, showing a **peak of 9.3% in April-June 2022** followed by a **steady decline to 7.9%** by the end of 2022. The **consistent bar width** and **chronological ordering** make temporal trends immediately apparent.
+A visualização captura efetivamente a trajetória do desemprego brasileiro, mostrando um **pico de 9,3% em abril-junho de 2022** seguido por um **declínio constante para 7,9%** até o final de 2022. A **largura consistente das barras** e **ordenação cronológica** tornam tendências temporais imediatamente aparentes.
 
-## Key Learning Points
+## Principais Pontos de Aprendizado
 
-- **Single-color bar charts** work excellently for time series when emphasis is on trend rather than categories
-- **Direct data labeling** can replace traditional axis elements for cleaner design
-- **Bold color choices** help charts stand out in news media contexts
-- **Proper decimal formatting** is crucial for Brazilian Portuguese audiences (comma vs. period)
-- This replication teaches both economic data visualization and Brazilian media design standards
+- **Gráficos de barras de cor única** funcionam excelentemente para séries temporais quando a ênfase está na tendência em vez de categorias
+- **Rotulagem direta de dados** pode substituir elementos de eixo tradicionais para design mais limpo
+- **Escolhas de cores fortes** ajudam gráficos a se destacarem em contextos de mídia noticiosa
+- **Formatação decimal adequada** é crucial para audiências em português brasileiro (vírgula vs. ponto)
+- Esta replicação ensina tanto visualização de dados econômicos quanto padrões de design da mídia brasileira
 
-*Data: IBGE PNAD Contínua quarterly unemployment survey. Replication demonstrates ggplot2 time series bar techniques with Brazilian formatting.*
+*Dados: IBGE PNAD Contínua pesquisa trimestral de desemprego. Replicação demonstra técnicas de barras de série temporal ggplot2 com formatação brasileira.*
