@@ -10,8 +10,8 @@ format:
   html:
     code-fold: false
     toc: true
-    fig-width: 8
-    fig-height: 6
+    fig-width: 9
+    fig-height: 6.1
 execute:
   warning: false
   message: false
@@ -60,14 +60,14 @@ set.seed(42)
 
 create_demo_data <- function(country, year, pattern = "young") {
   # Grupos etários
-  age_groups <- c("0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", 
-                  "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", 
+  age_groups <- c("0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34",
+                  "35-39", "40-44", "45-49", "50-54", "55-59", "60-64",
                   "65-69", "70-74", "75-79", "80-84", "85+")
-  
+
   # Criar diferentes padrões populacionais
   if (pattern == "young") {
     # População jovem - país em desenvolvimento típico
-    base_pop <- c(8.5, 8.2, 7.8, 7.5, 7.0, 6.8, 6.5, 6.2, 5.8, 5.5, 
+    base_pop <- c(8.5, 8.2, 7.8, 7.5, 7.0, 6.8, 6.5, 6.2, 5.8, 5.5,
                   5.0, 4.5, 4.0, 3.5, 2.8, 2.0, 1.2, 0.7)
   } else if (pattern == "aging") {
     # População envelhecida - país desenvolvido
@@ -78,15 +78,15 @@ create_demo_data <- function(country, year, pattern = "young") {
     base_pop <- c(6.5, 6.2, 6.0, 6.5, 7.0, 7.2, 7.0, 6.8, 6.5, 6.0,
                   5.5, 5.0, 4.5, 4.0, 3.5, 2.5, 1.5, 0.8)
   }
-  
+
   # Adicionar variação aleatória
   male_pop <- base_pop + rnorm(length(base_pop), 0, 0.2)
   female_pop <- base_pop + rnorm(length(base_pop), 0, 0.2)
-  
+
   # Garantir valores positivos
   male_pop <- pmax(male_pop, 0.1)
   female_pop <- pmax(female_pop, 0.1)
-  
+
   # Criar data frame
   data.frame(
     country = country,
@@ -113,9 +113,9 @@ demo_data <- demo_data |>
       sex == "Female" ~ "Feminino"
     ),
     sex = factor(sex, levels = c("Masculino", "Feminino")),
-    age_group = factor(age_group, levels = c("0-4", "5-9", "10-14", "15-19", "20-24", 
-                                           "25-29", "30-34", "35-39", "40-44", "45-49", 
-                                           "50-54", "55-59", "60-64", "65-69", "70-74", 
+    age_group = factor(age_group, levels = c("0-4", "5-9", "10-14", "15-19", "20-24",
+                                           "25-29", "30-34", "35-39", "40-44", "45-49",
+                                           "50-54", "55-59", "60-64", "65-69", "70-74",
                                            "75-79", "80-84", "85+"))
   ) |>
   group_by(country, year) |>
@@ -134,7 +134,7 @@ A visualização é chamada de "pirâmide" devido à sua forma distintiva: larga
 
 ```{r}
 # Filtrar dados para Brasil 1990
-brazil_90 <- demo_data |> 
+brazil_90 <- demo_data |>
   filter(country == "Brasil", year == 1990)
 
 # Gráfico básico da pirâmide
@@ -190,7 +190,7 @@ ggplot(brazil_90, aes(x = age_group, y = share)) +
   scale_fill_manual(values = colors) +
   labs(
     title = "Pirâmide Populacional do Brasil - 1990",
-    x = "Grupo Etário", 
+    x = "Grupo Etário",
     y = "Participação da População (%)"
   ) +
   theme_minimal(base_size = 12, base_family = font) +
@@ -207,7 +207,7 @@ Um dos usos mais poderosos das pirâmides demográficas é mostrar como a estrut
 
 ```{r}
 # Comparar Brasil ao longo dos períodos
-brazil_comparison <- demo_data |> 
+brazil_comparison <- demo_data |>
   filter(country == "Brasil")
 
 ggplot(brazil_comparison, aes(x = age_group, y = share)) +
@@ -224,7 +224,7 @@ ggplot(brazil_comparison, aes(x = age_group, y = share)) +
   scale_fill_manual(values = colors) +
   labs(
     title = "Transição Demográfica do Brasil: 1990 vs 2020",
-    x = "Grupo Etário", 
+    x = "Grupo Etário",
     y = "Participação da População (%)",
     caption = "Note a mudança de uma população jovem (formato pirâmide) para uma estrutura mais balanceada"
   ) +
@@ -243,7 +243,7 @@ Vamos comparar diferentes países para ver como as estruturas demográficas vari
 
 ```{r}
 # Comparar diferentes países em 2020
-country_comparison <- demo_data |> 
+country_comparison <- demo_data |>
   filter(year == 2020)
 
 ggplot(country_comparison, aes(x = age_group, y = share)) +
@@ -260,7 +260,7 @@ ggplot(country_comparison, aes(x = age_group, y = share)) +
   scale_fill_manual(values = colors) +
   labs(
     title = "Comparação da Estrutura Populacional: 2020",
-    x = "Grupo Etário", 
+    x = "Grupo Etário",
     y = "Participação da População (%)",
     caption = "O Brasil mostra estrutura balanceada enquanto o Japão exibe padrão de população envelhecida"
   ) +
@@ -278,7 +278,7 @@ ggplot(country_comparison, aes(x = age_group, y = share)) +
 Para uma comparação mais direta entre períodos, podemos sobrepor diferentes anos usando linhas e barras:
 
 ```{r}
-brazil_overlay <- demo_data |> 
+brazil_overlay <- demo_data |>
   filter(country == "Brasil")
 
 breaks_share <- seq(-8, 8, 2)
@@ -306,7 +306,7 @@ ggplot() +
   labs(
     title = "Evolução Demográfica do Brasil: 1990 → 2020",
     subtitle = "Linhas pretas mostram estrutura de 1990, barras coloridas mostram estrutura de 2020",
-    x = "Grupo Etário", 
+    x = "Grupo Etário",
     y = "Participação da População (%)"
   ) +
   scale_color_manual(values = colors) +
