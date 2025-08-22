@@ -940,3 +940,12 @@ body {
     }
   }
 }
+
+// ===================================================================
+// CODE LINE NUMBERING ADJUSTMENTS
+// ===================================================================
+
+// Adjust line numbering position in code blocks
+pre.numberSource code {
+  left: 1.5em !important;
+}
