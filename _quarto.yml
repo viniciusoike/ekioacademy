@@ -73,7 +73,7 @@ format:
     link-external-newwindow: true
     citations-hover: true
     footnotes-hover: true
-    highlight-style: github
+    highlight-style: assets/themes/material-palenight-r.theme
     css:
       - styles.css
       - assets/css/ekio-theme.css
@@ -81,7 +81,6 @@ format:
     include-after-body: _includes/analytics.html
 
 execute:
-  echo: true
   warning: false
   message: false
   cache: true
