@@ -1,0 +1,164 @@
+---
+title: "A filosofia do Tidyverse"
+date: '2025-08-01'
+categories: ['tidyverse', 'data-science', 'R']
+execute:
+  eval: false
+  message: false
+  warning: false
+---
+
+## A filosofia do `tidyverse`
+
+A filosofia geral do `tidyverse` toma muito emprestado da gramática. As funções têm nomes de verbos que costumam ser intuitivos e são encadeados via "pipes"[^6] que funcionam como conectivos numa frase. Em tese, isto torna o código mais legível e até mais didático. A tarefa de renomear colunas, criar variáveis e calcular uma média nos grupos torna-se "linear" no mesmo sentido em que uma frase com sujeito-verbo-objeto é linear.
+
+[^6]: Para saber mais sobre pipes e a diferença entre o novo pipe nativo `|>` e o pipe `|>` do `magrittr` veja meu post sobre o assunto.
+
+### Pipes
+
+O pipe, essencialmente, carrega o resultado de uma função adiante numa cadeia de comandos: `objeto |> função1 |> função2 |> função3`. Isto tem duas vantagens: primeiro, evita que você use funções compostas que são lidas "de dentro para fora" como `exp(mean(log(x)))`; e, segundo, dispensa a criação de objetos intermediários "inúteis" que estão ali somente para segurar um valor que não vai ser utilizado mais adiante.
+
+```{r}
+#| eval: false
+model <- lm(log(AirPassengers) ~ time(AirPassengers))
+
+#> Função composta
+mean(exp(fitted(model)))
+#> Usando pipes
+model |> fitted() |> exp() |> mean()
+#> Usando objetos intermediários
+x1 <- fitted(model)
+x2 <- exp(x1)
+x3 <- mean(x2)
+```
+
+Num contexto de manipulação de dados pode-se ter algo como o código abaixo.
+
+```{r}
+#| eval: false
+tab_vendas_cidade <- dados |>
+  #> Renomeia colunas
+  rename(date = data, city = cidade, variable = vendas, value = valor) |>
+  #> Transforma colunas
+  mutate(
+    value = value / 1000,
+    date = readr::parse_date(date, format = "%Y-%b%-d", locale = readr::locale("pt")),
+    year = lubridate::year(date)
+    ) |>
+  #> Agrupa pela coluna year e calcula algumas estatísticas
+  group_by(year) |>
+  summarise(
+    total = sum(value),
+    count = n()
+  )
+```
+
+Em base-R o mesmo código ficaria algo como o descrito abaixo.
+
+```{r}
+names(dados) <- c("date", "city", "variable", "value")
+
+dados$value <- dados$value / 1000
+dados$date <- readr::parse_date(
+  dados$date, format = "%Y-%b%-d", locale = readr::locale("pt")
+  )
+dados$year <- lubridate::year(dados$date)
+
+tab_vendas_cidade <- tapply(
+  dados$value,
+  dados$city,
+  \(x) {data.frame(total = sum(x), count = length(x))}
+  )
+```
+
+Há um tempo atrás argumentava-se contra o uso de "pipes", pois estes dificultavam a tarefa de encontrar bugs no código. Isto continua sendo parcialmente verdade, mas as funções do `tidyvserse` atualmente têm mensagens de erro bastante ricas e permitem encontrar a fonte do erro com relativa facilidade. Ainda assim, não se recomenda encadear funções em excesso, i.e., pipes com 10 funções ou mais[^7].
+
+[^7]: Para mais sobre pipes consulte o [meu post sobre o assunto](https://restateinsight.com/posts/general-posts/2023-09-pipes-in-r/).
+
+### Funções
+
+Outra filosofia do `tidyverse` é de que tarefas rotineiras devem ser transformadas em funções específicas. Neste sentido, os pacotes `dplyr`, `tidyr` e afins são recheados de funções, às vezes com nomes muito semelhantes e com usos redundantes. As funções `starts_with` e `ends_with`, por exemplo, são casos específicos da função `matches`. Há funções que permitem até duas formas de grafia como `summarise` e `summarize`. Outras como `slice_min` e `slice_max` são convenientes mas são literalmente: `arrange + slice`.
+
+Somando somente os dois principais pacotes, `dplyr` e `tidyr`, há 360 funções disponíveis. Contraste isto com o `data.table` que permite fazer 95% das transformações de dados somente com `dt[i, j, by = c(), .SDcols = cols]`.
+
+Mesmo as funções base do `R` costumam ser mais sucintas do que códigos em `tidyverse`. No exemplo abaixo, a função `tapply` consegue o mesmo resultado que o código mais extenso feito com `dplyr`.
+
+```{r}
+#| eval: false
+tapply(mtcars$mpg, mtcars$cyl, mean)
+
+mtcars |>
+  group_by(cyl) |>
+  summarise(avg = mean(cyl))
+```
+
+As vantagens do `tidyverse` se tornam mais evidentes com o tempo. De fato, o pacote permite abstrações muito poderosas, e eventualmente, pode-se fazer um código centenas de vezes mais sucinto combinando as suas funções. Em outros casos, as funções do tidyverse são simplesmente muito convenientes.
+
+Tome a `starts_with`, por exemplo, que seleciona as colunas que começam de uma certa forma. Suponha uma tabela simples em que há múltiplas colunas cujos nomes começam com a letra "x". O código em tidyverse é muito mais limpo que o código em base-R.
+
+```{r}
+df <- df |>
+  select(date, starts_with("x"))
+
+df <- df[, c("date", names(df)[grep("^x", names(df))])]
+df <- df[, c("date", names(df)[stringr::str_detect(names(df), "^x")])]
+```
+
+O exemplo abaixo é inspirado [neste post](https://www.r-bloggers.com/2023/03/unlocking-the-power-of-purrr-how-to-create-multiple-lags-like-a-pro-in-r/), que mostra como calcular lags de uma série de tempo que esteja em um `data.frame`. Calcular defasagens de uma série de tempo é uma tarefa um pouco árdua quando se usa somente funções base. O código abaixo mostra não somente a elegância do tidyverse mas também a facilidade em se criar funções a partir do tidyverse.
+
+```{r}
+calculate_lags <- function(df, var, lags) {
+
+ map_lag <- lags |> map(~partial(lag, n = .x))
+ out <- df |>
+   mutate(
+     across(.cols = {{var}},
+            .fns = map_lag,
+            .names = "{.col}_lag{lags}")
+     )
+
+ return(out)
+}
+
+df <- data.frame(
+  date = time(AirPassengers),
+  value = as.numeric(AirPassengers)
+)
+
+df |> calculate_lags(value, 1:3) |> head()
+#       date value value_lag1 value_lag2 value_lag3
+# 1 1949.000   112         NA         NA         NA
+# 2 1949.083   118        112         NA         NA
+# 3 1949.167   132        118        112         NA
+# 4 1949.250   129        132        118        112
+# 5 1949.333   121        129        132        118
+# 6 1949.417   135        121        129        132
+```
+
+### Desvantagens
+
+O lado negativo da abordagem "gramatical" é que para não-falantes de inglês muitas destas vantagens são despercebidas[^8] e o resultado é somente um código "verborrágico", cheio de funções. Além disso, pode-se argumentar que há ambiguidades inerentes na linguagem. A função `filter`, por exemplo, é utilizada para *filtrar* as linhas de um `data.frame`, mas podia, igualmente, chamar-se `select`, que *selecionaria* as linhas de um `data.frame`. A função `select`, contudo, é usada para *selecionar* as colunas de um `data.frame`.
+
+[^8]: No fundo, isto é ainda mais um incentivo para aprender inglês.
+
+Um fato particularmente irritante do `tidyverse` é a frequência com que os pacotes mudam. Na maior parte das vezes, as mudanças são positivas, mas isto faz com que o código escrito em `tidyverse` não seja sustentável ao longo do tempo.
+
+Eu demorei um bom tempo para entender as funções `tidyr::gather` e `tidyr::spread` e, atualmente, ambas foram descontinuadas e substituídas pelas funções `pivot_longer` e `pivot_wider`[^9]. As funções `mutate_if`, `mutate_at` e similares do `dplyr` foram todas suprimidas pela sinataxe mais geral do `across`. A função `tidyr::separate` agora está sendo substituída por `separate_wider_position` e `separate_wider_delim`.
+
+[^9]: Tecnicamente, elas foram "superseded", ou suplatandas. Isto significa que elas continuam existindo exatamente da forma como sempre existiram e que não receberão mais atualizações.
+
+Mesmo um código bem escrito há poucos anos atrás tem grandes chances de não funcionar mais porque as funções foram alteradas ou descontinuadas. Em 2021, Wickham discutiu este problema abertamente [numa palestra](https://posit.co/resources/videos/maintaining-the-house-the-tidyverse-built/). Desde então, o tidyverse tem melhorado a sua política de [manutenção de funções](https://lifecycle.r-lib.org/articles/stages.html).
+
+A velocidade e eficiência das funções do tidyverse pode ser um problema, mas atualmente existem diversas boas soluções como o já citado `tidytable`. Particularmente, são raras as situações em que a velocidade do tidyverse me incomoda.
+
+Atualmente, parece haver um consenso crescente de que a melhor forma de começar a aprender R é começando pelo `tidyverse`; esta visão não é livre de críticos como de [Norm Matloff, professor de estatística da UC Davis](https://matloff.wordpress.com/2022/04/02/greatly-revised-edition-of-tidyverse-skeptic/). Essencialmente, Matloff considera que o `tidyverse` é muito complexo para iniciantes: há muitas funções para se aprender e o incentivo à programação funcional torna o código muito abstrato. O tidyverse também esconde o uso do base-R e não ensina operadores básicos como `[[` e `$`. Matloff também considera que "pipes" prejudicam o aprendizado pois dificultam a tarefa de encontrar a fonte dos erros no código.
+
+# À força de uma conclusão
+
+O `tidyverse` é um conjunto de pacotes muito úteis que atualmente dominam o ecossistema do R. Pessoalmente, acredito que a melhor forma de aprender R é começando pelo `tidyverse`. As suas vantagens mais do que compensam as suas falhas. Além disso, o fato dele ser o dialeto dominante de R é, por si só, um bom motivo para aprendê-lo.
+
+A crítica de Matloff é válida em um ponto importante: em grande parte, o tidyverse substitui o base-R e dispensa o seu aprendizado. Isto cria uma lacuna importante que eventualmente vai causar prejuízos. Neste sentido, recomendo dois livros para aprender base-R e os princípios mais gerais da linguagem:
+
+-   [Grolemund, G. Hands-on programming with R](https://rstudio-education.github.io/hopr/)
+
+-   [Wickham, H. Advanced R. 1a ed.](http://adv-r.had.co.nz) - É importante notar a edição. A edição mais recente deste livro omite bastante do base-R.
