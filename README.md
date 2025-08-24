@@ -8,15 +8,12 @@ Educational platform for R programming and econometrics focused on Brazilian urb
 
 ## Overview
 
-EKIO Academy is a bilingual educational platform built with Quarto that provides tutorials, courses, and resources for R programming and econometrics using Brazilian economic data.
+EKIO Academy is an educational platform built with Quarto that provides tutorials, courses, and resources for R programming and econometrics using Brazilian economic data.
 
 ### Features
 
-- Interactive R tutorials with executable code
-- Bilingual support (English/Portuguese)
-- Integration with Brazilian data sources (IBGE, BCB, IPEA, FINBRA)
 - Professional course offerings
-- Complete R theme system for data visualization
+- Tutorials and mini-courses
 
 ### Technical Stack
 
@@ -24,20 +21,6 @@ EKIO Academy is a bilingual educational platform built with Quarto that provides
 - **R Integration**: Custom ggplot2 themes and data processing workflows
 - **Deployment**: Netlify with GitHub Actions CI/CD
 - **Content**: Markdown-based with multilingual support
-
-### Structure
-
-```
-ekioacademy/
-├── index.qmd              # English homepage
-├── tutorials/             # English tutorials
-├── books/                 # Resource library
-├── courses/               # Course offerings
-├── blog/                  # Blog posts
-├── pt/                    # Portuguese content
-├── assets/r/              # R theme system
-└── _includes/             # Reusable components
-```
 
 ## About
 
