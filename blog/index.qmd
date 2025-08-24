@@ -1,32 +1,28 @@
 ---
-title: "Blog"
-subtitle: "Insights sobre Economia Brasileira, Análise Urbana e Programação R"
+title: "A"
 lang: pt-BR
 format:
   html:
     page-layout: full
+    toc: false
 listing:
-  contents: "posts/*.qmd"
+  contents: "posts/**/*.qmd"
   sort: "date desc"
-  type: grid
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  fields: [image, date, title, subtitle, author, categories]
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  fields: [image, date, title, description, categories]
   feed: true
 ---
 
-::: {.hero-section style="padding: 4rem 0; margin-bottom: 2rem;"}
+::: {.hero-section style="padding: 4rem 0; margin-bottom: 1rem;"}
 ::: {.container}
 ::: {.hero-content}
 # Blog EKIO Academy {.hero-title style="font-size: 3rem;"}
 ## Insights sobre Economia Brasileira, Análise Urbana e Programação R {.hero-subtitle style="font-size: 1.2rem;"}
 
 Mantenha-se atualizado com os últimos desenvolvimentos em economia urbana brasileira, aprenda técnicas avançadas de R e obtenha insights da experiência de consultoria da EKIO.
-
-::: {style="margin-top: 2rem;"}
-[Assinar RSS](index.xml){.btn .btn-outline-light} [Todas as Categorias](#categorias){.btn .btn-outline-light style="margin-left: 1rem;"}
-:::
 :::
 :::
 :::
