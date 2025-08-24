@@ -1,0 +1,261 @@
+---
+title: "O tidyverse em números"
+date: 2025-08-05
+categories: ['tidyverse', 'data-science', 'R']
+execute:
+  echo: false
+---
+
+```{r}
+knitr::opts_chunk$set(
+  fig.align = "center",
+  fig.asp = 0.618,
+  fig.width = 9,
+  out.width = "80%",
+  fig.dev = "svg"
+)
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(patchwork)
+library(ragg)
+
+cran_20230905 <- readr::read_csv(
+  'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-19/cran_20230905.csv',
+  show_col_types = FALSE
+)
+
+tidy_packs <- c(
+  "dplyr",
+  "tidyr",
+  "readr",
+  "purrr",
+  "lubridate",
+  "ggplot2",
+  "forcats",
+  "stringr",
+  "tibble"
+)
+
+tab_tidypacks <- cran_20230905 |>
+  janitor::clean_names() |>
+  filter(package %in% tidy_packs) |>
+  select(package, starts_with("reverse")) |>
+  mutate(across(starts_with("reverse"), ~ str_count(.x, ",")))
+
+tab_tidypacks <- tab_tidypacks |>
+  pivot_longer(-package, names_sep = "_", names_to = c("drop", "type"))
+
+tab_tidy_total <- tab_tidypacks |>
+  summarise(total = sum(value, na.rm = TRUE), .by = "package") |>
+  arrange(desc(total))
+
+lvls <- tab_tidy_total$package
+
+tab_tidypacks <- tab_tidypacks |>
+  mutate(
+    package = factor(package, levels = lvls),
+    type = factor(
+      type,
+      levels = c("depends", "imports", "suggests", "enhances")
+    )
+  )
+
+p1 <- ggplot() +
+  geom_col(
+    data = tab_tidypacks,
+    aes(x = package, y = value, fill = type)
+  ) +
+  geom_hline(yintercept = 0) +
+  geom_text(
+    data = tab_tidy_total,
+    aes(x = package, y = total + 200, label = format(total, big.mark = ".")),
+    family = "Helvetica",
+    color = "gray20"
+  ) +
+  labs(
+    title = "O R é tidy",
+    subtitle = "Número de pacotes que depende (de alguma forma) de pacotes core do tidyvese.",
+    x = NULL,
+    y = "Número de pacotes",
+    caption = "Fonte: CRAN (2023/09/05)."
+  ) +
+  scale_fill_manual(
+    name = "",
+    values = c("#023047", "#126782", "#219ebc", "#8ecae6"),
+    labels = c("Depends", "Imports", "Suggests", "Enhances")
+  ) +
+  theme_minimal(base_size = 10, base_family = "Helvetica") +
+  theme(
+    legend.position = "top",
+    plot.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(linetype = 2),
+    panel.grid.minor = element_blank(),
+    plot.caption = element_text(hjust = 0, size = 8),
+    plot.margin = margin(rep(15, 4)),
+    plot.title = element_text(size = 18),
+    axis.text.x = element_text(
+      color = "gray10",
+      size = 12,
+      family = "Fira Code"
+    ),
+    axis.text.y = element_text(color = "gray20", size = 12)
+  )
+
+tab <- cran_20230905 |>
+  janitor::clean_names() |>
+  mutate(
+    is_tidy_imp = str_detect(imports, paste(tidy_packs, collapse = "|")),
+    is_tidy_dep = str_detect(depends, paste(tidy_packs, collapse = "|")),
+    year = lubridate::year(date_publication)
+  ) |>
+  group_by(year) |>
+  summarise(
+    total = n(),
+    depends = sum(is_tidy_dep, na.rm = TRUE),
+    imports = sum(is_tidy_imp, na.rm = TRUE)
+  )
+
+tab_packs <- tab |>
+  mutate(non_tidy = total - (depends + imports)) |>
+  select(-total) |>
+  pivot_longer(-year, names_to = "package_type", values_to = "count") |>
+  filter(year >= 2012) |>
+  mutate(
+    package_type = factor(
+      package_type,
+      levels = c("imports", "depends", "non_tidy")
+    )
+  )
+
+p2 <- ggplot(tab_packs, aes(x = year, y = count, fill = package_type)) +
+  geom_area() +
+  geom_hline(yintercept = 0) +
+  scale_x_continuous(breaks = 2012:2023, expand = expansion(0)) +
+  scale_y_continuous(labels = scales::label_number(big.mark = ".")) +
+  scale_fill_manual(
+    name = "",
+    values = c("#126782", "#023047", "#ffb703"),
+    labels = c("Imports", "Depends", "Não utiliza")
+  ) +
+  labs(
+    x = NULL,
+    y = "Pacotes Publicados"
+  ) +
+  theme_minimal(base_size = 10, base_family = "Helvetica") +
+  theme(
+    legend.position = "bottom",
+    plot.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(linewidth = 0.5),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(angle = 90)
+  )
+
+tab_share <- tab_packs |>
+  mutate(is_tidy = if_else(package_type != "non_tidy", 1L, 0L)) |>
+  summarise(total = sum(count), .by = c("year", "is_tidy")) |>
+  mutate(share = total / sum(total) * 100, .by = "year") |>
+  filter(year >= 2016, is_tidy == 1L)
+
+p3 <- ggplot(tab_share, aes(x = year, y = share)) +
+  geom_col(fill = "#219ebc") +
+  geom_text(aes(y = share + 5, label = paste0(round(share, 1), "%"))) +
+  scale_x_continuous(breaks = 2016:2023) +
+  scale_y_continuous(expand = c(0, 0), limits = c(NA, 50)) +
+  coord_flip() +
+  labs(
+    title = "Crescimento dos pacotes que usam tidyverse",
+    x = "Ano de publicação",
+    subtitle = "Share de pacotes publicados no CRAN que dependem de algum pacote (core) do tidyverse por ano de publicação.",
+  ) +
+  theme_minimal(base_size = 10, base_family = "Helvetica") +
+  theme(
+    plot.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.background = element_rect(fill = "#f8f8f8", color = NA),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_line(linewidth = 0.5),
+    panel.grid.minor = element_blank(),
+    plot.margin = margin(10, 5, 10, 5),
+  )
+
+theme_vini <- theme_minimal(base_size = 12, base_family = "Helvetica") +
+  theme(
+    plot.background = element_rect(fill = "#fefefe", color = NA),
+    panel.background = element_rect(fill = "#fefefe", color = NA),
+    plot.title = element_text(size = 14),
+    plot.subtitle = element_text(size = 10, color = "gray20"),
+    plot.caption = element_text(size = 8, hjust = 0, color = "gray50")
+  )
+
+panel <- p2 |
+  p3 +
+    plot_layout() +
+    plot_annotation(
+      title = "Crescimento dos pacotes que usam tidyverse",
+      subtitle = "Share de pacotes publicados no CRAN que dependem de algum pacote (core) do tidyverse por ano de publicação.",
+      caption = "Fonte: CRAN (2023/09/05). Pacotes core: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr.",
+      theme = theme_vini
+    )
+```
+
+
+# Explorando o tidyverse em números
+
+O "núcleo duro", por assim dizer, do tidyverse é composto por 8 pacotes:
+
+-   `dplyr`
+
+-   `tidyr`
+
+-   `tibble`
+
+-   `readr`
+
+-   `stringr`
+
+-   `lubridate`
+
+-   `forcats`
+
+-   `purrr`
+
+-   `ggplot2`
+
+Cada um destes pacotes resolve algum problema central na análise de dados. O pacote `readr` importa os dados; o `tibble` é a plataforma que contém os dados; `dplyr` e `tidyr` limpam os dados; e, finalmente, `ggplot2` visualiza os dados.
+
+Os pacotes `lubridate`, `forcats` e `stringr` lidam com as três classes importantes de dados: datas, factors e texto. Por fim, o pacote `purrr` amarra todo este ecossistema de pacotes numa abordagem de programação funcional que é elegante e eficiente.
+
+Além dos pacotes core, o tidyverse traz junto consigo outros pacotes importantes como `rvest`/`xml2`/`httr`, para webscrapping, `jsonlite`/`readxl`/`haven`/`feather`, para importação de outros tipos de arquivos de dados e `modelr`/`broom` para modelagem de dados e apresentação de resultados.
+
+## O tidyverse em números
+
+Olhando para as estatísticas do CRAN, vê-se que os pacotes do tidyverse são muito relevantes dentro do ecossistema. Os dados compilados abaixo mostram o retrato dos pacotes do CRAN em 05 de setembro de 2023, quando havia cerca de 19.800 pacotes ativos.
+
+Atualmente, cerca de um terço dos pacotes no CRAN dependem de algum dos pacotes core do tidyverse. O crescimento desta razão tem sido crescente: de todos os pacotes ativos em 2023, 40% dependem diretamente do tidyverse. Note que no gráfico abaixo, o ano de publicação reflete o ano da versão mais recente de cada pacote. Assim, pacotes ativos cuja última atualização foi anterior a 2016 dificilmente vão possuir alguma dependência com os pacotes do tidyverse já que a maioria deles não existia nesta época.
+
+```{r}
+#| eval: true
+#| echo: false
+panel
+```
+
+Vale lembrar que há três tipos de "dependência" entre pacotes no R: **imports**, **depends** e **suggests**. Tipicamente, se um pacote A usa algumas funções de outro pacote B, então o pacote A importa (**imports**) o pacote B. Isto é, ele assume que o usuário tenha o pacote B instalado. Já a relação **depends** é mais estrita: se um pacote A **depends** de um pacote C então os pacotes são carregados conjuntamente quando se chama `library()`[^4]. Por fim se um pacote A usa um pacote D, em algum contexto específico, mas não requer que o usuário tenha o pacote D instalado, então o pacote A **suggests** o pacote D[^5].
+
+[^4]: O pacote `ggforce`, por exemplo, *depends* do `ggplot2`. Isto significa que `library(ggforce)` automaticamente carrega o pacote `ggplot2`.
+
+[^5]: Em geral, os pacotes sugeridos (**suggests**) são listados para os desenvolvedores do pacote ou utilizados para testes e exemplos. Você provavelmente já deve ter visto algum exemplo que começa com: `if (require("pacote")) { … }`. O pacote `nnet`, por exemplo, não depende nem importa outros pacotes, mas utiliza o pacote `MASS` em seus exemplos; assim, o pacote `nnet` suggests o pacote `MASS`. Também existem casos onde um pacote tem mais capacidades ou melhor performance quando os pacotes sugeridos estão instalados; nestes casos, recomenda-se instalar o pacote com `install.packages(dependencies = TRUE)`\`.
+
+Olhando os dados por pacote vê-se que o ggplot2 e dplyr são os mais populares.
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 9
+p1
+```

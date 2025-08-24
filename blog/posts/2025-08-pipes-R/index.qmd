@@ -1,0 +1,182 @@
+---
+title: "Pipes: a intuição matemática das funções compostas"
+description: "O operador pipe é um importante diferencial da programção em R, que torna o código mais legível e seu workflow mais produtivo."
+date: "2025-07-15"
+categories: ["data-science", "R"]
+image: "/static/images/blog/sigmund-pipes.jpg"
+image-alt: "/static/images/blog/sigmund-pipes.jpg"
+---
+
+# Pipes
+
+## Introdução
+
+A partir da versão 4.1.0, o `R` passou a oferecer o operador `|>` chamado de pipe (literalmente, *cano*)[^1]. Este operador foi fortemente inspirado no operador homônimo `%>%` do popular pacote `{magrittr}`.
+
+[^1]: Para a lista completa de mudanças veja [News and Notes](https://journal.r-project.org/archive/2021-1/core.pdf).
+
+Neste post, vamos explorar a intuição matemática do operador, usando funções compostas.
+
+## Funções compostas
+
+O operador pipe, essencialmente, **ordena uma função composta**.
+
+Lembrando um pouco sobre funções compostas: a expressão abaixo mostra a aplicação de três funções onde primeiro aplica-se a função `f` sobre x, depois a função `g` e, por fim, a função `h`. Lê-se a função de dentro para fora.
+
+$$
+h(g(f(x))) = \dots
+$$
+
+Para tornar o exemplo mais concreto considere o exemplo abaixo onde calcula-se a média geométrica de uma sequência de números aleatórios.
+
+A média geométrica é dada pela expressão:
+
+$$
+\overline{x} = (\prod_{i = 1}^{n}x_{i})^{\frac{1}{n}} = \text{exp}(\frac{1}{n}\sum_{i = 1}^{n}\text{log}(x_{i}))
+$$
+
+A expressão acima é uma sequência de aplicação de funções sobre um vetor numérico $x$ :
+
+1.  Aplique a função $\text{log}$ sobre todos os $x_{i}$.
+2.  Aplique a função "somatório", i.e., some todos os $\text{log}(x_{i})$.
+3.  Divida a soma dos logs por $n$.
+4.  Aplique a função exponencial.
+
+Note que os passos 2 e 3 acima são equivalentes a calcular a média aritmética dos logs. Em termos de código, temos:
+
+```{r}
+x <- rnorm(n = 100, mean = 10)
+#> Calcula a média geométrica
+exp(mean(log(x)))
+```
+
+Usando a mesma notação acima, aplica-se primeiro a função `log` (f), depois a função `mean` (g) e, por fim, a função `exp` (h).
+
+Usando o operador pipe, pode-se reescrever a expressão da seguinte forma.
+
+```{r}
+x |> log() |> mean() |> exp()
+```
+
+Note que o resultado da função vai sendo "carregado" da esquerda para a direita sucessivamente.
+
+Para muitos usuários, a segunda sintaxe é mais intuitiva e fácil de ler. No segundo código a ordem em que o nome das funções aparecem coincide com a ordem da sua aplicação. No primeiro código temos que ler as funções de dentro para fora, indo da direita para a esquerda.
+
+Note que o uso de várias funções numa mesma linha de código também nos poupa de ter de criar objetos intermediários como no exemplo abaixo.
+
+```{r}
+log_x <- log(x)
+log_media <- mean(log_x)
+media_geometrica_x <- exp(log_media)
+```
+
+### Detalhes
+
+Os exemplos acima funcionaram sem problemas porque usou-se o operador pipe para "abrir" uma função composta. O argumento de cada função subsequente é o resultado da função antecedente: funciona como uma linha de montagem, em que cada nova etapa soma-se ao resultado da etapa anterior.
+
+Quando o resultado da função anterior não vai diretamente no primeiro argumento da função subsequente, precisa-se usar o operador `_` (underscore). Este operador serve como um *placeholder*: indica onde que o resultado da etapa anterior deve entrar[^2]. No exemplo abaixo, uso o placeholder para colocar a base de dados filtrada no argumento `data` dentro da função `lm`.
+
+[^2]: Tecnicamente, o *placeholder* foi apenas introduzido na versão 4.2.0 como uma melhoria em relação ao pipe nativo implementado anteriormente. "In a forward pipe `|>` expression it is now possible to use a named argument with the placeholder `_` in the `rhs` call to specify where the `lhs` is to be inserted. The placeholder can only appear once on the `rhs`.". [Link original](https://cran.r-project.org/bin/windows/base/old/4.2.0/NEWS.R-4.2.0.html).
+
+```{r}
+#| eval: false
+carros_4 <- subset(mtcars, cyl == 4)
+fit <- lm(mpg ~ wt, data = carros_4)
+
+mtcars |> 
+  subset(cyl == 4) |> 
+  lm(mpg ~ wt, data = _)
+```
+
+Por fim, temos o caso das funções anônimas[^3]. Uma função anônima é simplesmente uma função sem nome que é chamada uma única vez. Infelizmente, a sintaxe de um pipe com uma função anônima é bastante carregada.
+
+[^3]: A notação abaixo de função anônima, usando `\(x)`, também foi introduzida na versão 4.1.0 do R. Antigamente, para se definir uma função era necessário usar `function(x)`.
+
+```{r}
+#| eval: false
+objeto |> (\(x, y, z, ...) {define função})()
+
+# Nova sintaxe de funções anônimas (similar a lambda no Python)
+objeto |> (\(x, y) {x^2 + y^2})()
+# Antiga sintaxe de funções anônimas
+objeto |> (function(x, y) {x^2 + y^2})()
+```
+
+O exemplo repete o código acima, mas agora usa uma função anônima para pegar o R2 ajustado da regressão.
+
+```{r}
+#| eval: false
+mtcars |> 
+  subset(cyl == 4) |> 
+  lm(mpg ~ wt, data = _) |> 
+  (\(x) {summary(x)$adj.r.squared})()
+
+```
+
+## Limitações
+
+Imagine agora que se quer calcular o erro absoluto médio de uma regressão. Lembre-se que o EAM é dado por
+
+$$
+\text{EAM} = \frac{1}{N}\sum_{i = 1}^{N}|e_{i}|
+$$
+
+onde $e_{i}$ é o resíduo da regressão. O código abaixo mostra como fazer isto usando pipes.
+
+```{r}
+#> Estima uma regressão qualquer
+fit <- lm(mpg ~ wt, data = mtcars)
+
+#> Calcula o erro absoluto médio
+fit |> residuals() |> abs() |> mean()
+```
+
+Note, contudo, que a situação fica um pouco mais complicada no caso em que se quer calcular a raiz do erro quadrado médio.
+
+$$
+\text{REQM} = \sqrt{\frac{1}{N}\sum_{i = 1}^{N}(e_{i})^2}
+$$
+
+Na sintaxe convencional temos
+
+```{r}
+sqrt(mean(residuals(fit)^2))
+```
+
+O problema é que a exponenciação acontece via um *operador* e não uma *função convencional*. Nenhum dos exemplos abaixo funciona.
+
+::: content-margin
+Um *operador*, na verdade, é um tipo especial de função. Operadores aritméticos são o caso mais comum (+, -, \*, etc.), mas há vários outros tipos de operadores especiais dentro do R. O próprio pipe é um operador.
+:::
+
+```{r, error = TRUE}
+fit |> residuals() |> ^2 |> mean() |> sqrt()
+```
+
+```{r, error = TRUE}
+fit |> residuals()^2 |> mean() |> sqrt()
+```
+
+Para chegar no mesmo resultado, novamente precisa-se usar uma sintaxe bastante esotérica que envolve passar o resultado de `residuals` para uma função anônima.
+
+```{r}
+# eval: false
+fit |> residuals() |> (\(y) {sqrt(mean(y^2))})()
+```
+
+Alternativamente, podemos criar uma função e preservar a lógica original do pipe.
+
+```{r}
+# eval: false
+elevar_quadrado <- function(x) { x^2 }
+fit |> residuals() |> elevar_quadrado() |> mean() |> sqrt()
+```
+
+## Resumo
+
+Assim, apesar de muito útil, o operador pipe tem suas limitações. O operador sempre espera encontrar uma função à sua direita; a única maneira de seguir `|>` com um operador é criando uma função anônima, cuja sintaxe é um pouco carregada. Pode-se resumir os principais fatos sobre o operador pipe:
+
+1.  *Simplifica funções compostas*. Na expressão `x |> f |> g` o operador `|>` aplica a função `f` sobre o objeto `x` usando `x` como argumento de `f`. Depois, aplica a função `g` sobre o resultado de `f(x)`. Isto é equivalente a `g(f(x))`.
+2.  *Evita a definição de objetos intermediários*. O uso de pipes evita que você precise "salvar" cada passo intermediário da aplicação de funções. Isto deixa seu espaço de trabalho mais limpo e também consome menos memória.
+3.  *Placeholder*. Quando o objeto anterior não serve como o primeiro argumento da função subsequente, usa-se o placeholder para indicar onde ele deve ser inserido. `x |> f(y = 2, data = _)`.
+4.  *Função anônima*. Em casos mais complexos, é necessário montar uma função anônima usando `x |> (\(y) {funcao})()`.

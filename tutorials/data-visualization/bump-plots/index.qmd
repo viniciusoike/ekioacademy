@@ -11,8 +11,6 @@ format:
   html:
     code-fold: false
     toc: true
-    fig-width: 8
-    fig-height: 5
 ---
 
 ```{r}
@@ -22,27 +20,33 @@ library(tidyr)
 library(dplyr)
 library(ggbump)
 
-dat <- readr::read_csv(here::here("static/data/tutorials/gdp_over_hours_worked_with_estimated_hours_worked.csv"))
-
 knitr::opts_chunk$set(
-  fig.align = "center",
   fig.asp = 0.618,
   fig.width = 8,
-  out.width = "90%",
-  fig.dev = "svg",
-  fig.retina = 2
-  )
+  out.width = "100%",
+  fig.dev = "png"
+)
+
+dat <- readr::read_csv(here::here(
+  "static/data/tutorials/gdp_over_hours_worked_with_estimated_hours_worked.csv"
+))
 
 print_table <- function(x) {
-  
-  x |> 
-    knitr::kable(align = "c", digits = 0) |> 
+  x |>
+    knitr::kable(align = "c", digits = 0) |>
     kableExtra::kable_styling(
-        full_width = FALSE,
-        bootstrap_options = c("condensed", "hover")
+      full_width = FALSE,
+      bootstrap_options = c("condensed", "hover")
     )
-
 }
+
+theme_set(
+  theme(
+    plot.background = element_rect(fill = "#fefefe", color = NA),
+    panel.background = element_rect(fill = "#fefefe", color = NA),
+    legend.background = element_rect(fill = "#fefefe", color = NA)
+  )
+)
 ```
 
 # Introdução aos Bump Plots
@@ -83,7 +87,7 @@ Este primeiro exemplo é emprestado da documentação do pacote e ilustra o bás
 year <- rep(2019:2021, 4)
 position <- c(4, 2, 2, 3, 1, 4, 2, 3, 1, 1, 4, 3)
 player <- c("A", "A", "A",
-            "B", "B", "B", 
+            "B", "B", "B",
             "C", "C", "C",
             "D", "D", "D")
 
@@ -112,24 +116,24 @@ Removo o ano de 2015, pois este ano não está completo na amostra. Como há mai
 
 ```{r}
 # Encontra as top-15 cidades com maior número de vendas em 2014
-top_cities <- txhousing |> 
+top_cities <- txhousing |>
   # Seleciona apenas o ano de 2014
-  filter(year == 2014) |> 
+  filter(year == 2014) |>
   # Calcula o total de vendas em cada cidade
-  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |> 
+  summarise(total = sum(listings, na.rm = TRUE), .by = "city") |>
   # Seleciona o top-15
-  slice_max(total, n = 15) |> 
+  slice_max(total, n = 15) |>
   pull(city)
 
 # Calcula o total de vendas anuais na subamostra de cidades e faz o ranking anual
-rank_housing <- txhousing |> 
+rank_housing <- txhousing |>
   # Seleciona apenas cidades dentro da subamostra
-  filter(city %in% top_cities, year > 2005, year < 2015) |> 
+  filter(city %in% top_cities, year > 2005, year < 2015) |>
   # Calcula o total de vendas a cada ano
   summarise(
     listing_year = sum(listings, na.rm = TRUE),
     .by = c("city", "year")
-    ) |> 
+    ) |>
   # Faz o ranking das cidades dentro de cada ano
   mutate(rank = rank(-listing_year, "first"), .by = "year")
 ```
@@ -167,7 +171,7 @@ Mesmo com o nome das cidades, há muitas linhas para acompanhar no gráfico. Vam
 ```{r}
 sel_cities <- c("Bay Area", "El Paso", "Corpus Christi", "Tyler")
 
-rank_housing <- rank_housing |> 
+rank_housing <- rank_housing |>
   mutate(
     highlight = if_else(city %in% sel_cities, city, ""),
     is_highlight = factor(if_else(city %in% sel_cities, 1L, 0L))
@@ -193,7 +197,7 @@ ggplot() +
     linewidth = 2,
     smooth = 8
   ) +
-  # Pontos 
+  # Pontos
   geom_point(
     data = rank_housing,
     aes(year, rank, color = highlight),
@@ -241,7 +245,7 @@ O gráfico mostra um ranking dos países mais ricos do mundo segundo três métr
 2. **PIB per capita em PPC** (paridade do poder de compra) - ajustado pelo custo de vida
 3. **PIB per capita em PPC ajustado por horas trabalhadas** - mostra quão produtivos são os países por hora
 
-![Gráfico original do The Economist](static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
+![Gráfico original do The Economist](/static/images/tutorials/replication_economist_bump_plot.jpeg){fig-align="center" width="400"}
 
 Note como esta medida eleva consideravelmente a posição de países europeus como Bélgica, Alemanha, Áustria e Dinamarca, enquanto derruba alguns países como EUA e Singapura.
 
@@ -265,24 +269,24 @@ countries_sel <- c("Norway", "Belgium", "Austria", "United States", "Germany")
 
 measures <- c("gdp_over_pop", "gdp_ppp_over_pop", "gdp_ppp_over_k_hours_worked")
 
-sub <- dat |> 
-  select(country, year, all_of(measures)) |> 
+sub <- dat |>
+  select(country, year, all_of(measures)) |>
   na.omit()
 ```
 
 A transformação essencial é converter os dados em formato tidy e ranquear as observações dentro de cada métrica de PIB:
 
 ```{r}
-ranking <- sub |> 
-  filter(year == max(year)) |> 
-  pivot_longer(cols = -c(country, year), names_to = "measure") |> 
+ranking <- sub |>
+  filter(year == max(year)) |>
+  pivot_longer(cols = -c(country, year), names_to = "measure") |>
   mutate(rank = rank(-value), .by = "measure")
 ```
 
 Agora, mais por conveniência, eu crio algumas variáveis auxiliares que serão úteis para mapear os diferentes elementos estéticos:
 
 ```{r}
-ranking <- ranking |> 
+ranking <- ranking |>
   mutate(
     highlight = if_else(country %in% countries_sel, country, ""),
     highlight = factor(highlight, levels = c(countries_sel, "")),
@@ -308,7 +312,7 @@ df_gdp <- tibble(
   position = -1.2
 )
 
-df_gdp <- df_gdp |> 
+df_gdp <- df_gdp |>
   mutate(
     measure = factor(measure, levels = measures),
     measure_label = stringr::str_wrap(measure_label, width = 12),
@@ -339,6 +343,8 @@ O código final é bastante extenso, mas o resultado é muito satisfatório:
 
 ```{r}
 #| code-fold: true
+#| fig-width: 9
+#| fig-height: 7
 ggplot(ranking, aes(measure, rank, group = country)) +
   geom_bump(aes(color = highlight, linewidth = is_highlight)) +
   geom_point(shape = 21, color = "white", aes(fill = highlight), size = 3) +

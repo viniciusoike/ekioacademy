@@ -15,8 +15,6 @@ website:
   google-analytics: "G-XXXXXXXXXX"  # To be configured
 
   navbar:
-    logo: "assets/images/logos/ekio-academy-logo.png"
-    title: false  # Hide text when logo is present
     background: "#1abc9c"
     foreground: white
     collapse: true
@@ -33,8 +31,6 @@ website:
         href: blog/index.qmd
       - text: "Livros"
         href: books/index.qmd
-      - text: "Insights e Análises"
-        href: insights/index.qmd
       - text: "Gráficos Semanais"
         href: weekly-charts/index.qmd
       - text: "Sobre"
@@ -55,12 +51,9 @@ website:
     background: "#2c3e50"
     foreground: white
     left: |
-      © 2024 EKIO Academy. Parte da [EKIO Analytics](https://ekio.io).
+      © 2024 EKIO Academy. Parte da [EKIO](https://ekio.io).
     center: |
       Treinamento profissional em R para economistas e planejadores urbanos.
-    right: |
-      [Política de Privacidade](privacy.qmd) | [Termos](terms.qmd)
-
 format:
   html:
     theme:
@@ -73,7 +66,7 @@ format:
     link-external-newwindow: true
     citations-hover: true
     footnotes-hover: true
-    highlight-style: github
+    highlight-style: assets/themes/material-palenight-r.theme
     css:
       - styles.css
       - assets/css/ekio-theme.css
@@ -81,7 +74,6 @@ format:
     include-after-body: _includes/analytics.html
 
 execute:
-  echo: true
   warning: false
   message: false
   cache: true

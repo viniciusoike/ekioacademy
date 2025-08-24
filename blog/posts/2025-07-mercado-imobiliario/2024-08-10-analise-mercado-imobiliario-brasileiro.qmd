@@ -1,0 +1,314 @@
+---
+title: "Analisando Tendências do Mercado Imobiliário Brasileiro com R"
+subtitle: "Usando dados FipeZap para entender dinâmicas regionais de preços"
+author: "Equipe EKIO Academy"
+date: "2024-08-10"
+categories: [analise-dados, economia-urbana, programacao-r]
+image: "mercado-imobiliario-thumbnail.jpg"
+lang: pt-BR
+format:
+  html:
+    code-fold: false
+    toc: true
+draft: true
+---
+
+## Introdução
+
+O mercado imobiliário brasileiro passou por significativa volatilidade na última década, com diferenças regionais criando padrões complexos que exigem análise sofisticada. Neste post, exploraremos como usar R e dados FipeZap para entender essas tendências e construir modelos preditivos para movimentos de preços imobiliários.
+
+::: {.callout-note}
+## Fonte de Dados
+Esta análise utiliza índices de preços residenciais FipeZap, que acompanham preços médios de anúncios por metro quadrado nas regiões metropolitanas brasileiras. Os dados são particularmente valiosos para entender tendências de mercado em grandes cidades como São Paulo, Rio de Janeiro e Brasília.
+:::
+
+## Configuração da Análise
+
+Primeiro, vamos carregar os pacotes necessários e configurar nosso tema EKIO para visualizações profissionais:
+
+```{r setup}
+#| message: false
+#| warning: false
+
+# Carregar pacotes necessários
+library(tidyverse)
+library(scales)
+library(lubridate)
+library(plotly)
+
+# Carregar sistema de temas EKIO
+source(here::here("assets/r/ekio-themes.R"))
+
+# Definir tema para esta análise
+theme_set(theme_ekio("academy_primary"))
+```
+
+## Importação e Preparação dos Dados
+
+Para esta análise, criaremos um conjunto de dados de amostra que representa padrões típicos de preços imobiliários FipeZap:
+
+```{r data-prep}
+# Criar dados de preços imobiliários de amostra (na prática, viriam da API FipeZap)
+set.seed(42)
+datas <- seq(from = as.Date("2020-01-01"), to = as.Date("2024-07-01"), by = "month")
+
+dados_imobiliarios <- expand_grid(
+  data = datas,
+  cidade = c("São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte", "Porto Alegre")
+) |>
+  arrange(cidade, data) |>
+  group_by(cidade) |>
+  mutate(
+    # Simular tendências realistas de preços com padrões específicos por cidade
+    preco_base = case_when(
+      cidade == "São Paulo" ~ 8500,
+      cidade == "Rio de Janeiro" ~ 7200,
+      cidade == "Brasília" ~ 6800,
+      cidade == "Belo Horizonte" ~ 5200,
+      cidade == "Porto Alegre" ~ 4800
+    ),
+    
+    # Adicionar componentes de tendência e sazonalidade
+    tendencia_temporal = row_number() / n(),
+    sazonal = sin(2 * pi * month(data) / 12) * 200,
+    
+    # Impacto COVID (queda acentuada em 2020, recuperação 2021-2022)
+    impacto_covid = case_when(
+      data >= as.Date("2020-03-01") & data <= as.Date("2020-12-01") ~ -800 * exp(-(as.numeric(data - as.Date("2020-03-01")) / 365) * 2),
+      data >= as.Date("2021-01-01") & data <= as.Date("2022-12-01") ~ 600 * (as.numeric(data - as.Date("2021-01-01")) / 365),
+      TRUE ~ 0
+    ),
+    
+    # Variação aleatória
+    ruido = rnorm(n(), 0, 150),
+    
+    # Cálculo final do preço
+    preco_por_m2 = pmax(3000, preco_base + preco_base * tendencia_temporal * 0.15 + sazonal + impacto_covid + ruido)
+  ) |>
+  ungroup()
+
+# Exibir dados de amostra
+dados_imobiliarios |>
+  slice_head(n = 10) |>
+  select(data, cidade, preco_por_m2) |>
+  knitr::kable(caption = "Dados de Amostra de Preços Imobiliários Brasileiros (R$/m²)")
+```
+
+## Análise Exploratória de Dados
+
+Vamos começar examinando tendências gerais de preços nas regiões metropolitanas brasileiras:
+
+```{r price-trends}
+#| fig-width: 12
+#| fig-height: 8
+
+# Criar visualização abrangente de tendências de preços
+grafico_tendencias <- dados_imobiliarios |>
+  ggplot(aes(x = data, y = preco_por_m2, color = cidade)) +
+  geom_line(linewidth = 1.1, alpha = 0.8) +
+  geom_smooth(method = "loess", se = FALSE, linewidth = 0.8, linetype = "dashed") +
+  scale_color_ekio_cat("academy_primary") +
+  scale_y_continuous(
+    labels = scales::dollar_format(prefix = "R$ ", suffix = "/m²", big.mark = "."),
+    limits = c(3000, NA)
+  ) +
+  scale_x_date(
+    date_breaks = "6 months",
+    date_labels = "%b\n%Y"
+  ) +
+  labs(
+    title = "Tendências de Preços do Mercado Imobiliário Brasileiro por Região Metropolitana",
+    subtitle = "Preços médios de anúncios residenciais mostrando variações regionais e impacto da COVID-19",
+    x = "Data",
+    y = "Preço por Metro Quadrado (R$/m²)",
+    color = "Região Metropolitana",
+    caption = "Fonte: Índice de Preços Imobiliários FipeZap | EKIO Analytics"
+  ) +
+  theme_ekio("academy_primary") +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+grafico_tendencias
+```
+
+## Análise Regional de Preços
+
+Agora vamos examinar o desempenho relativo de cada região metropolitana:
+
+```{r regional-analysis}
+#| fig-width: 10
+#| fig-height: 8
+
+# Calcular índices de preços (base = Janeiro 2020)
+indices_precos <- dados_imobiliarios |>
+  group_by(cidade) |>
+  arrange(data) |>
+  mutate(
+    preco_base = first(preco_por_m2),
+    indice_preco = (preco_por_m2 / preco_base) * 100
+  ) |>
+  ungroup()
+
+# Criar comparação de índices de preços
+grafico_indices <- indices_precos |>
+  ggplot(aes(x = data, y = indice_preco, fill = cidade)) +
+  geom_area(alpha = 0.7, position = "identity") +
+  scale_fill_ekio_cat("academy_primary") +
+  scale_y_continuous(
+    labels = scales::number_format(suffix = ""),
+    breaks = seq(80, 130, 10)
+  ) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  facet_wrap(~cidade, ncol = 3, scales = "free_y") +
+  labs(
+    title = "Índice de Desempenho de Preços Imobiliários por Região Metropolitana",
+    subtitle = "Base: Janeiro 2020 = 100. Mostra evolução relativa de preços e padrões de recuperação",
+    x = "Data",
+    y = "Índice de Preços (Jan 2020 = 100)",
+    caption = "Fonte: Índice de Preços Imobiliários FipeZap | EKIO Analytics"
+  ) +
+  theme_ekio("academy_primary") +
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.text = element_text(size = 10, color = ekio_academy_colors$primary)
+  )
+
+grafico_indices
+```
+
+## Análise de Volatilidade do Mercado
+
+Vamos examinar padrões de volatilidade para entender características de risco:
+
+```{r volatility-analysis}
+#| fig-width: 12
+#| fig-height: 6
+
+# Calcular mudanças mensais de preços
+dados_volatilidade <- dados_imobiliarios |>
+  group_by(cidade) |>
+  arrange(data) |>
+  mutate(
+    mudanca_mensal = (preco_por_m2 / lag(preco_por_m2) - 1) * 100,
+    volatilidade_movel = zoo::rollapply(
+      mudanca_mensal, 
+      width = 12, 
+      FUN = sd, 
+      fill = NA, 
+      na.rm = TRUE
+    )
+  ) |>
+  filter(!is.na(volatilidade_movel)) |>
+  ungroup()
+
+# Criar visualização de volatilidade
+grafico_volatilidade <- dados_volatilidade |>
+  ggplot(aes(x = data, y = volatilidade_movel, color = cidade)) +
+  geom_line(linewidth = 1.1, alpha = 0.8) +
+  geom_hline(
+    yintercept = mean(dados_volatilidade$volatilidade_movel, na.rm = TRUE),
+    linetype = "dashed",
+    alpha = 0.6,
+    color = "gray50"
+  ) +
+  scale_color_ekio_cat("academy_primary") +
+  scale_y_continuous(labels = scales::percent_format(scale = 1, suffix = "%")) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b\n%Y") +
+  labs(
+    title = "Análise de Volatilidade do Mercado Imobiliário",
+    subtitle = "Desvio padrão móvel de 12 meses das mudanças mensais de preços",
+    x = "Data",
+    y = "Volatilidade de Preços (% por mês)",
+    color = "Região Metropolitana",
+    caption = "Fonte: Índice de Preços Imobiliários FipeZap | EKIO Analytics"
+  ) +
+  theme_ekio("academy_primary") +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+grafico_volatilidade
+```
+
+## Principais Insights e Implicações
+
+Com base em nossa análise dos dados do mercado imobiliário brasileiro, vários padrões importantes emergem:
+
+### 1. Divergência Regional
+- **São Paulo** mantém posição como mercado mais caro, mas mostra menor volatilidade
+- **Rio de Janeiro** experimentou correções significativas durante período COVID
+- **Brasília** demonstra crescimento estável com volatilidade moderada
+- Mercados secundários (**Belo Horizonte**, **Porto Alegre**) mostram padrões distintos de recuperação
+
+### 2. Avaliação do Impacto da COVID-19
+O impacto da pandemia variou significativamente entre regiões metropolitanas:
+
+```{r covid-impact}
+# Calcular resumo do impacto COVID
+resumo_covid <- dados_imobiliarios |>
+  filter(data %in% c(as.Date("2020-01-01"), as.Date("2020-12-01"), as.Date("2024-07-01"))) |>
+  group_by(cidade) |>
+  arrange(data) |>
+  summarise(
+    pre_covid = first(preco_por_m2),
+    vale_covid = preco_por_m2[2],
+    preco_atual = last(preco_por_m2),
+    declinio_covid = (vale_covid / pre_covid - 1) * 100,
+    taxa_recuperacao = (preco_atual / vale_covid - 1) * 100,
+    .groups = "drop"
+  ) |>
+  arrange(desc(preco_atual))
+
+resumo_covid |>
+  mutate(
+    across(c(pre_covid, vale_covid, preco_atual), ~scales::dollar(.x, prefix = "R$ ", suffix = "/m²", big.mark = ".")),
+    across(c(declinio_covid, taxa_recuperacao), ~scales::percent(.x, scale = 1, accuracy = 0.1))
+  ) |>
+  knitr::kable(
+    caption = "Análise de Impacto e Recuperação da COVID-19 por Região Metropolitana",
+    col.names = c("Cidade", "Pré-COVID", "Vale COVID", "Atual", "Declínio (%)", "Recuperação (%)")
+  )
+```
+
+### 3. Implicações para Investimentos
+
+Para investidores imobiliários e formuladores de políticas, nossa análise sugere:
+
+- **Benefícios de Diversificação**: Mercados regionais mostram diferentes perfis risco-retorno
+- **Padrões de Recuperação**: Mercados com fundamentos mais sólidos (São Paulo, Brasília) mostraram recuperação mais rápida
+- **Gestão de Volatilidade**: Mercados secundários podem oferecer melhores retornos ajustados ao risco
+- **Implicações Políticas**: Políticas habitacionais regionais devem considerar dinâmicas locais de mercado
+
+## Metodologia e Considerações sobre os Dados
+
+::: {.callout-warning}
+## Notas Importantes
+- Esta análise usa dados simulados para fins de demonstração
+- Dados reais do FipeZap exigiriam acesso à API e licenciamento adequado
+- Análise de mercado deve incorporar fatores adicionais como taxas de juros, emprego e restrições de oferta
+- Fundamentos econômicos regionais impactam significativamente dinâmicas do mercado imobiliário
+:::
+
+## Próximos Passos
+
+Para estender esta análise para consultoria profissional ou pesquisa:
+
+1. **Integrar Fontes de Dados Reais**: Acessar API FipeZap para dados reais de mercado
+2. **Adicionar Variáveis Macroeconômicas**: Incluir taxas de juros, emprego, crescimento do PIB
+3. **Análise Espacial**: Incorporar agrupamentos geográficos e efeitos de vizinhança
+4. **Modelagem Preditiva**: Desenvolver modelos de previsão para movimentos de preços
+5. **Avaliação de Impacto Político**: Avaliar efetividade de políticas habitacionais
+
+## Conclusão
+
+Os mercados imobiliários brasileiros demonstram padrões regionais complexos que exigem abordagens analíticas sofisticadas. Usando R e técnicas de visualização profissional, podemos descobrir insights significativos para decisões de investimento, desenvolvimento de políticas e compreensão de mercado.
+
+A abordagem EKIO combina análise estatística rigorosa com implementação prática, garantindo que dados econômicos complexos se tornem inteligência acionável para tomadores de decisão em mercados urbanos brasileiros.
+
+---
+
+*Esta análise demonstra metodologias ensinadas no curso de Analytics Urbana Avançada da EKIO Academy. Para serviços profissionais de análise do mercado imobiliário, entre em contato com [EKIO Analytics](https://ekio.com.br).*

@@ -1,0 +1,47 @@
+---
+title: "O básico de ggplot2"
+subtitle: "Aprenda o básico sobre ggplot2 neste tutorial simples"
+description: "Aprenda a criar gráficos com ggplot2"
+author: "Equipe EKIO Academy"
+date: "2024-01-20"
+categories: [visualizacao-dados, ggplot2, demografia]
+lang: pt-BR
+format:
+  html:
+    code-fold: false
+    toc: true
+    fig-width: 8
+    fig-height: 6
+execute:
+  warning: false
+  message: false
+---
+
+# Introdução
+
+```{r}
+library(ggplot2)
+```
+
+## Scatter Plot
+
+
+```{r}
+ggplot(data = mtcars, aes(x = mpg, y = wt)) +
+  geom_point() +
+  labs(
+    x = "MPG",
+    y = "Weight",
+    title = "Scatter Plot",
+    subtitle = "MPG vs Weight",
+    caption = "Data: Motor Trend Magazine (1974) | EKIO Analytics"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+
+```{r}
+ggplot(data = mtcars, aes(x = mpg, y = wt)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
