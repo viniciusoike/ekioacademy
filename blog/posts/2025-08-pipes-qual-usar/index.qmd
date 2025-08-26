@@ -1,0 +1,118 @@
+---
+title: "Pipes no R: qual usar?"
+date: "2025-08-17"
+categories: ["R", "data-science"]
+---
+
+# Qual pipe usar?
+
+Como comentei acima, o pipe nativo do R foi inspirado no pipe do pacote `magrittr`, um dos mais populares pacotes criados. Há algumas pequenas diferenças entre o `%>%` e o `|>`.
+
+Primeiro, em termos de eficiência, o `|>` é levemente mais rápido, mas a diferença é praticamente imperceptível.
+
+```{r}
+library(microbenchmark)
+
+microbenchmark(
+  {rnorm(n = 1000) |> mean()},
+  {rnorm(n = 1000) %>% mean()}
+  )
+```
+
+A principal diferença entre os dois é o uso do *placeholder*. O operador *placeholder* do `magrittr` é o ponto `.` e é *mais versátil* que o `_`.
+
+De maneira geral, eles possuem a mesma função
+
+```{r}
+#| eval: false
+mtcars |>
+  filter(cyl == 6) |>
+  lm(mpg ~ wt, data = _)
+
+mtcars %>%
+  filter(cyl == 6) %>%
+  lm(mpg ~ wt, dat = .)
+```
+
+
+No exemplo abaixo, eu consigo colocar a tabela filtrada dentro da função `rownames` durante o pipe.
+
+```{r, eval = FALSE}
+mtcars %>%
+  filter(cyl == 6) %>%
+  mutate(label = rownames(.))
+```
+
+Isto não funciona com o pipe nativo.
+
+```{r, error = TRUE}
+mtcars |>
+  filter(cyl == 6) |>
+  mutate(label = rownames(_))
+```
+
+Isto pode ser bastante conveniente quando se lida com objetos espaciais. Imagine o caso em que se tem um objeto criado com `sf` que guarda polígonos e se quer encontrar as coordenadas dos centróides destes polígonos.
+
+```{r, eval = FALSE}
+dat %>%
+  st_transform(crs = 4674) %>%
+  mutate(
+    center = st_centroid(.),
+    coords = st_coordinates(center)
+    )
+```
+
+Também consegue-se usar o `.` junto com operadores e não apenas com funções. O código abaixo calcula a raiz do erro quadrado médio dos resíduos da regressão. Isto não é possível com o pipe nativo e exigiria uma função anônima.
+
+```{r, eval = FALSE}
+fit <- lm(mpg ~ wt, data = mtcars)
+
+fit %>%
+  residuals() %>%
+  .^2 %>%
+  mean() %>%
+  sqrt()
+```
+
+O `.` pode ser seguido de outros operadores como o `$`[^4]. Assim pode-se extrair uma coluna específica depois de filtrar uma tabela.
+
+[^4]: Vale notar que este comportamento foi introduzido também no placeholder do pipe nativo a partir da versão 4.3.0 do R. Contudo, este comportamento ainda está em fase experimental. "As an experimental feature the placeholder `_` can now also be used in the `rhs` of a forward pipe `|>` expression as the first argument in an extraction call, such as `_$coef`.". [Link Original](https://cran.r-project.org/bin/windows/base/old/4.3.0/NEWS.R-4.3.0.html).
+
+```{r, eval = FALSE}
+mtcars %>%
+  filter(cyl == 6) %>%
+  .$mpg
+```
+
+O `.` também pode ser fornecido para múltiplos argumentos como no exemplo abaixo.
+
+```{r}
+mtcars %>%
+  anti_join(x = ., y = .)
+```
+
+```{r, error = TRUE}
+mtcars |>
+  anti_join(x = _, y = _)
+```
+
+# Resumo
+
+O pipe é um operador simples que serve para deixar o código mais limpo. Sempre é uma boa escolha usar pipes quando se quer aplicar múltiplas funções num mesmo objeto. O custo do `|>` é mínimo em termos de eficiência; além disso, ele diminui a necessidade de criar objetos intermediários o que poupa memória do sistema.
+
+O pipe nativo é embutido no R a partir da versão 4.1.0 enquanto o `%>%` exige `library(magrittr)`. Vale notar que muitos pacotes carregam o `%>%` automaticamente. De fato, pacotes como `dplyr`, `leaflet`, `mapview`, `rvest`, `gt`, `flextable` e tantos outros são praticamente inutilizáveis sem pipes[^5].
+
+[^5]: Uma quantidade enorme de pacotes utiliza o `magrittr` como dependência. Veja a [página do CRAN](https://cloud.r-project.org/web/packages/magrittr/index.html).
+
+Antes de pensar em usar o pipe nativo, vale a pena reforçar que ele foi criado recentemente. Isto significa que qualquer código ou pacote desenvolvido com uso de pipes vai exigir a versão 4.1.0 ou superior, o que pode exigir que o usuário atualize a sua versão do R. Além disso, algumas funcionalidades do pipe nativo mudaram nas versões 4.2 e 4.3 o que pode complicar ainda mais o uso do pipe. Em contrapartida, o pipe do `magrittr` é bastante estável e seu comportamento é consistente há muitos anos.
+
+## Qual pipe usar
+
+Para a maioria dos casos, vale usar o pipe nativo do R, já que o `%>%` exige carregar um pacote adicional. Quando o placeholder for necessário, vale usar o `%>%` em vez do pipe nativo, devido à sua maior flexibilidade.
+
+## Referências
+
+-   [Differences between the base R and magrittr pipes](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)
+-   [Changes in R 4.0-4.1](https://journal.r-project.org/archive/2021-1/core.pdf)
+-   [Changes in R 4.2.0](https://cran.r-project.org/bin/windows/base/old/4.2.0/NEWS.R-4.2.0.html)
+-   [Changes in R 4.3.0](https://cran.r-project.org/bin/windows/base/old/4.3.0/NEWS.R-4.3.0.html)
