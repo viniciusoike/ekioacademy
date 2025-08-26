@@ -83,8 +83,8 @@ Quando o resultado da função anterior não vai diretamente no primeiro argumen
 carros_4 <- subset(mtcars, cyl == 4)
 fit <- lm(mpg ~ wt, data = carros_4)
 
-mtcars |> 
-  subset(cyl == 4) |> 
+mtcars |>
+  subset(cyl == 4) |>
   lm(mpg ~ wt, data = _)
 ```
 
@@ -106,9 +106,9 @@ O exemplo repete o código acima, mas agora usa uma função anônima para pegar
 
 ```{r}
 #| eval: false
-mtcars |> 
-  subset(cyl == 4) |> 
-  lm(mpg ~ wt, data = _) |> 
+mtcars |>
+  subset(cyl == 4) |>
+  lm(mpg ~ wt, data = _) |>
   (\(x) {summary(x)$adj.r.squared})()
 
 ```
