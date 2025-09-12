@@ -4,7 +4,7 @@ subtitle: "Usando dados FipeZap para entender dinâmicas regionais de preços"
 author: "Equipe EKIO Academy"
 date: "2024-08-10"
 categories: [analise-dados, economia-urbana, programacao-r]
-image: "mercado-imobiliario-thumbnail.jpg"
+image: "/static/images/blog/charts-dashboard-carlos-muza.jpg"
 lang: pt-BR
 format:
   html:
