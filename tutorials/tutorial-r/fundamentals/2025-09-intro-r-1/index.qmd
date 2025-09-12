@@ -1,0 +1,162 @@
+---
+title: "Introdução ao R"
+description: ""
+date: ""
+categories: ["", "", ""]
+series: "R Basics"
+series-order: 1
+---
+
+# Primeiros Passos
+
+## Instalação e Uso
+
+O R está disponível gratuitamente na internet. Para instalar o R:
+
+- [Clique para baixar o R](https://cran.r-project.org/)
+- ([Guia de instação](https://www.ime.usp.br/~lane/home/MAE116R/progR/progR.htm))
+
+## Interface gráfica
+
+Para facilitar o uso do R é fortemente recomendado que se instale também alguma interface gráfica. Em particular, recomenda-se ou o [RStudio]() ou o [Positron]().
+
+### RStudio
+
+O RStudio é a interface gráfica mais popular entre usuários de R. Ela foi desenvolvida especificamente para programação em R e traz diversas funcionalidades úteis. Além de R, pode-se programar em outras linguagens (Python, HTML, etc.). O RStudio é muito bem integrado com recursos úteis como RMarkdown, Quarto e Shiny.
+
+Este html, por exemplo, foi renderizado a partir de um arquivo Quarto escrito no RStudio.
+
+Para instalar o RStudio:
+
+* [Clique aqui para baixar o RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+
+### Positron
+
+
+
+### Outros editores de texto
+
+Também é possível escrever código diretamente em editores de texto (ex: [Notepad++](https://notepad-plus-plus.org/)), mas isto não é recomendado para usários iniciantes. Opções como o VSCode e [Sublime Text](https://www.sublimetext.com/) exigem um certo trabalho inicial de configuração que pode parecer confuso e desafiador para novos usuários. Tanto o RStudio como o Positron funcionam de maneira muito mais direta.
+
+Também há outras interfaces gráficas que permitem o uso do R "apontando e clicando"; talvez o mais popular deles seja o [RCommander](https://www.rcommander.com/). A longo prazo, contudo, este tipo de interface acaba sendo restritiva; vale a pena investir tempo e aprender a usar o R programando.
+
+# Seguindo este tutorial
+
+Este é o primeiro capítulo da série de iniciantes ao R. Os capítulos foram escritos com o foco em economia e economistas. Apesar disto, muito dos princípios ensinados são de uso geral e podem ser aproveitados por estudantes e profissionais interessados em análise de dados.
+
+Próximo capítulo: [inserir link]
+
+Abaixo
+
+# Recursos Online
+
+## Google e Stack Overflow
+
+Como o R é opensource há uma vicejante comunidade online cultivada em seu entorno. Talvez a habilidade mais importante para aprender a usar o R é saber utilizar o Google. Há milhares de usuários usando o R no mundo inteiro e, via de regra, já existe uma solução para qualquer problema que você pode encontrar. Uma pesquisa no Google costuma ser suficiente para resolver *qualquer* problema no R.
+
+Vale notar que a qualidade dos resultados do Google, infelizmente, vem caindo ao longo dos anos.
+
+Também é possível encontrar vários tutoriais e livros (gratuitos) de R e econometria. Alguns deles serão listados no final deste tutorial. Vale notar que há diversos recursos online categorizados genericamente na rubrica de *data science* ou de *dados*. Este recursos costumam servir como introduções gerais ao R.
+
+## Sobre Machine Learning e Data Science
+
+Uma pequena distinção que vale a pena ser feita é entre _econometria_, _ciência de dados_ e _machine learning_. Ciência de dados é um termo bastante amplo para designar métodos científicos, processos e algoritmos que visam extrair conhecimento e insights de bases de dados.
+
+Neste sentido, **machine learning faz parte da ciência de dados**. Na prática, os termos costumam ser usados como sinônimos.
+
+Cursos de ciências de dados ou livros de ciências de dados aplicados ao R costumam enfatizar habilidades como mineração (_webscrapping_), manipulação e visualização de dados, buscando encontrar correlações e padrões (em geral de maneira automatizada) em bases de dados grandes.
+
+Algumas destas habilidades são bastante úteis para econometristas, ainda que um cientista de dados lide com problemas de programação e engenharia de software que estão fora do domínio da econometria.
+
+Há diversos métodos compartilhados e modelos híbridos de machine learning e econometria. O modelo de regressão linear, por exemplo, é comumente utilizado tanto para explicar o comportamento entre as variáveis quanto para prever o seu comportamento futuro.
+
+Ou seja, na prática os métodos e princípios são complementares. O economista Hal Varian (o mesmo do livro-texto de micro) publicou na _American Economic Review_ uma [revisão de métodos de machine learning e econometria](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.28.2.3), enfatizando vantagens e desvantagens de cada um e mostrando como eles podem se complementar.
+
+Na prática, cursos online de "machine learning usando R" ou "ciência de dados no R" costumam incluir vários exemplos de economia e podem ser muito úteis para economistas. Livros de séries de tempo também costumam incluir muitas aplicações usando dados econômicos e apresentam as muitas das mesmas técnicas que se aprende em cursos de econometria.
+
+## Inteligência Artificial, Chatbots e Autocomplete
+
+Os recursos de inteligência artificial avançaram significativamente nos últimos anos e muitos usuários passaram a programar junto com eles. É difícil definir o uso ideal de IA, visto que estas ferramentes estão em rápido crescimento.
+
+É importante deixar claro que, até o presente momento, as ferramentas de IA não conseguem produzir código de alta qualidade sem supervisão adequada. Simplesmente passar instruções genéricas para um chatbot é uma receita para um código disfuncional e ineficiente.
+
+### LLMs e Chatbots
+
+As IAs de maior sucesso atualmente são LLMs (large language models). Em geral, estes modelos estão disponíveis na forma de chatbots, onde o usuário pode fazer perguntas e receber respostas. O ChatGPT, por exemplo, oferece exatamente este tipo de serviço.
+
+Apesar de muito úteis, chatbots são bastante limitados. A qualidade das suas respostas depende de contexto e prover este contexto costuma ser bastante inconveniente. O usuário precisa copiar e colar seu código ou fazer o upload de arquivos antes de fazer a sua pergunta. Ainda assim, há a chance do modelo simplesmente responder com algo inútil.
+
+Chatbots podem, no melhor do casos, entregar um código que precisa ser copiado e colado e depois executado manualmente pelo usuário. Se o código tiver algum erro, é necessário explicar o erro ao modelo e seguir neste processo iterativamente até conseguir um código funcional.
+
+Em muitos casos, um programador experiente consegue fazer este trabalho com mais qualidade e em menos tempo.
+
+### Coding Agents e Ferramentas Integradas
+
+Coding agents são LLMs especializadas em programação. Enquanto a maior parte dos chatbots disponíveis são generalistas, feitas para lidar com qualquer tipo de problema, este *agents* são focados em código.
+
+Alguns destes agents também foram integrados em editores de texto ou até no terminal, permitindo que o agent "veja" o código, tenha acesso a pastas, dados e outros documentos. Isto resolve o problema do contexto e permite ...
+
+Apesar disto, os coding agents ainda cometem erros e precisam ser guiados para gerar melhores resultados.
+
+### Claude AI
+
+Atualmente, a melhor ferramenta de IA para programação em R é a [Claude AI](https://claude.ai), da Anthropic. Além do Chatbot, a Anthropic oferece uma API para programação em R e o [ClaudeCode](https://www.anthropic.com/claude-code), uma ferramenta integrada ao terminal que consegue programar diretamente no seu computador.
+
+A Claude AI também é integrada ao Positron via a extensão do editor e também através do Positron Assistant, um coding agent.
+
+O pacote Pro da Claude custa, em setembro de 2025, R$ 110/mês e o pacote Max, R$ 550/mês. A este custo, o Claude Max custa mais do que uma assinatura anual do Office 365 e mesmo o Claude Pro custa mais do que praticamente qualquer assinatura de software/streaming no mercado.
+
+Neste sentido, não se recomenda que usuários novos paguem por estes serviços. A melhor opção é **utilizar a versão gratuita do Claude** enquanto ela estiver disponível.
+
+### Copilot e Windsurf
+
+Outra ferramenta popular de IA é o chamado "autocomplete". Estas ficam rodando no background e fazem sugestões inteligentes no seu código à medida que você vai avançando.
+
+Essencialmente, estas ferramentas são como "corretor automático" turbinado, recomendando às vezes diversas linhas de código de uma só vez. As sugestões de código costumam ser boas, mas, como sempre, não é incomum que o "autocomplete" sugira um código non-sense.
+
+O pacote Pro do GitHub Copilot custa U$ 10/mês (cerca de R$ 55-60) e o pacote Pro+ custa U$ 39/mês (cerca de R$ 220-240). Assim como o Claude AI, os preços do Copilot não foram ajustados para o Brasil. O valor gasto em dois meses do pacote Pro+ é mais do que suficiente para pagar uma assinatura anual do Microsoft 365 (incluindo 2TB OneDrive, pacote office, Copilot, etc.) ou Google Workspace (incluindo Gemini) por um ano.
+
+Neste sentido, não se recomenda que usuários novos paguem por estes serviços. A melhor opção é **utilizar a versão gratuita do GitHub Copilot ou Windsurf** enquanto elas estiverem disponíveis.
+
+### Como usar a IA?
+
+Não se recomenda que novos usuários dependam muito de recursos de IA. Estas ferramentas podem criar vícios ruins e até dificultar seu aprendizado a longo prazo.
+
+Ninguém sabe, com certeza, qual o impacto cognitivo que a IA vai ter sobre nosso cérebro. Contudo, acredito que muitos já tiveram a experiência de depender do autocorretor do celular. Nosso cérebro é preguiçoso e se "ele sabe" que basta escrever "exce" para chegar em "exceção" é natural que "ele esqueça" com o tempo se o certo é "exceção", "excessão" ou "excescão".
+
+## Setups completos
+
+Como resumo do conteúdo acima e para ajudar a orientar usuários recomenda-se os três setups abaixo.
+
+### RStudio + Copilot + Claude AI
+
+Atualmente, o RStudio conta com suporte somente para o GitHub Copilot, então a decisão de "autocomplete" é simples. Junto com uma conta no Claude AI, este setup gratuito garante o melhor chatbot do mercado para R.
+
+### Positron + Copilot + Claude AI + extensão Claude
+
+O Positron tem maior flexibilidade no uso de ferramentas de IA. Este setup inclui as mesmas ferramentas do primeiro com a adição da extensão integrada do Claude. Essencialmente, esta ferramenta permite chamar o chatbot da Claude de dentro do Positron.
+
+### Positron + Windsurf + Claude AI + extensão Claude
+
+O último setup é igual ao anterior mas usa o Windsurf, na sua versão gratuita ao invés do GitHub Copilot.
+
+## Livros
+
+### Introdução ao R
+
+* [Introdução ao R (FEA-RP)](https://edisciplinas.usp.br/course/view.php?id=3739&section=6). Materiais do curso de programação em R da FEA de Ribeirão Preto.
+* [Introduction to R for Data Science](https://www.edx.org/course/introduction-to-r-for-data-science). Curso gratuito no _edX_ focado em manipulação e visualização de dados.
+* [Introduction to R](https://www.udemy.com/r-basics/). Curso gratuito do _udemy_. Bastante introdutório.
+* [Cookbook for R](http://www.cookbook-r.com/), Winston Chang. Site que acompanha o livro introdutório de R, _Cookbook for R_ (disponível gratuitamente). Contém vários exemplos.
+* [Swirl](https://swirlstats.com/). O pacote swirl é composto de uma série de aulas sobre R que são apresentadas dentro do prórprio R. Use `install.packages('swirl')` para instalar o pacote e depois `library(swirl)` para carregá-lo no R. Finalmente, é só executar `swirl()` e seguir os passos. Para mais detalhes veja o [site](https://swirlstats.com/).
+
+### Econometria e R
+
+* [Minicurso de Econometria no R](https://wp.ufpel.edu.br/cdshikida/files/2016/10/MinicursoEconometriaRStudio.pdf), C.D. Shikida e Rodrigo N. Fernandez (em português)
+* [Time Series Analysis and Its Applications With R Examples](https://www.stat.pitt.edu/stoffer/tsa4/tsa4.htm), Robert Schumway e David Stoffer. Livro de séries de tempo com aplicações no R. [Site](https://www.stat.pitt.edu/stoffer/tsa4/) que acompanha o livro. Os autores do livro são os mesmos do pacote _astsa_. Livro bastante completo que inclui também tópicos pouco vistos em disciplinas de econometria como análise espectral e modelos de espaço estado.
+* [Forecasting: Principles and Practice](https://otexts.com/fpp2/), Rob J Hyndman e George Athanasopoulos. Livro introdutório sobre métodos de previsão de séries temporais com aplicações práticas no R. Os autores do livro são os mesmos do pacote _forecast_ para o R. Livro mais focado em previsões e muitas vezes inclui modelos ateóricos (i.e., que não explicam a relação entre os dados).
+* [Applied Econometrics with R](https://www.springer.com/br/book/9780387773162), Christian Kleiber e Achim Zeileis. Livro intermediário de econometria aplicada no R. O livro supõe que o leitor já tenha adquirido conhecimentos de econometria. Os autores do livro são os mesmos do pacote _AER_ que inclui diversas bases de dados e scripts de tutoriais.
+
+### Recursos gerais
+* [Stackoverflow](https://stackoverflow.com/questions/tagged/r). Site de perguntas e respostas sobre R. Contém a resposta para praticamente qualquer problema envolvendo R.
+* [R Bloggers](https://www.r-bloggers.com/). Blog colaborativo sobre R. Contém desde tópicos introdutórios até outros bastante avançados.

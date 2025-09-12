@@ -1,0 +1,14 @@
+ggplot2
+rvest
+xml2
+tidyverse
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
+lubridate
+sf
+leaflet

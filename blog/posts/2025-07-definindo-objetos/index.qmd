@@ -1,10 +1,16 @@
 ---
-title: "Definindo objetos no R. `=` ou `<-` ?"
-date: "2025-07-12"
-image-alt: "/static/codigo_generico.png"
-image: "/static/codigo_generico.png"
-categories: ["R"]
-description: "Há duas maneiras de definir objetos no R, `<-` e `=` mas qual a mais adequeada?"
+title: "Definindo objetos no R: `=` ou `<-`?"
+description: "Aprenda as diferenças entre os operadores de atribuição em R e quando usar cada um. Entenda objetos, vetores, listas e data.frames."
+date: "2025-07-15"
+categories: ["R", "data-science", "conceitos-basicos"]
+series: "Fundamentos do R"
+series-order: 1
+image-alt: "/static/codigo_generico.jpg"
+image: "/static/codigo_generico.jpg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 # Definindo objetos no R
@@ -217,3 +223,19 @@ Por sorte há opções bastante simples que trocam os `=` para `<-` corretamente
 library(formatR)
 tidy_source(text = "x = rnorm(n = 10, mean = 2)", arrow = TRUE)
 ```
+
+---
+
+## Próximos passos na série "Fundamentos do R"
+
+Agora que você entende como definir objetos em R, o próximo passo é aprender sobre **pipes** - uma ferramenta fundamental que vai transformar a forma como você escreve código R.
+
+- **Próximo post**: [Pipes: a intuição matemática das funções compostas](../2025-08-pipes-r/) - Entenda como usar pipes para tornar seu código mais legível
+- **Também na série**: [Pipes no R: qual usar?](../2025-08-pipes-qual-usar/) - Comparação entre pipe nativo `|>` e magrittr `%>%`
+
+### Outros recursos recomendados
+
+Para aprofundar seus conhecimentos sobre objetos e atribuição em R:
+
+- [Advanced R - Names and values](https://adv-r.hadley.nz/names-values.html) - Compreensão avançada sobre como R gerencia objetos
+- [R Inferno](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf) - Pegadinhas comuns em R (incluindo operadores de atribuição)

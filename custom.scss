@@ -60,7 +60,7 @@ $dark: #2c3e50;
 // ===================================================================
 // TYPOGRAPHY SYSTEM
 // ===================================================================
-$font-family-sans-serif: 'Avenir', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-sans-serif: 'Avenir', 'Helvetica', 'HelveticaNeue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font-family-monospace: 'Fira Code', 'Source Code Pro', 'Monaco', monospace;
 
 // Font weights
@@ -145,8 +145,8 @@ $enrollment-form-bg: #f8f9fa;
 
 body {
   font-family: $font-family-sans-serif;
-  line-height: 2rem;
-  font-size: 1.25rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
   color: #2c3e50;
   background: #f8f9fa;
 }
@@ -948,4 +948,36 @@ body {
 // Adjust line numbering position in code blocks
 pre.numberSource code {
   left: 1.5em !important;
+}
+
+// ===================================================================
+// TIBBLE OUTPUT STYLING
+// ===================================================================
+
+// Make tibble/data frame outputs smaller without affecting inline code
+// Using multiple selectors to catch all possible Quarto output structures
+.cell-output-display .sourceCode pre,
+.cell-output-display pre,
+.cell-output pre,
+div[class*="cell-output"] pre,
+.cell-output-stdout pre,
+.cell-output-display code,
+pre.sourceCode:not(.r):not(.python):not(.sql) {
+  font-size: 0.85rem !important;  /* Good balance for readability */
+  line-height: 1.2 !important;
+  font-family: "Fira Code", "Source Code Pro", "Monaco", monospace !important;
+}
+
+// Even more aggressive targeting - catch any output that might be missed
+div[class*="output"] * {
+  font-size: 0.85rem !important;
+  line-height: 1.2 !important;
+}
+
+// Exclude input/source code from the aggressive rule
+div[class*="output"] .sourceCode.r *,
+div[class*="output"] .sourceCode.python *,
+div[class*="output"] .sourceCode.sql * {
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
 }

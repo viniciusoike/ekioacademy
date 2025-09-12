@@ -1,18 +1,11 @@
 # EKIO Academy R Profile
 # Enhanced R environment for Brazilian urban economics education
 
-# Set CRAN mirror to Brazilian server for faster downloads
-local({
-  r <- getOption("repos")
-  r["CRAN"] <- "https://cran.fiocruz.br/"
-  options(repos = r)
-})
-
 if (require(ggplot2, quietly = TRUE)) {
   theme_set(
     theme(
       plot.background = element_rect(fill = "transparent", color = NA),
-      panel.backgroudn = element_rect(fill = "transparent", color = NA),
+      panel.background = element_rect(fill = "transparent", color = NA),
       legend.background = element_rect(fill = "transparent", color = NA)
     )
   )
