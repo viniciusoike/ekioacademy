@@ -4,3 +4,5 @@ tidyr
 stringr
 patchwork
 ragg
+ekioplot
+lubridate

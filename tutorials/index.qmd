@@ -2,10 +2,107 @@
 title: "Tutoriais"
 subtitle: "Aprenda R para Análise Econômica Brasileira"
 lang: pt-BR
+format:
+  html:
+    page-layout: full
+    toc: false
+listing:
+  - id: "full"
+    type: default
+    contents: "**/*.qmd"
+    sort: "date desc"
+    sort-ui: true
+    filter-ui: true
+    page-size: 14
+    fields: [image, date, title, description, categories]
+  - id: "visualization"
+    type: grid
+    grid-columns: 4
+    max-items: 4
+    contents: "/data-visualization/**/*.qmd"
+    sort: "date desc"
+    fields: [image, date, title]
+  - id: "economia"
+    type: grid
+    grid-columns: 4
+    max-items: 4
+    contents: "/economics/**/*.qmd"
+    sort: "date desc"
+    fields: [image, date, title]
+  - id: "time-series"
+    type: grid
+    grid-columns: 4
+    max-items: 4
+    contents: "/time-series/**/*.qmd"
+    sort: "date desc"
+    fields: [image, date, title]
+  - id: "r-basic"
+    type: grid
+    grid-columns: 4
+    max-items: 4
+    contents: "/tutorial-r/fundamentals/**/*.qmd"
+    sort: "date desc"
+    fields: [image, date, title]
+  - id: "r-advanced"
+    type: grid
+    grid-columns: 4
+    max-items: 4
+    contents: "/tutorial-r/advanced/**/*.qmd"
+    sort: "date desc"
+    fields: [image, date, title]
 ---
 
 # Tutoriais EKIO Academy
 
-Tutoriais completos para análise de dados econômicos brasileiros usando R.
+Tutoriais completos para análise de dados econômicos brasileiros usando R. Explore por categoria ou use os filtros para encontrar o conteúdo perfeito para seu nível de conhecimento.
 
-*Conteúdo em desenvolvimento.*
+::: {.row style="margin: 4rem 0;"}
+::: {.col-md-8}
+##  Visualização de Dados
+Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
+
+::: {#visualization}
+:::
+
+:::
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
+::: {.row style="margin: 4rem 0;"}
+::: {.col-md-8}
+##  Econometria
+Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
+
+::: {#time-series}
+:::
+
+:::
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
+::: {.row style="margin: 4rem 0;"}
+::: {.col-md-8}
+##  Tutoriais R
+Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
+
+### Básico
+
+::: {#r-basic}
+:::
+
+### Avançado
+
+::: {#r-advanced}
+:::
+
+:::
+::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+:::
+:::
+
+## Todos Tutoriais

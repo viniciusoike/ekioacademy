@@ -1,7 +1,16 @@
 ---
 title: "Pipes no R: qual usar?"
-date: "2025-08-17"
-categories: ["R", "data-science"]
+description: "Comparação detalhada entre o pipe nativo |> e o pipe do magrittr %>%, com exemplos práticos e recomendações de uso para cada situação."
+date: "2025-07-17"
+categories: ["R", "data-science", "pipes"]
+series: "Fundamentos do R"
+series-order: 3
+image: "/static/images/blog/programming-monitor-pankaj-patel.jpg"
+image-alt: "Programming language on monitor display"
+format:
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 # Qual pipe usar?
@@ -12,6 +21,8 @@ Primeiro, em termos de eficiência, o `|>` é levemente mais rápido, mas a dife
 
 ```{r}
 library(microbenchmark)
+library(magrittr)
+library(dplyr)
 
 microbenchmark(
   {rnorm(n = 1000) |> mean()},
@@ -109,6 +120,21 @@ Antes de pensar em usar o pipe nativo, vale a pena reforçar que ele foi criado 
 ## Qual pipe usar
 
 Para a maioria dos casos, vale usar o pipe nativo do R, já que o `%>%` exige carregar um pacote adicional. Quando o placeholder for necessário, vale usar o `%>%` em vez do pipe nativo, devido à sua maior flexibilidade.
+
+---
+
+## Próximos passos na série "Fundamentos do R"
+
+Parabéns! Você completou a série de fundamentos do R. Agora você entende como definir objetos, usar pipes matematicamente e escolher o pipe certo para cada situação.
+
+- **Post anterior**: [Pipes: a intuição matemática das funções compostas](../2025-08-pipes-r/) - A base teórica dos pipes
+- **Primeiro da série**: [Definindo objetos no R](../2025-07-definindo-objetos/) - Como tudo começou
+
+### Continue aprendendo
+
+**Próximas séries recomendadas:**
+- [Tidyverse: o melhor caminho para começar?](../2025-08-tidyverse-aprendendo/) - Inicie a série sobre tidyverse
+- [Dicas e truques do R](../2025-08-dicas-r/) - Série de produtividade (em breve)
 
 ## Referências
 

@@ -1,10 +1,16 @@
 ---
 title: "Pipes: a intuição matemática das funções compostas"
 description: "O operador pipe é um importante diferencial da programção em R, que torna o código mais legível e seu workflow mais produtivo."
-date: "2025-07-15"
-categories: ["data-science", "R"]
+date: "2025-07-16"
+categories: ["data-science", "R", "pipes"]
+series: "Fundamentos do R"
+series-order: 2
 image: "/static/images/blog/sigmund-pipes.jpg"
 image-alt: "/static/images/blog/sigmund-pipes.jpg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 # Pipes
@@ -180,3 +186,18 @@ Assim, apesar de muito útil, o operador pipe tem suas limitações. O operador 
 2.  *Evita a definição de objetos intermediários*. O uso de pipes evita que você precise "salvar" cada passo intermediário da aplicação de funções. Isto deixa seu espaço de trabalho mais limpo e também consome menos memória.
 3.  *Placeholder*. Quando o objeto anterior não serve como o primeiro argumento da função subsequente, usa-se o placeholder para indicar onde ele deve ser inserido. `x |> f(y = 2, data = _)`.
 4.  *Função anônima*. Em casos mais complexos, é necessário montar uma função anônima usando `x |> (\(y) {funcao})()`.
+
+------------------------------------------------------------------------
+
+## Próximos passos na série "Fundamentos do R"
+
+Agora que você entende a intuição matemática por trás dos pipes, é hora de descobrir qual pipe usar em cada situação!
+
+-   **Post anterior**: [Definindo objetos no R](../2025-07-definindo-objetos/) - Fundamentos sobre operadores de atribuição
+-   **Próximo post**: [Pipes no R: qual usar?](../2025-08-pipes-qual-usar/) - Comparação prática entre `|>` e `%>%`
+
+### Para se aprofundar
+
+**Sobre programação funcional em R:** - [Functional Programming](https://adv-r.hadley.nz/fp.html) - Capítulo do Advanced R sobre programação funcional - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) - Programação funcional com purrr
+
+**Conecte pipes com tidyverse:** - [Tidyverse: o melhor caminho para começar?](../2025-08-tidyverse-aprendendo/) - Se vale a pena começar com tidyverse - [A filosofia do Tidyverse](../2025-08-tidyverse-filosofia/) - Como pipes se encaixam na filosofia tidyverse

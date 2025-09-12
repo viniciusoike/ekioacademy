@@ -1,0 +1,137 @@
+---
+title: "Dicas e truques essenciais do R"
+description: "Coleção de dicas práticas, atalhos e truques para aumentar sua produtividade com R, desde atalhos do RStudio até técnicas avançadas de manipulação de dados."
+date: 2025-08-20
+categories: ["R", "produtividade", "dicas", "RStudio"]
+series: "Dicas do R"
+series-order: 1
+image: "/static/images/blog/code-on-screen-chris-ried.jpg"
+image-alt: "Computer screen with programming code"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+draft: true
+---
+
+::: {.callout-note}
+## Post em construção
+
+Este é um esboço para a futura série "Dicas do R". O conteúdo será desenvolvido gradualmente com base no feedback da comunidade.
+:::
+
+# Planejamento da Série "Dicas do R"
+
+## Estrutura da Série
+
+### Post 1: **Produtividade no RStudio**
+- Atalhos essenciais do teclado
+- Configurações que fazem diferença
+- Add-ins úteis
+- Organização de projetos
+- Git integration tips
+
+### Post 2: **Manipulação de dados avançada**
+- Truques com dplyr que poucos conhecem
+- Técnicas de limpeza de dados
+- Trabalhar com dados bagunçados (missing values, duplicatas)
+- Performance tips para grandes datasets
+
+### Post 3: **Visualização eficiente**
+- ggplot2 hacks e extensões
+- Temas e customizações rápidas
+- Gráficos interativos com plotly
+- Salvando e exportando visualizações
+
+### Post 4: **Programação funcional**
+- purrr além do map()
+- Funções anônimas eficientes
+- Programação com tidyeval
+- Criando suas próprias funções do tidyverse
+
+### Post 5: **Debug e troubleshooting**
+- Como debugar código R efetivamente
+- Interpretando mensagens de erro
+- Profiling de código
+- Boas práticas para evitar bugs
+
+### Post 6: **Packages e reprodutibilidade**
+- Criando seu primeiro pacote
+- renv para gestão de dependências
+- Docker com R
+- Relatórios reprodutíveis com Quarto/RMarkdown
+
+## Tópicos Específicos Planejados
+
+### RStudio Tips
+```r
+# Atalho para pipe |>: Ctrl+Shift+M (ou Alt+- no Windows)
+# Multi-cursor: Ctrl+Alt+Up/Down
+# Comentar/descomentar: Ctrl+Shift+C
+# Reformatar código: Ctrl+Shift+A
+```
+
+### Data Manipulation Tricks
+```r
+# Usar across() de forma inteligente
+mtcars |>
+  summarise(across(where(is.numeric), 
+                   list(mean = mean, sd = sd), 
+                   .names = "{.col}_{.fn}"))
+
+# Pivoting complexo
+data |>
+  pivot_longer(
+    cols = matches("\\d{4}"),  # Anos
+    names_to = "year",
+    names_transform = as.numeric
+  )
+```
+
+### ggplot2 Hacks
+```r
+# Themes que fazem diferença
+theme_set(theme_minimal() + 
+  theme(plot.title.position = "plot"))
+
+# Faceting inteligente
+ggplot(data) +
+  geom_point() +
+  facet_wrap(~var, scales = "free", 
+             labeller = label_both)
+```
+
+### purrr Advanced
+```r
+# map2 e pmap para múltiplos inputs
+map2(list1, list2, ~.x + .y)
+
+# safely() para operações que podem falhar
+safe_read <- safely(readr::read_csv)
+files |> map(safe_read) |> transpose()
+```
+
+## Próximos passos
+
+1. **Coletar feedback**: Quais tópicos seriam mais úteis?
+2. **Priorizar conteúdo**: Começar pelos temas mais demandados
+3. **Desenvolver exemplos**: Casos práticos e reais
+4. **Interatividade**: Considerar notebooks interativos
+
+---
+
+*Esta série será desenvolvida com base nas necessidades da comunidade. Deixe seus comentários sobre quais tópicos gostaria de ver abordados!*
+
+## Recursos para começar
+
+Enquanto a série não fica pronta, recomendo:
+
+- [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/) - Resumos visuais
+- [What They Forgot to Teach You About R](https://rstats.wtf/) - Workflow e boas práticas
+- [R4DS Online Learning Community](https://r4ds.io/) - Comunidade ativa
+
+### Conecte-se
+
+- Siga a série no blog para receber atualizações
+- Participe da discussão nos comentários
+- Compartilhe suas próprias dicas e truques
