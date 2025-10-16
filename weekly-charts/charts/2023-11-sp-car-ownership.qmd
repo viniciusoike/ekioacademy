@@ -2,9 +2,9 @@
 title: "Divisão de Propriedade de Carros em São Paulo"
 description: "Bairros ricos possuem 4x mais carros por domicílio que áreas periféricas, enquanto o centro histórico espelha padrões de baixa renda"
 date: "2025-08-01"
-image: "/assets/images/weekly-charts/sp-car-ownership-map.svg"
 categories: ["transporte", "economia-urbana", "sao-paulo"]
 lang: pt-BR
+draft: true
 format:
   html:
     page-layout: article

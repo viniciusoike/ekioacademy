@@ -101,5 +101,3 @@ Nossa pesquisa informa diretamente:
 - Avaliações econômicas internacionais
 
 ---
-
-*Acesse nosso banco de dados completo de pesquisa e documentação metodológica através do nosso [Portal de Pesquisa](../research-portal.qmd).*

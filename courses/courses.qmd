@@ -11,7 +11,7 @@ Desenvolva suas habilidades em ciência de dados e análise econômica com nosso
 
 ## Cursos Principais
 
-### [R Completo para Economistas](r-completo-economistas/index.qmd)
+### R Completo para Economistas
 **12 semanas • Online ao vivo**
 
 Aprenda R desde o básico até análises econômicas avançadas, com foco em dados brasileiros e aplicações práticas para economistas e analistas de políticas.
@@ -27,7 +27,7 @@ Aprenda R desde o básico até análises econômicas avançadas, com foco em dad
 
 ---
 
-### [Domínio de Dados Brasileiros](dominio-dados-brasileiros/index.qmd)
+### Domínio de Dados Brasileiros
 **8 semanas • Online intensivo**
 
 Torne-se expert no ecossistema de dados brasileiro. Aprenda a acessar, limpar e analisar dados do IBGE, BCB, IPEA e outras fontes essenciais.
@@ -43,7 +43,7 @@ Torne-se expert no ecossistema de dados brasileiro. Aprenda a acessar, limpar e 
 
 ---
 
-### [Análise Urbana Avançada](analise-urbana-avancada/index.qmd)
+### Análise Urbana Avançada
 **10 semanas • Híbrido**
 
 Domine análise espacial e ciência de dados aplicada ao planejamento urbano e políticas públicas municipais.
@@ -59,7 +59,7 @@ Domine análise espacial e ciência de dados aplicada ao planejamento urbano e p
 
 ---
 
-### [Consultoria Profissional em Dados](consultoria-profissional-dados/index.qmd)
+### Consultoria Profissional em Dados
 **12 semanas + 6 meses mentoria**
 
 Transforme suas habilidades analíticas em um negócio de consultoria próspero. Aprenda tanto o lado técnico quanto empresarial da consultoria em dados.

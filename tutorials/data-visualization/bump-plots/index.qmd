@@ -419,4 +419,4 @@ O objetivo destes posts é de sempre fazer o máximo possível usando `ggplot2` 
 
 ---
 
-*Pronto para criar visualizações mais avançadas? Confira nosso tutorial de [Dashboards Interativos](../dashboards-interativos/index.qmd) ou explore nosso [guia completo de ggplot2](../ggplot2-basico/index.qmd).*
+*Pronto para criar visualizações mais avançadas? Explore nosso [guia completo de ggplot2](../ggplot2-basics/index.qmd).*

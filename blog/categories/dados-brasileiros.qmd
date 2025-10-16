@@ -44,4 +44,4 @@ O Brasil possui um dos sistemas estatísticos mais abrangentes do mundo. Nossos 
 
 ---
 
-*Novo em fontes de dados brasileiros? Comece com nosso tutorial [Guia de Dados Brasileiros](../../../tutorials/r-fundamentals/brazilian-data/index.qmd).*
+*Novo em fontes de dados brasileiros? Comece com nosso tutorial [Importando Dados do SIDRA](../../tutorials/economics/2023-08-importando-dados-sidra/index.qmd).*

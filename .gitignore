@@ -44,3 +44,6 @@ node_modules/
 _combined/
 dist/
 /.quarto/
+
+# TODO files (personal task tracking)
+TODO_*.txt

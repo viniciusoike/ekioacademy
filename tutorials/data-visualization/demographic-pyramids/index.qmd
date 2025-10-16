@@ -375,4 +375,4 @@ A mudança de formatos tradicionais de pirâmide para estruturas mais balanceada
 
 ---
 
-*Pronto para explorar mais visualizações de dados brasileiros? Confira nosso tutorial sobre [Fontes de Dados Brasileiros](../../../fundamentos-r/dados-brasileiros/index.qmd) ou aprenda sobre [Mapas Interativos](../mapas-coropleticos/index.qmd).*
+*Pronto para explorar mais visualizações de dados brasileiros? Confira nosso tutorial sobre [Importando Dados do SIDRA](../../economics/2023-08-importando-dados-sidra/index.qmd) para aprender a acessar dados demográficos brasileiros.*
