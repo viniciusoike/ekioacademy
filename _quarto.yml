@@ -21,7 +21,7 @@ website:
     logo-alt: "EKIO"
     logo-href: /index.qmd
     title: "Academy"
-    background: "#FEFEFE"
+    background: "#F1F1F1"
     foreground: "#373A3D"
     search: false
     collapse-below: md
@@ -38,7 +38,7 @@ website:
         href: sobre.qmd
 
   page-footer:
-    background: "#FEFEFE"
+    background: "#F1F1F1"
     foreground: "#52555A"
     left: "© 2026 EKIO Academy"
     right: |

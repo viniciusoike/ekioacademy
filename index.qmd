@@ -80,6 +80,6 @@ listing:
 :::
 :::
 
-::: {.band-linho .column-screen}
+::: {.band .column-screen}
 A Academy é a frente de ensino da [EKIO](https://ekio.io), consultoria de economia e dados.
 :::

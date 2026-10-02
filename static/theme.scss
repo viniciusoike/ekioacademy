@@ -1,24 +1,24 @@
 /*-- scss:defaults --*/
 
 // EKIO Academy — a lighter take on the EKIO brand.
-// Tokens come from ekio/design/marca/tokens. Paper page, one warm band
-// (linho), navy for headings and links. No radius, no shadow, no icons:
-// separation is a 1px rule or a change of surface.
+// Tokens come from ekio/design/marca/tokens. Two surfaces only: a neutral
+// gray page and white paper for the band, code and charts. Navy for
+// headings and links. No radius, no shadow, no icons: separation is a 1px
+// rule or a change of surface.
 
+$page: #F1F1F1;
 $paper: #FEFEFE;
-$linho: #F2EDE2;
-$rule: #D4DED9;
+$rule: #CFD2D5; // ekioplot gray.200; the brand hairline vanishes on gray
 $navy: #1E3A5F;
 $ink: #191A1C;
 $ink-700: #373A3D;
-$ink-600: #52555A;
-$ink-500: #6E7378;
+$ink-600: #52555A; // muted text; gray.500 falls below AA on $page
 
 $font-display: "Lora", Georgia, serif;
 $font-sans: "Lato", "Helvetica Neue", Arial, sans-serif;
 $font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
 
-$body-bg: $paper;
+$body-bg: $page;
 $body-color: $ink-700;
 $font-family-sans-serif: $font-sans;
 $font-family-monospace: $font-mono;
@@ -37,14 +37,14 @@ $border-radius-sm: 0;
 $border-radius-lg: 0;
 $box-shadow: none;
 
-$navbar-bg: $paper;
+$navbar-bg: $page;
 $navbar-fg: $ink-700;
 $navbar-hl: $navy;
-$footer-bg: $paper;
+$footer-bg: $page;
 $footer-fg: $ink-600;
 
 $code-color: $navy;
-$code-bg: $linho;
+$code-bg: $paper;
 
 /*-- scss:rules --*/
 
@@ -216,7 +216,7 @@ footer.footer .nav-footer {
   display: block;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: $linho;
+  background: $paper;
 
   img {
     width: 100%;
@@ -250,7 +250,7 @@ footer.footer .nav-footer {
   display: block;
   margin-top: 0.3rem;
   font-size: 0.875rem;
-  color: $ink-500;
+  color: $ink-600;
 }
 
 // ── Section strip ─────────────────────────────────────────────────
@@ -303,8 +303,8 @@ footer.footer .nav-footer {
 
 // ── Bands ──────────────────────────────────────────────────────────
 
-.band-linho {
-  background: $linho;
+.band {
+  background: $paper;
   padding: 4.5rem 2rem;
   margin-top: 6rem;
 
@@ -328,19 +328,25 @@ footer.footer .nav-footer {
   .title { font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.6rem); line-height: 1.2; }
   .subtitle { font-family: $font-sans; font-size: 1.15rem; color: $ink-600; }
   .quarto-categories { display: none; }
-  .quarto-title-meta-heading { text-transform: none !important; letter-spacing: 0 !important; color: $ink-500; }
+  .quarto-title-meta-heading { text-transform: none !important; letter-spacing: 0 !important; color: $ink-600; }
 }
 
 main.content h2 { font-size: 1.5rem; margin-top: 2.5rem; }
 main.content h3 { font-size: 1.2rem; }
 
-.figure img, main.content p > img { max-width: 100%; height: auto; }
+// Charts are exported on white; a white panel makes the edge deliberate.
+#quarto-content:not(.page-layout-full) main.content img {
+  max-width: 100%;
+  height: auto;
+  background: $paper;
+  padding: 1rem;
+}
 
-div.sourceCode { border: 1px solid $rule; background: $linho; border-radius: 0; }
+div.sourceCode { border: 1px solid $rule; background: $paper; border-radius: 0; }
 
 #TOC, .sidebar nav[role="doc-toc"] {
   .nav-link { font-size: 0.9rem; }
-  h2 { font-family: $font-sans; font-size: 0.9rem; color: $ink-500; }
+  h2 { font-family: $font-sans; font-size: 0.9rem; color: $ink-600; }
 }
 
 // ── Responsive ─────────────────────────────────────────────────────
