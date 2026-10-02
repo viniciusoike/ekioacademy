@@ -1,0 +1,30 @@
+# Image pilots
+
+Generated with the built-in image generation tool. Review drafts only; not wired into the website.
+
+Clean matte surfaces are the pilot finish. The first hero was rejected for adding generic figures and scenery. The retained pilots avoid labels and empirical specificity, but decorative arcs and background shapes still need review. Page crops and mobile placement have not been tested.
+
+## hero
+
+Image: `hero-v1.png`
+
+```text
+Use case: stylized-concept. Create one finished editorial illustration for EKIO Academy, educational content about data, economics and computational methods. Editorial character with scientific-atlas compositional discipline: deliberate alignment, clear groupings, generous negative space, restrained asymmetry. Simplified flat forms, crisp edges, selective fine blue linework, gentle curves, clean matte surface with barely perceptible texture. Almost no depth. Off-white #FEFEFE / #F1F1F1 ground, pale blue #E8F6FF and #B1D8F2 supporting shapes, #5597CC and #517A90 focal marks, selective navy #1E3A5F. Bright and readable, thoughtful and approachable. Analytical relationships are schematic, visually plausible but not precise evidence. NO text, letters, numerals, labels, axis titles, tick values, units, dates, source notes, identifiable datasets, maps of real places, logos or watermark. Omit axes. No simulated writing, decorative ribbons, arbitrary networks, neon, dark backgrounds, futuristic imagery, robot heads, circuitry, glossy 3D, period ornament or distressed texture. Strong editorial composition, not a technical infographic or app screenshot. Wide landscape 2.4:1 website hero. In the lower middle portion, a loose field of blue observations gradually forms calm grouped arrangements and resolves into a single clear curved analytical motif with scattered points. One continuous composed scene, not boxed panels. Relationship suggests making sense of observations without exact correspondences. Upper half mostly empty off-white for eventual website heading, add no heading. Keep essential artwork away from outer edges. Strictly no people, body parts, characters, plants, landscapes, hills, rocks, or scenery. Abstract analytical forms only; no stock business illustration. Avoid a monotonically rising growth swoosh.
+```
+
+## modeling
+
+Image: `modeling-v1.png`
+
+```text
+Use case: stylized-concept. Create one finished editorial illustration for EKIO Academy, educational content about data, economics and computational methods. Editorial character with scientific-atlas compositional discipline: deliberate alignment, clear groupings, generous negative space, restrained asymmetry. Simplified flat forms, crisp edges, selective fine blue linework, gentle curves, clean matte surface with barely perceptible texture. Almost no depth. Off-white #FEFEFE / #F1F1F1 ground, pale blue #E8F6FF and #B1D8F2 supporting shapes, #5597CC and #517A90 focal marks, selective navy #1E3A5F. Bright and readable, thoughtful and approachable. Analytical relationships are schematic, visually plausible but not precise evidence. NO text, letters, numerals, labels, axis titles, tick values, units, dates, source notes, identifiable datasets, maps of real places, logos or watermark. Omit axes. No simulated writing, decorative ribbons, arbitrary networks, neon, dark backgrounds, futuristic imagery, robot heads, circuitry, glossy 3D, period ornament or distressed texture. Strong editorial composition, not a technical infographic or app screenshot. Landscape 3:2 course-card illustration. A generous field of scattered circular observations around one smooth fitted curve with a gentle bend. Broad but coherent spread, some near the curve and some further away. Visually express scattered observations connected through a model. No confidence interval, no grids, no axes, no technical apparatus. The point field and elegant curve are the subject; give them editorial balance and generous margins. Strictly no people, body parts, characters, plants, landscapes, hills, rocks, or scenery. Abstract analytical forms only; no stock business illustration. Avoid a monotonically rising growth swoosh.
+```
+
+## dashboard
+
+Image: `dashboard-v1.png`
+
+```text
+Use case: stylized-concept. Create one finished editorial illustration for EKIO Academy, educational content about data, economics and computational methods. Editorial character with scientific-atlas compositional discipline: deliberate alignment, clear groupings, generous negative space, restrained asymmetry. Simplified flat forms, crisp edges, selective fine blue linework, gentle curves, clean matte surface with barely perceptible texture. Almost no depth. Off-white #FEFEFE / #F1F1F1 ground, pale blue #E8F6FF and #B1D8F2 supporting shapes, #5597CC and #517A90 focal marks, selective navy #1E3A5F. Bright and readable, thoughtful and approachable. Analytical relationships are schematic, visually plausible but not precise evidence. NO text, letters, numerals, labels, axis titles, tick values, units, dates, source notes, identifiable datasets, maps of real places, logos or watermark. Omit axes. No simulated writing, decorative ribbons, arbitrary networks, neon, dark backgrounds, futuristic imagery, robot heads, circuitry, glossy 3D, period ornament or distressed texture. Strong editorial composition, not a technical infographic or app screenshot. Landscape 3:2 dashboard-concept illustration. Three closely composed aligned schematic views: a small dot arrangement, a set of simple varied bars, and a gently undulating series. One stronger-blue subset appears across the views, suggesting a shared selection. Give each view breathing room and a clear common visual hierarchy, no visible app window, screen device, controls, grid, axes or text. More like an editorial plate than a dashboard screenshot. No demand for exact numerical correspondence. Strictly no people, body parts, characters, plants, landscapes, hills, rocks, or scenery. Abstract analytical forms only; no stock business illustration. Avoid a monotonically rising growth swoosh.
+```
+
