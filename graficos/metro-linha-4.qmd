@@ -1,0 +1,19 @@
+---
+title: "A Linha 4-Amarela ainda não voltou"
+description: "Em dia útil, o fluxo de passageiros segue 10% abaixo do nível pré-pandemia. No fim de semana, a recuperação foi mais rápida."
+date: "2025-08-16"
+image: /static/images/graficos/metro-linha-4.png
+categories: [mobilidade, São Paulo]
+---
+
+![](/static/images/graficos/metro-linha-4.png){fig-alt="Série mensal de passageiros da Linha 4-Amarela de 2018 a 2024, com a pandemia sombreada e marcações para inaugurações de estações e para o aumento da tarifa."}
+
+O gráfico combina três camadas: a série mensal, uma linha de tendência que separa o sinal do ruído e anotações para cada evento — inaugurações de estações, a pandemia e o aumento da tarifa. A faixa cinza dá o contexto da queda sem precisar de texto.
+
+![](/static/images/graficos/metro-linha-4-pandemia.png){fig-alt="Índice do fluxo médio de passageiros em dias úteis e em fins de semana, com base 100 no período pré-pandemia. Fins de semana chegam a 96,4 e dias úteis a 89,3."}
+
+Em dias úteis, o fluxo está em 89 % do nível pré-pandemia; nos fins de semana, em 96 %. O lazer voltou antes do deslocamento para o trabalho. As novas estações tiveram efeito pequeno na série total, e o aumento da tarifa pode ter freado a retomada — mas o gráfico sozinho não separa as duas coisas.
+
+![](/static/images/graficos/metro-linha-4-estacoes.png){fig-alt="Ranking de passageiros por estação da Linha 4 nos últimos doze meses. Luz lidera com 1,6 milhão, seguida de Paulista, Pinheiros e República."}
+
+*Fonte: ViaQuatro.*

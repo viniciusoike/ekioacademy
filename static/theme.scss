@@ -1,0 +1,341 @@
+/*-- scss:defaults --*/
+
+// EKIO Academy — a lighter take on the EKIO brand.
+// Tokens come from ekio/design/marca/tokens. Paper page, one warm band
+// (linho), navy for headings and links. No radius, no shadow, no icons:
+// separation is a 1px rule or a change of surface.
+
+$paper: #FEFEFE;
+$linho: #F2EDE2;
+$rule: #D4DED9;
+$navy: #1E3A5F;
+$ink: #191A1C;
+$ink-700: #373A3D;
+$ink-600: #52555A;
+$ink-500: #6E7378;
+
+$font-display: "Lora", Georgia, serif;
+$font-sans: "Lato", "Helvetica Neue", Arial, sans-serif;
+$font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+$body-bg: $paper;
+$body-color: $ink-700;
+$font-family-sans-serif: $font-sans;
+$font-family-monospace: $font-mono;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.65;
+$headings-font-family: $font-display;
+$headings-font-weight: 400;
+$headings-color: $navy;
+
+$primary: $navy;
+$link-color: $navy;
+$link-hover-color: $ink;
+$border-color: $rule;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$box-shadow: none;
+
+$navbar-bg: $paper;
+$navbar-fg: $ink-700;
+$navbar-hl: $navy;
+$footer-bg: $paper;
+$footer-fg: $ink-600;
+
+$code-color: $navy;
+$code-bg: $linho;
+
+/*-- scss:rules --*/
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-wrap: balance;
+  border-bottom: none;
+}
+
+p { text-wrap: pretty; }
+
+a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+// ── Navbar ─────────────────────────────────────────────────────────
+// One line: lockup and "Academy" on the left, five links on the right.
+
+.navbar {
+  border-bottom: 1px solid $rule;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+
+  .navbar-brand { display: flex; align-items: center; gap: 0.75rem; }
+  .navbar-logo { max-height: 30px; }
+
+  .navbar-title {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    color: $navy;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    color: $ink-700;
+    padding-left: 0.9rem !important;
+    padding-right: 0.9rem !important;
+    transition: color 0.18s ease;
+
+    &:hover, &.active { color: $navy; }
+    &.active { text-decoration: underline; text-underline-offset: 0.45em; }
+  }
+}
+
+// ── Footer ─────────────────────────────────────────────────────────
+
+footer.footer { border-top: 1px solid $rule; }
+
+footer.footer .nav-footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 0.875rem;
+  padding: 2rem;
+
+  a { color: $ink-600; text-decoration: none; }
+  a:hover { color: $navy; text-decoration: underline; }
+}
+
+// ── Page layout ────────────────────────────────────────────────────
+// Landing pages (home, section indexes) run full width without a
+// title block; articles keep Quarto's default column.
+
+.page-layout-full {
+  main.content { margin-top: 0; padding-top: 0; margin-bottom: 0; }
+  main.content > * { grid-column: screen-start / screen-end; }
+  #title-block-header { display: none; }
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.block { margin-top: 5rem; margin-bottom: 5rem; }
+.hero + .block { margin-top: 0; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+
+  h2 { font-size: 1.5rem; margin: 0; }
+  p { margin: 0; }
+  a { font-size: 0.95rem; }
+}
+
+.page-intro {
+  max-width: 1280px;
+  margin: 3.5rem auto 2.5rem;
+  padding: 0 2rem;
+
+  h1 { font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem); margin: 0 0 0.75rem; }
+  p { max-width: 38rem; color: $ink-600; margin: 0; }
+}
+
+// ── Home hero ──────────────────────────────────────────────────────
+// Image first, full bleed; one sentence under it. Nothing overlays the art.
+
+.hero {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2.4 / 1;
+    object-fit: cover;
+  }
+
+  h1 {
+    max-width: 1280px;
+    margin: 3rem auto 3.5rem;
+    padding: 0 2rem;
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+    line-height: 1.2;
+  }
+}
+
+// ── Tiles ──────────────────────────────────────────────────────────
+// A tile is an image with a short caption underneath; the whole tile is
+// the link. Image carries the weight, text stays small.
+
+.tiles {
+  display: grid;
+  gap: 2.5rem 1.75rem;
+
+  > * { min-width: 0; }
+}
+
+.tiles-2 { grid-template-columns: repeat(2, 1fr); }
+.tiles-3 { grid-template-columns: repeat(3, 1fr); }
+.tiles-4 { grid-template-columns: repeat(4, 1fr); }
+
+// Big grid: one tall tile on the left, two stacked on the right.
+.tiles-feature {
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto auto;
+
+  > .tile:first-child { grid-row: span 2; }
+  > .tile:first-child .tile-media { aspect-ratio: auto; height: 100%; min-height: 28rem; }
+  > .tile:first-child { display: flex; flex-direction: column; }
+  > .tile:first-child .tile-media { flex: 1; }
+}
+
+// Lead grid: the newest item spans two columns.
+.tiles-lead {
+  grid-template-columns: repeat(3, 1fr);
+
+  > .tile:first-child { grid-column: span 2; grid-row: span 2; }
+  > .tile:first-child .tile-media { aspect-ratio: auto; height: 100%; }
+  > .tile:first-child { display: flex; flex-direction: column; }
+  > .tile:first-child .tile-media { flex: 1; }
+  > .tile:first-child .tile-title { font-size: 1.4rem; }
+}
+
+.tile {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { color: inherit; }
+  &:hover .tile-title { text-decoration: underline; }
+  &:hover .tile-media img { opacity: 0.9; }
+}
+
+.tile-media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: $linho;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease;
+  }
+}
+
+.tile-wide .tile-media { aspect-ratio: 3 / 2; }
+.tile-tall .tile-media { aspect-ratio: 4 / 5; }
+
+// Charts are shown whole on paper, framed by a hairline, never cropped.
+.tile-chart .tile-media {
+  background: $paper;
+  border: 1px solid $rule;
+
+  img { object-fit: contain; padding: 0.75rem; }
+}
+
+.tile-title {
+  display: block;
+  margin-top: 0.85rem;
+  font-family: $font-display;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: $ink;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.tile-meta {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.875rem;
+  color: $ink-500;
+}
+
+// ── Bands ──────────────────────────────────────────────────────────
+
+.band-linho {
+  background: $linho;
+  padding: 4.5rem 2rem;
+  margin-top: 6rem;
+
+  p {
+    max-width: 44rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: $font-display;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: $ink;
+  }
+}
+
+
+// ── Articles ───────────────────────────────────────────────────────
+
+#title-block-header {
+  margin-top: 2.5rem;
+
+  .title { font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.6rem); line-height: 1.2; }
+  .subtitle { font-family: $font-sans; font-size: 1.15rem; color: $ink-600; }
+  .quarto-categories { display: none; }
+  .quarto-title-meta-heading { text-transform: none !important; letter-spacing: 0 !important; color: $ink-500; }
+}
+
+main.content h2 { font-size: 1.5rem; margin-top: 2.5rem; }
+main.content h3 { font-size: 1.2rem; }
+
+.figure img, main.content p > img { max-width: 100%; height: auto; }
+
+div.sourceCode { border: 1px solid $rule; background: $linho; border-radius: 0; }
+
+#TOC, .sidebar nav[role="doc-toc"] {
+  .nav-link { font-size: 0.9rem; }
+  h2 { font-family: $font-sans; font-size: 0.9rem; color: $ink-500; }
+}
+
+// ── Responsive ─────────────────────────────────────────────────────
+
+@media (max-width: 991px) {
+  .tiles-4 { grid-template-columns: repeat(2, 1fr); }
+  .tiles-3, .tiles-lead { grid-template-columns: repeat(2, 1fr); }
+  .tiles-feature { grid-template-columns: 1fr; grid-template-rows: none; }
+  .tiles-feature > .tile:first-child { grid-row: auto; }
+  .tiles-feature > .tile:first-child .tile-media { min-height: 0; aspect-ratio: 4 / 3; }
+}
+
+@media (max-width: 575px) {
+  .wrap, .page-intro, .hero h1 { padding: 0 1.25rem; }
+  .tiles-2, .tiles-3, .tiles-lead { grid-template-columns: 1fr; }
+  .tiles-4 { gap: 2rem 1rem; }
+  .tiles-4 .tile-title { font-size: 1rem; }
+  .tiles-lead > .tile:first-child { grid-column: auto; grid-row: auto; }
+  .tiles-lead > .tile:first-child .tile-media { aspect-ratio: 4 / 3; }
+  .block { margin-top: 3.5rem; margin-bottom: 3.5rem; }
+}
+
+// ── Offers (cursos, livros) and prose pages ─────────────────────────
+
+.offer {
+  img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+  h2 { font-size: 1.35rem; margin: 1rem 0 0.4rem; }
+  p { margin: 0; color: $ink-600; }
+  .figure, figure, p:has(> img) { margin: 0; }
+}
+
+.prose {
+  max-width: 42rem;
+  margin: 3rem auto 5rem;
+  padding: 0 1.25rem;
+
+  h1 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+}
+
+.offer .quarto-figure, .offer figure { margin-bottom: 0; }
+.hero .quarto-figure, .hero figure, .hero p { margin: 0; }

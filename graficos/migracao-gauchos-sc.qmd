@@ -1,0 +1,15 @@
+---
+title: "Para onde os gaúchos vão em Santa Catarina"
+description: "O Censo 2022 mostra Florianópolis com mais de 84 mil moradores nascidos no Rio Grande do Sul, quase o dobro de Chapecó."
+date: "2025-08-01"
+image: /static/images/graficos/migracao-gauchos-sc.png
+categories: [demografia, migração]
+---
+
+![](/static/images/graficos/migracao-gauchos-sc.png){fig-alt="Gráfico de barras horizontais com as cidades catarinenses com mais moradores nascidos no Rio Grande do Sul. Florianópolis lidera, seguida de Chapecó."}
+
+Florianópolis recebe mais de 84 mil gaúchos, quase o dobro de Chapecó. São dois padrões distintos: a capital atrai pelo mercado de trabalho e pela qualidade de vida; Chapecó, pela proximidade com a fronteira e pela economia do oeste.
+
+Barras horizontais funcionam bem quando os rótulos são nomes de cidades. Uma única cor e a ordenação do maior para o menor deixam o líder evidente sem legenda.
+
+*Fonte: IBGE, Censo Demográfico 2022.*

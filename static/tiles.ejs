@@ -1,0 +1,9 @@
+```{=html}
+<% for (const item of items) { %>
+<a class="tile <%= item.path.indexOf('graficos/') !== -1 ? 'tile-chart' : '' %>" href="<%- item.path %>">
+<span class="tile-media"><img src="<%- item.image %>" alt="" loading="lazy"></span>
+<span class="tile-title"><%= item.title %></span>
+<span class="tile-meta"><%= item.date %></span>
+</a>
+<% } %>
+```

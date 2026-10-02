@@ -1,0 +1,17 @@
+---
+title: "Quem tem carro em São Paulo"
+description: "Nos bairros ricos, cada domicílio tem quatro vezes mais carros que na periferia. O centro histórico se parece com a periferia."
+date: "2025-08-01"
+image: /static/images/graficos/sp-carros-por-domicilio.webp
+categories: [mobilidade, São Paulo]
+---
+
+![](/static/images/graficos/sp-carros-por-domicilio.webp){fig-alt="Mapa coroplético de São Paulo com o número de automóveis por domicílio em cada zona da Pesquisa Origem e Destino. Os valores mais altos se concentram no quadrante sudoeste."}
+
+Jardim Europa e Alto de Pinheiros chegam a 1,6 carro por domicílio. Cidade Tiradentes e Capão Redondo ficam perto de 0,4. A diferença é de quatro vezes.
+
+O gradiente de renda é esperado. A surpresa é o centro histórico: perto de empregos e bem servido de transporte, ele tem posse de carro tão baixa quanto a da periferia. Densidade e acesso ao metrô substituem o carro, mesmo onde a renda não explicaria isso.
+
+O histograma no canto mostra a distribuição das zonas. A maior parte fica entre 0,4 e 0,8 carro por domicílio; a cauda à direita são os bairros do quadrante sudoeste.
+
+*Fonte: Metrô, Pesquisa Origem e Destino 2017.*

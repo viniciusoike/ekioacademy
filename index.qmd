@@ -1,118 +1,90 @@
 ---
-title: "EKIO Academy"
-subtitle: "R & Data Science for Economics and Urban Analysis"
-lang: en
-format:
-  html:
-    page-layout: full
+pagetitle: "EKIO Academy"
+description: "Tutoriais de R, gráficos e cursos de economia aplicada da EKIO."
+page-layout: full
+listing:
+  - id: graficos-recentes
+    contents:
+      - graficos/*.qmd
+      - "!graficos/index.qmd"
+    sort: "date desc"
+    max-items: 3
+    type: custom
+    template: static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
 ---
 
-::: {.hero-section}
-::: {.container}
-::: {.hero-content}
-# Learn R & Data Science {.hero-title}
-## for Economics & Urban Analysis {.hero-subtitle}
+::: {.hero .column-screen}
+![](static/images/art/hero-metropolitan-geometry.webp){fig-alt=""}
 
-Master R programming, econometrics, and data visualization with practical tutorials designed specifically for economists and urban planners working with Brazilian data.
-
-::: {style="margin-top: 2rem;"}
-[Start Learning](tutorials/index.qmd){.btn .btn-ekio .btn-lg} [Research & Insights](insights/index.qmd){.btn .btn-outline-light .btn-lg style="margin-left: 1rem;"}
-:::
-:::
-:::
+# Economia, cidades e dados, aprendidos em R com casos brasileiros.
 :::
 
-## What You'll Find Here
-
-::: {.row style="margin-top: 3rem;"}
-::: {.col-md-4}
-::: {.tutorial-card}
-### 📚 Mini Courses
-Comprehensive learning modules covering everything from R basics to advanced econometric techniques, all using real Brazilian economic data.
-
-**Featured Topics:**
-- R Fundamentals for Economists  
-- ggplot2 with EKIO Visual Identity
-- Brazilian Municipal Data Analysis
-- Housing Market Econometrics
-- Interactive Dashboards with Shiny
-
-[Explore Mini Courses →](tutorials/index.qmd){.btn .btn-ekio}
+::: {.wrap .block}
+```{=html}
+<div class="tiles tiles-feature">
+<a class="tile" href="tutoriais/index.html">
+<span class="tile-media"><img src="static/images/art/card-positive-correlation.webp" alt=""></span>
+<span class="tile-title">Tutoriais</span>
+<span class="tile-meta">Do dado bruto ao gráfico final</span>
+</a>
+<a class="tile tile-wide" href="graficos/index.html">
+<span class="tile-media"><img src="static/images/art/insight-market-cycles.webp" alt=""></span>
+<span class="tile-title">Gráficos</span>
+<span class="tile-meta">Cidades, demografia e mercado imobiliário</span>
+</a>
+<a class="tile tile-wide" href="cursos.html">
+<span class="tile-media"><img src="static/images/art/insight-sao-paulo-copan.webp" alt=""></span>
+<span class="tile-title">Cursos</span>
+<span class="tile-meta">Em preparação</span>
+</a>
+</div>
+```
 :::
+
+::: {.wrap .block}
+::: {.section-head}
+## Gráficos recentes
+
+[Ver todos](graficos/index.qmd)
 :::
 
-::: {.col-md-4}
-::: {.tutorial-card}
-### 📖 Books
-Comprehensive resources and eBooks covering specialized topics in urban economics, R programming, and Brazilian data analysis.
-
-**Available Resources:**
-- R for Urban Economics (eBook)
-- Brazilian Data Sources Guide  
-- EKIO Methods Handbook
-- Econometrics with R Cookbook
-- Data Visualization Best Practices
-
-[Browse Books →](books/index.qmd){.btn .btn-ekio}
+::: {#graficos-recentes .tiles .tiles-3}
 :::
 :::
 
-::: {.col-md-4}
-::: {.tutorial-card}
-### 🎓 Courses
-Structured learning paths taking you from beginner to expert in R-based economic analysis and urban data science.
-
-**Course Tracks:**
-- Complete R for Economists (R$ 497)
-- Advanced Urban Analytics (R$ 697)
-- Brazilian Economic Data Mastery (R$ 397)
-- Professional Consulting Methods (R$ 1,297)
-
-[View Courses →](courses/index.qmd){.btn .btn-ekio}
-:::
-:::
+::: {.wrap .block}
+::: {.section-head}
+## Em preparação
 :::
 
-::: {.brazil-data-showcase style="margin: 4rem 0;"}
-## Brazilian Economic Data Integration
-
-Learn to work with real Brazilian data sources that power economic research and policy decisions:
-
-::: {style="text-align: center; margin: 2rem 0;"}
-::: {.data-source-badge}
-IBGE
-:::
-::: {.data-source-badge}
-Banco Central
-:::
-::: {.data-source-badge}
-IPEA
-:::
-::: {.data-source-badge}
-FINBRA
-:::
-::: {.data-source-badge}
-FipeZap
-:::
-:::
-
-Our tutorials teach you to access, clean, and analyze data from Brazil's key economic institutions, giving you practical skills for real-world economic analysis.
-:::
-
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-## 📊 Research & Insights
-
-Stay updated with data-driven analysis of Brazilian economics, urban development, and evidence-based policy recommendations:
-
-- **[Brazil's Housing Affordability Crisis: A Data-Driven Analysis](insights/posts/brazil-housing-crisis.qmd)** - Comprehensive examination of price trends and policy solutions
-- **[Municipal Service Efficiency Benchmarking Study](insights/posts/municipal-efficiency.qmd)** - Performance analysis across 5,570 Brazilian municipalities
-
+```{=html}
+<div class="tiles tiles-4">
+<a class="tile tile-tall" href="cursos.html#r-para-economistas">
+<span class="tile-media"><img src="static/images/art/insight-office-towers.webp" alt="" loading="lazy"></span>
+<span class="tile-title">R para economistas</span>
+<span class="tile-meta">Curso</span>
+</a>
+<a class="tile tile-tall" href="cursos.html#analise-urbana-com-r">
+<span class="tile-media"><img src="static/images/art/insight-old-and-new.webp" alt="" loading="lazy"></span>
+<span class="tile-title">Análise urbana com R</span>
+<span class="tile-meta">Curso</span>
+</a>
+<a class="tile tile-tall" href="livros.html#r-para-economia-urbana">
+<span class="tile-media"><img src="static/images/art/cover-layered-inquiry.webp" alt="" loading="lazy"></span>
+<span class="tile-title">R para economia urbana</span>
+<span class="tile-meta">Livro</span>
+</a>
+<a class="tile tile-tall" href="livros.html#guia-de-dados-brasileiros">
+<span class="tile-media"><img src="static/images/art/cover-metropolitan-fields.webp" alt="" loading="lazy"></span>
+<span class="tile-title">Guia de dados brasileiros</span>
+<span class="tile-meta">Livro</span>
+</a>
+</div>
+```
 :::
 
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[View All Research →](insights/index.qmd){.btn .btn-ekio .btn-lg}
+::: {.band-linho .column-screen}
+A Academy é a frente de ensino da [EKIO](https://ekio.io), consultoria de economia e dados.
 :::
-:::
-
-{{< include _includes/ekio-cta.qmd >}}

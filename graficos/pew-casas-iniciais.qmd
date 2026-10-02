@@ -1,0 +1,15 @@
+---
+title: "Replicando a Pew: o sumiço das casas pequenas"
+description: "Replicação em ggplot2 de um gráfico da Pew Research sobre a queda na construção de casas de até 1.400 pés quadrados nos Estados Unidos."
+date: "2025-08-15"
+image: /static/images/graficos/pew-casas-iniciais.png
+categories: [replicação, habitação]
+---
+
+![](/static/images/graficos/pew-casas-iniciais.png){fig-alt="Barras comparando a distribuição das casas novas por tamanho nos Estados Unidos em 2004 e 2023. A fatia de casas com menos de 1.400 pés quadrados caiu 53%."}
+
+Entre 2004 e 2023, a construção de casas com menos de 1.400 pés quadrados caiu 53 % nos Estados Unidos. O destaque em caixa leva o leitor direto a esse número; as duas cores separam os anos sem legenda.
+
+A replicação reproduz as escolhas da Pew: rótulos alinhados à esquerda, espaço em branco generoso e tipografia contida. Copiar um gráfico bem-feito é um exercício rápido para aprender o que cada detalhe faz.
+
+*Fonte: US Census Bureau, Survey of Construction. Gráfico original: Pew Research Center.*

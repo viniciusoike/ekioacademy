@@ -1,0 +1,15 @@
+---
+title: "Replicando a Pew: idade e religião no mundo"
+description: "Replicação em ggplot2 de um gráfico de barras empilhadas da Pew Research sobre a estrutura etária de cada grupo religioso."
+date: "2025-08-14"
+image: /static/images/graficos/pew-religioes-idade.png
+categories: [replicação, demografia]
+---
+
+![](/static/images/graficos/pew-religioes-idade.png){fig-alt="Barras empilhadas a 100% com a distribuição etária de cada grupo religioso. Muçulmanos aparecem no topo, com a maior parcela de jovens."}
+
+Barras empilhadas a 100 % mostram a composição etária de cada grupo religioso. Três tons do mesmo azul ordenam as faixas de idade, e os rótulos dentro das barras dispensam o eixo.
+
+A ordem das categorias faz parte do argumento: muçulmanos no topo reforçam o título, que trata do perfil mais jovem desse grupo.
+
+*Fonte: Pew Research Center. Gráfico original: Pew Research Center.*

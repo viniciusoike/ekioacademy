@@ -1,44 +1,25 @@
 # EKIO Academy
 
-Educational platform for R programming and econometrics focused on Brazilian urban economics analysis.
+Site de ensino da [EKIO](https://ekio.io): tutoriais de R, gráficos comentados e, em breve, cursos e livros. Feito em Quarto e publicado no Netlify.
 
-[![R](https://img.shields.io/badge/R-4.3.2+-blue.svg)](https://www.r-project.org/)
-[![Quarto](https://img.shields.io/badge/Quarto-1.4.0+-green.svg)](https://quarto.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+## Estrutura
 
-## Overview
+| Caminho | Conteúdo |
+|---|---|
+| `index.qmd` | Página inicial |
+| `tutoriais/` | Um `.qmd` por tutorial; a listagem fica em `index.qmd` |
+| `graficos/` | Um `.qmd` por gráfico; imagens em `static/images/graficos/` |
+| `cursos.qmd`, `livros.qmd` | Ofertas em preparação |
+| `static/theme.scss` | Tema, a partir dos tokens de `ekio/design/marca` |
+| `static/tiles.ejs` | Template das grades de imagem |
+| `static/images/art/` | Arte editorial, a mesma série do ekio-site |
 
-EKIO Academy is a bilingual educational platform built with Quarto that provides tutorials, courses, and resources for R programming and econometrics using Brazilian economic data.
+## Publicar
 
-### Features
-
-- Interactive R tutorials with executable code
-- Bilingual support (English/Portuguese)
-- Integration with Brazilian data sources (IBGE, BCB, IPEA, FINBRA)
-- Professional course offerings
-- Complete R theme system for data visualization
-
-### Technical Stack
-
-- **Frontend**: Quarto + Bootstrap 5 + Custom SCSS
-- **R Integration**: Custom ggplot2 themes and data processing workflows
-- **Deployment**: Netlify with GitHub Actions CI/CD
-- **Content**: Markdown-based with multilingual support
-
-### Structure
-
-```
-ekioacademy/
-├── index.qmd              # English homepage
-├── tutorials/             # English tutorials
-├── books/                 # Resource library
-├── courses/               # Course offerings
-├── blog/                  # Blog posts
-├── pt/                    # Portuguese content
-├── assets/r/              # R theme system
-└── _includes/             # Reusable components
+```sh
+quarto render
 ```
 
-## About
+Os tutoriais executam R. O resultado fica em `_freeze/`, que vai para o git, então o Netlify renderiza o site sem R.
 
-EKIO Academy is developed by [EKIO](https://ekio.io).
+Todo tutorial e gráfico precisa de `image:` no front matter; a imagem é o card na listagem.

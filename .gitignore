@@ -41,3 +41,8 @@ node_modules/
 _combined/
 dist/
 /.quarto/
+
+**/*.quarto_ipynb
+
+# Playwright screenshots
+.playwright-mcp/
