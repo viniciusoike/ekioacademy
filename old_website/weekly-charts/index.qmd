@@ -1,0 +1,21 @@
+---
+title: "Weekly Charts"
+subtitle: "Data visualizations that tell stories"
+lang: en
+format:
+  html:
+    page-layout: full
+    css: weekly-charts-style.css
+listing:
+  type: grid
+  grid-columns: 3
+  contents: 
+    - "charts/*.qmd"
+    - "!charts/*-pt.qmd"
+  sort: "date desc"
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  page-size: 24
+  fields: [image, date, title, description]
+---

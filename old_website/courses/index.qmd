@@ -1,0 +1,10 @@
+---
+title: "Brazilian Data Mastery"
+subtitle: "Working with IBGE, BCB, and IPEA Data"
+---
+
+# Brazilian Data Sources Mastery
+
+Expert-level training in accessing and analyzing Brazilian institutional data sources.
+
+*Course details coming soon.*

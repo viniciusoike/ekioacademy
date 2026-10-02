@@ -1,0 +1,29 @@
+---
+title: "Replicating Nexo: Brazil's Driver License Demographics"
+description: "Recreation of Nexo's horizontal stacked bar chart showing driver's license distribution by age and gender in Brazil using ggplot2"
+date: "2025-08-20"
+image: "/assets/images/weekly-charts/replication-nexo-2/chart.png"
+categories: ["data-replication", "demographics", "transportation", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-nexo-2/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This horizontal stacked percentage chart demonstrates **Nexo's clean approach to demographic analysis** through its **dual-color encoding system** that makes gender disparities immediately apparent across age groups. The **teal and dark blue color scheme** provides strong contrast while maintaining professional aesthetics, and the **percentage labels within bars** eliminate the need for complex legends or external reference points.
+
+The visualization reveals a striking demographic pattern: **the gender gap in driver's licenses widens significantly with age**, from nearly equal representation among young adults (18-30: 62.7% male) to dramatic disparities among seniors (71+: 77.4% male). The **horizontal bar orientation** accommodates age group labels effectively while the **consistent 100% scaling** enables immediate cross-group comparisons.
+
+## Key Learning Points
+
+- **Horizontal stacked percentage bars** excel at showing compositional changes across categories
+- **Age-based analysis** reveals generational differences in transportation access and behavior
+- **Gender encoding through color** makes disparities immediately visible without requiring complex legends
+- **Percentage labeling within bars** maintains chart cleanliness while preserving precision
+- **Demographic visualization** techniques help identify societal patterns and potential policy implications
+- This replication teaches both population analysis and effective demographic data presentation
+
+*Data: Brazilian driver's license statistics by age and gender, January 2024. Replication demonstrates ggplot2 stacked percentage techniques with demographic insights.*

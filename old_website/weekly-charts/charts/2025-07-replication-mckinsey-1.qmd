@@ -1,0 +1,28 @@
+---
+title: "Replicating McKinsey: Nigeria's Gender Representation"
+description: "Recreation of McKinsey stacked bar chart showing steady ~29% women representation across corporate hierarchy levels using ggplot2"
+date: "2025-07-15"
+image: "/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_2.png"
+categories: ["data-replication", "gender", "visualization-tutorial", "corporate-diversity"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-mckinsey-1/mckinsey-1-chart_1.png){fig-align="center"}
+
+## Visualization Strengths
+
+This stacked bar chart masterfully demonstrates **McKinsey's signature visual style** through its clean typography, strategic color choices, and sophisticated layout. The **bold black and cyan color contrast** creates immediate visual hierarchy while the **integrated text annotations** eliminate the need for traditional legends or axes.
+
+The chart reveals a striking pattern: **women's representation remains remarkably stable** at ~29% across all seniority levels in Nigeria's private sector, from entry-level to C-suite positions. This consistency contradicts the typical "leaky pipeline" narrative often seen in corporate gender studies.
+
+## Key Learning Points
+
+- **Integrated annotations** work better than traditional axis labels for executive presentations
+- **Stacked bars with percentage splits** clearly show compositional data across categories
+- **Strategic color choices** (black/cyan) create professional contrast while maintaining readability
+- **Minimal grid lines** focus attention on data rather than chart infrastructure
+- This replication teaches both gender analytics and McKinsey-style visualization techniques
+
+*Data: McKinsey survey conducted Mar–June 2024. Replication demonstrates ggplot2 stacked bar techniques with professional styling.*

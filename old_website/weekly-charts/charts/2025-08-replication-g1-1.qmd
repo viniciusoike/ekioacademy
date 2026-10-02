@@ -1,0 +1,28 @@
+---
+title: "Replicating G1: Brazil Unemployment Evolution"
+description: "Recreation of G1's quarterly unemployment rate visualization showing Brazil's economic recovery with clean bar chart design using ggplot2"
+date: "2025-08-12"
+image: "/assets/images/weekly-charts/replication-g1-1/chart.png"
+categories: ["data-replication", "economics", "unemployment", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-g1-1/chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This time series bar chart exemplifies **G1's signature news visualization style** through its **bold red color scheme** and **clean typography hierarchy**. The **direct percentage labeling** on each bar eliminates the need for y-axis gridlines, creating a focused reading experience. The **Portuguese language formatting** (using commas as decimal separators) demonstrates proper localization for Brazilian audiences.
+
+The visualization effectively captures Brazil's unemployment trajectory, showing a **peak of 9.3% in April-June 2022** followed by a **steady decline to 7.9%** by the end of 2022. The **consistent bar width** and **chronological ordering** make temporal trends immediately apparent.
+
+## Key Learning Points
+
+- **Single-color bar charts** work excellently for time series when emphasis is on trend rather than categories
+- **Direct data labeling** can replace traditional axis elements for cleaner design
+- **Bold color choices** help charts stand out in news media contexts
+- **Proper decimal formatting** is crucial for Brazilian Portuguese audiences (comma vs. period)
+- This replication teaches both economic data visualization and Brazilian media design standards
+
+*Data: IBGE PNAD Contínua quarterly unemployment survey. Replication demonstrates ggplot2 time series bar techniques with Brazilian formatting.*

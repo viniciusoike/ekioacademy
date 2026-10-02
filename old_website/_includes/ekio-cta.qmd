@@ -1,0 +1,41 @@
+---
+format: html
+---
+
+::: {.ekio-cta}
+## Ready for Professional Implementation?
+
+::: {.row}
+::: {.col-md-6}
+::: {.ekio-message}
+### 🎯 Need expert-level analysis for your project?
+EKIO provides professional consulting services for complex urban economic analysis, combining the methodologies taught in these courses with 7+ years of consulting experience.
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### ⚡ From municipal budgets to housing market forecasting
+Whatever your data challenge, EKIO has the solution with professional-grade R analysis and econometric modeling.
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### 👥 Want custom training for your team?
+EKIO offers organization-specific R training, custom analysis templates, and institutional partnerships.
+:::
+:::
+
+::: {.col-md-6}
+::: {.ekio-message}
+### 🚀 Scale your data capabilities professionally
+Transform your organization's approach to urban economic analysis with EKIO's proven methodologies and tools.
+:::
+:::
+:::
+
+::: {style="text-align: center; margin-top: 2rem;"}
+[Discover EKIO Professional Services →](https://ekio.com.br){.btn .btn-light .btn-lg onclick="ekioTrackEducationalEngagement('professional_services_cta', 'from_academy_content')"}
+:::
+:::
