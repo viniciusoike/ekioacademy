@@ -1,108 +1,81 @@
 ---
-title: "Tutoriais"
-subtitle: "Aprenda R para Análise Econômica Brasileira"
-lang: pt-BR
-format:
-  html:
-    page-layout: full
-    toc: false
+pagetitle: "Tutoriais"
+page-layout: full
 listing:
-  - id: "full"
-    type: default
-    contents: "**/*.qmd"
+  - id: visualizacao
+    contents: "data-visualization/**/index.qmd"
     sort: "date desc"
-    sort-ui: true
-    filter-ui: true
-    page-size: 14
-    fields: [image, date, title, description, categories]
-  - id: "visualization"
-    type: grid
-    grid-columns: 4
-    max-items: 4
-    contents: "/data-visualization/**/*.qmd"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: economia
+    contents: "economics/**/index.qmd"
     sort: "date desc"
-    fields: [image, date, title]
-  - id: "economia"
-    type: grid
-    grid-columns: 4
-    max-items: 4
-    contents: "/economics/**/*.qmd"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: series
+    contents: "time-series/**/index.qmd"
     sort: "date desc"
-    fields: [image, date, title]
-  - id: "time-series"
-    type: grid
-    grid-columns: 4
-    max-items: 4
-    contents: "/time-series/**/*.qmd"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: r-basico
+    contents: "tutorial-r/fundamentals/**/index.qmd"
     sort: "date desc"
-    fields: [image, date, title]
-  - id: "r-basic"
-    type: grid
-    grid-columns: 4
-    max-items: 4
-    contents: "/tutorial-r/fundamentals/**/*.qmd"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: r-avancado
+    contents: "tutorial-r/advanced/**/index.qmd"
     sort: "date desc"
-    fields: [image, date, title]
-  - id: "r-advanced"
-    type: grid
-    grid-columns: 4
-    max-items: 4
-    contents: "/tutorial-r/advanced/**/*.qmd"
-    sort: "date desc"
-    fields: [image, date, title]
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
 ---
 
-# Tutoriais EKIO Academy
+::: {.page-intro}
+# Tutoriais
 
-Tutoriais completos para análise de dados econômicos brasileiros usando R. Explore por categoria ou use os filtros para encontrar o conteúdo perfeito para seu nível de conhecimento.
-
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-##  Visualização de Dados
-Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
-
-::: {#visualization}
+Passo a passo em R, do dado bruto ao gráfico final, sempre com dados brasileiros.
 :::
 
-:::
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+::: {.wrap .block-tight}
+## Visualização de dados
+
+::: {#visualizacao .tiles .tiles-4}
 :::
 :::
 
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-##  Econometria
-Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
+::: {.wrap .block-tight}
+## Dados econômicos
 
-::: {#time-series}
-:::
-
-:::
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+::: {#economia .tiles .tiles-4}
 :::
 :::
 
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-##  Tutoriais R
-Encontre tutoriais sobre visualização de dados com temas EKIO e ggplot2.
+::: {.wrap .block-tight}
+## Séries de tempo
 
-### Básico
-
-::: {#r-basic}
-:::
-
-### Avançado
-
-::: {#r-advanced}
-:::
-
-:::
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
+::: {#series .tiles .tiles-4}
 :::
 :::
 
-## Todos Tutoriais
+::: {.wrap .block-tight}
+## R: fundamentos
+
+::: {#r-basico .tiles .tiles-4}
+:::
+:::
+
+::: {.wrap .block-tight}
+## R: tidyverse e além
+
+::: {#r-avancado .tiles .tiles-4}
+:::
+:::

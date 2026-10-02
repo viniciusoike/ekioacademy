@@ -1,9 +1,0 @@
----
-title: "Insights e Análises"
-subtitle: "Análise baseada em dados sobre economia brasileira e desenvolvimento urbano"
-lang: pt-BR
-format:
-  html:
-    page-layout: full
-    css: insights-style.css
----

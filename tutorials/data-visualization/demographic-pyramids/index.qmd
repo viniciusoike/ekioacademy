@@ -5,6 +5,7 @@ description: "Aprenda a criar pirâmides demográficas usando ggplot2 para visua
 author: "Equipe EKIO Academy"
 date: "2024-01-20"
 categories: [visualizacao-dados, ggplot2, demografia, dados-brasileiros]
+image: "/static/images/tutorials/ggplot2_demographic_pyramid.png"
 lang: pt-BR
 format:
   html:
@@ -373,6 +374,3 @@ As pirâmides demográficas são ferramentas poderosas para visualizar estrutura
 
 A mudança de formatos tradicionais de pirâmide para estruturas mais balanceadas ou até invertidas reflete transições demográficas globais e tem implicações importantes para planejamento de políticas, desenvolvimento econômico e serviços sociais.
 
----
-
-*Pronto para explorar mais visualizações de dados brasileiros? Confira nosso tutorial sobre [Fontes de Dados Brasileiros](../../../fundamentos-r/dados-brasileiros/index.qmd) ou aprenda sobre [Mapas Interativos](../mapas-coropleticos/index.qmd).*

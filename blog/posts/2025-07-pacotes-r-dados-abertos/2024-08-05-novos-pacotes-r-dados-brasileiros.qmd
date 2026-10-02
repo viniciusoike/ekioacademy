@@ -146,4 +146,4 @@ O ecossistema R brasileiro está mais maduro e robusto do que nunca. As atualiza
 
 ---
 
-*Quer dominar o R para análise econômica brasileira? Explore nossos [cursos especializados](../../courses/index.qmd) ou comece com nossos [tutoriais gratuitos](../../tutorials/index.qmd).*
+*Quer dominar o R para análise econômica brasileira? Explore nossos [cursos](/cursos.qmd) ou comece com nossos [tutoriais gratuitos](/tutorials/index.qmd).*

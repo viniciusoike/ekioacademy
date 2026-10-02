@@ -1,144 +1,87 @@
 ---
-title: "EKIO Academy"
-subtitle: "R & Ciência de Dados para Economia e Análise Urbana"
-lang: pt-BR
-format:
-  html:
-    page-layout: full
-    toc: false
+pagetitle: "EKIO Academy"
+description: "Tutoriais de R, gráficos e cursos de economia aplicada da EKIO."
+page-layout: full
 listing:
-  - id: sample-blog
-    type: grid
-    grid-columns: 3
-    max-items: 3
-    contents: "/blog/posts/**/*.qmd"
-    sort: "date desc"
-    fields: [image, date, title, description]
-  - id: sample-charts
-    type: grid
-    grid-columns: 4
-    max-items: 4
+  - id: graficos-recentes
     contents: "/weekly-charts/charts/*.qmd"
     sort: "date desc"
-    fields: [image, date, title]
+    max-items: 3
+    type: custom
+    template: static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: tutoriais-recentes
+    contents:
+      - "/tutorials/**/index.qmd"
+      - "!/tutorials/index.qmd"
+    sort: "date desc"
+    max-items: 3
+    type: custom
+    template: static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
 ---
 
-::: {.hero-section}
-::: {.container}
-::: {.hero-content}
-# Aprenda R & Ciência de Dados {.hero-title}
-## para Economia e Mercado Imobiliário {.hero-subtitle}
+::: {.hero .column-screen}
+![](static/images/art/hero-metropolitan-geometry.webp){fig-alt=""}
 
-Domine programação em R, econometria e visualização de dados com tutoriais práticos desenvolvidos especificamente para economistas e planejadores urbanos.
-
-::: {style="margin-top: 2rem;"}
-[Começar a Aprender](tutorials/index.qmd){.btn .btn-ekio .btn-lg} [Recursos Gratuitos](books/index.qmd){.btn .btn-outline-light .btn-lg style="margin-left: 1rem;"}
-:::
-:::
-:::
+# Economia, cidades e dados, aprendidos em R com casos brasileiros.
 :::
 
-## Aprender
-
-::: {.row style="margin-top: 3rem;"}
-::: {.col-md-4}
-::: {.tutorial-card}
-### Tutoriais
-Guias passo a passo cobrindo desde o básico do R até técnicas econométricas avançadas. Aprenda uma ferramenta nova a cada dia.
-
-[Explorar Tutoriais](tutorials/index.qmd){.btn .btn-ekio}
+::: {.wrap}
+```{=html}
+<nav class="strip" aria-label="Seções">
+<a class="strip-item" href="tutorials/index.html">
+<span class="tile-media"><img src="static/images/art/card-positive-correlation.webp" alt=""></span>
+<span class="strip-label">Tutoriais</span>
+</a>
+<a class="strip-item" href="weekly-charts/index.html">
+<span class="tile-media"><img src="static/images/art/insight-market-cycles.webp" alt=""></span>
+<span class="strip-label">Gráficos</span>
+</a>
+<a class="strip-item" href="blog/index.html">
+<span class="tile-media"><img src="static/images/art/insight-signal-and-cycle.webp" alt=""></span>
+<span class="strip-label">Blog</span>
+</a>
+<a class="strip-item" href="cursos.html">
+<span class="tile-media"><img src="static/images/art/insight-sao-paulo-copan.webp" alt=""></span>
+<span class="strip-label">Cursos</span>
+</a>
+<a class="strip-item" href="livros.html">
+<span class="tile-media"><img src="static/images/art/cover-layered-inquiry.webp" alt=""></span>
+<span class="strip-label">Livros</span>
+</a>
+<a class="strip-item" href="sobre.html">
+<span class="tile-media"><img src="static/images/art/banner-sao-paulo-heritage.webp" alt=""></span>
+<span class="strip-label">Sobre</span>
+</a>
+</nav>
+```
 :::
+
+::: {.wrap .block}
+::: {.section-head}
+## Gráficos recentes
+
+[Ver todos](weekly-charts/index.qmd)
 :::
 
-::: {.row style="margin-top: 3rem;"}
-::: {.col-md-4}
-::: {.tutorial-card}
-### Mini-Cursos
-Conjunto estruturado e temático de tutoriais.
-
-[Explorar Mini-Cursos](tutorials/index.qmd){.btn .btn-ekio}
-:::
-:::
-
-::: {.col-md-4}
-::: {.tutorial-card}
-### Cursos Completos
-Trilhas de aprendizado levando você de iniciante a especialista em análise econômica usando R.
-
-[Ver Cursos](courses/index.qmd){.btn .btn-ekio}
-:::
-:::
-:::
-
-::: {.col-md-4}
-::: {.tutorial-card}
-### Livros
-Recursos abrangentes e eBooks cobrindo tópicos especializados em economia urbana, programação R e análise de dados brasileiros.
-
-[Navegar Livros](books/index.qmd){.btn .btn-ekio}
+::: {#graficos-recentes .tiles .tiles-3}
 :::
 :::
 
+::: {.wrap .block}
+::: {.section-head}
+## Tutoriais
 
-
-
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-## Visualização de Dados
-
-::: {#sample-charts}
+[Ver todos](tutorials/index.qmd)
 :::
 
-:::
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Ver Mais](blog/index.qmd){.btn .btn-ekio .btn-lg}
+::: {#tutoriais-recentes .tiles .tiles-3}
 :::
 :::
 
-
-::: {.row style="margin: 4rem 0;"}
-::: {.col-md-8}
-##  Posts Recentes do Blog
-
-::: {#sample-blog}
+::: {.band .column-screen}
+A Academy é a frente de ensino da [EKIO](https://ekio.io), consultoria de economia e dados.
 :::
-
-:::
-::: {.col-md-4 style="display: flex; align-items: center; justify-content: center;"}
-[Ver Todos os Posts](blog/index.qmd){.btn .btn-ekio .btn-lg}
-:::
-:::
-
-
-
-
-
-<!-- ::: {.ekio-cta}
-## O que fazemos | Quem servimos
-
-::: {.row}
-::: {.col-md-6}
-::: {.ekio-message}
-### Real Estate | Incorporadoras e Desenvolvedoras
-A EKIO oferece serviços de consultoria aliando dados com anos de expertise do mercado imobiliário brasileiro.
-:::
-:::
-
-::: {.col-md-6}
-::: {.ekio-message}
-### Poder Público |
-Qualquer que seja seu desafio de dados, a EKIO tem a solução com análise profissional em R e modelagem econométrica.
-:::
-:::
-
-::: {.col-md-6}
-::: {.ekio-message}
-### Quer treinamento personalizado para sua equipe?
-A EKIO oferece treinamento específico para organizações, modelos de análise personalizados e parcerias institucionais.
-:::
-:::
-
-::: {style="text-align: center; margin-top: 2rem;"}
-[Descubra os Serviços Profissionais EKIO →](https://ekio.io){.btn .btn-light .btn-lg onclick="ekioTrackEducationalEngagement('professional_services_cta_pt', 'from_academy_content_pt')"}
-:::
-::: -->

@@ -1,19 +1,23 @@
 ---
-title: "Gráficos Semanais"
-subtitle: "Visualizações de dados que contam histórias"
-lang: pt-BR
-format:
-  html:
-    page-layout: full
-    css: graficos-semanais-style.css
+pagetitle: "Gráficos"
+page-layout: full
 listing:
-  type: grid
-  grid-columns: 3
+  id: lista
   contents: "charts/*.qmd"
   sort: "date desc"
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  page-size: 24
-  fields: [image, date, title, description]
+  type: custom
+  template: ../static/tiles.ejs
+  fields: [title, date, image]
+  date-format: "MMMM [de] YYYY"
 ---
+
+::: {.page-intro}
+# Gráficos
+
+Gráficos sobre cidades, demografia e mercado imobiliário, com o texto que explica cada escolha de desenho. Muitos são replicações de gráficos publicados.
+:::
+
+::: {.wrap}
+::: {#lista .tiles .tiles-lead}
+:::
+:::

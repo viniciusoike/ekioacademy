@@ -5,7 +5,7 @@ description: "Aprenda a criar bump plots para visualizar rankings e comparaçõe
 author: "Equipe EKIO Academy"
 date: "2024-01-15"
 categories: [visualizacao-dados, ggplot2, rankings]
-image: "static/images/tutorials/replication_economist_bump_plot.jpeg"
+image: "/static/images/tutorials/replication_economist_bump_plot.jpeg"
 lang: pt-BR
 format:
   html:
@@ -417,6 +417,3 @@ Os bump plots são excelentes para visualizar rankings e comparações em difere
 
 O objetivo destes posts é de sempre fazer o máximo possível usando `ggplot2` mas, na prática, as caixas de texto acima do gráfico podem ser feitas num software externo para designs mais complexos.
 
----
-
-*Pronto para criar visualizações mais avançadas? Confira nosso tutorial de [Dashboards Interativos](../dashboards-interativos/index.qmd) ou explore nosso [guia completo de ggplot2](../ggplot2-basico/index.qmd).*

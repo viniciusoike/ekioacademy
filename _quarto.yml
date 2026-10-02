@@ -1,80 +1,71 @@
 project:
   type: website
+  output-dir: _site
   render:
     - "*.qmd"
     - "!content-archive/"
     - "!old_website/"
-    - "!quarto-*/"
-
+  # Imagens citadas só em `style` ou em templates EJS não são descobertas
+  # pelo Quarto; a pasta entra explicitamente.
+  resources:
+    - static/images/
 
 website:
-  title: "EKIO Academy"
-  description: "R & Ciência de Dados para Economia e Análise Urbana | Plataforma Educacional Brasileira de Economia Urbana"
+  title: "Academy"
+  description: "Tutoriais de R, gráficos e cursos de economia aplicada da EKIO"
   site-url: "https://academy.ekio.io"
-
-  google-analytics: "G-XXXXXXXXXX"  # To be configured
+  favicon: static/images/brand/monogram-navy.svg
+  open-graph: true
 
   navbar:
-    background: "#1abc9c"
-    foreground: white
-    collapse: true
-    left:
-      - text: "Aprender"
-        menu:
-          - text: "Tutoriais"
-            href: tutorials/index.qmd
-          - text: "Mini Cursos"
-            href: tutorials/index.qmd
-          - text: "Cursos Completos"
-            href: courses/index.qmd
+    logo: static/images/brand/lockup-navy.svg
+    logo-alt: "EKIO"
+    logo-href: /index.qmd
+    title: "Academy"
+    background: "#F1F1F1"
+    foreground: "#373A3D"
+    search: false
+    collapse-below: md
+    right:
+      - text: "Tutoriais"
+        href: tutorials/index.qmd
+      - text: "Gráficos"
+        href: weekly-charts/index.qmd
       - text: "Blog"
         href: blog/index.qmd
+      - text: "Cursos"
+        href: cursos.qmd
       - text: "Livros"
-        href: books/index.qmd
-      - text: "Gráficos Semanais"
-        href: weekly-charts/index.qmd
+        href: livros.qmd
       - text: "Sobre"
-        href: about.qmd
-    right:
-      - icon: "github"
-        href: "https://github.com/viniciusoike/ekioacademy"
-        aria-label: "GitHub"
-      - icon: "linkedin"
-        href: "https://linkedin.com/company/ekio-analytics"
-        aria-label: "LinkedIn"
-
-  search:
-    type: overlay
-    copy-button: true
+        href: sobre.qmd
 
   page-footer:
-    background: "#2c3e50"
-    foreground: white
-    left: |
-      © 2024 EKIO Academy. Parte da [EKIO](https://ekio.io).
-    center: |
-      Treinamento profissional em R para economistas e planejadores urbanos.
+    background: "#F1F1F1"
+    foreground: "#52555A"
+    left: "© 2026 EKIO Academy"
+    right: |
+      [ekio.io](https://ekio.io) · [GitHub](https://github.com/viniciusoike) · [LinkedIn](https://linkedin.com/in/viniciusoike)
+
+lang: pt
+
 format:
   html:
     theme:
       - cosmo
-      - custom.scss
-    toc: true
-    toc-depth: 3
-    number-sections: false
-    smooth-scroll: true
+      - static/theme.scss
+    include-in-header: static/head.html
+    toc: false
+    anchor-sections: false
+    section-divs: false
+    code-tools: false
     link-external-newwindow: true
-    citations-hover: true
-    footnotes-hover: true
     highlight-style: assets/themes/material-palenight-r.theme
-    css:
-      - styles.css
-      - assets/css/ekio-theme.css
-    include-in-header: _includes/head-custom.html
-    include-after-body: _includes/analytics.html
 
 execute:
+  # Content is rendered locally and frozen; the build never runs R.
+  freeze: true
+  cache: true
+  echo: true
   warning: false
   message: false
-  cache: true
-  freeze: true

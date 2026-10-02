@@ -1,0 +1,32 @@
+---
+pagetitle: "Livros"
+page-layout: full
+---
+
+::: {.page-intro}
+# Livros
+
+Os livros estão em preparação e serão publicados abertos, em formato web.
+:::
+
+::: {.wrap .tiles .tiles-2 .offer-list}
+::: {.offer #r-para-economia-urbana}
+![](static/images/art/cover-layered-inquiry.webp){fig-alt=""}
+
+## R para economia urbana
+
+Como medir preços, densidade e acesso nas cidades brasileiras com R.
+
+[Em preparação]{.tile-meta}
+:::
+
+::: {.offer #guia-de-dados-brasileiros}
+![](static/images/art/cover-metropolitan-fields.webp){fig-alt=""}
+
+## Guia de dados brasileiros
+
+Onde estão os dados públicos do Brasil e como importá-los no R.
+
+[Em preparação]{.tile-meta}
+:::
+:::

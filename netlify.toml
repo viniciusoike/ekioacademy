@@ -1,52 +1,17 @@
+# Quarto runs on Netlify without R: pages with code are rendered from _freeze/,
+# which is committed. Run `quarto render` locally before pushing new tutorials.
 [build]
-  command = "mkdir -p /tmp/quarto && curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.32/quarto-1.7.32-linux-amd64.tar.gz && tar -xzf quarto-1.7.32-linux-amd64.tar.gz -C /tmp/quarto && export PATH=$PATH:/tmp/quarto/quarto-1.7.32/bin && npm install && npm run build"
+  command = "mkdir -p /tmp/quarto && curl -sL https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-linux-amd64.tar.gz | tar -xz -C /tmp/quarto && /tmp/quarto/quarto-1.9.37/bin/quarto render"
   publish = "_site"
-  
-[build.environment]
-  NODE_VERSION = "18"
 
-# Language-based redirects
-[[redirects]]
-  from = "/pt/*"
-  to = "/pt/:splat"
-  status = 200
-  force = false
-
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-  force = false
-
-# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff" 
+    X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com"
-
-# Caching optimization
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "*.css"
+  for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
-
-[[headers]] 
-  for = "*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
-
-# Form handling
-[forms]
-  [forms."course-enrollment"]
-    action = "/enrollment-success"
-  [forms."contact"]
-    action = "/contact-success"
