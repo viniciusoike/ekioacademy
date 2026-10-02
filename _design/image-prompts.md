@@ -55,6 +55,14 @@ Home strip, square 1:1.
 Asset/composition: Square. Three small flat charts printed on one pale sheet as if pulled from separate woodblocks: a short column chart in pale and mid blue, a thin connected line in navy, and a loose scatter of round points. They overlap slightly and are offset like misregistered print layers. Wide empty margins. No axes labels, no text, no numbers.
 ```
 
+### secao-blog.webp
+
+Home strip, square 1:1.
+
+```text
+Asset/composition: Square. A writing desk seen from above in light key: a few loose sheets of pale paper fanned out, one with a small printed line chart in slate blue, a fountain pen lying diagonally, and a thin navy ruled margin on each sheet. Mostly empty paper-white surface. No writing, no letters, no numbers.
+```
+
 ### secao-cursos.webp
 
 Home strip, square 1:1.
@@ -129,6 +137,7 @@ paths below and delete the old WebPs that are no longer referenced.
 | Home hero (`index.qmd`) | `hero-metropolitan-geometry.webp` | `hero-academy.webp` |
 | Strip: Tutoriais | `card-positive-correlation.webp` | `secao-tutoriais.webp` |
 | Strip: Gráficos | `insight-market-cycles.webp` | `secao-graficos.webp` |
+| Strip: Blog | `insight-signal-and-cycle.webp` | `secao-blog.webp` |
 | Strip: Cursos | `insight-sao-paulo-copan.webp` | `secao-cursos.webp` |
 | Strip: Livros | `cover-layered-inquiry.webp` | `secao-livros.webp` |
 | Strip: Sobre | `banner-sao-paulo-heritage.webp` | `secao-sobre.webp` |

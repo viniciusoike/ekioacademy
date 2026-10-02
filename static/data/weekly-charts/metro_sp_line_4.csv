@@ -1,0 +1,786 @@
+variable,date,year,metric,value,name_station
+passenger_transported,2018-01-01,2018,Total,15110,Total
+passenger_transported,2018-01-01,2018,Média dos Dias Úteis,610,Total
+passenger_transported,2018-01-01,2018,Média dos Sábados,313,Total
+passenger_transported,2018-01-01,2018,Média dos Domingos,152,Total
+passenger_transported,2018-01-01,2018,Máxima Diária,696,Total
+passenger_transported,2018-02-01,2018,Total,16807,Total
+passenger_transported,2018-02-01,2018,Média dos Dias Úteis,722,Total
+passenger_transported,2018-02-01,2018,Média dos Sábados,517,Total
+passenger_transported,2018-02-01,2018,Média dos Domingos,254,Total
+passenger_transported,2018-02-01,2018,Máxima Diária,772,Total
+passenger_transported,2018-03-01,2018,Total,19470,Total
+passenger_transported,2018-03-01,2018,Média dos Dias Úteis,786,Total
+passenger_transported,2018-03-01,2018,Média dos Sábados,372,Total
+passenger_transported,2018-03-01,2018,Média dos Domingos,222,Total
+passenger_transported,2018-03-01,2018,Máxima Diária,836,Total
+passenger_transported,2018-04-01,2018,Total,18757,Total
+passenger_transported,2018-04-01,2018,Média dos Dias Úteis,774,Total
+passenger_transported,2018-04-01,2018,Média dos Sábados,370,Total
+passenger_transported,2018-04-01,2018,Média dos Domingos,207,Total
+passenger_transported,2018-04-01,2018,Máxima Diária,808,Total
+passenger_transported,2018-05-01,2018,Total,19792,Total
+passenger_transported,2018-05-01,2018,Média dos Dias Úteis,789,Total
+passenger_transported,2018-05-01,2018,Média dos Sábados,409,Total
+passenger_transported,2018-05-01,2018,Média dos Domingos,259,Total
+passenger_transported,2018-05-01,2018,Máxima Diária,810,Total
+passenger_transported,2018-06-01,2018,Total,18618,Total
+passenger_transported,2018-06-01,2018,Média dos Dias Úteis,750,Total
+passenger_transported,2018-06-01,2018,Média dos Sábados,379,Total
+passenger_transported,2018-06-01,2018,Média dos Domingos,243,Total
+passenger_transported,2018-06-01,2018,Máxima Diária,818,Total
+passenger_transported,2018-07-01,2018,Total,17862,Total
+passenger_transported,2018-07-01,2018,Média dos Dias Úteis,711,Total
+passenger_transported,2018-07-01,2018,Média dos Sábados,376,Total
+passenger_transported,2018-07-01,2018,Média dos Domingos,235,Total
+passenger_transported,2018-07-01,2018,Máxima Diária,744,Total
+passenger_transported,2018-08-01,2018,Total,20844,Total
+passenger_transported,2018-08-01,2018,Média dos Dias Úteis,797,Total
+passenger_transported,2018-08-01,2018,Média dos Sábados,397,Total
+passenger_transported,2018-08-01,2018,Média dos Domingos,229,Total
+passenger_transported,2018-08-01,2018,Máxima Diária,827,Total
+passenger_transported,2018-09-01,2018,Total,18080,Total
+passenger_transported,2018-09-01,2018,Média dos Dias Úteis,800,Total
+passenger_transported,2018-09-01,2018,Média dos Sábados,411,Total
+passenger_transported,2018-09-01,2018,Média dos Domingos,111,Total
+passenger_transported,2018-09-01,2018,Máxima Diária,841,Total
+passenger_transported,2018-10-01,2018,Total,18907,Total
+passenger_transported,2018-10-01,2018,Média dos Dias Úteis,761,Total
+passenger_transported,2018-10-01,2018,Média dos Sábados,362,Total
+passenger_transported,2018-10-01,2018,Média dos Domingos,118,Total
+passenger_transported,2018-10-01,2018,Máxima Diária,828,Total
+passenger_transported,2018-11-01,2018,Total,16990,Total
+passenger_transported,2018-11-01,2018,Média dos Dias Úteis,735,Total
+passenger_transported,2018-11-01,2018,Média dos Sábados,354,Total
+passenger_transported,2018-11-01,2018,Média dos Domingos,213,Total
+passenger_transported,2018-11-01,2018,Máxima Diária,802,Total
+passenger_transported,2018-12-01,2018,Total,16471,Total
+passenger_transported,2018-12-01,2018,Média dos Dias Úteis,666,Total
+passenger_transported,2018-12-01,2018,Média dos Sábados,373,Total
+passenger_transported,2018-12-01,2018,Média dos Domingos,233,Total
+passenger_transported,2018-12-01,2018,Máxima Diária,795,Total
+passenger_transported,2019-01-01,2019,Total,16121,Total
+passenger_transported,2019-01-01,2019,Média dos Dias Úteis,648,Total
+passenger_transported,2019-01-01,2019,Média dos Sábados,313,Total
+passenger_transported,2019-01-01,2019,Média dos Domingos,203,Total
+passenger_transported,2019-01-01,2019,Máxima Diária,713,Total
+passenger_transported,2019-02-01,2019,Total,18136,Total
+passenger_transported,2019-02-01,2019,Média dos Dias Úteis,765,Total
+passenger_transported,2019-02-01,2019,Média dos Sábados,437,Total
+passenger_transported,2019-02-01,2019,Média dos Domingos,273,Total
+passenger_transported,2019-02-01,2019,Máxima Diária,808,Total
+passenger_transported,2019-03-01,2019,Total,19278,Total
+passenger_transported,2019-03-01,2019,Média dos Dias Úteis,789,Total
+passenger_transported,2019-03-01,2019,Média dos Sábados,438,Total
+passenger_transported,2019-03-01,2019,Média dos Domingos,268,Total
+passenger_transported,2019-03-01,2019,Máxima Diária,835,Total
+passenger_transported,2019-04-01,2019,Total,19644,Total
+passenger_transported,2019-04-01,2019,Média dos Dias Úteis,808,Total
+passenger_transported,2019-04-01,2019,Média dos Sábados,387,Total
+passenger_transported,2019-04-01,2019,Média dos Domingos,227,Total
+passenger_transported,2019-04-01,2019,Máxima Diária,843,Total
+passenger_transported,2019-05-01,2019,Total,20654,Total
+passenger_transported,2019-05-01,2019,Média dos Dias Úteis,809,Total
+passenger_transported,2019-05-01,2019,Média dos Sábados,393,Total
+passenger_transported,2019-05-01,2019,Média dos Domingos,257,Total
+passenger_transported,2019-05-01,2019,Máxima Diária,848,Total
+passenger_transported,2019-06-01,2019,Total,18030,Total
+passenger_transported,2019-06-01,2019,Média dos Dias Úteis,780,Total
+passenger_transported,2019-06-01,2019,Média dos Sábados,398,Total
+passenger_transported,2019-06-01,2019,Média dos Domingos,247,Total
+passenger_transported,2019-06-01,2019,Máxima Diária,827,Total
+passenger_transported,2019-07-01,2019,Total,18518,Total
+passenger_transported,2019-07-01,2019,Média dos Dias Úteis,730,Total
+passenger_transported,2019-07-01,2019,Média dos Sábados,378,Total
+passenger_transported,2019-07-01,2019,Média dos Domingos,222,Total
+passenger_transported,2019-07-01,2019,Máxima Diária,760,Total
+passenger_transported,2019-08-01,2019,Total,20689,Total
+passenger_transported,2019-08-01,2019,Média dos Dias Úteis,810,Total
+passenger_transported,2019-08-01,2019,Média dos Sábados,394,Total
+passenger_transported,2019-08-01,2019,Média dos Domingos,223,Total
+passenger_transported,2019-08-01,2019,Máxima Diária,838,Total
+passenger_transported,2019-09-01,2019,Total,19888,Total
+passenger_transported,2019-09-01,2019,Média dos Dias Úteis,818,Total
+passenger_transported,2019-09-01,2019,Média dos Sábados,385,Total
+passenger_transported,2019-09-01,2019,Média dos Domingos,234,Total
+passenger_transported,2019-09-01,2019,Máxima Diária,855,Total
+passenger_transported,2019-10-01,2019,Total,21387,Total
+passenger_transported,2019-10-01,2019,Média dos Dias Úteis,818,Total
+passenger_transported,2019-10-01,2019,Média dos Sábados,386,Total
+passenger_transported,2019-10-01,2019,Média dos Domingos,255,Total
+passenger_transported,2019-10-01,2019,Máxima Diária,854,Total
+passenger_transported,2019-11-01,2019,Total,19412,Total
+passenger_transported,2019-11-01,2019,Média dos Dias Úteis,836,Total
+passenger_transported,2019-11-01,2019,Média dos Sábados,392,Total
+passenger_transported,2019-11-01,2019,Média dos Domingos,238,Total
+passenger_transported,2019-11-01,2019,Máxima Diária,872,Total
+passenger_transported,2019-12-01,2019,Total,17788,Total
+passenger_transported,2019-12-01,2019,Média dos Dias Úteis,703,Total
+passenger_transported,2019-12-01,2019,Média dos Sábados,400,Total
+passenger_transported,2019-12-01,2019,Média dos Domingos,261,Total
+passenger_transported,2019-12-01,2019,Máxima Diária,859,Total
+passenger_transported,2020-01-01,2020,Total,17750,Total
+passenger_transported,2020-01-01,2020,Média dos Dias Úteis,702,Total
+passenger_transported,2020-01-01,2020,Média dos Sábados,335,Total
+passenger_transported,2020-01-01,2020,Média dos Domingos,202,Total
+passenger_transported,2020-01-01,2020,Máxima Diária,777,Total
+passenger_transported,2020-02-01,2020,Total,18294,Total
+passenger_transported,2020-02-01,2020,Média dos Dias Úteis,763,Total
+passenger_transported,2020-02-01,2020,Média dos Sábados,441,Total
+passenger_transported,2020-02-01,2020,Média dos Domingos,310,Total
+passenger_transported,2020-02-01,2020,Máxima Diária,853,Total
+passenger_transported,2020-03-01,2020,Total,13139,Total
+passenger_transported,2020-03-01,2020,Média dos Dias Úteis,521,Total
+passenger_transported,2020-03-01,2020,Média dos Sábados,232,Total
+passenger_transported,2020-03-01,2020,Média dos Domingos,151,Total
+passenger_transported,2020-03-01,2020,Máxima Diária,861,Total
+passenger_transported,2020-04-01,2020,Total,3806,Total
+passenger_transported,2020-04-01,2020,Média dos Dias Úteis,158,Total
+passenger_transported,2020-04-01,2020,Média dos Sábados,83,Total
+passenger_transported,2020-04-01,2020,Média dos Domingos,48,Total
+passenger_transported,2020-04-01,2020,Máxima Diária,174,Total
+passenger_transported,2020-05-01,2020,Total,4062,Total
+passenger_transported,2020-05-01,2020,Média dos Dias Úteis,175,Total
+passenger_transported,2020-05-01,2020,Média dos Sábados,91,Total
+passenger_transported,2020-05-01,2020,Média dos Domingos,49,Total
+passenger_transported,2020-05-01,2020,Máxima Diária,182,Total
+passenger_transported,2020-06-01,2020,Total,5278,Total
+passenger_transported,2020-06-01,2020,Média dos Dias Úteis,208,Total
+passenger_transported,2020-06-01,2020,Média dos Sábados,113,Total
+passenger_transported,2020-06-01,2020,Média dos Domingos,60,Total
+passenger_transported,2020-06-01,2020,Máxima Diária,230,Total
+passenger_transported,2020-07-01,2020,Total,6746,Total
+passenger_transported,2020-07-01,2020,Média dos Dias Úteis,255,Total
+passenger_transported,2020-07-01,2020,Média dos Sábados,149,Total
+passenger_transported,2020-07-01,2020,Média dos Domingos,71,Total
+passenger_transported,2020-07-01,2020,Máxima Diária,276,Total
+passenger_transported,2020-08-01,2020,Total,7324,Total
+passenger_transported,2020-08-01,2020,Média dos Dias Úteis,290,Total
+passenger_transported,2020-08-01,2020,Média dos Sábados,168,Total
+passenger_transported,2020-08-01,2020,Média dos Domingos,81,Total
+passenger_transported,2020-08-01,2020,Máxima Diária,312,Total
+passenger_transported,2020-09-01,2020,Total,7980,Total
+passenger_transported,2020-09-01,2020,Média dos Dias Úteis,320,Total
+passenger_transported,2020-09-01,2020,Média dos Sábados,193,Total
+passenger_transported,2020-09-01,2020,Média dos Domingos,95,Total
+passenger_transported,2020-09-01,2020,Máxima Diária,338,Total
+passenger_transported,2020-10-01,2020,Total,8892,Total
+passenger_transported,2020-10-01,2020,Média dos Dias Úteis,347,Total
+passenger_transported,2020-10-01,2020,Média dos Sábados,208,Total
+passenger_transported,2020-10-01,2020,Média dos Domingos,107,Total
+passenger_transported,2020-10-01,2020,Máxima Diária,368,Total
+passenger_transported,2020-11-01,2020,Total,8976,Total
+passenger_transported,2020-11-01,2020,Média dos Dias Úteis,365,Total
+passenger_transported,2020-11-01,2020,Média dos Sábados,234,Total
+passenger_transported,2020-11-01,2020,Média dos Domingos,122,Total
+passenger_transported,2020-11-01,2020,Máxima Diária,385,Total
+passenger_transported,2020-12-01,2020,Total,8785,Total
+passenger_transported,2020-12-01,2020,Média dos Dias Úteis,337,Total
+passenger_transported,2020-12-01,2020,Média dos Sábados,213,Total
+passenger_transported,2020-12-01,2020,Média dos Domingos,114,Total
+passenger_transported,2020-12-01,2020,Máxima Diária,392,Total
+passenger_transported,2021-01-01,2021,Total,8042,Total
+passenger_transported,2021-01-01,2021,Média dos Dias Úteis,341,Total
+passenger_transported,2021-01-01,2021,Média dos Sábados,172,Total
+passenger_transported,2021-01-01,2021,Média dos Domingos,101,Total
+passenger_transported,2021-01-01,2021,Máxima Diária,365,Total
+passenger_transported,2021-02-01,2021,Total,8395,Total
+passenger_transported,2021-02-01,2021,Média dos Dias Úteis,360,Total
+passenger_transported,2021-02-01,2021,Média dos Sábados,206,Total
+passenger_transported,2021-02-01,2021,Média dos Domingos,110,Total
+passenger_transported,2021-02-01,2021,Máxima Diária,375,Total
+passenger_transported,2021-03-01,2021,Total,7060,Total
+passenger_transported,2021-03-01,2021,Média dos Dias Úteis,288,Total
+passenger_transported,2021-03-01,2021,Média dos Sábados,135,Total
+passenger_transported,2021-03-01,2021,Média dos Domingos,69,Total
+passenger_transported,2021-03-01,2021,Máxima Diária,373,Total
+passenger_transported,2021-04-01,2021,Total,6530,Total
+passenger_transported,2021-04-01,2021,Média dos Dias Úteis,276,Total
+passenger_transported,2021-04-01,2021,Média dos Sábados,141,Total
+passenger_transported,2021-04-01,2021,Média dos Domingos,77,Total
+passenger_transported,2021-04-01,2021,Máxima Diária,317,Total
+passenger_transported,2021-05-01,2021,Total,8284,Total
+passenger_transported,2021-05-01,2021,Média dos Dias Úteis,324,Total
+passenger_transported,2021-05-01,2021,Média dos Sábados,193,Total
+passenger_transported,2021-05-01,2021,Média dos Domingos,103,Total
+passenger_transported,2021-05-01,2021,Máxima Diária,346,Total
+passenger_transported,2021-06-01,2021,Total,8721,Total
+passenger_transported,2021-06-01,2021,Média dos Dias Úteis,336,Total
+passenger_transported,2021-06-01,2021,Média dos Sábados,216,Total
+passenger_transported,2021-06-01,2021,Média dos Domingos,114,Total
+passenger_transported,2021-06-01,2021,Máxima Diária,357,Total
+passenger_transported,2021-07-01,2021,Total,9139,Total
+passenger_transported,2021-07-01,2021,Média dos Dias Úteis,350,Total
+passenger_transported,2021-07-01,2021,Média dos Sábados,222,Total
+passenger_transported,2021-07-01,2021,Média dos Domingos,119,Total
+passenger_transported,2021-07-01,2021,Máxima Diária,373,Total
+passenger_transported,2021-08-01,2021,Total,10049,Total
+passenger_transported,2021-08-01,2021,Média dos Dias Úteis,386,Total
+passenger_transported,2021-08-01,2021,Média dos Sábados,231,Total
+passenger_transported,2021-08-01,2021,Média dos Domingos,129,Total
+passenger_transported,2021-08-01,2021,Máxima Diária,405,Total
+passenger_transported,2021-09-01,2021,Total,10409,Total
+passenger_transported,2021-09-01,2021,Média dos Dias Úteis,409,Total
+passenger_transported,2021-09-01,2021,Média dos Sábados,252,Total
+passenger_transported,2021-09-01,2021,Média dos Domingos,149,Total
+passenger_transported,2021-09-01,2021,Máxima Diária,431,Total
+passenger_transported,2021-10-01,2021,Total,10956.07,Total
+passenger_transported,2021-10-01,2021,Média dos Dias Úteis,434.81,Total
+passenger_transported,2021-10-01,2021,Média dos Sábados,272.26,Total
+passenger_transported,2021-10-01,2021,Média dos Domingos,146.87,Total
+passenger_transported,2021-10-01,2021,Máxima Diária,478.42,Total
+passenger_transported,2021-11-01,2021,Total,11712.12,Total
+passenger_transported,2021-11-01,2021,Média dos Dias Úteis,469.24,Total
+passenger_transported,2021-11-01,2021,Média dos Sábados,300.21,Total
+passenger_transported,2021-11-01,2021,Média dos Domingos,188.66,Total
+passenger_transported,2021-11-01,2021,Máxima Diária,497.47,Total
+passenger_transported,2021-12-01,2021,Total,11566.89,Total
+passenger_transported,2021-12-01,2021,Média dos Dias Úteis,423.65,Total
+passenger_transported,2021-12-01,2021,Média dos Sábados,272.63,Total
+passenger_transported,2021-12-01,2021,Média dos Domingos,183.1,Total
+passenger_transported,2021-12-01,2021,Máxima Diária,514.81,Total
+passenger_transported,2022-01-01,2022,Total,9745.14,Total
+passenger_transported,2022-01-01,2022,Média dos Dias Úteis,381.81,Total
+passenger_transported,2022-01-01,2022,Média dos Sábados,209.48,Total
+passenger_transported,2022-01-01,2022,Média dos Domingos,135.96,Total
+passenger_transported,2022-01-01,2022,Máxima Diária,420.11,Total
+passenger_transported,2022-02-01,2022,Total,10885,Total
+passenger_transported,2022-02-01,2022,Média dos Dias Úteis,450,Total
+passenger_transported,2022-02-01,2022,Média dos Sábados,289,Total
+passenger_transported,2022-02-01,2022,Média dos Domingos,180,Total
+passenger_transported,2022-02-01,2022,Máxima Diária,486,Total
+passenger_transported,2022-03-01,2022,Total,13697,Total
+passenger_transported,2022-03-01,2022,Média dos Dias Úteis,523,Total
+passenger_transported,2022-03-01,2022,Média dos Sábados,322,Total
+passenger_transported,2022-03-01,2022,Média dos Domingos,172,Total
+passenger_transported,2022-03-01,2022,Máxima Diária,575,Total
+passenger_transported,2022-04-01,2022,Total,13019,Total
+passenger_transported,2022-04-01,2022,Média dos Dias Úteis,550,Total
+passenger_transported,2022-04-01,2022,Média dos Sábados,299,Total
+passenger_transported,2022-04-01,2022,Média dos Domingos,165,Total
+passenger_transported,2022-04-01,2022,Máxima Diária,591,Total
+passenger_transported,2022-05-01,2022,Total,14873.24,Total
+passenger_transported,2022-05-01,2022,Média dos Dias Úteis,569.18,Total
+passenger_transported,2022-05-01,2022,Média dos Sábados,337.49,Total
+passenger_transported,2022-05-01,2022,Média dos Domingos,200.28,Total
+passenger_transported,2022-05-01,2022,Máxima Diária,606.09,Total
+passenger_transported,2022-06-01,2022,Total,14239.84,Total
+passenger_transported,2022-06-01,2022,Média dos Dias Úteis,559.54,Total
+passenger_transported,2022-06-01,2022,Média dos Sábados,322.67,Total
+passenger_transported,2022-06-01,2022,Média dos Domingos,223.49,Total
+passenger_transported,2022-06-01,2022,Máxima Diária,587.65,Total
+passenger_transported,2022-07-01,2022,Total,14178.13,Total
+passenger_transported,2022-07-01,2022,Média dos Dias Úteis,548.41,Total
+passenger_transported,2022-07-01,2022,Média dos Sábados,328.38,Total
+passenger_transported,2022-07-01,2022,Média dos Domingos,203.91,Total
+passenger_transported,2022-07-01,2022,Máxima Diária,586.31,Total
+passenger_transported,2022-08-01,2022,Total,15871.08,Total
+passenger_transported,2022-08-01,2022,Média dos Dias Úteis,599.54,Total
+passenger_transported,2022-08-01,2022,Média dos Sábados,327.55,Total
+passenger_transported,2022-08-01,2022,Média dos Domingos,192.89,Total
+passenger_transported,2022-08-01,2022,Máxima Diária,640.13,Total
+passenger_transported,2022-09-01,2022,Total,15427.31,Total
+passenger_transported,2022-09-01,2022,Média dos Dias Úteis,619.43,Total
+passenger_transported,2022-09-01,2022,Média dos Sábados,341.23,Total
+passenger_transported,2022-09-01,2022,Média dos Domingos,205.33,Total
+passenger_transported,2022-09-01,2022,Máxima Diária,653.67,Total
+passenger_transported,2022-10-01,2022,Total,15642.63,Total
+passenger_transported,2022-10-01,2022,Média dos Dias Úteis,626.43,Total
+passenger_transported,2022-10-01,2022,Média dos Sábados,350.85,Total
+passenger_transported,2022-10-01,2022,Média dos Domingos,224.48,Total
+passenger_transported,2022-10-01,2022,Máxima Diária,660.21,Total
+passenger_transported,2022-11-01,2022,Total,14955.05,Total
+passenger_transported,2022-11-01,2022,Média dos Dias Úteis,613.22,Total
+passenger_transported,2022-11-01,2022,Média dos Sábados,357,Total
+passenger_transported,2022-11-01,2022,Média dos Domingos,205.72,Total
+passenger_transported,2022-11-01,2022,Máxima Diária,659.99,Total
+passenger_transported,2022-12-01,2022,Total,14236.08,Total
+passenger_transported,2022-12-01,2022,Média dos Dias Úteis,544.98,Total
+passenger_transported,2022-12-01,2022,Média dos Sábados,299.08,Total
+passenger_transported,2022-12-01,2022,Média dos Domingos,187.76,Total
+passenger_transported,2022-12-01,2022,Máxima Diária,693.28,Total
+passenger_transported,2023-01-01,2023,Total,13605.41,Total
+passenger_transported,2023-01-01,2023,Média dos Dias Úteis,530.98,Total
+passenger_transported,2023-01-01,2023,Média dos Sábados,311.82,Total
+passenger_transported,2023-01-01,2023,Média dos Domingos,186.86,Total
+passenger_transported,2023-01-01,2023,Máxima Diária,594.24,Total
+passenger_transported,2023-02-01,2023,Total,13777.19,Total
+passenger_transported,2023-02-01,2023,Média dos Dias Úteis,580.3,Total
+passenger_transported,2023-02-01,2023,Média dos Sábados,387.56,Total
+passenger_transported,2023-02-01,2023,Média dos Domingos,224.68,Total
+passenger_transported,2023-02-01,2023,Máxima Diária,639.51,Total
+passenger_transported,2023-03-01,2023,Total,17370.64,Total
+passenger_transported,2023-03-01,2023,Média dos Dias Úteis,649.07,Total
+passenger_transported,2023-03-01,2023,Média dos Sábados,389.01,Total
+passenger_transported,2023-03-01,2023,Média dos Domingos,221.48,Total
+passenger_transported,2023-03-01,2023,Máxima Diária,711.99,Total
+passenger_transported,2023-04-01,2023,Total,15070.57,Total
+passenger_transported,2023-04-01,2023,Média dos Dias Úteis,661.45,Total
+passenger_transported,2023-04-01,2023,Média dos Sábados,338.3,Total
+passenger_transported,2023-04-01,2023,Média dos Domingos,201.58,Total
+passenger_transported,2023-04-01,2023,Máxima Diária,701.71,Total
+passenger_transported,2023-05-01,2023,Total,17186.23,Total
+passenger_transported,2023-05-01,2023,Média dos Dias Úteis,661.45,Total
+passenger_transported,2023-05-01,2023,Média dos Sábados,383.42,Total
+passenger_transported,2023-05-01,2023,Média dos Domingos,222.49,Total
+passenger_transported,2023-05-01,2023,Máxima Diária,682.41,Total
+passenger_transported,2023-06-01,2023,Total,16029.96,Total
+passenger_transported,2023-06-01,2023,Média dos Dias Úteis,619.78,Total
+passenger_transported,2023-06-01,2023,Média dos Sábados,361.31,Total
+passenger_transported,2023-06-01,2023,Média dos Domingos,237.37,Total
+passenger_transported,2023-06-01,2023,Máxima Diária,707.89,Total
+passenger_transported,2023-07-01,2023,Total,15459.79,Total
+passenger_transported,2023-07-01,2023,Média dos Dias Úteis,600.39,Total
+passenger_transported,2023-07-01,2023,Média dos Sábados,353.48,Total
+passenger_transported,2023-07-01,2023,Média dos Domingos,216.82,Total
+passenger_transported,2023-07-01,2023,Máxima Diária,656.52,Total
+passenger_transported,2023-08-01,2023,Total,17702.89,Total
+passenger_transported,2023-08-01,2023,Média dos Dias Úteis,670.46,Total
+passenger_transported,2023-08-01,2023,Média dos Sábados,363.29,Total
+passenger_transported,2023-08-01,2023,Média dos Domingos,207.28,Total
+passenger_transported,2023-08-01,2023,Máxima Diária,733.58,Total
+passenger_transported,2023-09-01,2023,Total,16572.57,Total
+passenger_transported,2023-09-01,2023,Média dos Dias Úteis,672.42,Total
+passenger_transported,2023-09-01,2023,Média dos Sábados,372.83,Total
+passenger_transported,2023-09-01,2023,Média dos Domingos,247.93,Total
+passenger_transported,2023-09-01,2023,Máxima Diária,709.14,Total
+passenger_transported,2023-10-01,2023,Total,16172.6,Total
+passenger_transported,2023-10-01,2023,Média dos Dias Úteis,644.25,Total
+passenger_transported,2023-10-01,2023,Média dos Sábados,358.94,Total
+passenger_transported,2023-10-01,2023,Média dos Domingos,194.46,Total
+passenger_transported,2023-10-01,2023,Máxima Diária,713.7,Total
+passenger_transported,2023-11-01,2023,Total,16110.49,Total
+passenger_transported,2023-11-01,2023,Média dos Dias Úteis,677.44,Total
+passenger_transported,2023-11-01,2023,Média dos Sábados,371.66,Total
+passenger_transported,2023-11-01,2023,Média dos Domingos,239.77,Total
+passenger_transported,2023-11-01,2023,Máxima Diária,744.08,Total
+passenger_transported,2023-12-01,2023,Total,15339.32,Total
+passenger_transported,2023-12-01,2023,Média dos Dias Úteis,619.88,Total
+passenger_transported,2023-12-01,2023,Média dos Sábados,352.45,Total
+passenger_transported,2023-12-01,2023,Média dos Domingos,224.3,Total
+passenger_transported,2023-12-01,2023,Máxima Diária,731.29,Total
+passenger_transported,2024-01-01,2024,Total,14239.23,Total
+passenger_transported,2024-01-01,2024,Média dos Dias Úteis,558.96,Total
+passenger_transported,2024-01-01,2024,Média dos Sábados,331.11,Total
+passenger_transported,2024-01-01,2024,Média dos Domingos,193.19,Total
+passenger_transported,2024-01-01,2024,Máxima Diária,642.59,Total
+passenger_transported,2024-02-01,2024,Total,15454.08,Total
+passenger_transported,2024-02-01,2024,Média dos Dias Úteis,631.16,Total
+passenger_transported,2024-02-01,2024,Média dos Sábados,385.07,Total
+passenger_transported,2024-02-01,2024,Média dos Domingos,252.25,Total
+passenger_transported,2024-02-01,2024,Máxima Diária,697.67,Total
+passenger_transported,2024-03-01,2024,Total,16704.49,Total
+passenger_transported,2024-03-01,2024,Média dos Dias Úteis,685.9,Total
+passenger_transported,2024-03-01,2024,Média dos Sábados,347.42,Total
+passenger_transported,2024-03-01,2024,Média dos Domingos,208.74,Total
+passenger_transported,2024-03-01,2024,Máxima Diária,712.5,Total
+passenger_transported,2024-04-01,2024,Total,17476.45,Total
+passenger_transported,2024-04-01,2024,Média dos Dias Úteis,689.3,Total
+passenger_transported,2024-04-01,2024,Média dos Sábados,370.26,Total
+passenger_transported,2024-04-01,2024,Média dos Domingos,207.72,Total
+passenger_transported,2024-04-01,2024,Máxima Diária,726.1,Total
+passenger_transported,2024-05-01,2024,Total,16946.69,Total
+passenger_transported,2024-05-01,2024,Média dos Dias Úteis,676.38,Total
+passenger_transported,2024-05-01,2024,Média dos Sábados,363.62,Total
+passenger_transported,2024-05-01,2024,Média dos Domingos,193.51,Total
+passenger_transported,2024-05-01,2024,Máxima Diária,721.62,Total
+passenger_transported,2024-06-01,2024,Total,16436.11,Total
+passenger_transported,2024-06-01,2024,Média dos Dias Úteis,670.89,Total
+passenger_transported,2024-06-01,2024,Média dos Sábados,368.05,Total
+passenger_transported,2024-06-01,2024,Média dos Domingos,235.62,Total
+passenger_transported,2024-06-01,2024,Máxima Diária,704.3,Total
+passenger_transported,2024-07-01,2024,Total,16124.4,Total
+passenger_transported,2024-07-01,2024,Média dos Dias Úteis,619.62,Total
+passenger_transported,2024-07-01,2024,Média dos Sábados,359.11,Total
+passenger_transported,2024-07-01,2024,Média dos Domingos,213.17,Total
+passenger_transported,2024-07-01,2024,Máxima Diária,676.23,Total
+passenger_entrance,2018-01-01,2018,Total,3755,Total
+passenger_entrance,2018-01-01,2018,Média dos Dias Úteis,151,Total
+passenger_entrance,2018-01-01,2018,Média dos Sábados,78,Total
+passenger_entrance,2018-01-01,2018,Média dos Domingos,38,Total
+passenger_entrance,2018-01-01,2018,Máxima Diária,176,Total
+passenger_entrance,2018-02-01,2018,Total,4585,Total
+passenger_entrance,2018-02-01,2018,Média dos Dias Úteis,165,Total
+passenger_entrance,2018-02-01,2018,Média dos Sábados,147,Total
+passenger_entrance,2018-02-01,2018,Média dos Domingos,79,Total
+passenger_entrance,2018-02-01,2018,Máxima Diária,214,Total
+passenger_entrance,2018-03-01,2018,Total,5308,Total
+passenger_entrance,2018-03-01,2018,Média dos Dias Úteis,216,Total
+passenger_entrance,2018-03-01,2018,Média dos Sábados,97,Total
+passenger_entrance,2018-03-01,2018,Média dos Domingos,57,Total
+passenger_entrance,2018-03-01,2018,Máxima Diária,228,Total
+passenger_entrance,2018-04-01,2018,Total,5198,Total
+passenger_entrance,2018-04-01,2018,Média dos Dias Úteis,206,Total
+passenger_entrance,2018-04-01,2018,Média dos Sábados,100,Total
+passenger_entrance,2018-04-01,2018,Média dos Domingos,54,Total
+passenger_entrance,2018-04-01,2018,Máxima Diária,227,Total
+passenger_entrance,2018-05-01,2018,Total,5630,Total
+passenger_entrance,2018-05-01,2018,Média dos Dias Úteis,226,Total
+passenger_entrance,2018-05-01,2018,Média dos Sábados,113,Total
+passenger_entrance,2018-05-01,2018,Média dos Domingos,72,Total
+passenger_entrance,2018-05-01,2018,Máxima Diária,235,Total
+passenger_entrance,2018-06-01,2018,Total,5265,Total
+passenger_entrance,2018-06-01,2018,Média dos Dias Úteis,203,Total
+passenger_entrance,2018-06-01,2018,Média dos Sábados,105,Total
+passenger_entrance,2018-06-01,2018,Média dos Domingos,68,Total
+passenger_entrance,2018-06-01,2018,Máxima Diária,232,Total
+passenger_entrance,2018-07-01,2018,Total,4952,Total
+passenger_entrance,2018-07-01,2018,Média dos Dias Úteis,198,Total
+passenger_entrance,2018-07-01,2018,Média dos Sábados,102,Total
+passenger_entrance,2018-07-01,2018,Média dos Domingos,65,Total
+passenger_entrance,2018-07-01,2018,Máxima Diária,210,Total
+passenger_entrance,2018-08-01,2018,Total,6040,Total
+passenger_entrance,2018-08-01,2018,Média dos Dias Úteis,232,Total
+passenger_entrance,2018-08-01,2018,Média dos Sábados,112,Total
+passenger_entrance,2018-08-01,2018,Média dos Domingos,64,Total
+passenger_entrance,2018-08-01,2018,Máxima Diária,241,Total
+passenger_entrance,2018-09-01,2018,Total,5268,Total
+passenger_entrance,2018-09-01,2018,Média dos Dias Úteis,222,Total
+passenger_entrance,2018-09-01,2018,Média dos Sábados,121,Total
+passenger_entrance,2018-09-01,2018,Média dos Domingos,32,Total
+passenger_entrance,2018-09-01,2018,Máxima Diária,242,Total
+passenger_entrance,2018-10-01,2018,Total,5740,Total
+passenger_entrance,2018-10-01,2018,Média dos Dias Úteis,231,Total
+passenger_entrance,2018-10-01,2018,Média dos Sábados,108,Total
+passenger_entrance,2018-10-01,2018,Média dos Domingos,36,Total
+passenger_entrance,2018-10-01,2018,Máxima Diária,242,Total
+passenger_entrance,2018-11-01,2018,Total,5438,Total
+passenger_entrance,2018-11-01,2018,Média dos Dias Úteis,224,Total
+passenger_entrance,2018-11-01,2018,Média dos Sábados,111,Total
+passenger_entrance,2018-11-01,2018,Média dos Domingos,69,Total
+passenger_entrance,2018-11-01,2018,Máxima Diária,261,Total
+passenger_entrance,2018-12-01,2018,Total,5229,Total
+passenger_entrance,2018-12-01,2018,Média dos Dias Úteis,212,Total
+passenger_entrance,2018-12-01,2018,Média dos Sábados,118,Total
+passenger_entrance,2018-12-01,2018,Média dos Domingos,74,Total
+passenger_entrance,2018-12-01,2018,Máxima Diária,258,Total
+passenger_entrance,2019-01-01,2019,Total,5094,Total
+passenger_entrance,2019-01-01,2019,Média dos Dias Úteis,205,Total
+passenger_entrance,2019-01-01,2019,Média dos Sábados,98,Total
+passenger_entrance,2019-01-01,2019,Média dos Domingos,63,Total
+passenger_entrance,2019-01-01,2019,Máxima Diária,231,Total
+passenger_entrance,2019-02-01,2019,Total,6002,Total
+passenger_entrance,2019-02-01,2019,Média dos Dias Úteis,254,Total
+passenger_entrance,2019-02-01,2019,Média dos Sábados,139,Total
+passenger_entrance,2019-02-01,2019,Média dos Domingos,92,Total
+passenger_entrance,2019-02-01,2019,Máxima Diária,271,Total
+passenger_entrance,2019-03-01,2019,Total,6473,Total
+passenger_entrance,2019-03-01,2019,Média dos Dias Úteis,266,Total
+passenger_entrance,2019-03-01,2019,Média dos Sábados,146,Total
+passenger_entrance,2019-03-01,2019,Média dos Domingos,88,Total
+passenger_entrance,2019-03-01,2019,Máxima Diária,281,Total
+passenger_entrance,2019-04-01,2019,Total,6636,Total
+passenger_entrance,2019-04-01,2019,Média dos Dias Úteis,274,Total
+passenger_entrance,2019-04-01,2019,Média dos Sábados,128,Total
+passenger_entrance,2019-04-01,2019,Média dos Domingos,74,Total
+passenger_entrance,2019-04-01,2019,Máxima Diária,282,Total
+passenger_entrance,2019-05-01,2019,Total,7021,Total
+passenger_entrance,2019-05-01,2019,Média dos Dias Úteis,276,Total
+passenger_entrance,2019-05-01,2019,Média dos Sábados,131,Total
+passenger_entrance,2019-05-01,2019,Média dos Domingos,84,Total
+passenger_entrance,2019-05-01,2019,Máxima Diária,295,Total
+passenger_entrance,2019-06-01,2019,Total,6048,Total
+passenger_entrance,2019-06-01,2019,Média dos Dias Úteis,263,Total
+passenger_entrance,2019-06-01,2019,Média dos Sábados,129,Total
+passenger_entrance,2019-06-01,2019,Média dos Domingos,81,Total
+passenger_entrance,2019-06-01,2019,Máxima Diária,280,Total
+passenger_entrance,2019-07-01,2019,Total,6072,Total
+passenger_entrance,2019-07-01,2019,Média dos Dias Úteis,240,Total
+passenger_entrance,2019-07-01,2019,Média dos Sábados,123,Total
+passenger_entrance,2019-07-01,2019,Média dos Domingos,72,Total
+passenger_entrance,2019-07-01,2019,Máxima Diária,257,Total
+passenger_entrance,2019-08-01,2019,Total,7095,Total
+passenger_entrance,2019-08-01,2019,Média dos Dias Úteis,278,Total
+passenger_entrance,2019-08-01,2019,Média dos Sábados,134,Total
+passenger_entrance,2019-08-01,2019,Média dos Domingos,74,Total
+passenger_entrance,2019-08-01,2019,Máxima Diária,291,Total
+passenger_entrance,2019-10-01,2019,Total,7330,Total
+passenger_entrance,2019-10-01,2019,Média dos Dias Úteis,280,Total
+passenger_entrance,2019-10-01,2019,Média dos Sábados,130,Total
+passenger_entrance,2019-10-01,2019,Média dos Domingos,91,Total
+passenger_entrance,2019-10-01,2019,Máxima Diária,291,Total
+passenger_entrance,2019-11-01,2019,Total,6659,Total
+passenger_entrance,2019-11-01,2019,Média dos Dias Úteis,288,Total
+passenger_entrance,2019-11-01,2019,Média dos Sábados,131,Total
+passenger_entrance,2019-11-01,2019,Média dos Domingos,82,Total
+passenger_entrance,2019-11-01,2019,Máxima Diária,300,Total
+passenger_entrance,2019-12-01,2019,Total,5917,Total
+passenger_entrance,2019-12-01,2019,Média dos Dias Úteis,234,Total
+passenger_entrance,2019-12-01,2019,Média dos Sábados,131,Total
+passenger_entrance,2019-12-01,2019,Média dos Domingos,88,Total
+passenger_entrance,2019-12-01,2019,Máxima Diária,296,Total
+passenger_entrance,2020-01-01,2020,Total,5888,Total
+passenger_entrance,2020-01-01,2020,Média dos Dias Úteis,233,Total
+passenger_entrance,2020-01-01,2020,Média dos Sábados,109,Total
+passenger_entrance,2020-01-01,2020,Média dos Domingos,67,Total
+passenger_entrance,2020-01-01,2020,Máxima Diária,260,Total
+passenger_entrance,2020-02-01,2020,Total,6305,Total
+passenger_entrance,2020-02-01,2020,Média dos Dias Úteis,239,Total
+passenger_entrance,2020-02-01,2020,Média dos Sábados,150,Total
+passenger_entrance,2020-02-01,2020,Média dos Domingos,102,Total
+passenger_entrance,2020-02-01,2020,Máxima Diária,300,Total
+passenger_entrance,2020-03-01,2020,Total,4493,Total
+passenger_entrance,2020-03-01,2020,Média dos Dias Úteis,179,Total
+passenger_entrance,2020-03-01,2020,Média dos Sábados,78,Total
+passenger_entrance,2020-03-01,2020,Média dos Domingos,51,Total
+passenger_entrance,2020-03-01,2020,Máxima Diária,305,Total
+passenger_entrance,2020-04-01,2020,Total,1218,Total
+passenger_entrance,2020-04-01,2020,Média dos Dias Úteis,48,Total
+passenger_entrance,2020-04-01,2020,Média dos Sábados,27,Total
+passenger_entrance,2020-04-01,2020,Média dos Domingos,15,Total
+passenger_entrance,2020-04-01,2020,Máxima Diária,56,Total
+passenger_entrance,2020-05-01,2020,Total,1305,Total
+passenger_entrance,2020-05-01,2020,Média dos Dias Úteis,56,Total
+passenger_entrance,2020-05-01,2020,Média dos Sábados,29,Total
+passenger_entrance,2020-05-01,2020,Média dos Domingos,16,Total
+passenger_entrance,2020-05-01,2020,Máxima Diária,59,Total
+passenger_entrance,2020-06-01,2020,Total,1709,Total
+passenger_entrance,2020-06-01,2020,Média dos Dias Úteis,65,Total
+passenger_entrance,2020-06-01,2020,Média dos Sábados,37,Total
+passenger_entrance,2020-06-01,2020,Média dos Domingos,20,Total
+passenger_entrance,2020-06-01,2020,Máxima Diária,75,Total
+passenger_entrance,2020-07-01,2020,Total,2203,Total
+passenger_entrance,2020-07-01,2020,Média dos Dias Úteis,83,Total
+passenger_entrance,2020-07-01,2020,Média dos Sábados,49,Total
+passenger_entrance,2020-07-01,2020,Média dos Domingos,23,Total
+passenger_entrance,2020-07-01,2020,Máxima Diária,89,Total
+passenger_entrance,2020-08-01,2020,Total,2399,Total
+passenger_entrance,2020-08-01,2020,Média dos Dias Úteis,95,Total
+passenger_entrance,2020-08-01,2020,Média dos Sábados,55,Total
+passenger_entrance,2020-08-01,2020,Média dos Domingos,26,Total
+passenger_entrance,2020-08-01,2020,Máxima Diária,103,Total
+passenger_entrance,2020-09-01,2020,Total,2618,Total
+passenger_entrance,2020-09-01,2020,Média dos Dias Úteis,105,Total
+passenger_entrance,2020-09-01,2020,Média dos Sábados,63,Total
+passenger_entrance,2020-09-01,2020,Média dos Domingos,30,Total
+passenger_entrance,2020-09-01,2020,Máxima Diária,111,Total
+passenger_entrance,2020-10-01,2020,Total,2926,Total
+passenger_entrance,2020-10-01,2020,Média dos Dias Úteis,115,Total
+passenger_entrance,2020-10-01,2020,Média dos Sábados,68,Total
+passenger_entrance,2020-10-01,2020,Média dos Domingos,34,Total
+passenger_entrance,2020-10-01,2020,Máxima Diária,122,Total
+passenger_entrance,2020-11-01,2020,Total,2961,Total
+passenger_entrance,2020-11-01,2020,Média dos Dias Úteis,115,Total
+passenger_entrance,2020-11-01,2020,Média dos Sábados,77,Total
+passenger_entrance,2020-11-01,2020,Média dos Domingos,40,Total
+passenger_entrance,2020-11-01,2020,Máxima Diária,127,Total
+passenger_entrance,2020-12-01,2020,Total,2872,Total
+passenger_entrance,2020-12-01,2020,Média dos Dias Úteis,111,Total
+passenger_entrance,2020-12-01,2020,Média dos Sábados,69,Total
+passenger_entrance,2020-12-01,2020,Média dos Domingos,36,Total
+passenger_entrance,2020-12-01,2020,Máxima Diária,128,Total
+passenger_entrance,2021-01-01,2021,Total,2621,Total
+passenger_entrance,2021-01-01,2021,Média dos Dias Úteis,112,Total
+passenger_entrance,2021-01-01,2021,Média dos Sábados,55,Total
+passenger_entrance,2021-01-01,2021,Média dos Domingos,32,Total
+passenger_entrance,2021-01-01,2021,Máxima Diária,121,Total
+passenger_entrance,2021-02-01,2021,Total,2771,Total
+passenger_entrance,2021-02-01,2021,Média dos Dias Úteis,119,Total
+passenger_entrance,2021-02-01,2021,Média dos Sábados,68,Total
+passenger_entrance,2021-02-01,2021,Média dos Domingos,35,Total
+passenger_entrance,2021-02-01,2021,Máxima Diária,125,Total
+passenger_entrance,2021-03-01,2021,Total,2323,Total
+passenger_entrance,2021-03-01,2021,Média dos Dias Úteis,95,Total
+passenger_entrance,2021-03-01,2021,Média dos Sábados,44,Total
+passenger_entrance,2021-03-01,2021,Média dos Domingos,22,Total
+passenger_entrance,2021-03-01,2021,Máxima Diária,123,Total
+passenger_entrance,2021-04-01,2021,Total,2145,Total
+passenger_entrance,2021-04-01,2021,Média dos Dias Úteis,91,Total
+passenger_entrance,2021-04-01,2021,Média dos Sábados,46,Total
+passenger_entrance,2021-04-01,2021,Média dos Domingos,24,Total
+passenger_entrance,2021-04-01,2021,Máxima Diária,105,Total
+passenger_entrance,2021-05-01,2021,Total,2718,Total
+passenger_entrance,2021-05-01,2021,Média dos Dias Úteis,107,Total
+passenger_entrance,2021-05-01,2021,Média dos Sábados,62,Total
+passenger_entrance,2021-05-01,2021,Média dos Domingos,33,Total
+passenger_entrance,2021-05-01,2021,Máxima Diária,114,Total
+passenger_entrance,2021-06-01,2021,Total,2869,Total
+passenger_entrance,2021-06-01,2021,Média dos Dias Úteis,111,Total
+passenger_entrance,2021-06-01,2021,Média dos Sábados,70,Total
+passenger_entrance,2021-06-01,2021,Média dos Domingos,36,Total
+passenger_entrance,2021-06-01,2021,Máxima Diária,119,Total
+passenger_entrance,2021-07-01,2021,Total,3020,Total
+passenger_entrance,2021-07-01,2021,Média dos Dias Úteis,117,Total
+passenger_entrance,2021-07-01,2021,Média dos Sábados,72,Total
+passenger_entrance,2021-07-01,2021,Média dos Domingos,37,Total
+passenger_entrance,2021-07-01,2021,Máxima Diária,123,Total
+passenger_entrance,2021-08-01,2021,Total,3337,Total
+passenger_entrance,2021-08-01,2021,Média dos Dias Úteis,129,Total
+passenger_entrance,2021-08-01,2021,Média dos Sábados,74,Total
+passenger_entrance,2021-08-01,2021,Média dos Domingos,41,Total
+passenger_entrance,2021-08-01,2021,Máxima Diária,134,Total
+passenger_entrance,2021-09-01,2021,Total,3440,Total
+passenger_entrance,2021-09-01,2021,Média dos Dias Úteis,136,Total
+passenger_entrance,2021-09-01,2021,Média dos Sábados,82,Total
+passenger_entrance,2021-09-01,2021,Média dos Domingos,47,Total
+passenger_entrance,2021-09-01,2021,Máxima Diária,143,Total
+passenger_entrance,2021-10-01,2021,Total,3644.42,Total
+passenger_entrance,2021-10-01,2021,Média dos Dias Úteis,145.5,Total
+passenger_entrance,2021-10-01,2021,Média dos Sábados,88.32,Total
+passenger_entrance,2021-10-01,2021,Média dos Domingos,47.8,Total
+passenger_entrance,2021-10-01,2021,Máxima Diária,158.18,Total
+passenger_entrance,2021-11-01,2021,Total,3906.76,Total
+passenger_entrance,2021-11-01,2021,Média dos Dias Úteis,157.04,Total
+passenger_entrance,2021-11-01,2021,Média dos Sábados,99.13,Total
+passenger_entrance,2021-11-01,2021,Média dos Domingos,62.18,Total
+passenger_entrance,2021-11-01,2021,Máxima Diária,170.35,Total
+passenger_entrance,2021-12-01,2021,Total,3794.01,Total
+passenger_entrance,2021-12-01,2021,Média dos Dias Úteis,139.22,Total
+passenger_entrance,2021-12-01,2021,Média dos Sábados,89.05,Total
+passenger_entrance,2021-12-01,2021,Média dos Domingos,58.92,Total
+passenger_entrance,2021-12-01,2021,Máxima Diária,170.53,Total
+passenger_entrance,2022-01-01,2022,Total,3186.53,Total
+passenger_entrance,2022-01-01,2022,Média dos Dias Úteis,125.63,Total
+passenger_entrance,2022-01-01,2022,Média dos Sábados,67.43,Total
+passenger_entrance,2022-01-01,2022,Média dos Domingos,42.21,Total
+passenger_entrance,2022-01-01,2022,Máxima Diária,140.55,Total
+passenger_entrance,2022-02-01,2022,Total,3659,Total
+passenger_entrance,2022-02-01,2022,Média dos Dias Úteis,153,Total
+passenger_entrance,2022-02-01,2022,Média dos Sábados,96,Total
+passenger_entrance,2022-02-01,2022,Média dos Domingos,56,Total
+passenger_entrance,2022-02-01,2022,Máxima Diária,164,Total
+passenger_entrance,2022-03-01,2022,Total,4701,Total
+passenger_entrance,2022-03-01,2022,Média dos Dias Úteis,179,Total
+passenger_entrance,2022-03-01,2022,Média dos Sábados,109,Total
+passenger_entrance,2022-03-01,2022,Média dos Domingos,54,Total
+passenger_entrance,2022-03-01,2022,Máxima Diária,198,Total
+passenger_entrance,2022-04-01,2022,Total,4493,Total
+passenger_entrance,2022-04-01,2022,Média dos Dias Úteis,191,Total
+passenger_entrance,2022-04-01,2022,Média dos Sábados,101,Total
+passenger_entrance,2022-04-01,2022,Média dos Domingos,52,Total
+passenger_entrance,2022-04-01,2022,Máxima Diária,206,Total
+passenger_entrance,2022-05-01,2022,Total,4822.29,Total
+passenger_entrance,2022-05-01,2022,Média dos Dias Úteis,186.85,Total
+passenger_entrance,2022-05-01,2022,Média dos Sábados,104.07,Total
+passenger_entrance,2022-05-01,2022,Média dos Domingos,59.08,Total
+passenger_entrance,2022-05-01,2022,Máxima Diária,206.37,Total
+passenger_entrance,2022-06-01,2022,Total,4275.52,Total
+passenger_entrance,2022-06-01,2022,Média dos Dias Úteis,169.44,Total
+passenger_entrance,2022-06-01,2022,Média dos Sábados,92.89,Total
+passenger_entrance,2022-06-01,2022,Média dos Domingos,64.52,Total
+passenger_entrance,2022-06-01,2022,Máxima Diária,183.01,Total
+passenger_entrance,2022-07-01,2022,Total,5042.79,Total
+passenger_entrance,2022-07-01,2022,Média dos Dias Úteis,161.84,Total
+passenger_entrance,2022-07-01,2022,Média dos Sábados,93.92,Total
+passenger_entrance,2022-07-01,2022,Média dos Domingos,58.95,Total
+passenger_entrance,2022-07-01,2022,Máxima Diária,179.49,Total
+passenger_entrance,2022-08-01,2022,Total,5818.59,Total
+passenger_entrance,2022-08-01,2022,Média dos Dias Úteis,183.02,Total
+passenger_entrance,2022-08-01,2022,Média dos Sábados,96.25,Total
+passenger_entrance,2022-08-01,2022,Média dos Domingos,56.95,Total
+passenger_entrance,2022-08-01,2022,Máxima Diária,199.79,Total
+passenger_entrance,2022-09-01,2022,Total,5599.15,Total
+passenger_entrance,2022-09-01,2022,Média dos Dias Úteis,186.85,Total
+passenger_entrance,2022-09-01,2022,Média dos Sábados,98.38,Total
+passenger_entrance,2022-09-01,2022,Média dos Domingos,62.35,Total
+passenger_entrance,2022-09-01,2022,Máxima Diária,197.27,Total
+passenger_entrance,2022-10-01,2022,Total,5632.47,Total
+passenger_entrance,2022-10-01,2022,Média dos Dias Úteis,187.44,Total
+passenger_entrance,2022-10-01,2022,Média dos Sábados,101.13,Total
+passenger_entrance,2022-10-01,2022,Média dos Domingos,63.57,Total
+passenger_entrance,2022-10-01,2022,Máxima Diária,201.94,Total
+passenger_entrance,2022-11-01,2022,Total,5380.98,Total
+passenger_entrance,2022-11-01,2022,Média dos Dias Úteis,183.27,Total
+passenger_entrance,2022-11-01,2022,Média dos Sábados,101.4,Total
+passenger_entrance,2022-11-01,2022,Média dos Domingos,57.03,Total
+passenger_entrance,2022-11-01,2022,Máxima Diária,200.12,Total
+passenger_entrance,2022-12-01,2022,Total,5018.25,Total
+passenger_entrance,2022-12-01,2022,Média dos Dias Úteis,156.79,Total
+passenger_entrance,2022-12-01,2022,Média dos Sábados,83.25,Total
+passenger_entrance,2022-12-01,2022,Média dos Domingos,51.74,Total
+passenger_entrance,2022-12-01,2022,Máxima Diária,207.31,Total
+passenger_entrance,2023-01-01,2023,Total,4753.9,Total
+passenger_entrance,2023-01-01,2023,Média dos Dias Úteis,150.7,Total
+passenger_entrance,2023-01-01,2023,Média dos Sábados,86.73,Total
+passenger_entrance,2023-01-01,2023,Média dos Domingos,56.25,Total
+passenger_entrance,2023-01-01,2023,Máxima Diária,172.93,Total
+passenger_entrance,2023-02-01,2023,Total,4961.75,Total
+passenger_entrance,2023-02-01,2023,Média dos Dias Úteis,171.04,Total
+passenger_entrance,2023-02-01,2023,Média dos Sábados,115.67,Total
+passenger_entrance,2023-02-01,2023,Média dos Domingos,66.26,Total
+passenger_entrance,2023-02-01,2023,Máxima Diária,192.65,Total
+passenger_entrance,2023-03-01,2023,Total,6399.57,Total
+passenger_entrance,2023-03-01,2023,Média dos Dias Úteis,198.02,Total
+passenger_entrance,2023-03-01,2023,Média dos Sábados,115.69,Total
+passenger_entrance,2023-03-01,2023,Média dos Domingos,64.55,Total
+passenger_entrance,2023-03-01,2023,Máxima Diária,223.08,Total
+passenger_entrance,2023-04-01,2023,Total,5498.99,Total
+passenger_entrance,2023-04-01,2023,Média dos Dias Úteis,199.44,Total
+passenger_entrance,2023-04-01,2023,Média dos Sábados,97.33,Total
+passenger_entrance,2023-04-01,2023,Média dos Domingos,56.51,Total
+passenger_entrance,2023-04-01,2023,Máxima Diária,209.63,Total
+passenger_entrance,2023-05-01,2023,Total,6313.77,Total
+passenger_entrance,2023-05-01,2023,Média dos Dias Úteis,199.55,Total
+passenger_entrance,2023-05-01,2023,Média dos Sábados,110.9,Total
+passenger_entrance,2023-05-01,2023,Média dos Domingos,63.53,Total
+passenger_entrance,2023-05-01,2023,Máxima Diária,207.04,Total
+passenger_entrance,2023-06-01,2023,Total,5831.13,Total
+passenger_entrance,2023-06-01,2023,Média dos Dias Úteis,617.5,Total
+passenger_entrance,2023-06-01,2023,Média dos Sábados,359.11,Total
+passenger_entrance,2023-06-01,2023,Média dos Domingos,237.39,Total
+passenger_entrance,2023-06-01,2023,Máxima Diária,700.3,Total
+passenger_entrance,2023-07-01,2023,Total,5539.96,Total
+passenger_entrance,2023-07-01,2023,Média dos Dias Úteis,174.23,Total
+passenger_entrance,2023-07-01,2023,Média dos Sábados,100.45,Total
+passenger_entrance,2023-07-01,2023,Média dos Domingos,63.7,Total
+passenger_entrance,2023-07-01,2023,Máxima Diária,200.43,Total
+passenger_entrance,2023-08-01,2023,Total,6588.44,Total
+passenger_entrance,2023-08-01,2023,Média dos Dias Úteis,205.01,Total
+passenger_entrance,2023-08-01,2023,Média dos Sábados,105.29,Total
+passenger_entrance,2023-08-01,2023,Média dos Domingos,59.24,Total
+passenger_entrance,2023-08-01,2023,Máxima Diária,233.59,Total
+passenger_entrance,2023-09-01,2023,Total,6155.95,Total
+passenger_entrance,2023-09-01,2023,Média dos Dias Úteis,204.21,Total
+passenger_entrance,2023-09-01,2023,Média dos Sábados,109.51,Total
+passenger_entrance,2023-09-01,2023,Média dos Domingos,73.54,Total
+passenger_entrance,2023-09-01,2023,Máxima Diária,219.76,Total
+passenger_entrance,2023-10-01,2023,Total,6093,Total
+passenger_entrance,2023-10-01,2023,Média dos Dias Úteis,198.69,Total
+passenger_entrance,2023-10-01,2023,Média dos Sábados,104.99,Total
+passenger_entrance,2023-10-01,2023,Média dos Domingos,55.45,Total
+passenger_entrance,2023-10-01,2023,Máxima Diária,217.39,Total
+passenger_entrance,2023-11-01,2023,Total,6062.04,Total
+passenger_entrance,2023-11-01,2023,Média dos Dias Úteis,208.98,Total
+passenger_entrance,2023-11-01,2023,Média dos Sábados,109,Total
+passenger_entrance,2023-11-01,2023,Média dos Domingos,71.81,Total
+passenger_entrance,2023-11-01,2023,Máxima Diária,231.85,Total
+passenger_entrance,2023-12-01,2023,Total,5656.18,Total
+passenger_entrance,2023-12-01,2023,Média dos Dias Úteis,184.94,Total
+passenger_entrance,2023-12-01,2023,Média dos Sábados,101.06,Total
+passenger_entrance,2023-12-01,2023,Média dos Domingos,63.6,Total
+passenger_entrance,2023-12-01,2023,Máxima Diária,224.47,Total
+passenger_entrance,2024-01-01,2024,Total,5146.09,Total
+passenger_entrance,2024-01-01,2024,Média dos Dias Úteis,161.64,Total
+passenger_entrance,2024-01-01,2024,Média dos Sábados,96.32,Total
+passenger_entrance,2024-01-01,2024,Média dos Domingos,53,Total
+passenger_entrance,2024-01-01,2024,Máxima Diária,190.55,Total
+passenger_entrance,2024-02-01,2024,Total,5769.54,Total
+passenger_entrance,2024-02-01,2024,Média dos Dias Úteis,191.74,Total
+passenger_entrance,2024-02-01,2024,Média dos Sábados,116.66,Total
+passenger_entrance,2024-02-01,2024,Média dos Domingos,74.08,Total
+passenger_entrance,2024-02-01,2024,Máxima Diária,216.57,Total
+passenger_entrance,2024-03-01,2024,Total,6311.95,Total
+passenger_entrance,2024-03-01,2024,Média dos Dias Úteis,212.48,Total
+passenger_entrance,2024-03-01,2024,Média dos Sábados,100.47,Total
+passenger_entrance,2024-03-01,2024,Média dos Domingos,65.43,Total
+passenger_entrance,2024-03-01,2024,Máxima Diária,221.76,Total
+passenger_entrance,2024-04-01,2024,Total,6639.32,Total
+passenger_entrance,2024-04-01,2024,Média dos Dias Úteis,214.41,Total
+passenger_entrance,2024-04-01,2024,Média dos Sábados,109.2,Total
+passenger_entrance,2024-04-01,2024,Média dos Domingos,58.76,Total
+passenger_entrance,2024-04-01,2024,Máxima Diária,226.58,Total
+passenger_entrance,2024-05-01,2024,Total,6441.94,Total
+passenger_entrance,2024-05-01,2024,Média dos Dias Úteis,214.5,Total
+passenger_entrance,2024-05-01,2024,Média dos Sábados,106.91,Total
+passenger_entrance,2024-05-01,2024,Média dos Domingos,54.4,Total
+passenger_entrance,2024-05-01,2024,Máxima Diária,231.77,Total
+passenger_entrance,2024-06-01,2024,Total,6135.54,Total
+passenger_entrance,2024-06-01,2024,Média dos Dias Úteis,204.52,Total
+passenger_entrance,2024-06-01,2024,Média dos Sábados,106.84,Total
+passenger_entrance,2024-06-01,2024,Média dos Domingos,66.72,Total
+passenger_entrance,2024-06-01,2024,Máxima Diária,218.21,Total
+passenger_entrance,2024-07-01,2024,Total,5908.16,Total
+passenger_entrance,2024-07-01,2024,Média dos Dias Úteis,183.84,Total
+passenger_entrance,2024-07-01,2024,Média dos Sábados,102.3,Total
+passenger_entrance,2024-07-01,2024,Média dos Domingos,58.12,Total
+passenger_entrance,2024-07-01,2024,Máxima Diária,207.26,Total

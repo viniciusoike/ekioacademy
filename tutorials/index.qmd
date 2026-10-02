@@ -1,0 +1,81 @@
+---
+pagetitle: "Tutoriais"
+page-layout: full
+listing:
+  - id: visualizacao
+    contents: "data-visualization/**/index.qmd"
+    sort: "date desc"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: economia
+    contents: "economics/**/index.qmd"
+    sort: "date desc"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: series
+    contents: "time-series/**/index.qmd"
+    sort: "date desc"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: r-basico
+    contents: "tutorial-r/fundamentals/**/index.qmd"
+    sort: "date desc"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+  - id: r-avancado
+    contents: "tutorial-r/advanced/**/index.qmd"
+    sort: "date desc"
+    type: custom
+    template: ../static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
+---
+
+::: {.page-intro}
+# Tutoriais
+
+Passo a passo em R, do dado bruto ao gráfico final, sempre com dados brasileiros.
+:::
+
+::: {.wrap .block-tight}
+## Visualização de dados
+
+::: {#visualizacao .tiles .tiles-4}
+:::
+:::
+
+::: {.wrap .block-tight}
+## Dados econômicos
+
+::: {#economia .tiles .tiles-4}
+:::
+:::
+
+::: {.wrap .block-tight}
+## Séries de tempo
+
+::: {#series .tiles .tiles-4}
+:::
+:::
+
+::: {.wrap .block-tight}
+## R: fundamentos
+
+::: {#r-basico .tiles .tiles-4}
+:::
+:::
+
+::: {.wrap .block-tight}
+## R: tidyverse e além
+
+::: {#r-avancado .tiles .tiles-4}
+:::
+:::

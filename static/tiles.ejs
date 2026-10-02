@@ -1,7 +1,7 @@
 ```{=html}
 <% for (const item of items) { %>
 <a class="tile tile-chart" href="<%- item.path %>">
-<span class="tile-media"><img src="<%- item.image %>" alt="" loading="lazy"></span>
+<span class="tile-media"><% if (item.image) { %><img src="<%- item.image %>" alt="" loading="lazy" onerror="this.remove()"><% } %></span>
 <span class="tile-title"><%= item.title %></span>
 <span class="tile-meta"><%= item.date %></span>
 </a>

@@ -4,7 +4,7 @@ Site de ensino da EKIO, em português. Quarto + Netlify.
 
 ## Seções
 
-Tutoriais (`tutoriais/`), Gráficos (`graficos/`), Cursos e Livros (em preparação). Sem inglês, sem preços, sem ofertas que não existem.
+Tutoriais (`tutorials/`), Gráficos (`weekly-charts/charts/`), Blog (`blog/posts/`), Cursos e Livros (em preparação). Thumbnails ausentes estão em `TODO_MISSING_IMAGES.txt`. Sem inglês, sem preços, sem ofertas que não existem.
 
 ## Identidade visual
 

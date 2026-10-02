@@ -1,14 +1,15 @@
 # EKIO Academy
 
-Site de ensino da [EKIO](https://ekio.io): tutoriais de R, gráficos comentados e, em breve, cursos e livros. Feito em Quarto e publicado no Netlify.
+Site de ensino da [EKIO](https://ekio.io): tutoriais de R, gráficos comentados, blog e, em breve, cursos e livros. Feito em Quarto e publicado no Netlify.
 
 ## Estrutura
 
 | Caminho | Conteúdo |
 |---|---|
 | `index.qmd` | Página inicial |
-| `tutoriais/` | Um `.qmd` por tutorial; a listagem fica em `index.qmd` |
-| `graficos/` | Um `.qmd` por gráfico; imagens em `static/images/graficos/` |
+| `tutorials/` | Tutoriais, uma pasta por tema; a listagem fica em `index.qmd` |
+| `weekly-charts/charts/` | Um `.qmd` por gráfico; imagens em `assets/images/weekly-charts/` |
+| `blog/posts/` | Posts do blog, uma pasta por post |
 | `cursos.qmd`, `livros.qmd` | Ofertas em preparação |
 | `static/theme.scss` | Tema, a partir dos tokens de `ekio/design/marca` |
 | `static/tiles.ejs` | Template das grades de imagem |
@@ -20,6 +21,6 @@ Site de ensino da [EKIO](https://ekio.io): tutoriais de R, gráficos comentados 
 quarto render
 ```
 
-Os tutoriais executam R. O resultado fica em `_freeze/`, que vai para o git, então o Netlify renderiza o site sem R.
+Tutoriais e posts executam R. O resultado fica em `_freeze/`, que vai para o git, e o projeto usa `freeze: true`, então o Netlify renderiza o site sem R. Para atualizar um tutorial, renderize o arquivo localmente com `quarto render caminho/do/arquivo.qmd --execute`.
 
 Todo tutorial e gráfico precisa de `image:` no front matter; a imagem é o card na listagem.

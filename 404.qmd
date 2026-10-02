@@ -6,5 +6,5 @@ page-layout: full
 ::: {.page-intro}
 # Página não encontrada
 
-O endereço mudou ou não existe mais. Comece pelos [tutoriais](/tutoriais/index.html) ou pelos [gráficos](/graficos/index.html).
+O endereço mudou ou não existe mais. Comece pelos [tutoriais](/tutorials/index.html) ou pelos [gráficos](/weekly-charts/index.html).
 :::

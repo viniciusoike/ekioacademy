@@ -131,6 +131,8 @@ footer.footer .nav-footer {
 }
 
 .block { margin-top: 5rem; }
+.block-tight { margin-top: 3.5rem; }
+.block-tight h2 { font-size: 1.35rem; margin-bottom: 1.25rem; }
 .hero + .block { margin-top: 0; }
 
 .section-head {
@@ -254,12 +256,12 @@ footer.footer .nav-footer {
 }
 
 // ── Section strip ─────────────────────────────────────────────────
-// Five equal squares with a centered label, closed by a hairline.
+// Equal squares, one per section, with a centered label, closed by a hairline.
 // Below 768px the row scrolls sideways and snaps; no script, no motion.
 
 .strip {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid $rule;
@@ -341,7 +343,22 @@ main.content h3 { font-size: 1.2rem; }
   padding: 1rem;
 }
 
-div.sourceCode { border: 1px solid $rule; background: $paper; border-radius: 0; }
+// Code keeps the Material Palenight highlight theme (set in _quarto.yml);
+// only size, spacing and corners change here.
+div.sourceCode { border: 0; border-radius: 0; }
+div.sourceCode pre { padding: 1.25rem; }
+div.sourceCode pre, pre.sourceCode code { font-size: 0.875rem; line-height: 1.4; }
+pre.numberSource code { left: 1.5em; }
+
+// Printed output (tibbles, console) is smaller than the code that made it.
+.cell-output pre,
+.cell-output-stdout pre {
+  font-size: 0.85rem;
+  line-height: 1.25;
+  background: $paper;
+  border-left: 1px solid $rule;
+  padding: 0.75rem 1rem;
+}
 
 #TOC, .sidebar nav[role="doc-toc"] {
   .nav-link { font-size: 0.9rem; }

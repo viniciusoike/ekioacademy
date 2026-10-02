@@ -4,9 +4,7 @@ description: "Tutoriais de R, gráficos e cursos de economia aplicada da EKIO."
 page-layout: full
 listing:
   - id: graficos-recentes
-    contents:
-      - graficos/*.qmd
-      - "!graficos/index.qmd"
+    contents: "/weekly-charts/charts/*.qmd"
     sort: "date desc"
     max-items: 3
     type: custom
@@ -15,8 +13,8 @@ listing:
     date-format: "MMMM [de] YYYY"
   - id: tutoriais-recentes
     contents:
-      - tutoriais/*.qmd
-      - "!tutoriais/index.qmd"
+      - "/tutorials/**/index.qmd"
+      - "!/tutorials/index.qmd"
     sort: "date desc"
     max-items: 3
     type: custom
@@ -34,13 +32,17 @@ listing:
 ::: {.wrap}
 ```{=html}
 <nav class="strip" aria-label="Seções">
-<a class="strip-item" href="tutoriais/index.html">
+<a class="strip-item" href="tutorials/index.html">
 <span class="tile-media"><img src="static/images/art/card-positive-correlation.webp" alt=""></span>
 <span class="strip-label">Tutoriais</span>
 </a>
-<a class="strip-item" href="graficos/index.html">
+<a class="strip-item" href="weekly-charts/index.html">
 <span class="tile-media"><img src="static/images/art/insight-market-cycles.webp" alt=""></span>
 <span class="strip-label">Gráficos</span>
+</a>
+<a class="strip-item" href="blog/index.html">
+<span class="tile-media"><img src="static/images/art/insight-signal-and-cycle.webp" alt=""></span>
+<span class="strip-label">Blog</span>
 </a>
 <a class="strip-item" href="cursos.html">
 <span class="tile-media"><img src="static/images/art/insight-sao-paulo-copan.webp" alt=""></span>
@@ -62,7 +64,7 @@ listing:
 ::: {.section-head}
 ## Gráficos recentes
 
-[Ver todos](graficos/index.qmd)
+[Ver todos](weekly-charts/index.qmd)
 :::
 
 ::: {#graficos-recentes .tiles .tiles-3}
@@ -73,7 +75,7 @@ listing:
 ::: {.section-head}
 ## Tutoriais
 
-[Ver todos](tutoriais/index.qmd)
+[Ver todos](tutorials/index.qmd)
 :::
 
 ::: {#tutoriais-recentes .tiles .tiles-3}

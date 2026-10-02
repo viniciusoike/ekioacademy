@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!content-archive/"
+    - "!old_website/"
   # Imagens citadas só em `style` ou em templates EJS não são descobertas
   # pelo Quarto; a pasta entra explicitamente.
   resources:
@@ -27,9 +28,11 @@ website:
     collapse-below: md
     right:
       - text: "Tutoriais"
-        href: tutoriais/index.qmd
+        href: tutorials/index.qmd
       - text: "Gráficos"
-        href: graficos/index.qmd
+        href: weekly-charts/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
       - text: "Cursos"
         href: cursos.qmd
       - text: "Livros"
@@ -57,10 +60,12 @@ format:
     section-divs: false
     code-tools: false
     link-external-newwindow: true
-    highlight-style: github
+    highlight-style: assets/themes/material-palenight-r.theme
 
 execute:
-  freeze: auto
+  # Content is rendered locally and frozen; the build never runs R.
+  freeze: true
+  cache: true
   echo: true
   warning: false
   message: false
