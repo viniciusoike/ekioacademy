@@ -1,0 +1,27 @@
+---
+title: "Replicating Pew Research: US Housing Construction Trends"
+description: "Recreation of Pew Research chart showing decline in starter home construction using ggplot2 and custom styling"
+date: "2025-08-15"
+image: "/assets/images/weekly-charts/replication-pew-2/charts/pew-2-chart.png"
+categories: ["data-replication", "housing", "visualization-tutorial"]
+format:
+  html:
+    page-layout: article
+---
+
+![](/assets/images/weekly-charts/replication-pew-2/charts/pew-2-chart.png){fig-align="center"}
+
+## Visualization Strengths
+
+This chart replication demonstrates excellent **hierarchical visual design** with the callout box drawing attention to the most striking finding - the dramatic 53% decline in starter homes under 1,400 sq ft. The **dual-color approach** (dark bars for 2023, light bars for 2004) creates immediate temporal comparison across all size categories.
+
+The **clean typography** and **strategic whitespace** mirror Pew Research's professional style, while the **left-aligned category labels** maintain readability even with varying text lengths. Notice how the **proportional bar widths** make the magnitude differences clear - larger homes show smaller percentage changes.
+
+## Key Learning Points
+
+- **Callout boxes** effectively highlight key insights without cluttering the main visualization
+- **Consistent color encoding** across categories reduces cognitive load for readers
+- **Professional styling** (fonts, spacing, alignment) significantly impacts credibility and readability
+- This replication approach helps students understand both data analysis and visual design principles
+
+*Data: US Census Bureau Survey of Construction. Replication using ggplot2 and custom theme development.*

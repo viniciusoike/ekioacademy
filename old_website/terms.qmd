@@ -1,0 +1,76 @@
+---
+title: "Terms of Service"
+description: "EKIO Academy terms of service and usage conditions"
+---
+
+# Terms of Service
+
+*Last updated: January 2024*
+
+## Agreement to Terms
+
+By accessing and using EKIO Academy, you accept and agree to be bound by these Terms of Service.
+
+## Use License
+
+Permission is granted to temporarily access EKIO Academy for personal, non-commercial educational use. This license does not include:
+
+- Modifying or copying materials without permission
+- Using materials for commercial purposes without written consent
+- Attempting to reverse engineer any software
+- Removing copyright or proprietary notations
+
+## Educational Content
+
+### Free Content
+- Tutorials and blog posts are available for educational use
+- Attribution is required when sharing or referencing our content
+- Content may not be redistributed for commercial purposes
+
+### Premium Content
+- Paid courses and books are subject to separate license agreements
+- Access is limited to enrolled users
+- Sharing login credentials is prohibited
+
+## User Conduct
+
+Users agree not to:
+- Violate any applicable laws or regulations
+- Transmit harmful or malicious content
+- Attempt to gain unauthorized access to our systems
+- Interfere with other users' experience
+
+## Intellectual Property
+
+All content on EKIO Academy is protected by copyright and other intellectual property laws. Unless otherwise specified:
+- Content belongs to EKIO Analytics
+- R code examples are provided under permissive licenses where applicable
+- Third-party data and packages are subject to their respective licenses
+
+## Disclaimers
+
+### Educational Purpose
+- Content is provided for educational purposes only
+- We do not guarantee accuracy or completeness of all information
+- Users should verify information independently for professional use
+
+### No Warranty
+EKIO Academy is provided "as is" without warranties of any kind, either express or implied.
+
+## Limitation of Liability
+
+EKIO Analytics shall not be liable for any damages arising from the use or inability to use our services, including but not limited to direct, indirect, incidental, or consequential damages.
+
+## Governing Law
+
+These terms are governed by Brazilian law and any disputes will be resolved in Brazilian courts.
+
+## Contact Information
+
+For questions about these Terms of Service, contact us at:
+- Email: legal@ekio.com.br  
+- Website: [Contact Form](contact.qmd)
+
+## Changes to Terms
+
+We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to this page.

@@ -1,0 +1,133 @@
+---
+title: "Enroll in Brazilian Data Mastery"
+subtitle: "Master Brazil's Data Ecosystem"
+description: "Comprehensive course on accessing, analyzing, and visualizing Brazilian economic and social datasets."
+---
+
+# Enroll in Brazilian Data Mastery
+
+Become an expert in Brazil's rich data ecosystem. Learn to access, clean, analyze, and visualize data from IBGE, BCB, IPEA, and other key Brazilian institutions.
+
+## Course Overview
+
+- **Duration**: 8 weeks intensive program
+- **Format**: Live online sessions + practical workshops
+- **Language**: Available in Portuguese and English
+- **Price**: Special launch pricing available
+
+## Why This Course is Essential
+
+Brazil has one of the world's most comprehensive statistical systems, but navigating it requires specialized knowledge. This course gives you the keys to unlock insights from:
+
+- **IBGE**: Census, surveys, and municipal statistics
+- **Banco Central**: Financial and monetary data
+- **IPEA**: Economic and social indicators
+- **SIDRA**: Multidimensional statistical database
+- **Municipal APIs**: Local government data
+- **Research institutions**: Academic and policy datasets
+
+## What You'll Master
+
+### Data Access Skills
+- Navigating Brazilian statistical portals
+- Using APIs for automated data collection
+- Understanding data collection methodologies
+- Working with different data formats and encodings
+
+### Technical Proficiency
+- R packages for Brazilian data (sidrar, GetBCBData, geobr)
+- Data cleaning techniques for Brazilian datasets
+- Handling geographic data and administrative divisions
+- Time series analysis with Brazilian economic indicators
+
+### Domain Knowledge
+- Brazilian institutional landscape
+- Economic indicator interpretation
+- Regional and municipal analysis
+- Understanding data limitations and biases
+
+## Course Structure
+
+### Week 1-2: Foundations
+- Brazilian statistical system overview
+- Setting up your data toolkit
+- First data collection project
+
+### Week 3-4: Economic Data
+- Banco Central data ecosystem
+- Inflation, interest rates, and monetary policy
+- Financial market indicators
+
+### Week 5-6: Demographic and Social Data
+- Census and survey data from IBGE
+- Municipal and regional indicators
+- Social development metrics
+
+### Week 7-8: Applied Projects
+- Regional economic analysis
+- Municipal development indicators
+- Policy impact assessment
+
+## Real-World Applications
+
+Students have used these skills for:
+
+- **Government consulting** - Municipal development planning
+- **Private sector** - Market research and site selection
+- **Academia** - Research on Brazilian economic development
+- **Journalism** - Data-driven reporting on social issues
+- **NGOs** - Evidence-based advocacy and program evaluation
+
+## Enrollment Details
+
+### Next Cohort Dates
+**Brazilian Data Mastery** is launching soon!
+
+### Early Bird Registration
+Contact us to secure your spot and early bird pricing:
+
+**Email**: [academy@ekio.io](mailto:academy@ekio.io)  
+**Subject**: "Brazilian Data Mastery - Enrollment"  
+**Include**: Your experience level and specific interests
+
+### Prerequisites
+- Basic R knowledge (our R Fundamentals course recommended)
+- Portuguese reading ability helpful but not required
+- Interest in Brazilian economics and policy
+
+## Student Success Stories
+
+> *"This course transformed how I approach regional economic analysis. I can now access and analyze municipal data that I never knew existed."*  
+> — **Ana Silva**, Economic Consultant
+
+> *"The instructors' deep knowledge of Brazilian data sources saved me months of trial and error."*  
+> — **João Santos**, PhD Student in Economics
+
+## Instructor Expertise
+
+### Vinicius Oike
+- Former IPEA researcher
+- Expert in Brazilian municipal data
+- Author of multiple R packages for Brazilian data
+
+### Guest Instructors
+- **IBGE statisticians** - Behind-the-scenes insights
+- **Policy analysts** - Real-world applications
+- **Data journalists** - Storytelling with Brazilian data
+
+## Course Materials
+
+### Included Resources
+- Comprehensive Brazilian data source guide
+- Custom R packages and code templates
+- Access to private datasets and APIs
+- Networking with Brazilian data community
+
+### Ongoing Support
+- 6 months of instructor office hours
+- Alumni community forum
+- Updates on new data sources and methods
+
+---
+
+*Ready to unlock Brazil's data wealth? [Contact us](mailto:academy@ekio.io) to enroll or learn more about upcoming cohorts.*

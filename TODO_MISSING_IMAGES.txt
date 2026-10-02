@@ -1,0 +1,344 @@
+================================================================================
+EKIO ACADEMY - MISSING IMAGES TODO
+Generated: October 2025
+================================================================================
+
+SUMMARY
+-------
+- 16 tutorials with broken image references
+- 4 tutorials missing image fields
+- 1 weekly chart needs image regeneration
+- Total: 21 items requiring attention
+
+================================================================================
+SECTION 1: MISSING TUTORIAL THUMBNAILS (16 images)
+================================================================================
+
+GROUP A: DPLYR LOGO (5 tutorials need this)
+--------------------------------------------
+Image needed: /static/images/dplyr_logo.png
+Used by:
+  1. tutorials/tutorial-r/advanced/2024-01-tidyverse-rename/index.qmd
+  2. tutorials/tutorial-r/advanced/2025-07-tidyverse-select/index.qmd
+  3. tutorials/tutorial-r/advanced/2024-01-tidyverse-mutate/index.qmd
+  4. tutorials/tutorial-r/advanced/2024-01-tidyverse-filter/index.qmd
+  5. tutorials/tutorial-r/advanced/2024-01-tidyverse-summarise/index.qmd
+
+Strategy: Download official dplyr hex logo from tidyverse.org
+URL: https://github.com/rstudio/hex-stickers or tidyverse package
+Resize to: 600x600px PNG with transparent background
+
+
+GROUP B: GGPLOT2 VISUALIZATION THUMBNAILS (4 images)
+-----------------------------------------------------
+Base path: /static/
+
+1. ggplot2_point.png
+   - Used by: tutorials/data-visualization/2025-08-ggplot2-scatterplot/index.qmd
+   - Create: Simple scatter plot with ggplot2 defaults
+   - Code: ggplot(mtcars, aes(wt, mpg)) + geom_point()
+
+2. ggplot2_histogram.png
+   - Used by: tutorials/data-visualization/2025-08-histogram/index.qmd
+   - Create: Histogram with blue fill
+   - Code: ggplot(mtcars, aes(mpg)) + geom_histogram(fill = "steelblue")
+
+3. ggplot2_bar.png
+   - Used by: tutorials/data-visualization/2025-08-ggplot2-barplot/index.qmd
+   - Create: Bar plot with categories
+   - Code: ggplot(diamonds, aes(cut)) + geom_bar(fill = "#1abc9c")
+
+4. ggplot2_line.png
+   - Used by: tutorials/data-visualization/2025-08-ggplot2-lineplot/index.qmd
+   - Create: Line plot showing trend
+   - Code: ggplot(economics, aes(date, unemploy)) + geom_line(color = "#1abc9c")
+
+Strategy: Use template script (see BATCH SCRIPT section below)
+Size: 800x500px PNG
+Theme: theme_minimal() with EKIO primary color (#1abc9c)
+
+
+GROUP C: TIME SERIES PLOTS (3 images)
+--------------------------------------
+Base path: /static/plots/
+
+1. hamilton_trend.png
+   - Used by: tutorials/time-series/2024-02-hamilton-trend/index.qmd
+   - Create: Plot showing HP filter vs Hamilton filter comparison
+   - Data: Use Brazilian GDP or similar macro series
+
+2. moving_average_trend.png
+   - Used by: tutorials/time-series/2024-02-media-movel/index.qmd
+   - Create: Time series with moving average overlay
+   - Data: Sample economic indicator
+
+3. series_trend_decomposition_stl.png
+   - Used by: tutorials/time-series/2025-sazonalidade/index.qmd
+   - Create: STL decomposition plot (trend, seasonal, remainder)
+   - Data: Quarterly/monthly series with clear seasonality
+
+Strategy: Generate from actual tutorial code
+Extract plotting code from each tutorial's .qmd file
+Save high-res versions for thumbnails
+
+
+GROUP D: OTHER LOGOS/IMAGES (4 images)
+---------------------------------------
+1. /static/images/thumbnails/sidra_logo.png
+   - Used by: tutorials/economics/2023-08-importando-dados-sidra/index.qmd
+   - Source: IBGE/SIDRA official logo
+   - URL: https://sidra.ibge.gov.br/ (check footer/header for logo)
+
+2. /static/images/thumbnails/starbucks_logo.png
+   - Used by: tutorials/tutorial-r/advanced/2025-07-webscrape/index.qmd
+   - Source: Starbucks official brand assets
+   - Alternative: Create simple coffee cup icon with "Starbucks" text
+
+3. /static/sarima_tutorial_r.svg
+   - Used by: tutorials/time-series/repost-sarima-no-r/index.qmd
+   - Create: SARIMA model visualization (ACF/PACF or forecast plot)
+   - Format: SVG for crisp display
+
+4. /static/series-tempo-r.svg
+   - Used by: tutorials/time-series/repost-arima-no-r/index.qmd
+   - Create: Generic time series plot with ARIMA fit
+   - Format: SVG for crisp display
+
+
+================================================================================
+SECTION 2: TUTORIALS MISSING IMAGE FIELDS (4 items)
+================================================================================
+
+These tutorials are complete but lack thumbnail images in YAML:
+
+1. tutorials/time-series/repost-arma-exemplo-simples/index.qmd
+   Title: "ARMA: um exemplo simples"
+   Suggested image: Create ARMA process visualization
+
+2. tutorials/data-visualization/ggplot2-basics/index.qmd
+   Title: "O básico de ggplot2"
+   Suggested image: Composite showing multiple geoms or ggplot2 hex logo
+
+3. tutorials/data-visualization/demographic-pyramids/index.qmd
+   Title: "Pirâmides Demográficas no R"
+   Suggested image: Generate a sample demographic pyramid
+
+4. tutorials/tutorial-r/fundamentals/2025-09-intro-r-1/index.qmd
+   Title: "Introdução ao R"
+   Note: File appears incomplete (missing description, date, categories)
+   Suggested image: R logo or RStudio screenshot
+
+
+================================================================================
+SECTION 3: WEEKLY CHART TO REGENERATE (1 item)
+================================================================================
+
+1. weekly-charts/charts/2023-11-sp-car-ownership.qmd
+   Missing: /assets/images/weekly-charts/sp-car-ownership-map.svg
+   Status: Marked as draft until image is created
+   Action needed: Regenerate the choropleth map from original code
+   Data source: Pesquisa Origem-Destino Metro SP 2017
+
+
+================================================================================
+STREAMLINED IMAGE CREATION STRATEGY
+================================================================================
+
+PHASE 1: QUICK WINS (Logos and Official Assets)
+------------------------------------------------
+Time estimate: 30 minutes
+
+1. Download dplyr logo (1 file → 5 tutorials fixed)
+   Source: https://github.com/tidyverse/dplyr/blob/main/man/figures/logo.png
+   Or: install.packages("dplyr"); get logo from package
+
+2. Download/find SIDRA logo
+   Source: IBGE website official assets
+
+3. Create/source Starbucks logo
+   Option A: Official brand assets (if available)
+   Option B: Simple icon from icons8.com or similar
+
+
+PHASE 2: AUTOMATED GGPLOT2 THUMBNAILS
+--------------------------------------
+Time estimate: 1 hour
+
+Create R script: scripts/generate_ggplot_thumbnails.R
+
+```r
+library(ggplot2)
+library(dplyr)
+
+# EKIO brand colors
+ekio_primary <- "#1abc9c"
+ekio_secondary <- "#16a085"
+
+# Standard theme for all thumbnails
+theme_ekio_thumbnail <- function() {
+  theme_minimal(base_size = 14) +
+    theme(
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.background = element_rect(fill = "#f8f9fa", color = NA),
+      plot.margin = margin(20, 20, 20, 20)
+    )
+}
+
+# Save function with consistent specs
+save_thumbnail <- function(plot, filename) {
+  ggsave(
+    filename,
+    plot,
+    width = 8,
+    height = 5,
+    dpi = 150,
+    bg = "white"
+  )
+}
+
+# Generate scatter plot
+p_scatter <- ggplot(mtcars, aes(wt, mpg)) +
+  geom_point(color = ekio_primary, size = 3, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, color = ekio_secondary) +
+  labs(title = "Gráfico de Dispersão",
+       x = "Peso", y = "Consumo") +
+  theme_ekio_thumbnail()
+
+save_thumbnail(p_scatter, "static/ggplot2_point.png")
+
+# Generate histogram
+p_hist <- ggplot(mtcars, aes(mpg)) +
+  geom_histogram(fill = ekio_primary, color = "white", bins = 10) +
+  labs(title = "Histograma", x = "Consumo", y = "Frequência") +
+  theme_ekio_thumbnail()
+
+save_thumbnail(p_hist, "static/ggplot2_histogram.png")
+
+# Generate bar plot
+diamonds_summary <- diamonds %>%
+  count(cut) %>%
+  mutate(cut = forcats::fct_reorder(cut, n))
+
+p_bar <- ggplot(diamonds_summary, aes(cut, n)) +
+  geom_col(fill = ekio_primary, width = 0.7) +
+  coord_flip() +
+  labs(title = "Gráfico de Barras", x = NULL, y = "Contagem") +
+  theme_ekio_thumbnail()
+
+save_thumbnail(p_bar, "static/ggplot2_bar.png")
+
+# Generate line plot
+p_line <- ggplot(economics, aes(date, unemploy)) +
+  geom_line(color = ekio_primary, linewidth = 1) +
+  labs(title = "Gráfico de Linha",
+       x = NULL, y = "Desemprego (milhares)") +
+  theme_ekio_thumbnail()
+
+save_thumbnail(p_line, "static/ggplot2_line.png")
+
+cat("✓ Generated 4 ggplot2 thumbnails\n")
+```
+
+Run with: Rscript scripts/generate_ggplot_thumbnails.R
+
+
+PHASE 3: TIME SERIES VISUALIZATIONS
+------------------------------------
+Time estimate: 1.5 hours
+
+1. Open each tutorial's .qmd file
+2. Execute the R code to generate the key visualization
+3. Save the main plot as thumbnail
+4. Use consistent size: 800x600px
+
+Alternative approach:
+- Render the tutorial with Quarto
+- Extract the desired figure from _freeze/ directory
+- Resize/optimize for web use
+
+
+PHASE 4: SPECIALIZED VISUALIZATIONS
+------------------------------------
+Time estimate: 2 hours
+
+1. Demographic pyramid (for demographic-pyramids tutorial)
+   - Generate using sample Brazilian demographic data
+   - Use population pyramid template from tutorial itself
+
+2. ARMA/ARIMA/SARIMA plots (for time series tutorials)
+   - Use simulated ARMA processes
+   - Create ACF/PACF plots or forecasts
+   - Save as SVG for mathematical clarity
+
+3. São Paulo car ownership map
+   - Requires source data and original code
+   - May need to recreate if code is lost
+   - Consider placing in separate project for complex maps
+
+
+BATCH EXECUTION PLAN
+--------------------
+Total time estimate: 5 hours
+
+Session 1 (30 min):
+  ☐ Download all logos (dplyr, SIDRA, Starbucks)
+  ☐ Place in correct directories
+  ☐ Verify 6 tutorials now have valid images
+
+Session 2 (1 hour):
+  ☐ Create and run generate_ggplot_thumbnails.R script
+  ☐ Verify 4 ggplot2 tutorials now have valid images
+
+Session 3 (1.5 hours):
+  ☐ Extract time series plots from tutorials
+  ☐ Generate hamilton_trend.png
+  ☐ Generate moving_average_trend.png
+  ☐ Generate series_trend_decomposition_stl.png
+
+Session 4 (2 hours):
+  ☐ Create ARMA visualization
+  ☐ Create demographic pyramid
+  ☐ Create SARIMA SVG plots
+  ☐ Regenerate SP car ownership map (if needed)
+
+Final Verification:
+  ☐ Run: quarto render --no-execute-daemon
+  ☐ Check for broken image links in console output
+  ☐ Visual spot-check of all tutorial listing pages
+
+
+QUALITY CHECKLIST
+-----------------
+For each image created:
+  ☐ File exists at exact path specified in YAML
+  ☐ Image size appropriate (600-1000px wide)
+  ☐ File size reasonable (<200KB for web)
+  ☐ Uses EKIO brand colors where appropriate
+  ☐ High contrast and readable at thumbnail size
+  ☐ Includes alt text in YAML (image-alt field)
+
+
+MAINTENANCE NOTES
+-----------------
+1. Store R script in: scripts/generate_thumbnails.R
+2. Document any data dependencies
+3. Consider creating a "thumbnail library" folder with reusable assets
+4. Add to CLAUDE.md: thumbnail creation workflow for future tutorials
+5. Create a thumbnail template for consistent branding
+
+
+OPTIONAL ENHANCEMENTS
+---------------------
+- Create consistent border/frame for all thumbnails
+- Add subtle EKIO watermark to tutorial thumbnails
+- Generate 2x versions for retina displays
+- Create thumbnail preview gallery for quality check
+- Automate thumbnail generation in pre-render hook
+
+
+================================================================================
+END OF TODO
+================================================================================
+
+Last updated: 2025-10-15
+Next review: After image creation session

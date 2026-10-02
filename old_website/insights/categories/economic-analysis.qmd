@@ -1,0 +1,105 @@
+---
+title: "Economic Analysis Research"
+subtitle: "Macroeconomic trends and regional development analysis"
+description: "Comprehensive analysis of Brazilian macroeconomic indicators, regional development patterns, and economic policy impacts."
+listing:
+  contents: "../posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+  include:
+    categories: ["economic-analysis"]
+format:
+  html:
+    page-layout: full
+---
+
+# Economic Analysis Research
+
+Understanding Brazil's complex economic landscape through rigorous data analysis and evidence-based insights.
+
+## Research Focus Areas
+
+### 📊 Macroeconomic Indicators
+- GDP growth patterns and drivers
+- Inflation dynamics and regional variations
+- Labor market trends and productivity
+- Business cycle analysis and forecasting
+
+### 🌎 Regional Development
+- Economic inequality across Brazilian regions
+- Cluster development and specialization patterns  
+- Infrastructure investment impacts
+- Inter-regional trade and migration flows
+
+### 💰 Monetary and Fiscal Policy
+- Central Bank policy effectiveness
+- Government spending multipliers
+- Tax policy impact analysis
+- Debt sustainability assessments
+
+### 🏭 Sectoral Analysis
+- Industry competitiveness and productivity
+- Agricultural modernization and exports
+- Service sector growth and innovation
+- Energy transition economic impacts
+
+## Current Research Initiatives
+
+### Active Projects
+- **Brazilian Regional Competitiveness Index 2025**
+- **Post-pandemic economic recovery analysis**
+- **Green economy transition pathways**
+- **Digital transformation economic impacts**
+
+### Recent Publications
+- Regional Inflation Patterns: Beyond the National Average (Nov 2024)
+- Brazil's Economic Cycles: Historical Analysis and Future Prospects (Oct 2024)
+- Municipality-level Economic Resilience Assessment (Sep 2024)
+
+## Analytical Methods
+
+Our economic analysis combines:
+
+- **Time series econometrics** for trend analysis
+- **Panel data models** for regional comparisons
+- **Input-output analysis** for sectoral linkages
+- **Machine learning** for pattern recognition
+- **Microsimulation** for policy impact assessment
+
+## Key Findings & Insights
+
+### Regional Economic Patterns
+Brazil's economic development shows persistent regional disparities, with the Southeast maintaining its dominance while the Northeast shows signs of convergence in specific sectors.
+
+### Inflation Heterogeneity
+Regional price levels vary significantly, with transportation costs and housing driving much of the geographic variation in living costs.
+
+### Productivity Challenges
+Manufacturing productivity growth has stagnated since 2010, while service sectors show more dynamic patterns across different metropolitan areas.
+
+## Data Infrastructure
+
+Our analysis draws on comprehensive databases including:
+
+- **BCB**: Monetary policy, financial sector indicators
+- **IBGE**: National accounts, price indices, surveys
+- **IPEA**: Regional development indicators
+- **MTE**: Labor market and employment data
+- **International sources**: World Bank, IMF, OECD
+
+## Policy Applications
+
+Our research directly informs:
+
+- Regional development strategy formulation
+- Investment location decisions
+- Economic forecasting models
+- Public policy evaluation frameworks
+- International economic assessments
+
+---
+
+*Access our full research database and methodology documentation through our [Research Portal](../research-portal.qmd).*

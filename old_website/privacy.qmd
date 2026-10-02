@@ -1,0 +1,65 @@
+---
+title: "Privacy Policy"
+description: "EKIO Academy privacy policy and data protection information"
+---
+
+# Privacy Policy
+
+*Last updated: January 2024*
+
+## Overview
+
+EKIO Academy ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website.
+
+## Information We Collect
+
+### Automatically Collected Information
+- Website usage analytics through Google Analytics
+- IP addresses and browser information
+- Pages visited and time spent on site
+
+### Information You Provide
+- Contact form submissions
+- Course enrollment information
+- Newsletter subscription data
+- Comments and feedback
+
+## How We Use Your Information
+
+We use collected information to:
+- Improve our website and educational content
+- Provide customer support
+- Send educational resources and updates (with consent)
+- Analyze website performance and user engagement
+
+## Information Sharing
+
+We do not sell, trade, or rent your personal information to third parties. We may share information with:
+- Service providers who assist with website operations
+- Analytics services (Google Analytics)
+- Legal authorities if required by law
+
+## Data Security
+
+We implement appropriate security measures to protect your information, including:
+- Secure server infrastructure
+- Regular security assessments
+- Limited access to personal information
+
+## Your Rights
+
+You have the right to:
+- Access your personal information
+- Request corrections to your data
+- Opt-out of communications
+- Request deletion of your information
+
+## Contact Us
+
+For privacy-related questions or requests, contact us at:
+- Email: privacy@ekio.com.br
+- Website: [Contact Form](contact.qmd)
+
+## Changes to This Policy
+
+We may update this Privacy Policy periodically. Changes will be posted on this page with an updated revision date.
