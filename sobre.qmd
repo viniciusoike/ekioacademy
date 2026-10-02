@@ -4,7 +4,7 @@ page-layout: full
 ---
 
 ::: {.hero .column-screen}
-![](static/images/art/banner-sao-paulo-heritage.webp){fig-alt=""}
+![](static/images/art/sobre-banner.webp){fig-alt=""}
 :::
 
 ::: {.prose}
