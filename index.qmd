@@ -24,7 +24,7 @@ listing:
 ---
 
 ::: {.hero .column-screen}
-![](static/images/art/hero-metropolitan-geometry.webp){fig-alt=""}
+![](static/images/art/hero-academy.webp){fig-alt=""}
 
 # Economia, cidades e dados, aprendidos em R com casos brasileiros.
 :::
@@ -33,27 +33,27 @@ listing:
 ```{=html}
 <nav class="strip" aria-label="Seções">
 <a class="strip-item" href="tutorials/index.html">
-<span class="tile-media"><img src="static/images/art/card-positive-correlation.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-tutoriais.webp" alt=""></span>
 <span class="strip-label">Tutoriais</span>
 </a>
 <a class="strip-item" href="weekly-charts/index.html">
-<span class="tile-media"><img src="static/images/art/insight-market-cycles.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-graficos.webp" alt=""></span>
 <span class="strip-label">Gráficos</span>
 </a>
 <a class="strip-item" href="blog/index.html">
-<span class="tile-media"><img src="static/images/art/insight-signal-and-cycle.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-blog.webp" alt=""></span>
 <span class="strip-label">Blog</span>
 </a>
 <a class="strip-item" href="cursos.html">
-<span class="tile-media"><img src="static/images/art/insight-sao-paulo-copan.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-cursos.webp" alt=""></span>
 <span class="strip-label">Cursos</span>
 </a>
 <a class="strip-item" href="livros.html">
-<span class="tile-media"><img src="static/images/art/cover-layered-inquiry.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-livros.webp" alt=""></span>
 <span class="strip-label">Livros</span>
 </a>
 <a class="strip-item" href="sobre.html">
-<span class="tile-media"><img src="static/images/art/banner-sao-paulo-heritage.webp" alt=""></span>
+<span class="tile-media"><img src="static/images/art/secao-sobre.webp" alt=""></span>
 <span class="strip-label">Sobre</span>
 </a>
 </nav>

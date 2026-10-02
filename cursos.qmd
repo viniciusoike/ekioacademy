@@ -11,7 +11,7 @@ Os cursos estão em preparação. Os tutoriais e gráficos publicados dão uma a
 
 ::: {.wrap .tiles .tiles-2 .offer-list}
 ::: {.offer #r-para-economistas}
-![](static/images/art/insight-office-towers.webp){fig-alt=""}
+![](static/images/art/curso-r-para-economistas.webp){fig-alt=""}
 
 ## R para economistas
 
@@ -21,7 +21,7 @@ Do primeiro script ao relatório reproduzível, com dados do IBGE e do Banco Cen
 :::
 
 ::: {.offer #analise-urbana-com-r}
-![](static/images/art/insight-old-and-new.webp){fig-alt=""}
+![](static/images/art/curso-analise-urbana.webp){fig-alt=""}
 
 ## Análise urbana com R
 
