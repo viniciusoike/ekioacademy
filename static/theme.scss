@@ -92,6 +92,12 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
   }
 }
 
+@media (max-width: 767px) {
+  .navbar .navbar-logo { max-height: 24px; }
+  .navbar .navbar-title { font-size: 1.05rem; }
+  .navbar .navbar-brand-container { max-width: none; overflow: visible; }
+}
+
 // ── Footer ─────────────────────────────────────────────────────────
 
 footer.footer { border-top: 1px solid $rule; }
@@ -116,13 +122,15 @@ footer.footer .nav-footer {
   #title-block-header { display: none; }
 }
 
+// Auto margins on a grid item switch off stretching; width keeps it full.
 .wrap {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.block { margin-top: 5rem; margin-bottom: 5rem; }
+.block { margin-top: 5rem; }
 .hero + .block { margin-top: 0; }
 
 .section-head {
@@ -183,17 +191,6 @@ footer.footer .nav-footer {
 .tiles-3 { grid-template-columns: repeat(3, 1fr); }
 .tiles-4 { grid-template-columns: repeat(4, 1fr); }
 
-// Big grid: one tall tile on the left, two stacked on the right.
-.tiles-feature {
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: auto auto;
-
-  > .tile:first-child { grid-row: span 2; }
-  > .tile:first-child .tile-media { aspect-ratio: auto; height: 100%; min-height: 28rem; }
-  > .tile:first-child { display: flex; flex-direction: column; }
-  > .tile:first-child .tile-media { flex: 1; }
-}
-
 // Lead grid: the newest item spans two columns.
 .tiles-lead {
   grid-template-columns: repeat(3, 1fr);
@@ -229,8 +226,6 @@ footer.footer .nav-footer {
   }
 }
 
-.tile-wide .tile-media { aspect-ratio: 3 / 2; }
-.tile-tall .tile-media { aspect-ratio: 4 / 5; }
 
 // Charts are shown whole on paper, framed by a hairline, never cropped.
 .tile-chart .tile-media {
@@ -256,6 +251,54 @@ footer.footer .nav-footer {
   margin-top: 0.3rem;
   font-size: 0.875rem;
   color: $ink-500;
+}
+
+// ── Section strip ─────────────────────────────────────────────────
+// Five equal squares with a centered label, closed by a hairline.
+// Below 768px the row scrolls sideways and snaps; no script, no motion.
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid $rule;
+
+  .tile-media { aspect-ratio: 1 / 1; }
+}
+
+.strip-item {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: $ink;
+
+  &:hover { color: $navy; }
+  &:hover .strip-label { text-decoration: underline; }
+  &:hover img { opacity: 0.9; }
+}
+
+.strip-label {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: $font-display;
+  font-size: 1.1rem;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 767px) {
+  .strip {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 40%;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .strip-item { scroll-snap-align: start; }
 }
 
 // ── Bands ──────────────────────────────────────────────────────────
@@ -305,9 +348,6 @@ div.sourceCode { border: 1px solid $rule; background: $linho; border-radius: 0; 
 @media (max-width: 991px) {
   .tiles-4 { grid-template-columns: repeat(2, 1fr); }
   .tiles-3, .tiles-lead { grid-template-columns: repeat(2, 1fr); }
-  .tiles-feature { grid-template-columns: 1fr; grid-template-rows: none; }
-  .tiles-feature > .tile:first-child { grid-row: auto; }
-  .tiles-feature > .tile:first-child .tile-media { min-height: 0; aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 575px) {
@@ -317,7 +357,7 @@ div.sourceCode { border: 1px solid $rule; background: $linho; border-radius: 0; 
   .tiles-4 .tile-title { font-size: 1rem; }
   .tiles-lead > .tile:first-child { grid-column: auto; grid-row: auto; }
   .tiles-lead > .tile:first-child .tile-media { aspect-ratio: 4 / 3; }
-  .block { margin-top: 3.5rem; margin-bottom: 3.5rem; }
+  .block { margin-top: 3.5rem; }
 }
 
 // ── Offers (cursos, livros) and prose pages ─────────────────────────

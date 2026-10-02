@@ -13,6 +13,16 @@ listing:
     template: static/tiles.ejs
     fields: [title, date, image]
     date-format: "MMMM [de] YYYY"
+  - id: tutoriais-recentes
+    contents:
+      - tutoriais/*.qmd
+      - "!tutoriais/index.qmd"
+    sort: "date desc"
+    max-items: 3
+    type: custom
+    template: static/tiles.ejs
+    fields: [title, date, image]
+    date-format: "MMMM [de] YYYY"
 ---
 
 ::: {.hero .column-screen}
@@ -21,25 +31,30 @@ listing:
 # Economia, cidades e dados, aprendidos em R com casos brasileiros.
 :::
 
-::: {.wrap .block}
+::: {.wrap}
 ```{=html}
-<div class="tiles tiles-feature">
-<a class="tile" href="tutoriais/index.html">
+<nav class="strip" aria-label="Seções">
+<a class="strip-item" href="tutoriais/index.html">
 <span class="tile-media"><img src="static/images/art/card-positive-correlation.webp" alt=""></span>
-<span class="tile-title">Tutoriais</span>
-<span class="tile-meta">Do dado bruto ao gráfico final</span>
+<span class="strip-label">Tutoriais</span>
 </a>
-<a class="tile tile-wide" href="graficos/index.html">
+<a class="strip-item" href="graficos/index.html">
 <span class="tile-media"><img src="static/images/art/insight-market-cycles.webp" alt=""></span>
-<span class="tile-title">Gráficos</span>
-<span class="tile-meta">Cidades, demografia e mercado imobiliário</span>
+<span class="strip-label">Gráficos</span>
 </a>
-<a class="tile tile-wide" href="cursos.html">
+<a class="strip-item" href="cursos.html">
 <span class="tile-media"><img src="static/images/art/insight-sao-paulo-copan.webp" alt=""></span>
-<span class="tile-title">Cursos</span>
-<span class="tile-meta">Em preparação</span>
+<span class="strip-label">Cursos</span>
 </a>
-</div>
+<a class="strip-item" href="livros.html">
+<span class="tile-media"><img src="static/images/art/cover-layered-inquiry.webp" alt=""></span>
+<span class="strip-label">Livros</span>
+</a>
+<a class="strip-item" href="sobre.html">
+<span class="tile-media"><img src="static/images/art/banner-sao-paulo-heritage.webp" alt=""></span>
+<span class="strip-label">Sobre</span>
+</a>
+</nav>
 ```
 :::
 
@@ -56,33 +71,13 @@ listing:
 
 ::: {.wrap .block}
 ::: {.section-head}
-## Em preparação
+## Tutoriais
+
+[Ver todos](tutoriais/index.qmd)
 :::
 
-```{=html}
-<div class="tiles tiles-4">
-<a class="tile tile-tall" href="cursos.html#r-para-economistas">
-<span class="tile-media"><img src="static/images/art/insight-office-towers.webp" alt="" loading="lazy"></span>
-<span class="tile-title">R para economistas</span>
-<span class="tile-meta">Curso</span>
-</a>
-<a class="tile tile-tall" href="cursos.html#analise-urbana-com-r">
-<span class="tile-media"><img src="static/images/art/insight-old-and-new.webp" alt="" loading="lazy"></span>
-<span class="tile-title">Análise urbana com R</span>
-<span class="tile-meta">Curso</span>
-</a>
-<a class="tile tile-tall" href="livros.html#r-para-economia-urbana">
-<span class="tile-media"><img src="static/images/art/cover-layered-inquiry.webp" alt="" loading="lazy"></span>
-<span class="tile-title">R para economia urbana</span>
-<span class="tile-meta">Livro</span>
-</a>
-<a class="tile tile-tall" href="livros.html#guia-de-dados-brasileiros">
-<span class="tile-media"><img src="static/images/art/cover-metropolitan-fields.webp" alt="" loading="lazy"></span>
-<span class="tile-title">Guia de dados brasileiros</span>
-<span class="tile-meta">Livro</span>
-</a>
-</div>
-```
+::: {#tutoriais-recentes .tiles .tiles-3}
+:::
 :::
 
 ::: {.band-linho .column-screen}
