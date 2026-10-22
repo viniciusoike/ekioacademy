@@ -7,11 +7,6 @@
 # The book lives in its own repo (viniciusoike/guia-ia-r) and Netlify site;
 # a 200 rewrite serves it under the Academy domain.
 [[redirects]]
-  from = "/livros/ia-para-r"
-  to = "/livros/ia-para-r/"
-  status = 301
-
-[[redirects]]
   from = "/livros/ia-para-r/*"
   to = "https://guia-ia-r.netlify.app/:splat"
   status = 200
