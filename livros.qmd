@@ -29,4 +29,14 @@ Onde estão os dados públicos do Brasil e como importá-los no R.
 
 [Em preparação]{.tile-meta}
 :::
+
+::: {.offer #guia-ia-para-r}
+![](static/images/art/secao-livros.webp){fig-alt=""}
+
+## Guia de sobrevivência: IA para usuários de R
+
+Assistentes, agentes, MCPs e skills para quem programa em R, e o que eu uso hoje.
+
+[Em preparação]{.tile-meta}
+:::
 :::
